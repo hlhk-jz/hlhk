@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.TestMapper">
+    <!--collection中的map是dao层传入的map参数，item中的value表示map中的值，index中的key表示map中键-->
+    <!--foreach进行循环map取出里面的key和value-->
+    <insert id="insert"  >
+        insert into ${table_name}
+        <foreach item="value" collection="map" index="key" open="("   separator="," close=")">
+            ${key}
+        </foreach>
+        values
+        <foreach item="value" collection="map" index="key"  open="("   separator="," close=")">
+            #{value}
+        </foreach>
+    </insert>
+</mapper>

@@ -1,0 +1,10 @@
+server:
+  port: 9005
+spring:
+  rabbitmq:
+    host: 192.168.135.128
+    username: hlhk
+    password: 1qaz!QAZ
+#    port: 5672          #mq服务器port,默认为5672
+#    username: guest     #mq服务器username,默认为gust
+#    password: guest     #mq服务器password,默认为guest

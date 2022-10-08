@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plus.mapper.TestMapper">
+    <!--传入id
+    通过statementType="CALLABLE"指定存储过程调用
+    通过mode=IN指定入参
+    -->
+    <delete id="deled" parameterType="java.lang.Long" statementType="CALLABLE">
+        {CALL
+            delStuById(
+            #{id,mode=IN})
+        }
+    </delete>
+
+    <select id="queryData" parameterType="java.lang.Long" resultType="java.lang.String" statementType="CALLABLE">
+        {
+        call b(#{id})
+        }
+    </select>
+
+    <select id="selectData"  resultType="java.lang.String" statementType="CALLABLE">
+        {
+        call queryData1(#{id},#{in_name,mode=INOUT,jdbcType=VARCHAR})
+        }
+    </select>
+</mapper>
