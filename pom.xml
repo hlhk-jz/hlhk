@@ -26,6 +26,7 @@
         <module>hlhk_file</module>
         <module>hlhk_plus</module>
         <module>hlhk_rabitmq</module>
+        <module>hlhk_check</module>
     </modules>
 
     <dependencies>

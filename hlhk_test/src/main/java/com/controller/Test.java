@@ -1,4 +1,4 @@
-package com.controller;
+/*package com.controller;
 import com.config.DesUtils;
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
@@ -14,4 +14,4 @@ public class Test {
         String decrypt = DesUtils.decrypt(hello,key);
         log.info("解密后===="+decrypt);
     }
-}
+}*/
