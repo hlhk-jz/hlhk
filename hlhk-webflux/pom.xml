@@ -9,6 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <description>响应式编程</description>
+
     <artifactId>hlhk-webflux</artifactId>
 
 

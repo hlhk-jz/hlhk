@@ -9,7 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <description>
-        通过json数据生成对应的 bean ，右侧maven中 install或package都可以
+        通过json数据生成对应的 bean ，右侧maven中
+        该工程的 Plugins 下的 jsonschema2pojo 双击也可以
+        install或package都可以
     </description>
 
     <artifactId>hlhk_jsonToPojo</artifactId>

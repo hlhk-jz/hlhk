@@ -1,0 +1,10 @@
+server:
+  port: 9697
+fdfs:
+  so-timeout: 1501
+  connect-timeout: 2000
+  thumb-image:
+    width: 150
+    height: 150
+  tracker-list:
+      - 192.168.157.129:22122

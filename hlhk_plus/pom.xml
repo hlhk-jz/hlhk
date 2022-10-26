@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>hlhk_plus</artifactId>
+    <description>测试mybatis plus</description>
 
 <dependencies>
     <dependency>

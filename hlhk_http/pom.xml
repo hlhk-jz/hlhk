@@ -11,6 +11,7 @@
 
     <artifactId>hlhk_http</artifactId>
 
+    <description>测试http请求</description>
 
     <dependencies>
         <dependency>

@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <description>将excel数据导入数据库，文件名为表，列名为字段名，需提前建表</description>
     <artifactId>hlhk_file</artifactId>
 
     <dependencies>
