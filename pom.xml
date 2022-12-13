@@ -28,6 +28,7 @@
         <module>hlhk_rabitmq</module>
         <module>hlhk_check</module>
         <module>hlhk_exception</module>
+        <module>hlhk_https</module>
     </modules>
 
     <dependencies>

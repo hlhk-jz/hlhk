@@ -1,0 +1,8 @@
+server:
+  port: 9011
+  ssl:
+    #秘钥库的路径
+    key-store: classpath:tomcat.pkcs12
+    #秘钥库的类型
+    key-store-type: pkcs12
+    key-store-password: 123456
