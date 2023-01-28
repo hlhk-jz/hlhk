@@ -18,6 +18,11 @@
             <version>11.0.2</version>
         </dependency>
         <dependency>
+            <groupId>org.sikuli</groupId>
+            <artifactId>sikuliapi</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
