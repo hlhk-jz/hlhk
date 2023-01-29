@@ -29,6 +29,7 @@
         <module>hlhk_check</module>
         <module>hlhk_exception</module>
         <module>hlhk_https</module>
+        <module>hlhk_sikulix</module>
     </modules>
 
     <dependencies>
