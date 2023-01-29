@@ -44,8 +44,7 @@ public class SikTest {
         double score = match.getScore();
         System.out.println("查找相似数量："+score);
         //获取要点击的对象
-        Location target = match.getTarget();
-        target.doubleClick();
+        match.doubleClick();
 
 
        // Match match1 = region.find("D:/c.png");
