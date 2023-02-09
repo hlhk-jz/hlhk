@@ -7,6 +7,7 @@ import java.util.Iterator;
 @Slf4j
 public class SikTest {
     public static void main(String[] args)throws Exception{
+        //x 是左右调节，y 是上下调节
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         //循环打怪
