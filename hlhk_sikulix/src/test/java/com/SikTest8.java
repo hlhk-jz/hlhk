@@ -5,6 +5,7 @@ public class SikTest8 {
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         Match wait = region.wait("D:/sikuliximage/jar.png", 10);
+        //查看文件位置
         Location target = wait.getTarget();
         System.out.println(target.x);
         System.out.println(target.y);
