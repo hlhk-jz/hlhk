@@ -8,8 +8,7 @@ import java.util.Iterator;
 public class SikTest {
     public static void main(String[] args)throws Exception{
         //x 是左右调节，y 是上下调节
-        Region region = new Region(0, 0,1920,1080);
-        region.setThrowException(false);
+
         //循环打怪
         //daGuai();
 
@@ -17,7 +16,65 @@ public class SikTest {
          //suiJiShi();
 
          //捡装备
-        jianZhuanBei();
+        //jianZhuanBei();
+
+        //检查药品
+       // yaoPin();
+
+        //回收测试，判断包裹空位
+        testBaoguo();
+    }
+
+    private static void testBaoguo() throws Exception{
+        long s = 6;
+        long sd = s%2;
+        System.out.println("sssssss="+sd);
+    }
+
+    private static void yaoPin() throws Exception{
+        Match match = null;
+        Region region = new Region(0, 0,1920,1080);
+        region.setThrowException(false);
+
+        //寻找包裹
+        match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
+        match.click();
+        int size = 0;
+
+        Iterator<Match> all = region.findAll("D:/software/sikulix/image/yaopin1.PNG");
+        if(null != all){
+            size = Iterators.size(all);
+        }
+        //如果小药小于4
+        if(size < 4){
+            //如果没有大药就买
+            match = region.wait("D:/software/sikulix/image/yaopin2.PNG",1);
+            if(null == match){
+                match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+                match.click();
+                match = region.wait("D:/software/sikulix/image/yaopin3.PNG",1);
+                if(null == match){
+                    match = region.wait("D:/software/sikulix/image/yaopin4.PNG",1);
+                }
+                match.click();
+                match = region.wait("D:/software/sikulix/image/yaopin2.PNG",1);
+                match.click();
+                match = region.wait("D:/software/sikulix/image/gm.PNG",1);
+                match.click();
+                match = region.wait("D:/software/sikulix/image/qd.PNG",1);
+                match.click();
+                //关闭商铺栏
+                match = region.wait("D:/software/sikulix/image/gbspl.PNG", 2);
+                if(null != match){
+                    match.click();
+                }
+            }
+        }
+        //关闭物品栏
+        match = region.wait("D:/software/sikulix/image/gbzbl.PNG", 1);
+        if(null != match){
+            match.click();
+        }
     }
 
     /**

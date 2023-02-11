@@ -33,6 +33,8 @@ public class SikJZB {
             jzb("D:/software/sikulix/zhuangbei/kl.PNG");
             //霸者之刃
             jzb("D:/software/sikulix/zhuangbei/bzzr.PNG");
+            //奉天
+            jzb("D:/software/sikulix/zhuangbei/ft.PNG");
         }
     }
 

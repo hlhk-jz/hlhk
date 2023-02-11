@@ -29,7 +29,7 @@ public class SikHS {
         }
         match.click();
         Thread.sleep(500);
-        match = region.find("D:/software/sikulix/image/hs5.PNG");
+        match = region.wait("D:/software/sikulix/image/hs5.PNG",1);
         //如果没有回收问题，点击回收
         if(null != match){
             match.click();
@@ -240,7 +240,11 @@ public class SikHS {
                 match.click();
                 jzbData(region);
             }
-
+            match = region.wait("D:/software/sikulix/image/hs5.PNG",1);
+            if(null == match){
+                match = region.wait("D:/software/sikulix/image/hs7.PNG",1);
+            }
+            match.click();
         }catch (Exception e){
             //异常后点刷新
             match = region.find("D:/software/sikulix/huishou/sxsx.PNG");

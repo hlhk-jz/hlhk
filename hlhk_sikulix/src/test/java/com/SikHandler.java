@@ -2,9 +2,8 @@ package com;
 import com.google.common.collect.Iterators;
 import org.sikuli.script.*;
 import java.util.Iterator;
-
-//新手福利
-public class SikTest7 {
+public class SikHandler {
+    private static long count = 3;
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
@@ -28,6 +27,8 @@ public class SikTest7 {
     }
 
     private static void tulongdianMethod(Region region)throws Exception {
+        count ++;
+        Location location;
         //5. 寻找随机石
         suiJiShi();
         Match match2 = region.find("D:/software/sikulix/tulongdian/shitou.PNG");
@@ -37,6 +38,7 @@ public class SikTest7 {
         Thread.sleep(300);
         //6. 寻找教主
         Match match3 = null;
+        Match match5 = null;
         int n = 1;
         while (null == match3){
             n++;
@@ -60,26 +62,47 @@ public class SikTest7 {
         //7. 循环打怪直到没有怪为止
         int i = 1;
         Match match4 = null;
-        while (null != match4 || null != match3){
+        while (null != match4 || null != match3 || null != match5){
             i++;
             try {
+                match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",1);
                 if(null != match3){
-                    match3.click();
-                    region.type(Key.F3);
-                }else {
-                    Thread.sleep(500);
-                    match4.click();
+                    location = match3.getTarget();
+                    location.setY(location.getY()+30);
+                    location.click();
                     region.type(Key.F3);
                 }
-                match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",2);
                 if(null == match3){
-                    match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",2);
+                    match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",1);
+                    if(null != match4){
+                        location = match4.getTarget();
+                        location.setY(location.getY()+30);
+                        location.click();
+                        region.type(Key.F3);
+                    }
+                    if(null == match4){
+                        match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
+                        if(null != match5){
+                            location = match5.getTarget();
+                            location.setY(location.getY()+30);
+                            location.click();
+                            region.type(Key.F3);
+                        }
+                    }
+                }
+                match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",1);
+                if(null == match3){
+                    match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",1);
+                    if(null == match4){
+                        match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
+                    }
                 }
                 Thread.sleep(500);
             } catch (Exception e) {
-                match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",3);
-                match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",3);
-                System.out.println("失败~~~"+match3+"；"+match4);
+                match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",1);
+                match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",1);
+                match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
+                System.out.println("失败~~~"+match3+"；"+match4+":"+match5);
             }
             if(i == 100){
                 //如果打怪循环100次，放弃该次打怪
@@ -92,10 +115,16 @@ public class SikTest7 {
         SikJZB.pickup();
 
         //9. 回收
-        SikHS.jzb();
+        if((count%2)!=0){
+            System.out.println("回收装备开始：count："+count);
+            SikHS.jzb();
+        }
 
-        //10. 循环地柜
-      //  tulongdianMethod(region);
+        //10. 检查药品
+        SikYaoPin.yaoPin();
+
+        //11. 循环地柜
+        //tulongdianMethod(region);
     }
 
     //查看随机石是否充足
@@ -142,7 +171,4 @@ public class SikTest7 {
             match.click();
         }
     }
-
 }
-
-
