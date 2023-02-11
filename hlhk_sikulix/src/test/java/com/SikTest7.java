@@ -1,7 +1,6 @@
 package com;
 import com.google.common.collect.Iterators;
 import org.sikuli.script.*;
-
 import java.util.Iterator;
 
 //新手福利
@@ -75,13 +74,13 @@ public class SikTest7 {
         }
 
         //8. 打完怪捡装备
+        SikJZB.pickup();
 
         //9. 回收
+        SikHS.jzb();
 
-        //10. 查看药品是否没有了，没有就买点
-
-
-        tulongdianMethod(region);
+        //10. 循环地柜
+      //  tulongdianMethod(region);
     }
 
     //查看随机石是否充足
