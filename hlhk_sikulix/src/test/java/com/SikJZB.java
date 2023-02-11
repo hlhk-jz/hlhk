@@ -16,6 +16,8 @@ public class SikJZB {
             jzb("D:/software/sikulix/zhuangbei/hs.PNG");
             //开天
             jzb("D:/software/sikulix/zhuangbei/kt.PNG");
+            //玄天
+            jzb("D:/software/sikulix/zhuangbei/xt.PNG");
             //圣魔
             jzb("D:/software/sikulix/zhuangbei/sm.PNG");
             //太极
@@ -27,6 +29,10 @@ public class SikJZB {
             jzb("D:/software/sikulix/zhuangbei/zs.PNG");
             //震天
             jzb("D:/software/sikulix/zhuangbei/zt.PNG");
+            //狂雷
+            jzb("D:/software/sikulix/zhuangbei/kl.PNG");
+            //霸者之刃
+            jzb("D:/software/sikulix/zhuangbei/bzzr.PNG");
         }
     }
 
@@ -46,11 +52,11 @@ public class SikJZB {
                 location.hover();
                 match = region.find(target);
                 Thread.sleep(500);
-                matchGb = region.find("D:/software/sikulix/image/gb.NPG");
-                Thread.sleep(500);
-                if(null != matchGb){
-                    matchGb.click();
-                }
+            }
+            matchGb = region.find("D:/software/sikulix/image/gb.NPG");
+            Thread.sleep(500);
+            if(null != matchGb){
+                matchGb.click();
             }
         }
     }

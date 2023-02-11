@@ -37,7 +37,9 @@ public class SikTest7 {
         Thread.sleep(300);
         //6. 寻找教主
         Match match3 = null;
+        int n = 1;
         while (null == match3){
+            n++;
             //点击随机石
             match2.doubleClick();
             Thread.sleep(2000);
@@ -47,11 +49,19 @@ public class SikTest7 {
             if (null != match3){
                 break;
             }
+            if(n > 40){
+                //随机40次没有怪后，调用随机石方法
+                System.out.println("随机石超过40检查包裹");
+                suiJiShi();
+                n = 1;
+            }
         }
 
         //7. 循环打怪直到没有怪为止
+        int i = 1;
         Match match4 = null;
         while (null != match4 || null != match3){
+            i++;
             try {
                 if(null != match3){
                     match3.click();
@@ -70,6 +80,11 @@ public class SikTest7 {
                 match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",3);
                 match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",3);
                 System.out.println("失败~~~"+match3+"；"+match4);
+            }
+            if(i == 100){
+                //如果打怪循环100次，放弃该次打怪
+                System.out.println("打怪循环100次，重新随机");
+                tulongdianMethod(region);
             }
         }
 

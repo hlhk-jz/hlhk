@@ -8,6 +8,9 @@ public class SikHS {
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         Match match = region.find("D:/software/sikulix/image/hs1.PNG");
+        if(null == match){
+             match = region.find("D:/software/sikulix/image/hs4.PNG");
+        }
         Thread.sleep(500);
         match.click();
         Thread.sleep(500);
@@ -20,9 +23,19 @@ public class SikHS {
         region.type(Key.ENTER);
         //查找 回收装备 选项
         match = region.find("D:/software/sikulix/image/hs2.PNG");
-        Thread.sleep(1000);
+        Thread.sleep(700);
+        if(null == match){
+            match = region.find("D:/software/sikulix/image/hs3.PNG");
+        }
         match.click();
-       jzbData(region);
+        Thread.sleep(500);
+        match = region.find("D:/software/sikulix/image/hs5.PNG");
+        //如果没有回收问题，点击回收
+        if(null != match){
+            match.click();
+        }else {
+            jzbData(region);
+        }
     }
 
     private static void jzbData(Region region) throws Exception{
@@ -35,7 +48,7 @@ public class SikHS {
             if(null != match){
                 match = region.find("D:/software/sikulix/huishou/kqs1.PNG");
                 Thread.sleep(500);
-                match.hover();
+                match.click();
                 isTrue = false;
             }
 
@@ -46,7 +59,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/xs1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -58,7 +71,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/ngr1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -70,7 +83,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/jsm1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -82,7 +95,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/wz1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -94,7 +107,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/cjz1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -106,7 +119,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/wcn1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -118,7 +131,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/qe1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -130,7 +143,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/ywzm1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -142,7 +155,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/srff1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -154,7 +167,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/xy1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -166,7 +179,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/dh1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -178,7 +191,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/zgyd1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -190,7 +203,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/tw1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -202,7 +215,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/tam1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -214,7 +227,7 @@ public class SikHS {
                 if(null != match){
                     match = region.find("D:/software/sikulix/huishou/sb1.PNG");
                     Thread.sleep(500);
-                    match.hover();
+                    match.click();
                     isTrue = false;
                 }
             }
@@ -230,7 +243,7 @@ public class SikHS {
 
         }catch (Exception e){
             //异常后点刷新
-            match = region.find("D:/software/sikulix/huishou/kqs.PNG");
+            match = region.find("D:/software/sikulix/huishou/sxsx.PNG");
             Thread.sleep(500);
             match.click();
             jzbData(region);
