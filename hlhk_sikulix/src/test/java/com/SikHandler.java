@@ -116,13 +116,17 @@ public class SikHandler {
         }
 
         //8. 打完怪捡装备
+        long jzbStart = System.currentTimeMillis();
         SikJZB.pickup();
+        System.out.println("打完怪捡装备耗时："+(jzbStart - System.currentTimeMillis())/1000 + "秒");
 
         //9. 回收
+        long hsbStart = System.currentTimeMillis();
         if((count%2)!=0){
             System.out.println("回收装备开始：count："+count);
             SikHS.jzb();
         }
+        System.out.println("回收耗时："+(hsbStart - System.currentTimeMillis())/1000 + "秒");
 
         //10. 检查药品
         SikYaoPin.yaoPin();
@@ -134,8 +138,6 @@ public class SikHandler {
     //查看随机石是否充足
     public static void suiJiShi()throws Exception{
         Region region = new Region(0, 0,1300,1080);
-        region.setThrowException(false);
-
         //寻找包裹
         Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
         match.click();
