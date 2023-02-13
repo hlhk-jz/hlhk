@@ -4,26 +4,30 @@ import org.sikuli.script.*;
 import java.util.Iterator;
 public class SikHandler {
     private static long count = 3;
-    public static void main(String[] args)throws Exception{
+    public static void main(String[] args){
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
-
+        try {
         //1 新手福利npc
-        Match match = region.find("D:/software/sikulix/image/fuli.PNG");
-        if(null != match){
-            Thread.sleep(300);
-            //2. 点击新手福利
-            match.click();
-            //3.寻找屠龙殿界面
-            match = region.find("D:/software/sikulix/image/ru.PNG");
-            Thread.sleep(600);
-            if(null == match){
+            Match match = region.find("D:/software/sikulix/image/fuli.PNG");
+            if(null != match){
+                Thread.sleep(300);
+                //2. 点击新手福利
+                match.click();
+                //3.寻找屠龙殿界面
                 match = region.find("D:/software/sikulix/image/ru.PNG");
+                Thread.sleep(600);
+                if(null == match){
+                    match = region.find("D:/software/sikulix/image/ru.PNG");
+                }
+                //4. 我要进入
+                match.click();
+                tulongdianMethod(region);
             }
-            //4. 我要进入
-            match.click();
-            tulongdianMethod(region);
+        }catch (Exception e){
+            e.getStackTrace();
         }
+
     }
 
     private static void tulongdianMethod(Region region)throws Exception {
