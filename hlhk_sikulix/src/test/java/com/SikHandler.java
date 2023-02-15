@@ -30,7 +30,7 @@ public class SikHandler {
 
     }
 
-    private static void tulongdianMethod(Region region)throws Exception {
+    public static void tulongdianMethod(Region region)throws Exception {
         count ++;
         Location location;
         //5. 寻找随机石
@@ -117,14 +117,14 @@ public class SikHandler {
 
         //8. 打完怪捡装备
         long jzbStart = System.currentTimeMillis();
-        SikJZB.pickup();
+        SikJZB.pickup(region);
         System.out.println("打完怪捡装备耗时："+(jzbStart - System.currentTimeMillis())/1000 + "秒");
 
         //9. 回收
         long hsbStart = System.currentTimeMillis();
         if((count%2)!=0){
             System.out.println("回收装备开始：count："+count);
-            SikHS.jzb();
+            SikHS.jzb(region);
         }
         System.out.println("回收耗时："+(hsbStart - System.currentTimeMillis())/1000 + "秒");
 

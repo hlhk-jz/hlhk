@@ -4,9 +4,7 @@ import org.sikuli.script.*;
 //回收装备
 public class SikHS {
 
-    public static void jzb()throws Exception{
-        Region region = new Region(0, 0,1920,1080);
-        region.setThrowException(false);
+    public static void jzb(Region region)throws Exception{
         Match match = region.find("D:/software/sikulix/image/hs1.PNG");
         if(null == match){
              match = region.find("D:/software/sikulix/image/hs4.PNG");
