@@ -11,6 +11,9 @@ import java.util.Iterator;
  */
 
 public class SikYaoPin {
+  /*  public static void main(String[] args)throws Exception{
+       yaoPin();
+    }*/
     public static void yaoPin() throws Exception{
         Match match = null;
         Region region = new Region(0, 0,1920,1080);

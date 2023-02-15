@@ -5,9 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SikJZB {
+  /*  public static void main(String[] args)throws Exception{
+        Region region = new Region(0, 0,1920,1080);
+        region.setThrowException(false);
+        pickup(region);
+        pickup(region);
+    }*/
 
     public static void pickup(Region region)throws Exception{
-        List<String> targetList = initTargetList();
+        List<String> targetList = new ArrayList<>();
         //判断当前地图有哪些装备
         for (String str : initTargetList()){
             Match match = region.wait(str, 0.5);
@@ -22,6 +28,7 @@ public class SikJZB {
             if(null != matchGb){
                 matchGb.click();
             }
+            System.out.println("本次需要捡装备数量："+targetList.size());
             for (String str : targetList){
                 jzb(str,region);
             }
@@ -41,7 +48,7 @@ public class SikJZB {
                 location.setY(location.getY()+5);
                 location.click();
                 Thread.sleep(800);
-                location.setY(500);
+                location.setY(200);
                 location.hover();
                 match = region.wait(target,0.5);
             }
@@ -50,6 +57,8 @@ public class SikJZB {
 
     public static List<String> initTargetList(){
         List<String> initList = new ArrayList<>();
+        //倚天
+        initList.add("D:/software/sikulix/zhuangbei/yt.PNG");
         //星王
         initList.add("D:/software/sikulix/zhuangbei/xw.PNG");
         //强化
@@ -73,6 +82,14 @@ public class SikJZB {
         initList.add("D:/software/sikulix/zhuangbei/zt.PNG");
         //狂雷
         initList.add("D:/software/sikulix/zhuangbei/kl.PNG");
+        //通云
+        initList.add("D:/software/sikulix/zhuangbei/ty.PNG");
+        //逆火
+        initList.add("D:/software/sikulix/zhuangbei/nh.PNG");
+        //黄金
+        initList.add("D:/software/sikulix/zhuangbei/hj.PNG");
+        //词金
+        initList.add("D:/software/sikulix/zhuangbei/cj.PNG");
         //霸者之刃
         initList.add("D:/software/sikulix/zhuangbei/bzzr.PNG");
         //奉天

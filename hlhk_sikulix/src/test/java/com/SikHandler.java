@@ -115,8 +115,10 @@ public class SikHandler {
             }
         }
 
-        //8. 打完怪捡装备
+        //8. 打完怪捡装备,防止装备漏捡，调用两次
         long jzbStart = System.currentTimeMillis();
+        region.type(Key.F12);
+        SikJZB.pickup(region);
         SikJZB.pickup(region);
         System.out.println("打完怪捡装备耗时："+(jzbStart - System.currentTimeMillis())/1000 + "秒");
 
