@@ -4,42 +4,25 @@ import org.sikuli.script.*;
 import java.util.Iterator;
 public class SikHandler {
     private static long count = 3;
-    public static void main(String[] args){
-        Region region = new Region(0, 0,1920,1080);
-        region.setThrowException(false);
-        try {
-        //1 新手福利npc
-            Match match = region.find("D:/software/sikulix/image/fuli.PNG");
-            if(null != match){
-                Thread.sleep(300);
-                //2. 点击新手福利
-                match.click();
-                //3.寻找屠龙殿界面
-                match = region.find("D:/software/sikulix/image/ru.PNG");
-                Thread.sleep(600);
-                if(null == match){
-                    match = region.find("D:/software/sikulix/image/ru.PNG");
-                }
-                //4. 我要进入
-                match.click();
-                tulongdianMethod(region);
-            }
-        }catch (Exception e){
-            e.getStackTrace();
-        }
-
-    }
-
     public static void tulongdianMethod(Region region)throws Exception {
+        //如果是在土城，就找新手打宝
+        Thread.sleep(1000);
+        Match match = region.find("D:/software/sikulix/image/tc.PNG");
+        Thread.sleep(1000);
+        if(null != match){
+            XinShouFuli.xin(region);
+        }
         count ++;
         Location location;
         //5. 寻找随机石
-        suiJiShi();
+        suiJiShi(region);
+        Thread.sleep(1000);
         Match match2 = region.find("D:/software/sikulix/tulongdian/shitou.PNG");
+        Thread.sleep(1000);
         if(null == match2){
             match2 = region.find("D:/software/sikulix/tulongdian/shitou.PNG");
+            Thread.sleep(1000);
         }
-        Thread.sleep(300);
         //6. 寻找教主
         Match match3 = null;
         Match match5 = null;
@@ -58,7 +41,7 @@ public class SikHandler {
             if(n > 40){
                 //随机40次没有怪后，调用随机石方法
                 System.out.println("随机石超过40检查包裹");
-                suiJiShi();
+                suiJiShi(region);
                 n = 1;
             }
         }
@@ -108,7 +91,7 @@ public class SikHandler {
                 match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
                 System.out.println("失败~~~"+match3+"；"+match4+":"+match5);
             }
-            if(i == 100){
+            if(i == 300){
                 //如果打怪循环100次，放弃该次打怪
                 System.out.println("打怪循环100次，重新随机");
                 tulongdianMethod(region);
@@ -134,12 +117,11 @@ public class SikHandler {
         SikYaoPin.yaoPin();
 
         //11. 循环地柜
-        //tulongdianMethod(region);
+        tulongdianMethod(region);
     }
 
     //查看随机石是否充足
-    public static void suiJiShi()throws Exception{
-        Region region = new Region(0, 0,1300,1080);
+    public static void suiJiShi(Region region)throws Exception{
         //寻找包裹
         Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
         match.click();

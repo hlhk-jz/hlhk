@@ -61,8 +61,6 @@ public class SikJZB {
         initList.add("D:/software/sikulix/zhuangbei/yt.PNG");
         //星王
         initList.add("D:/software/sikulix/zhuangbei/xw.PNG");
-        //强化
-        initList.add("D:/software/sikulix/zhuangbei/qh.PNG");
         //混世
         initList.add("D:/software/sikulix/zhuangbei/hs.PNG");
         //开天
