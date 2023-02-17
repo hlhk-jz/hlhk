@@ -7,8 +7,7 @@ public class SikHandler {
     public static void tulongdianMethod(Region region)throws Exception {
         //如果是在土城，就找新手打宝
         Thread.sleep(1000);
-        Match match = region.find("D:/software/sikulix/image/tc.PNG");
-        Thread.sleep(1000);
+        Match match = region.wait("D:/software/sikulix/image/tc.PNG",1);
         if(null != match){
             //新手地图
             XinShouFuli.xin(region);
@@ -117,8 +116,9 @@ public class SikHandler {
         //8. 打完怪捡装备,防止装备漏捡，调用两次
         long jzbStart = System.currentTimeMillis();
         region.type(Key.F12);
-        SikJZB.pickup(region);
-        SikJZB.pickup(region);
+        Region jzbRegion = new Region(60, 0,1200,800);
+        region.setThrowException(false);
+        SikJZB.pickup(jzbRegion);
         System.out.println("打完怪捡装备耗时："+(jzbStart - System.currentTimeMillis())/1000 + "秒");
 
         //9. 回收
