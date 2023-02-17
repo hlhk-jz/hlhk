@@ -1,14 +1,14 @@
-package com;
+package cesi;
 
 import org.sikuli.script.Button;
 import org.sikuli.script.Location;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
-/**
- * 移动文件到指定位置
- */
 public class SikTest {
+    /**
+     * 移动文件到指定位置
+     */
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,500,1080);
         region.setThrowException(false);
