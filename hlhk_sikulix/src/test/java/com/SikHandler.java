@@ -29,14 +29,15 @@ public class SikHandler {
         Match match3 = null;
         Match match5 = null;
         int n = 1;
-        System.out.println("~~~~~随机石："+match2);
         while (null == match3){
             n++;
             //点击随机石
             match2.doubleClick();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             //寻找教主
-            match3 = region.find("D:/software/sikulix/image/jiaozhu1.PNG");
+            match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",0.5);
+            //寻找随机石，因为有可能随机石在其它位置了，所以在查一遍
+            match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",0.5);
             //如果找到教主了推出循环
             if (null != match3){
                 break;
@@ -144,7 +145,7 @@ public class SikHandler {
         Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou3.PNG");
         Thread.sleep(1000);
         int size = Iterators.size(all);
-        if(size < 2){
+        if(size < 3){
             //如果随机石小于3就在商城买点
             //如果没有随机石，在商城买，寻找商铺
             match = region.wait("D:/software/sikulix/image/pu.PNG", 2);
