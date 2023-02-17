@@ -51,70 +51,13 @@ public class SikHandler {
         }
 
         //7. 循环打怪直到没有怪为止
-        int i = 1;
-        Match match4 = null;
-        while (null != match4 || null != match3 || null != match5){
-            i++;
-            try {
-                match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",1);
-                if(null != match3){
-                    location = match3.getTarget();
-                    location.setY(location.getY()+100);
-                    location.click();
-                    region.type(Key.F3);
-                }
-                if(null == match3){
-                    match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",1);
-                    if(null != match4){
-                        location = match4.getTarget();
-                        location.setY(location.getY()+100);
-                        location.click();
-                        region.type(Key.F3);
-                    }
-                    if(null == match4){
-                        match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
-                        if(null != match5){
-                            match5.rightClick();
-                            location = match5.getTarget();
-                            location.setY(location.getY()+100);
-                            location.click();
-                            region.type(Key.F3);
-                        }
-                    }
-                }
-                match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",1);
-                if(null == match3){
-                    match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",1);
-                    if(null == match4){
-                        match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
-                        if((i%10)==0){
-                            match5.rightClick();
-                        }
-                    }{
-                        if((i%10)==0){
-                            match4.rightClick();
-                        }
-                    }
-                }else {
-                    if((i%10)==0){
-                        match3.rightClick();
-                    }
-                }
-                Thread.sleep(500);
-            } catch (Exception e) {
-                match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",1);
-                match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",1);
-                match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
-                System.out.println("失败~~~"+match3+"；"+match4+":"+match5);
-            }
-            if(i == 200){
-                //如果打怪循环100次，放弃该次打怪
-                System.out.println("打怪循环100次，重新随机");
-                tulongdianMethod(region);
-            }
-        }
+        SikDaGuai.daGuai(region);
+        region.setY(0);
+        region.setX(0);
+        region.setW(1200);
+        region.setH(800);
 
-        //8. 打完怪捡装备,防止装备漏捡，调用两次
+        //8. 打完怪捡装备
         long jzbStart = System.currentTimeMillis();
         region.type(Key.F12);
         SikJZB.pickup(region);
