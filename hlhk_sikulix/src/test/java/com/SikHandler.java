@@ -63,18 +63,21 @@ public class SikHandler {
             SikHS.jzb(region);
         }
 
-        //10. 检查药品
-        SikYaoPin.yaoPin();
+        //10. 检查药品,主号和宝宝
+        SikYaoPin.zhYaoPin(region);
+        SikYaoPin.bbYaoPin(region);
 
         //11. 检查火龙之心
         if((count%100)==0){
             //修装备
             HLZX.hlzx(region);
             //检查磨血石
+            MoXueShi.jcMXS(region);
             //修复装备
+            XiuFuZB.xfzb(region);
         }
 
-        //11. 循环地柜
+        //12. 循环地柜
         tulongdianMethod(region);
     }
 }
