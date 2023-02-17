@@ -60,12 +60,19 @@ public class SikHandler {
 
         //9. 回收
         if((count%2)!=0){
-            System.out.println("回收装备开始：count："+count);
             SikHS.jzb(region);
         }
 
         //10. 检查药品
         SikYaoPin.yaoPin();
+
+        //11. 检查火龙之心
+        if((count%100)==0){
+            //修装备
+            HLZX.hlzx(region);
+            //检查磨血石
+            //修复装备
+        }
 
         //11. 循环地柜
         tulongdianMethod(region);
