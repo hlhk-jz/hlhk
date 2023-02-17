@@ -13,10 +13,18 @@ public class SikJZB {
     }*/
 
     public static void pickup(Region region)throws Exception{
+        //寻找包裹
+        Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        match.setY(match.getY()-100);
+        Thread.sleep(500);
+        match.hover();
+        Thread.sleep(500);
+        region.type(Key.F1);
+
         List<String> targetList = new ArrayList<>();
         //判断当前地图有哪些装备
         for (String str : initTargetList()){
-            Match match = region.wait(str, 0.5);
+             match = region.wait(str, 0.5);
             if(null != match){
                 targetList.add(str);
             }

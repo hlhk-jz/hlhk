@@ -10,7 +10,10 @@ public class SikHandler {
         Match match = region.find("D:/software/sikulix/image/tc.PNG");
         Thread.sleep(1000);
         if(null != match){
+            //新手地图
             XinShouFuli.xin(region);
+            //屠龙殿地图
+            //TuLongDian.tld(region);
         }
         count ++;
         Location location;
@@ -20,13 +23,14 @@ public class SikHandler {
         Match match2 = region.find("D:/software/sikulix/tulongdian/shitou.PNG");
         Thread.sleep(1000);
         if(null == match2){
-            match2 = region.find("D:/software/sikulix/tulongdian/shitou.PNG");
+            match2 = region.find("D:/software/sikulix/tulongdian/shitou2.PNG");
             Thread.sleep(1000);
         }
         //6. 寻找教主
         Match match3 = null;
         Match match5 = null;
         int n = 1;
+        System.out.println("~~~~~随机石："+match2);
         while (null == match3){
             n++;
             //点击随机石
@@ -55,7 +59,7 @@ public class SikHandler {
                 match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",1);
                 if(null != match3){
                     location = match3.getTarget();
-                    location.setY(location.getY()+30);
+                    location.setY(location.getY()+100);
                     location.click();
                     region.type(Key.F3);
                 }
@@ -63,15 +67,16 @@ public class SikHandler {
                     match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",1);
                     if(null != match4){
                         location = match4.getTarget();
-                        location.setY(location.getY()+30);
+                        location.setY(location.getY()+100);
                         location.click();
                         region.type(Key.F3);
                     }
                     if(null == match4){
                         match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
                         if(null != match5){
+                            match5.rightClick();
                             location = match5.getTarget();
-                            location.setY(location.getY()+30);
+                            location.setY(location.getY()+100);
                             location.click();
                             region.type(Key.F3);
                         }
@@ -82,6 +87,17 @@ public class SikHandler {
                     match4 = region.wait("D:/software/sikulix/image/jiaozhu2.PNG",1);
                     if(null == match4){
                         match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
+                        if((i%10)==0){
+                            match5.rightClick();
+                        }
+                    }{
+                        if((i%10)==0){
+                            match4.rightClick();
+                        }
+                    }
+                }else {
+                    if((i%10)==0){
+                        match3.rightClick();
                     }
                 }
                 Thread.sleep(500);
@@ -91,7 +107,7 @@ public class SikHandler {
                 match5 = region.wait("D:/software/sikulix/image/jiaozhu3.PNG",1);
                 System.out.println("失败~~~"+match3+"；"+match4+":"+match5);
             }
-            if(i == 300){
+            if(i == 200){
                 //如果打怪循环100次，放弃该次打怪
                 System.out.println("打怪循环100次，重新随机");
                 tulongdianMethod(region);
@@ -126,10 +142,11 @@ public class SikHandler {
         Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
         match.click();
         //查看随机石总数
-        Iterator<Match> all = region.findAll("D:/software/sikulix/image/shitou.PNG");
+        Thread.sleep(300);
+        Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou3.PNG");
         Thread.sleep(1000);
         int size = Iterators.size(all);
-        if(size < 3){
+        if(size < 2){
             //如果随机石小于3就在商城买点
             //如果没有随机石，在商城买，寻找商铺
             match = region.wait("D:/software/sikulix/image/pu.PNG", 2);
