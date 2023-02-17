@@ -32,10 +32,11 @@ public class SikJZB {
         System.out.println("当前地图检测装备数量："+any.size()+" 条！");
         if(0 != any.size()){
             //查看有没有弹框，有就关闭，防止影响捡装备
-            Match matchGb = jzbRegion.find("D:/software/sikulix/image/gb.NPG");
-            Thread.sleep(500);
-            if(null != matchGb){
-                matchGb.click();
+            List<Match> matchGbs = jzbRegion.findAnyList(initGBListObj());
+            if(!matchGbs.isEmpty()){
+                for (Match match: matchGbs){
+                    match.click();
+                }
             }
             for (Match matchs: any){
                 while (null != matchs){
@@ -100,6 +101,14 @@ public class SikJZB {
         //强化
         initList.add("D:/software/sikulix/zhuangbei/qh.PNG");
         initList.add("D:/software/sikulix/zhuangbei/qh2.PNG");
+        return initList;
+    }
+
+    public static List<Object> initGBListObj(){
+        List<Object> initList = new ArrayList<>();
+        initList.add("D:/software/sikulix/image/gb.PNG");
+        initList.add("D:/software/sikulix/image/gbspl.PNG");
+        initList.add("D:/software/sikulix/image/gbzbl.PNG");
         return initList;
     }
 }

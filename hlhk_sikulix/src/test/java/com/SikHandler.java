@@ -57,19 +57,16 @@ public class SikHandler {
         region.setW(1200);
         region.setH(800);
 
-        //8. 打完怪捡装备
-        long jzbStart = System.currentTimeMillis();
+        //8. 打完怪捡装备,防止漏捡，调用两次
         region.type(Key.F12);
         SikJZB.pickup(region);
-        System.out.println("打完怪捡装备耗时："+(jzbStart - System.currentTimeMillis())/1000 + "秒");
+        SikJZB.pickup(region);
 
         //9. 回收
-        long hsbStart = System.currentTimeMillis();
         if((count%2)!=0){
             System.out.println("回收装备开始：count："+count);
             SikHS.jzb(region);
         }
-        System.out.println("回收耗时："+(hsbStart - System.currentTimeMillis())/1000 + "秒");
 
         //10. 检查药品
         SikYaoPin.yaoPin();
