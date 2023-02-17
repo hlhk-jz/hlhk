@@ -15,7 +15,6 @@ public class SikHandler {
             //TuLongDian.tld(region);
         }
         count ++;
-        Location location;
         //5. 寻找随机石
         suiJiShi(region);
         Thread.sleep(1000);
