@@ -6,7 +6,7 @@ import org.sikuli.script.Region;
 //新手福利地图
 public class XinShouFuli {
     public static void main(String[] args){
-        Region region = new Region(0, 0,1500,900);
+        Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
         try {
             xin(region);
