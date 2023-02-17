@@ -49,6 +49,7 @@ public class SikJZB {
                     location.click();
                     location.setY(200);
                     location.hover();
+                    region.type(Key.F4);
                     matchs = jzbRegion.wait(matchs.getImage(),0.5);
                     start ++;
                 }
