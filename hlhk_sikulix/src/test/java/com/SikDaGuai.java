@@ -29,6 +29,8 @@ public class SikDaGuai {
     public static void daGuai(Region region ){
         int i = 1;
         try {
+            //检查宝宝是否在线
+            BaoBao.baobao(region);
             List<Match> any = region.findAnyList(guaiList());
             Location location;
             if (!any.isEmpty()){
