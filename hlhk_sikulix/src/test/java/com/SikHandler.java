@@ -27,7 +27,6 @@ public class SikHandler {
         }
         //6. 寻找教主
         Match match3 = null;
-        Match match5 = null;
         int n = 1;
         while (null == match3){
             n++;
