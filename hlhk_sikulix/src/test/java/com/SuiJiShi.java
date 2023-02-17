@@ -17,17 +17,20 @@ public class SuiJiShi {
     //查看随机石是否充足
     public static void suiJiShi(Region region)throws Exception{
         //寻找包裹
-        Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
+        Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        match.click();
+        //寻找刷新按键
+        match = region.wait("D:/software/sikulix/image/sxbg.PNG", 1);
         match.click();
         //查看随机石总数
         Thread.sleep(300);
         Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou3.PNG");
-        Thread.sleep(1000);
+        Thread.sleep(500);
         int size = Iterators.size(all);
-        if(size < 3){
+        if(size < 2){
             //防止没检查出来，再次查询
             all = region.findAll("D:/software/sikulix/tulongdian/shitou3.PNG");
-            if(Iterators.size(all) < 3){
+            if(Iterators.size(all) < 2){
                 //如果随机石小于3就在商城买点
                 //如果没有随机石，在商城买，寻找商铺
                 match = region.wait("D:/software/sikulix/image/pu.PNG", 2);

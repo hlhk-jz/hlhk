@@ -44,7 +44,7 @@ public class SikDaGuai {
                     while (match != null){
                         i++;
                         location = match.getTarget();
-                        location.setY(location.getY()+100);
+                        location.setY(location.getY()+90);
                         location.click();
                         region.type(Key.F3);
                         //如果循环满十次就点击下怪基础位置，防止坐标下面100没在地图内
