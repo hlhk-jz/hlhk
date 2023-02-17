@@ -109,7 +109,7 @@ public class SikJZB {
         List<Object> initList = new ArrayList<>();
         initList.add("D:/software/sikulix/image/gb.PNG");
         initList.add("D:/software/sikulix/image/gbspl.PNG");
-        initList.add("D:/software/sikulix/image/gbzbl.PNG");
+        initList.add("D:/software/sikulix/image/bgbg.PNG");
         return initList;
     }
 }
