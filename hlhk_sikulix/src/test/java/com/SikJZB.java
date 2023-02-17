@@ -13,21 +13,23 @@ public class SikJZB {
     }*/
 
     public static void pickup(Region region)throws Exception{
+        Region jzbRegion = new Region(60, 0,1200,800);
+        jzbRegion.setThrowException(false);
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
-        Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        Match match = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         match.setY(match.getY()-100);
         Thread.sleep(500);
         match.hover();
         Thread.sleep(500);
-        region.type(Key.F1);
+        jzbRegion.type(Key.F1);
 
         //判断当前地图有哪些装备
         int start = 1;
-        List<Match> any = region.findAnyList(initTargetListObj());
+        List<Match> any = jzbRegion.findAnyList(initTargetListObj());
         System.out.println("当前地图检测装备数量："+any.size()+" 条！");
         if(0 != any.size()){
             //查看有没有弹框，有就关闭，防止影响捡装备
-            Match matchGb = region.find("D:/software/sikulix/image/gb.NPG");
+            Match matchGb = jzbRegion.find("D:/software/sikulix/image/gb.NPG");
             Thread.sleep(500);
             if(null != matchGb){
                 matchGb.click();
@@ -43,7 +45,7 @@ public class SikJZB {
                     location.click();
                     location.setY(200);
                     location.hover();
-                    match = region.wait(match.getImage(),0.5);
+                    match = jzbRegion.wait(match.getImage(),0.5);
                     start ++;
                 }
             }
