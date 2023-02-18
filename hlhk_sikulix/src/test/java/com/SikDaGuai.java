@@ -31,11 +31,12 @@ public class SikDaGuai {
                     region.setX(0);
                     region.setW(1200);
                     region.setH(800);
-                    match = region.wait(match.getImage(),0.5);
+                    Thread.sleep(500);
                     while (match != null){
                         i++;
-                        match = region.wait(match.getImage(),1);
-                        if(null != match){
+                        dgAll = region.findAnyList(guaiList);
+                        if(!dgAll.isEmpty()){
+                            match = dgAll.get(0);
                             location = match.getTarget();
                             location.setY(location.getY()+90);
                             location.click();
@@ -44,7 +45,6 @@ public class SikDaGuai {
                             if((i%10)==0){
                                 match.click();
                             }
-                            Thread.sleep(1000);
                             //如果打怪循环超过100次，结束本次循环
                             if(i > 60){
                                 System.out.println("打怪循环超过60次，结束本次循环!!!");
@@ -53,10 +53,10 @@ public class SikDaGuai {
                             if((i%4)==0){
                                 System.out.println("缩小范围！");
                                 //循环3次，就缩小下范围
-                                region.setX(428);
-                                region.setY(219);
-                                region.setW(167);
-                                region.setH(149);
+                                region.setX(365);
+                                region.setY(154);
+                                region.setW(372);
+                                region.setH(304);
                             }
                             Thread.sleep(500);
                             dgAll = region.findAnyList(guaiList);
