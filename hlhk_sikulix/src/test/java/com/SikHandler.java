@@ -11,9 +11,9 @@ public class SikHandler {
         Match match = region.wait("D:/software/sikulix/image/tc.PNG",1);
         if(null != match){
             //新手地图
-            XinShouFuli.xin(region);
+            AXinShouFuliStart.xin(region);
             //屠龙殿地图
-            //TuLongDian.tld(region);
+            //ATuLongDianStart.tld(region);
         }
         count ++;
         //5. 寻找随机石

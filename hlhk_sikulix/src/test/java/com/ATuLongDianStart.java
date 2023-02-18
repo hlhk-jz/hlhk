@@ -4,7 +4,7 @@ import org.sikuli.script.Location;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
-public class TuLongDian {
+public class ATuLongDianStart {
     public static void main(String[] args){
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
