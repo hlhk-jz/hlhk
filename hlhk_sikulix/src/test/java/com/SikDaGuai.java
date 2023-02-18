@@ -1,25 +1,22 @@
 package com;
 
-import org.sikuli.script.Key;
-import org.sikuli.script.Location;
-import org.sikuli.script.Match;
-import org.sikuli.script.Region;
-
+import org.sikuli.script.*;
 import java.util.ArrayList;
 import java.util.List;
 
+//打怪
 public class SikDaGuai {
-    public static void main(String[] args)throws Exception{
+/*    public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         daGuai(region);
-    }
+    }*/
 
     public static void daGuai(Region region ){
         int i = 1;
         try {
             //检查宝宝是否在线
-            //BaoBao.baobao(region);
+            BaoBao.baobao(region);
             List<Object> guaiList = guaiList();
             List<Match> dgAll;
             Location location;
@@ -37,11 +34,11 @@ public class SikDaGuai {
                 if(!any.isEmpty()){
                     match = any.get(0);
                     while (match != null){
-                        i++;
                         match = region.wait(match.getImage(),1);
                         if(null != match){
+                            i++;
                             location = match.getTarget();
-                            location.setY(location.getY()+90);
+                            location.setY(location.getY()+80);
                             location.click();
                             region.type(Key.F3);
                             //如果循环满十次就点击下怪基础位置，防止坐标下面100没在地图内
