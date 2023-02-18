@@ -64,7 +64,7 @@ public class SikHandler {
         SikJZB.pickup(region);
 
         //9. 回收
-        if((count%2)!=0){
+        if((count%3)!=0){
             System.out.println("回收装备开始！！！！count："+count);
             SikHS.jzb(region);
             System.out.println("回收装备结束~~~~~~~~");
