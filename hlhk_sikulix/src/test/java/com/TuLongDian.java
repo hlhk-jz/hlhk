@@ -53,6 +53,6 @@ public class TuLongDian {
         }
         //我要进入
         match.click();
-        SikHandler.tulongdianMethod(region);
+        SikHandler.show(region);
     }
 }

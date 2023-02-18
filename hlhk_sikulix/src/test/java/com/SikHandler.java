@@ -2,7 +2,7 @@ package com;
 import org.sikuli.script.*;
 public class SikHandler {
     private static long count = 3;
-    public static void tulongdianMethod(Region region)throws Exception {
+    public static void show(Region region)throws Exception {
         //如果是在土城，就找新手打宝
         Thread.sleep(1000);
         Match match = region.wait("D:/software/sikulix/image/tc.PNG",1);
@@ -78,6 +78,6 @@ public class SikHandler {
         }
 
         //12. 循环地柜
-        tulongdianMethod(region);
+        show(region);
     }
 }

@@ -43,7 +43,7 @@ public class XinShouFuli {
         }
         //我要进入
         match.click();
-        SikHandler.tulongdianMethod(region);
+        SikHandler.show(region);
     }
 
     //点击回城石
