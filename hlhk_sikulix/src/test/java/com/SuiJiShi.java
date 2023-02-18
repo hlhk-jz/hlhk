@@ -30,11 +30,11 @@ public class SuiJiShi {
         Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou3.PNG");
         Thread.sleep(500);
         int size = Iterators.size(all);
-        if(size < 2){
+        if(size < 4){
             //防止没检查出来，再次查询
             all = region.findAll("D:/software/sikulix/tulongdian/shitou3.PNG");
-            if(Iterators.size(all) < 2){
-                //如果随机石小于3就在商城买点
+            if(Iterators.size(all) < 4){
+                //如果随机石小于指定数量就在商城买点
                 //如果没有随机石，在商城买，寻找商铺
                 match = region.wait("D:/software/sikulix/image/pu.PNG", 2);
                 match.click();
