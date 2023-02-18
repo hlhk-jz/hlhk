@@ -87,5 +87,11 @@ public class AXinShouFuliStart {
             }
         }
         match.doubleClick();
+        Thread.sleep(500);
+        //关闭物品栏
+        match = region.wait("D:/software/sikulix/image/gbzbl.PNG", 1);
+        if(null != match){
+            match.click();
+        }
     }
 }

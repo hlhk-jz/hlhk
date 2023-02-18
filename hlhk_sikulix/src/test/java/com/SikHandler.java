@@ -6,14 +6,14 @@ import java.util.List;
 public class SikHandler {
     private static long count = 0;
     public static void show(Region region)throws Exception {
-        //如果是在土城，就找新手打宝
+        //如果是在土城，就找新手打宝/屠龙殿地图
         Thread.sleep(1000);
         Match match = region.wait("D:/software/sikulix/image/tc.PNG",1);
         if(null != match){
             //新手地图
-            AXinShouFuliStart.xin(region);
+            //AXinShouFuliStart.xin(region);
             //屠龙殿地图
-            //ATuLongDianStart.tld(region);
+            ATuLongDianStart.tld(region);
         }
         count ++;
         //5. 寻找随机石
