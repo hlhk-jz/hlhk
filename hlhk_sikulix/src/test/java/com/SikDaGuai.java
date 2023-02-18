@@ -36,13 +36,14 @@ public class SikDaGuai {
                     while (match != null){
                         match = region.wait(match.getImage(),1);
                         if(null != match){
-                            i++;
                             location = match.getTarget();
                             location.setY(location.getY()+80);
                             location.click();
                             region.type(Key.F3);
-                            //如果循环满十次就点击下怪基础位置，防止坐标下面100没在地图内
-                            if((i%10)==0){
+                            //如果循环满指定次数就点击下怪基础位置，防止坐标下面100没在地图内
+                            if((i%8)==0){
+                                match.setY(match.getY()-90);
+                                Thread.sleep(300);
                                 match.rightClick();
                             }
                             //如果打怪循环超过100次，结束本次循环
@@ -72,6 +73,7 @@ public class SikDaGuai {
                                 System.out.println(i+"未查询到怪！！！");
                                 match = null;
                             }
+                            i++;
                         }
                     }
                     i = 1;

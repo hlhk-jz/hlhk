@@ -46,13 +46,17 @@ public class SikJZB {
                     }
                     Location location = matchs.getTarget();
                     location.setY(location.getY()+5);
-                    location.click();
-                    location.setY(200);
+                    if(start == 1){
+                        location.rightClick();
+                    }
+                    location.setY(location.getY()+100);
                     location.hover();
                     region.type(Key.F4);
+                    Thread.sleep(300);
                     matchs = jzbRegion.wait(matchs.getImage(),0.5);
                     start ++;
                 }
+                start = 1;
             }
         }
     }
