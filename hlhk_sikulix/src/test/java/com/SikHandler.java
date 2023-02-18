@@ -1,5 +1,8 @@
 package com;
 import org.sikuli.script.*;
+
+import java.util.List;
+
 public class SikHandler {
     private static long count = 3;
     public static void show(Region region)throws Exception {
@@ -16,11 +19,9 @@ public class SikHandler {
         //5. 寻找随机石
         SuiJiShi.suiJiShi(region);
         Thread.sleep(1000);
-        Match match2 = region.find("D:/software/sikulix/tulongdian/shitou.PNG");
-        Thread.sleep(1000);
+        Match match2 = region.wait("D:/software/sikulix/tulongdian/shitou.PNG",0.5);
         if(null == match2){
-            match2 = region.find("D:/software/sikulix/tulongdian/shitou2.PNG");
-            Thread.sleep(1000);
+            match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",1);
         }
         //6. 寻找教主
         Match match3 = null;
@@ -29,13 +30,17 @@ public class SikHandler {
             n++;
             //点击随机石
             match2.doubleClick();
-            Thread.sleep(1000);
+            Thread.sleep(500);
             //寻找教主
-            match3 = region.wait("D:/software/sikulix/image/jiaozhu1.PNG",0.5);
+            List<Match> any = region.findAnyList(SikDaGuai.guaiList());
+            Thread.sleep(1000);
             //寻找随机石，因为有可能随机石在其它位置了，所以在查一遍
-            match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",0.5);
+            match2 = region.wait("D:/software/sikulix/tulongdian/shitou.PNG",0.5);
+            if(null == match2){
+                match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",0.5);
+            }
             //如果找到教主了推出循环
-            if (null != match3){
+            if (!any.isEmpty()){
                 break;
             }
             if(n > 40){

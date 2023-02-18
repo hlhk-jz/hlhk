@@ -24,7 +24,9 @@ public class SuiJiShi {
         if(null == match){
             match = region.wait("D:/software/sikulix/image/sxbg2.PNG", 1);
         }
-        match.click();
+        if(null != match){
+            match.click();
+        }
         //查看随机石总数
         Thread.sleep(300);
         Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou3.PNG");

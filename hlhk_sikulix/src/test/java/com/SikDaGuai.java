@@ -60,10 +60,10 @@ public class SikDaGuai {
                             }
                             Thread.sleep(500);
                             dgAll = region.findAnyList(guaiList);
-                            Thread.sleep(2000);
+                            Thread.sleep(1000);
                             if(dgAll.isEmpty()){
                                 dgAll = region.findAnyList(guaiList);
-                                Thread.sleep(2000);
+                                Thread.sleep(1000);
                             }
                             if(!dgAll.isEmpty()){
                                 System.out.println(i+"搜索怪数量："+dgAll.size());
