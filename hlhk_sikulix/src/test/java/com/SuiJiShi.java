@@ -21,6 +21,9 @@ public class SuiJiShi {
         match.click();
         //寻找刷新按键
         match = region.wait("D:/software/sikulix/image/sxbg.PNG", 1);
+        if(null == match){
+            match = region.wait("D:/software/sikulix/image/sxbg2.PNG", 1);
+        }
         match.click();
         //查看随机石总数
         Thread.sleep(300);
