@@ -29,12 +29,12 @@ public class SuiJiShi {
         }
         //查看随机石总数
         Thread.sleep(300);
-        Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou3.PNG");
-        Thread.sleep(500);
+        Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou4.PNG");
+        Thread.sleep(1000);
         int size = Iterators.size(all);
         if(size < 4){
             //防止没检查出来，再次查询
-            all = region.findAll("D:/software/sikulix/tulongdian/shitou3.PNG");
+            all = region.findAll("D:/software/sikulix/tulongdian/shitou.PNG");
             if(Iterators.size(all) < 4){
                 //如果随机石小于指定数量就在商城买点
                 //如果没有随机石，在商城买，寻找商铺
