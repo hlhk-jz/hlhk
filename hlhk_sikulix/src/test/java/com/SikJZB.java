@@ -54,9 +54,6 @@ public class SikJZB {
                     start ++;
                 }
             }
-        }else {
-            //如果没有装备要捡继续随机
-            SikHandler.show(region);
         }
     }
 
