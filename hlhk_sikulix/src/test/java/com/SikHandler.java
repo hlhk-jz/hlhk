@@ -48,7 +48,6 @@ public class SikHandler {
 
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         SikDaGuai.daGuai(region);
-        SikDaGuai.daGuai(region);
         region.setY(0);
         region.setX(0);
         region.setW(1200);
