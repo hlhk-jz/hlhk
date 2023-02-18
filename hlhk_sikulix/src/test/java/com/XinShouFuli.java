@@ -21,7 +21,7 @@ public class XinShouFuli {
         match = region.wait("D:/software/sikulix/image/fuli.PNG",1);
         int x = 1;
         while (null == match){
-            if((x%3)==0){
+            if((x%5)==0){
                 isHcs(region);
             }
             //寻找 out 按键，调整鼠标位置向下移动
