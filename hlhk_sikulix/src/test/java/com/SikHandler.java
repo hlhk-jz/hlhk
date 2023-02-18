@@ -4,7 +4,7 @@ import org.sikuli.script.*;
 import java.util.List;
 
 public class SikHandler {
-    private static long count = 3;
+    private static long count = 0;
     public static void show(Region region)throws Exception {
         //如果是在土城，就找新手打宝
         Thread.sleep(1000);
@@ -64,7 +64,7 @@ public class SikHandler {
         SikJZB.pickup(region);
 
         //9. 回收
-        if((count%3)!=0){
+        if((count%3)==0){
             System.out.println("回收装备开始！！！！count："+count);
             SikHS.jzb(region);
             System.out.println("回收装备结束~~~~~~~~");
