@@ -98,6 +98,8 @@ public class SikDaGuai {
         list.add("D:/software/sikulix/image/jiaozhu2.PNG");
         list.add("D:/software/sikulix/image/jiaozhu3.PNG");
         list.add("D:/software/sikulix/image/jiaozhu4.PNG");
+        list.add("D:/software/sikulix/image/jiaozhu5.PNG");
+        list.add("D:/software/sikulix/image/jiaozhu6.PNG");
         return list;
     }
 }

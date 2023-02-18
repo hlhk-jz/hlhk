@@ -31,7 +31,7 @@ public class ATuLongDianStart {
             match.hover();
             Thread.sleep(500);
             match.rightClick();
-            match = region.wait("D:/software/sikulix/image/tld.PNG",1);
+            match = region.wait("D:/software/sikulix/tulongdian/tld.PNG",1);
             x++;
         }
         match.click();
