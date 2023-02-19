@@ -45,7 +45,7 @@ public class SikJZB {
                         break;
                     }
                     Location location = matchs.getTarget();
-                    location.setY(location.getY()+5);
+                    location.setY(location.getY()+8);
                     if(start == 1){
                         location.rightClick();
                     }

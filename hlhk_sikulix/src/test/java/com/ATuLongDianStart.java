@@ -43,6 +43,9 @@ public class ATuLongDianStart {
         }
         //我要进入
         match.click();
+        if(null == match){
+            tld(region);
+        }
         SikHandler.show(region);
     }
 }
