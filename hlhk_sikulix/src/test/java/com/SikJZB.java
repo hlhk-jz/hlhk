@@ -12,24 +12,22 @@ public class SikJZB {
     }*/
 
     public static void pickup(Region region)throws Exception{
-        Region jzbRegion = new Region(60, 0,1200,800);
-        jzbRegion.setThrowException(false);
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
-        Match bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         bgMathc.setY(bgMathc.getY()-100);
         Thread.sleep(500);
         bgMathc.hover();
         Thread.sleep(500);
         //守护
-        jzbRegion.type(Key.F4);
+        region.type(Key.F4);
 
         //判断当前地图有哪些装备
         int start = 1;
-        List<Match> any = jzbRegion.findAnyList(initTargetListObj());
+        List<Match> any = region.findAnyList(initTargetListObj());
         System.out.println("当前地图检测装备数量："+any.size()+" 条！");
         if(0 != any.size()){
             //查看有没有弹框，有就关闭，防止影响捡装备
-            List<Match> matchGbs = jzbRegion.findAnyList(initGBListObj());
+            List<Match> matchGbs = region.findAnyList(initGBListObj());
             if(!matchGbs.isEmpty()){
                 for (Match match: matchGbs){
                     match.click();
@@ -52,7 +50,7 @@ public class SikJZB {
                     location.hover();
                     region.type(Key.F4);
                     Thread.sleep(300);
-                    matchs = jzbRegion.wait(matchs.getImage(),0.5);
+                    matchs = region.wait(matchs.getImage(),0.5);
                     start ++;
                 }
                 start = 1;

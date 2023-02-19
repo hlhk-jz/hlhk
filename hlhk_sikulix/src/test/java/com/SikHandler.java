@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SikHandler {
     private static long count = 0;
-    private static Region yzz = new Region(0,0,1200,800);
+    private static Region yzz = new Region(0,0,1000,800);
     public static void show(Region region)throws Exception {
         //如果是在土城，就找新手打宝/屠龙殿地图
         Thread.sleep(1000);
@@ -110,7 +110,7 @@ public class SikHandler {
         SikDaGuai.daGuai(region);
         region.setY(0);
         region.setX(0);
-        region.setW(1200);
+        region.setW(1000);
         region.setH(800);
 
         //8. 打完怪捡装备,防止漏捡，调用两次
@@ -130,7 +130,7 @@ public class SikHandler {
         SikYaoPin.bbYaoPin(region);
         System.out.println("检查主号和宝宝药品结束。。。。。。");
 
-        //11. 检查火龙之心
+        //11. 检查火龙之心等
         if((count%100)==0){
             //修装备
             HLZX.hlzx(region);

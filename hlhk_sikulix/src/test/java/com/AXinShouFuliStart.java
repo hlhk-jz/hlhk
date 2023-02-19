@@ -1,4 +1,5 @@
 package com;
+import org.sikuli.basics.Settings;
 import org.sikuli.script.Location;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
@@ -6,8 +7,10 @@ import org.sikuli.script.Region;
 //新手福利地图
 public class AXinShouFuliStart {
     public static void main(String[] args){
-        Region region = new Region(0, 0,1200,800);
+        Region region = new Region(0, 0,1000,800);
         region.setThrowException(false);
+        //设置对比值
+        Settings.MinSimilarity=0.57;
         try {
             xin(region);
         } catch (Exception e) {

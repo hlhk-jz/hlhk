@@ -26,7 +26,7 @@ public class SikDaGuai {
             for (int st = 1;st<4;st++){
                 region.setY(0);
                 region.setX(0);
-                region.setW(1200);
+                region.setW(1000);
                 region.setH(800);
                 Thread.sleep(500);
                 List<Match> any = region.findAnyList(guaiList);
@@ -122,7 +122,7 @@ public class SikDaGuai {
             for (int st = 1;st<4;st++){
                 region.setY(0);
                 region.setX(0);
-                region.setW(1200);
+                region.setW(1000);
                 region.setH(800);
                 Thread.sleep(500);
                 List<Match> any = region.findAnyList(guaiList);
@@ -196,8 +196,6 @@ public class SikDaGuai {
         list.add("D:/software/sikulix/image/jiaozhu2.PNG");
         list.add("D:/software/sikulix/image/jiaozhu3.PNG");
         list.add("D:/software/sikulix/image/jiaozhu4.PNG");
-        list.add("D:/software/sikulix/image/jiaozhu5.PNG");
-        list.add("D:/software/sikulix/image/jiaozhu6.PNG");
         return list;
     }
 }
