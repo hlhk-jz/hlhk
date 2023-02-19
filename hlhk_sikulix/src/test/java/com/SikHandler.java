@@ -115,8 +115,8 @@ public class SikHandler {
 
         //8. 打完怪捡装备,防止漏捡，调用两次
         region.type(Key.F12);
-        SikJZB.pickup(region);
-        SikJZB.pickup(region);
+        SikJZB.pickup();
+        SikJZB.pickup();
 
         //9. 回收
         if((count%5)==0){
