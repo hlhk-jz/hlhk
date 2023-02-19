@@ -10,23 +10,13 @@ public class DaoZhan {
         Region region = new Region(139, 609,728,264);
         region.setThrowException(false);
         while (true){
-            Thread.sleep(3000);
-            //寻找守护
-            Match wait = region.wait("D:/software/sikulix/image/shouhu.PNG", 3);
-            if(null != wait){
-                Thread.sleep(1000);
+            Thread.sleep(8000);
+            //寻找锁定
+            Match match = region.wait("D:/software/sikulix/image/suoding.PNG",5);
+            if(null != match){
                 //无极真气
-                Thread.sleep(200);
                 region.type(Key.F5);
-                //施毒术
-    /*    region.type(Key.F2);
-        Thread.sleep(2000);
-        region.type(Key.F2);
-        Thread.sleep(2000);*/
-                //锁定
-                region.type(Key.F3);
-                //region.wait("D:/software/sikulix/image/suoding.PNG",0.6);
-                Thread.sleep(200);
+                Thread.sleep(300);
                 //合击
                 region.type(Key.F4);
             }
