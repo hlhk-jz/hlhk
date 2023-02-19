@@ -5,6 +5,7 @@ import java.util.List;
 
 public class SikHandler {
     private static long count = 0;
+    private static Region yzz = new Region(0,0,1200,800);
     public static void show(Region region)throws Exception {
         //如果是在土城，就找新手打宝/屠龙殿地图
         Thread.sleep(1000);
@@ -26,7 +27,8 @@ public class SikHandler {
         //6. 寻找教主
         Match match3 = null;
         int n = 1;
-        while (null == match3){
+        boolean isTrue = true;
+        while (true){
             n++;
             //点击随机石
             match2.doubleClick();
@@ -34,11 +36,36 @@ public class SikHandler {
             //寻找教主
             List<Match> any = region.findAnyList(SikDaGuai.guaiList());
             Thread.sleep(1000);
-            //寻找随机石，因为有可能随机石在其它位置了，所以在查一遍
-            match2 = region.wait("D:/software/sikulix/tulongdian/shitou.PNG",0.5);
-            if(null == match2){
-                match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",0.5);
+            if(any.isEmpty()){
+                match3 = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
+                if(null != match3){
+                    //右下
+                    System.out.println("右下！！！！！！！");
+                    isTrue = false;
+                    Thread.sleep(300);
+                }
+                if(isTrue){
+                    //左上
+                    match3 = region.wait("D:/software/sikulix/image/zuoshang.PNG",0.3);
+                    if(null != match3){
+                        System.out.println("左上！！！！！！！");
+                        isTrue = false;
+                        Thread.sleep(300);
+                    }
+                }
+                if(isTrue){
+                    //左下
+                    match3 = region.wait("D:/software/sikulix/image/zuoxia.PNG",0.3);
+                    if(null != match3){
+                        System.out.println("左下！！！！！！！");
+                        isTrue = false;
+                        Thread.sleep(300);
+                    }
+                }
             }
+            //寻找教主
+            any = region.findAnyList(SikDaGuai.guaiList());
+            Thread.sleep(1000);
             //如果找到教主了推出循环
             if (!any.isEmpty()){
                 break;
@@ -48,6 +75,11 @@ public class SikHandler {
                 System.out.println("随机石超过40检查包裹");
                 SuiJiShi.suiJiShi(region);
                 n = 1;
+            }
+            //寻找随机石，因为有可能随机石在其它位置了，所以在查一遍
+            match2 = region.wait("D:/software/sikulix/tulongdian/shitou.PNG",0.5);
+            if(null == match2){
+                match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",0.5);
             }
         }
 
