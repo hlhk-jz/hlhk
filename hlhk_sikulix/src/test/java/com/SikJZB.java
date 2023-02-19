@@ -8,10 +8,6 @@ public class SikJZB {
   /*  public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
-        Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
-        match.setY(match.getY()-100);
-        Thread.sleep(500);
-        match.click();
         pickup(region);
     }*/
 
@@ -24,6 +20,7 @@ public class SikJZB {
         Thread.sleep(500);
         bgMathc.hover();
         Thread.sleep(500);
+        //守护
         jzbRegion.type(Key.F4);
 
         //判断当前地图有哪些装备

@@ -13,7 +13,7 @@ public class SikDaGuai {
     }*/
 
     //道法
-    public static void daGuai(Region region ){
+  /*  public static void daGuai(Region region ){
         int i = 1;
         try {
             //检查宝宝是否在线
@@ -106,10 +106,10 @@ public class SikDaGuai {
             i = 1;
             daGuai(region);
         }
-    }
+    }*/
 
     //战道
-  /*  public static void daGuai(Region region ){
+    public static void daGuai(Region region ){
         int i = 1;
         try {
             //检查宝宝是否在线
@@ -187,7 +187,7 @@ public class SikDaGuai {
              i = 1;
             daGuai(region);
         }
-    }*/
+    }
 
 
     public static List<Object> guaiList(){
