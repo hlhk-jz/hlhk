@@ -37,11 +37,18 @@ public class SikHandler {
             List<Match> any = region.findAnyList(SikDaGuai.guaiList());
             Thread.sleep(1000);
             if(any.isEmpty()){
+                Match matchyd = region.find("D:/software/sikulix/tulongdian/tldyd.PNG");
+                Thread.sleep(500);
                 match3 = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
                 if(null != match3){
                     //右下
                     System.out.println("右下！！！！！！！");
                     isTrue = false;
+                    matchyd.setY(matchyd.getY()-100);
+                    matchyd.setX(matchyd.getX()+400);
+                    matchyd.rightClick();
+                    Thread.sleep(600);
+                    matchyd.rightClick();
                     Thread.sleep(300);
                 }
                 if(isTrue){
@@ -50,6 +57,11 @@ public class SikHandler {
                     if(null != match3){
                         System.out.println("左上！！！！！！！");
                         isTrue = false;
+                        matchyd.setY(matchyd.getY()-500);
+                        matchyd.setX(matchyd.getX()-80);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
                         Thread.sleep(300);
                     }
                 }
@@ -59,6 +71,11 @@ public class SikHandler {
                     if(null != match3){
                         System.out.println("左下！！！！！！！");
                         isTrue = false;
+                        matchyd.setY(matchyd.getY()-100);
+                        matchyd.setX(matchyd.getX()-100);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
                         Thread.sleep(300);
                     }
                 }
