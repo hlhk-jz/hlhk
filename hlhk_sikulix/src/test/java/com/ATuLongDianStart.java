@@ -41,11 +41,11 @@ public class ATuLongDianStart {
         if(null == match){
             match = region.find("D:/software/sikulix/tulongdian/tldb.PNG");
         }
-        //我要进入
-        match.click();
         if(null == match){
             tld(region);
         }
+        //我要进入
+        match.click();
         SikHandler.show(region);
     }
 }

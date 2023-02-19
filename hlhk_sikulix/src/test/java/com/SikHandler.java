@@ -117,13 +117,12 @@ public class SikHandler {
             System.out.println("回收装备开始！！！！count："+count);
             SikHS.jzb(region);
             System.out.println("回收装备结束~~~~~~~~");
-
-            //10. 检查药品,主号和宝宝
-            System.out.println("检查主号和宝宝药品开始~~~~~~~~");
-            SikYaoPin.zhYaoPin(region);
-            SikYaoPin.bbYaoPin(region);
-            System.out.println("检查主号和宝宝药品结束。。。。。。");
         }
+        //10. 检查药品,主号和宝宝
+        System.out.println("检查主号和宝宝药品开始~~~~~~~~");
+        SikYaoPin.zhYaoPin(region);
+        SikYaoPin.bbYaoPin(region);
+        System.out.println("检查主号和宝宝药品结束。。。。。。");
 
         //11. 检查火龙之心
         if((count%100)==0){
