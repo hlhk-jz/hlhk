@@ -1,5 +1,6 @@
 package cesi;
 
+import org.sikuli.basics.Settings;
 import org.sikuli.script.Button;
 import org.sikuli.script.Location;
 import org.sikuli.script.Match;
@@ -12,8 +13,18 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,500,1080);
         region.setThrowException(false);
+        Settings.MinSimilarity=0.58;
 
-        Match match = region.wait("D:/sikuliximage/yidong.png", 2);
+        //寻找补给
+        Match match = region.wait("D:/software/sikulix/image/bj.PNG", 2);
+        if (null == match){
+            match = region.wait("D:/software/sikulix/image/bj2.PNG", 2);
+        }
+        if(null != match){
+            match.hover();
+        }
+
+       /* Match match = region.wait("D:/sikuliximage/yidong.png", 2);
         match.hover();
         Thread.sleep(500);
         //按下左键
@@ -23,6 +34,6 @@ public class SikTest {
         region.mouseMove(location);
         Thread.sleep(500);
         //松开左键
-        region.mouseUp(Button.LEFT);
+        region.mouseUp(Button.LEFT);*/
     }
 }

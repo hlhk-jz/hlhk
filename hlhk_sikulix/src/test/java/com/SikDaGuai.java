@@ -28,7 +28,6 @@ public class SikDaGuai {
             for (String target : gus){
                 match = region.wait(target,0.5);
                 while (null != match){
-                    System.out.println(count);
                     match.setY(match.getY()+80);
                     match.click();
                     //查看是否被锁定
@@ -39,6 +38,8 @@ public class SikDaGuai {
                             match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",1);
                         }
                         match2.doubleClick();
+                        Thread.sleep(300);
+                        region.type(Key.F1);
                     }
                     //合击
                     region.type(Key.F3);

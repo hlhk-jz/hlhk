@@ -132,10 +132,10 @@ public class SikHandler {
 
         //11. 检查火龙之心等
         if((count%100)==0){
-            //修装备
+            //火龙之心
             HLZX.hlzx(region);
-            //检查磨血石
-            MoXueShi.jcMXS(region);
+            //检查磨血石，如果有人龙印只修装备就可以
+           // MoXueShi.jcMXS(region);
             //修复装备
             XiuFuZB.xfzb(region);
         }
