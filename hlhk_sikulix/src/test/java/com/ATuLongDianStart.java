@@ -10,7 +10,7 @@ public class ATuLongDianStart {
         Region region = new Region(0, 0,1000,800);
         region.setThrowException(false);
         //设置对比值
-        Settings.MinSimilarity=0.57;
+        Settings.MinSimilarity=0.6;
         try {
             tld(region);
         } catch (Exception e) {

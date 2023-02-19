@@ -1,5 +1,6 @@
 package com;
 
+import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,65 @@ public class SikDaGuai {
         region.setThrowException(false);
         daGuai(region);
     }*/
+
+
+   //战法
+    public static void daGuai(Region region ){
+        int count = 1;
+        try {
+            //检查宝宝是否在线
+            BaoBao.baobao(region);
+             //设置对比值
+            Settings.MinSimilarity=0.58;
+            //獲取教主LISTtr
+            List<String> gus = guaiStrList();
+            Match match = null;
+            for (String target : gus){
+                match = region.wait(target,0.5);
+                while (null != match){
+                    System.out.println(count);
+                    match.setY(match.getY()+80);
+                    match.click();
+                    //查看是否被锁定
+                    Match wait = region.wait("D:/software/sikulix/cs/bsd.PNG");
+                    if(null != wait){
+                        Match match2 = region.wait("D:/software/sikulix/tulongdian/shitou.PNG",0.5);
+                        if(null == match2){
+                            match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",1);
+                        }
+                        match2.doubleClick();
+                    }
+                    //合击
+                    region.type(Key.F3);
+                    match = region.wait(target);
+                    //防止没查到再次查询教主
+                    if(null == match){
+                        match = region.wait(target);
+                        if(null == match){
+                            match = region.wait(target);
+                        }
+                    }
+                    count++;
+                    if(count == 200){
+                        //当本次循环指定次数后结束循环
+                        break;
+                    }
+                }
+                count = 1;
+            }
+        }catch (Exception e){
+            //报异常后，重复调用下
+            try {
+                Thread.sleep(3000);
+                e.printStackTrace();
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
+            count = 1;
+            daGuai(region);
+        }
+    }
+
 
     //道法
   /*  public static void daGuai(Region region ){
@@ -109,7 +169,7 @@ public class SikDaGuai {
     }*/
 
     //战道
-    public static void daGuai(Region region ){
+   /* public static void daGuai(Region region ){
         int i = 1;
         try {
             //检查宝宝是否在线
@@ -187,11 +247,21 @@ public class SikDaGuai {
              i = 1;
             daGuai(region);
         }
-    }
+    }*/
 
 
     public static List<Object> guaiList(){
         List<Object> list = new ArrayList<>();
+        list.add("D:/software/sikulix/image/jiaozhu1.PNG");
+        list.add("D:/software/sikulix/image/jiaozhu2.PNG");
+        list.add("D:/software/sikulix/image/jiaozhu3.PNG");
+        list.add("D:/software/sikulix/image/jiaozhu4.PNG");
+        return list;
+    }
+
+
+    public static List<String> guaiStrList(){
+        List<String> list = new ArrayList<>();
         list.add("D:/software/sikulix/image/jiaozhu1.PNG");
         list.add("D:/software/sikulix/image/jiaozhu2.PNG");
         list.add("D:/software/sikulix/image/jiaozhu3.PNG");
