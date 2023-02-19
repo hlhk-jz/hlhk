@@ -45,6 +45,8 @@ public class SikJZB {
                     location.setY(location.getY()+8);
                     if(start == 1){
                         location.rightClick();
+                    }else {
+                        location.click();
                     }
                     location.setY(location.getY()+100);
                     location.hover();
