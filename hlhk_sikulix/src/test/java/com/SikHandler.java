@@ -49,6 +49,8 @@ public class SikHandler {
                     matchyd.rightClick();
                     Thread.sleep(600);
                     matchyd.rightClick();
+                    Thread.sleep(600);
+                    matchyd.rightClick();
                     Thread.sleep(300);
                 }
                 if(isTrue){
@@ -59,6 +61,8 @@ public class SikHandler {
                         isTrue = false;
                         matchyd.setY(matchyd.getY()-500);
                         matchyd.setX(matchyd.getX()-80);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
                         matchyd.rightClick();
                         Thread.sleep(600);
                         matchyd.rightClick();
@@ -73,6 +77,8 @@ public class SikHandler {
                         isTrue = false;
                         matchyd.setY(matchyd.getY()-100);
                         matchyd.setX(matchyd.getX()-100);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
                         matchyd.rightClick();
                         Thread.sleep(600);
                         matchyd.rightClick();
