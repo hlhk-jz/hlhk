@@ -26,4 +26,14 @@ public class CurrencyData {
         list.add(xsJZ);
         return list;
     }
+
+    //关闭
+    public  static List<Object> gbList(){
+        List<Object> list = new ArrayList<>();
+        list.add("D:/software/sikulix/image/bgbg.PNG");
+        list.add("D:/software/sikulix/image/gbspl.PNG");
+        list.add("D:/software/sikulix/image/gbzbl.PNG");
+        list.add("D:/software/sikulix/image/gb.PNG");
+        return list;
+    }
 }

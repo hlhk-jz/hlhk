@@ -2,6 +2,8 @@ package com;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 
+import java.util.List;
+
 //打怪
 public class SikDaGuai {
 
@@ -72,6 +74,17 @@ public class SikDaGuai {
                         SikJZB.pickup();
                         SikYaoPin.zhYaoPin(region);
                         SikYaoPin.bbYaoPin(region);
+                        //检查关闭
+                        try {
+                            List<Match> anyList = region.findAnyList(CurrencyData.gbList());
+                            if(!anyList.isEmpty()){
+                                for (Match gbms:anyList){
+                                    gbms.click();
+                                }
+                            }
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
                     }
                     //合击
                     region.type(Key.F3);
