@@ -53,12 +53,12 @@ public class SikDaGuai {
                     //施毒术
                     if((count % 6)==0 || count == 1){
                         //释放施毒术
-                        region.type(Key.F4);
+                        region.type(Key.CTRL+Key.F4);
                         Thread.sleep(2000);
                         //查看是否被锁定
                         bsd(bsdReg);
                         //释放施毒术
-                        region.type(Key.F4);
+                        region.type(Key.CTRL+Key.F4);
                         Thread.sleep(2000);
                         //查看是否被锁定
                         bsd(bsdReg);
@@ -68,6 +68,7 @@ public class SikDaGuai {
                     //检查药品捡装备
                     if((count % 20)==0){
                         System.out.println("打怪期间检查药品和捡装备");
+                        region.type(Key.F12);
                         SikJZB.pickup();
                         SikYaoPin.zhYaoPin(region);
                         SikYaoPin.bbYaoPin(region);
@@ -81,7 +82,7 @@ public class SikDaGuai {
                         match.setY(match.getY()+100);
                         match.rightClick();
                     }else {
-                        match.setY(match.getY()-200);
+                        match.setY(match.getY()-100);
                         match.rightClick();
                     }
 
