@@ -1,6 +1,7 @@
 package com;
 import org.sikuli.script.*;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class SikHandler {
@@ -34,9 +35,9 @@ public class SikHandler {
             match2.doubleClick();
             Thread.sleep(500);
             //寻找教主
-            List<Match> any = region.findAnyList(SikDaGuai.guaiList());
+            Iterator<Match> all = region.findAll("D:/software/sikulix/cs/jiaozhu5.PNG");
             Thread.sleep(1000);
-            if(any.isEmpty()){
+            if(null == all){
                 Match matchyd = region.find("D:/software/sikulix/tulongdian/tldyd.PNG");
                 Thread.sleep(500);
                 match3 = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
@@ -87,16 +88,18 @@ public class SikHandler {
                 }
             }
             //寻找教主
-            any = region.findAnyList(SikDaGuai.guaiList());
+            all = region.findAll("D:/software/sikulix/cs/jiaozhu5.PNG");
             Thread.sleep(1000);
             //如果找到教主了推出循环
-            if (!any.isEmpty()){
+            if (null != all){
                 break;
             }
             if(n > 40){
                 //随机40次没有怪后，调用随机石方法
                 System.out.println("随机石超过40检查包裹");
                 SuiJiShi.suiJiShi(region);
+                //检查药品
+                SikYaoPin.zhYaoPin(region);
                 n = 1;
             }
             //寻找随机石，因为有可能随机石在其它位置了，所以在查一遍
@@ -107,7 +110,9 @@ public class SikHandler {
         }
 
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
+        System.out.println("调用打怪开始！！！！！！");
         SikDaGuai.daGuai(region);
+        System.out.println("调用打怪结束~~~~~~~~~~~");
         region.setY(0);
         region.setX(0);
         region.setW(1000);
@@ -115,9 +120,11 @@ public class SikHandler {
 
         //8. 打完怪捡装备,防止漏捡，调用两次
         region.type(Key.F12);
+        System.out.println("调用捡装备开始！！！！！！");
         SikJZB.pickup();
         SikJZB.pickup();
-
+        region.type(Key.F1);
+        System.out.println("调用捡装备结束！！！！！！");
         //9. 回收
         if((count%5)==0){
             System.out.println("回收装备开始！！！！count："+count);

@@ -16,20 +16,23 @@ public class SikDaGuai {
 
    //战法
     public static void daGuai(Region region ){
-        int count = 1;
+        int count = 0;
         try {
             //检查宝宝是否在线
             BaoBao.baobao(region);
              //设置对比值
-            Settings.MinSimilarity=0.58;
+            Settings.MinSimilarity=0.65;
             //獲取教主LISTtr
             List<String> gus = guaiStrList();
             Match match = null;
             for (String target : gus){
                 match = region.wait(target,0.5);
                 while (null != match){
-                    match.setY(match.getY()+80);
-                    match.click();
+                    if((count % 8)== 0){
+                        match.setY(match.getY()+80);
+                        match.click();
+                    }
+                    match.rightClick();
                     //查看是否被锁定
                     Match wait = region.wait("D:/software/sikulix/cs/bsd.PNG");
                     if(null != wait){
@@ -49,6 +52,12 @@ public class SikDaGuai {
                         match = region.wait(target);
                         if(null == match){
                             match = region.wait(target);
+                            if(null == match){
+                                match = region.wait(target);
+                                if(null == match){
+                                    match = region.wait(target);
+                                }
+                            }
                         }
                     }
                     count++;
@@ -263,10 +272,7 @@ public class SikDaGuai {
 
     public static List<String> guaiStrList(){
         List<String> list = new ArrayList<>();
-        list.add("D:/software/sikulix/image/jiaozhu1.PNG");
-        list.add("D:/software/sikulix/image/jiaozhu2.PNG");
-        list.add("D:/software/sikulix/image/jiaozhu3.PNG");
-        list.add("D:/software/sikulix/image/jiaozhu4.PNG");
+        list.add("D:/software/sikulix/cs/jiaozhu5.PNG");
         return list;
     }
 }

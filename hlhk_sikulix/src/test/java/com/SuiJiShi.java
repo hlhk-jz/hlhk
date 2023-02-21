@@ -35,6 +35,9 @@ public class SuiJiShi {
             //查看随机石总数
             Thread.sleep(500);
             Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou4.PNG");
+            if(null == all){
+                all = region.findAll("D:/software/sikulix/tulongdian/shitou.PNG");
+            }
             Thread.sleep(1000);
             int size = Iterators.size(all);
             if(size < 4){
