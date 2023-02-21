@@ -50,8 +50,6 @@ public class SikDaGuai {
                     //左键鼠标悬浮
                     match.setY(match.getY()+80);
                     match.hover();
-                    //锁定
-                    region.type(Key.F2);
                     //施毒术
                     if((count % 6)==0 || count == 1){
                         //释放施毒术
@@ -65,6 +63,8 @@ public class SikDaGuai {
                         //查看是否被锁定
                         bsd(bsdReg);
                     }
+                    //锁定
+                    region.type(Key.F2);
                     //嗜血术
                     region.type(Key.F6);
                     //检查药品捡装备
@@ -77,9 +77,11 @@ public class SikDaGuai {
                         //检查关闭
                         try {
                             List<Match> anyList = region.findAnyList(CurrencyData.gbList());
+                            Thread.sleep(1000);
                             if(!anyList.isEmpty()){
                                 for (Match gbms:anyList){
                                     gbms.click();
+                                    Thread.sleep(500);
                                 }
                             }
                         }catch (Exception e){

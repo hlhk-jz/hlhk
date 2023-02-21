@@ -33,7 +33,7 @@ public class CurrencyData {
         list.add("D:/software/sikulix/image/bgbg.PNG");
         list.add("D:/software/sikulix/image/gbspl.PNG");
         list.add("D:/software/sikulix/image/gbzbl.PNG");
-        list.add("D:/software/sikulix/image/gb.PNG");
+        list.add("D:/software/sikulix/image/gb6.PNG");
         return list;
     }
 }
