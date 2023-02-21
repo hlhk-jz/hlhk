@@ -53,15 +53,17 @@ public class SikDaGuai {
                     //施毒术
                     if((count % 6)==0 || count == 1){
                         //释放施毒术
-                        region.type(Key.CTRL+Key.F4);
+                        region.type(Key.F6);
                         Thread.sleep(2000);
                         //查看是否被锁定
                         bsd(bsdReg);
                         //释放施毒术
-                        region.type(Key.CTRL+Key.F4);
+                        region.type(Key.F6);
                         Thread.sleep(2000);
                         //查看是否被锁定
                         bsd(bsdReg);
+                        //无极真气
+                        region.type(Key.F5);
                     }
                     //锁定
                     region.type(Key.F2);
