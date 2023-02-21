@@ -21,6 +21,10 @@ public class SikDaGuai {
             bsdReg.setThrowException(false);
             Match sdMatch = null;
             Match match = region.wait(CurrencyData.tldJZ,0.5);
+            if(null == match){
+                match = region.wait(CurrencyData.xsJZ,0.5);
+            }
+            System.out.println("打怪查询："+match);
             //如果教主不为空一直循环打
             while (null != match){
                 //第一次，必须激活教主并且锁定成功
@@ -47,29 +51,40 @@ public class SikDaGuai {
                     //锁定
                     region.type(Key.F2);
                     //施毒术
-                    if((count % 10)==0 || count == 1){
+                    if((count % 6)==0 || count == 1){
                         //释放施毒术
                         region.type(Key.F4);
-                        Thread.sleep(1500);
+                        Thread.sleep(2000);
                         //查看是否被锁定
                         bsd(bsdReg);
                         //释放施毒术
                         region.type(Key.F4);
-                        Thread.sleep(1500);
+                        Thread.sleep(2000);
                         //查看是否被锁定
                         bsd(bsdReg);
-                        //无极真气
-                        region.type(Key.F5);
-                        Thread.sleep(1000);
                     }
-                    //右键跟随教主
-                    match.rightClick();
                     //嗜血术
                     region.type(Key.F6);
+                    //检查药品捡装备
+                    if((count % 20)==0){
+                        System.out.println("打怪期间检查药品和捡装备");
+                        SikJZB.pickup();
+                        SikYaoPin.zhYaoPin(region);
+                        SikYaoPin.bbYaoPin(region);
+                    }
                     //合击
                     region.type(Key.F3);
                     //查看是否被锁定
                     bsd(bsdReg);
+                    //右键跟随教主
+                    if((count % 2)==0){
+                        match.setY(match.getY()+100);
+                        match.rightClick();
+                    }else {
+                        match.setY(match.getY()-200);
+                        match.rightClick();
+                    }
+
                     match = region.wait(CurrencyData.tldJZ,8);
                 }
                 count++;
