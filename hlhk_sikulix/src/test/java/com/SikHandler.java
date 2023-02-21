@@ -1,16 +1,16 @@
 package com;
 import org.sikuli.script.*;
-
 import java.util.Iterator;
 import java.util.List;
 
 public class SikHandler {
     private static long count = 0;
-    private static Region yzz = new Region(0,0,1000,800);
+
     public static void show(Region region)throws Exception {
+
         //如果是在土城，就找新手打宝/屠龙殿地图
-        Thread.sleep(1000);
-        Match match = region.wait("D:/software/sikulix/image/tc.PNG",1);
+        Thread.sleep(500);
+        Match match = region.wait(CurrencyData.tcNpc,1);
         if(null != match){
             //新手地图
             //AXinShouFuliStart.xin(region);
@@ -18,33 +18,31 @@ public class SikHandler {
             ATuLongDianStart.tld(region);
         }
         count ++;
+
         //5. 寻找随机石
         SuiJiShi.suiJiShi(region);
         Thread.sleep(1000);
-        Match match2 = region.wait("D:/software/sikulix/tulongdian/shitou.PNG",0.5);
+        Match match2 = region.wait(CurrencyData.zblSjs,0.5);
         if(null == match2){
-            match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",1);
+            match2 = region.wait(CurrencyData.zblSjs,1);
         }
+
         //6. 寻找教主
-        Match match3 = null;
+        Match yd = null;
         int n = 1;
-        boolean isTrue = true;
         while (true){
             n++;
             //点击随机石
             match2.doubleClick();
             Thread.sleep(500);
             //寻找教主
-            Iterator<Match> all = region.findAll("D:/software/sikulix/cs/jiaozhu5.PNG");
+            List<Match> anyList = region.findAnyList(CurrencyData.jzList());
             Thread.sleep(1000);
-            if(null == all){
-                Match matchyd = region.find("D:/software/sikulix/tulongdian/tldyd.PNG");
-                Thread.sleep(500);
-                match3 = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
-                if(null != match3){
+            if(anyList.isEmpty()){
+                yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
+                if(null != yd && (n%2)==0){
                     //右下
-                    System.out.println("右下！！！！！！！");
-                    isTrue = false;
+                    Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                     matchyd.setY(matchyd.getY()-100);
                     matchyd.setX(matchyd.getX()+400);
                     matchyd.rightClick();
@@ -54,44 +52,24 @@ public class SikHandler {
                     matchyd.rightClick();
                     Thread.sleep(300);
                 }
-                if(isTrue){
+                if(null != yd && (n%2)!=0){
                     //左上
-                    match3 = region.wait("D:/software/sikulix/image/zuoshang.PNG",0.3);
-                    if(null != match3){
-                        System.out.println("左上！！！！！！！");
-                        isTrue = false;
-                        matchyd.setY(matchyd.getY()-500);
-                        matchyd.setX(matchyd.getX()-80);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                    }
-                }
-                if(isTrue){
-                    //左下
-                    match3 = region.wait("D:/software/sikulix/image/zuoxia.PNG",0.3);
-                    if(null != match3){
-                        System.out.println("左下！！！！！！！");
-                        isTrue = false;
-                        matchyd.setY(matchyd.getY()-100);
-                        matchyd.setX(matchyd.getX()-100);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                    }
+                    Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                    matchyd.setY(matchyd.getY()-500);
+                    matchyd.setX(matchyd.getX()-80);
+                    matchyd.rightClick();
+                    Thread.sleep(600);
+                    matchyd.rightClick();
+                    Thread.sleep(600);
+                    matchyd.rightClick();
+                    Thread.sleep(300);
                 }
             }
             //寻找教主
-            all = region.findAll("D:/software/sikulix/cs/jiaozhu5.PNG");
+            anyList = region.findAnyList(CurrencyData.jzList());
             Thread.sleep(1000);
             //如果找到教主了推出循环
-            if (null != all){
+            if (!anyList.isEmpty()){
                 break;
             }
             if(n > 40){
@@ -113,14 +91,11 @@ public class SikHandler {
         System.out.println("调用打怪开始！！！！！！");
         SikDaGuai.daGuai(region);
         System.out.println("调用打怪结束~~~~~~~~~~~");
-        region.setY(0);
-        region.setX(0);
-        region.setW(1000);
-        region.setH(800);
 
-        //8. 打完怪捡装备,防止漏捡，调用两次
+        //8. 打完怪捡装备,防止漏捡，调用多次
         region.type(Key.F12);
         System.out.println("调用捡装备开始！！！！！！");
+        SikJZB.pickup();
         SikJZB.pickup();
         SikJZB.pickup();
         region.type(Key.F1);

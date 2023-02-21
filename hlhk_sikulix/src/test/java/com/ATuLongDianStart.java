@@ -1,16 +1,13 @@
 package com;
-
 import org.sikuli.basics.Settings;
-import org.sikuli.script.Location;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
+
 //屠龙殿
 public class ATuLongDianStart {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1000,800);
         region.setThrowException(false);
-        //设置对比值
-        Settings.MinSimilarity=0.6;
         try {
             tld(region);
         } catch (Exception e) {
@@ -21,7 +18,7 @@ public class ATuLongDianStart {
     public static void tld(Region region)throws Exception{
         Match match = null;
         //寻找屠龙殿NPC
-        match = region.wait("D:/software/sikulix/tulongdian/tld.PNG",1);
+        match = region.wait(CurrencyData.tldNpc,1);
         int x = 1;
         while (null == match){
             if((x%5)==0){
