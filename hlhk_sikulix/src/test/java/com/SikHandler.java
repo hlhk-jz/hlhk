@@ -116,7 +116,7 @@ public class SikHandler {
         region.type(Key.F1);
         System.out.println("调用捡装备结束！！！！！！");
         //9. 回收
-        if((count%5)==0){
+        if((count%4)==0){
             System.out.println("回收装备开始！！！！count："+count);
             SikHS.jzb(region);
             System.out.println("回收装备结束~~~~~~~~");
@@ -128,7 +128,7 @@ public class SikHandler {
         System.out.println("检查主号和宝宝药品结束。。。。。。");*/
 
         //11. 检查火龙之心等
-        if((count%100)==0){
+        if((count%50)==0){
             //火龙之心
             HLZX.hlzx(region);
             //检查磨血石，如果有人龙印只修装备就可以
