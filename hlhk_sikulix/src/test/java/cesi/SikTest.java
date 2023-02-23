@@ -14,10 +14,26 @@ public class SikTest {
         Region region = new Region(0, 601,168,244);
         region.setThrowException(false);
         Settings.MinSimilarity=0.8;
-        Match wait = region.wait("D:/software/sikulix/image/mzs.PNG", 0.5);
+        region.setX(659);
+        region.setY(561);
+        region.setW(255);
+        region.setH(181);
+        Match wait = region.wait("D:/software/sikulix/image/out.PNG", 0.8);
+        region.setX(0);
+        region.setY(0);
+        region.setW(1000);
+        region.setH(800);
         if(null != wait){
             System.out.println("===================");
-            wait.hover();
+            wait.click();
+            wait = region.wait("D:/software/sikulix/image/qdtc.PNG", 0.8);
+            wait.click();
+            Thread.sleep(5000);
+            wait = region.wait("D:/software/sikulix/image/ksjr.PNG", 0.8);
+            wait.click();
+            Thread.sleep(5000);
+            wait = region.wait("D:/software/sikulix/image/qdjr.PNG", 0.8);
+            wait.click();
         }else {
             System.out.println("!!!!!!!!!!!!!!!!!!!");
         }

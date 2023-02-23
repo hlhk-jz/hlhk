@@ -22,6 +22,16 @@ public class ATuLongDianStart {
             region.setW(1000);
             region.setH(800);
             if(null != wait){
+                wait.click();
+                wait = region.wait("D:/software/sikulix/image/qdtc.PNG", 0.8);
+                wait.click();
+                Thread.sleep(5000);
+                wait = region.wait("D:/software/sikulix/image/ksjr.PNG", 0.8);
+                wait.click();
+                Thread.sleep(5000);
+                wait = region.wait("D:/software/sikulix/image/qdjr.PNG", 0.8);
+                wait.click();
+                Thread.sleep(2000);
                 tld(region);
             }
         }
