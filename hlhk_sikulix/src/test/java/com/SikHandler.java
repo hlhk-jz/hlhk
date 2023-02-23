@@ -72,6 +72,7 @@ public class SikHandler {
             if (!anyList.isEmpty()){
                 break;
             }
+            //查看是否在土城
             if((n%10)==0){
                 Settings.MinSimilarity=0.9;
                 region.setX(0);
