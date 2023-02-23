@@ -137,7 +137,6 @@ public class SikHandler {
             //修复装备
             XiuFuZB.xfzb(region);
         }
-
         //12. 循环地柜
         System.out.println("~~~~~~~~~~~本次超级循环数量："+count);
         show(region);

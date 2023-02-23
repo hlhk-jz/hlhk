@@ -12,6 +12,18 @@ public class ATuLongDianStart {
             tld(region);
         } catch (Exception e) {
             e.printStackTrace();
+            region.setX(659);
+            region.setY(561);
+            region.setW(255);
+            region.setH(181);
+            Match wait = region.wait("D:/software/sikulix/image/out.PNG", 0.8);
+            region.setX(0);
+            region.setY(0);
+            region.setW(1000);
+            region.setH(800);
+            if(null != wait){
+                tld(region);
+            }
         }
     }
 

@@ -11,57 +11,53 @@ public class XiuFuZB {
         xfzb(region);
     }*/
 
-    public static void xfzb(Region region){
-        try {
-            boolean isTrue = true;
-            Match match;
+    public static void xfzb(Region region)throws Exception{
+        boolean isTrue = true;
+        Match match;
+        //寻找包裹
+        match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
+        match.click();
+        //寻找包裹修复神石
+        match = region.wait("D:/software/sikulix/image/xfss2.PNG", 2);
+        if(null != match){
+            match.doubleClick();
+            isTrue = false;
+        }
+
+        if(isTrue){
+            //寻找商铺点击
+            match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+            match.click();
+            //寻找装饰点击
+            match = region.wait("D:/software/sikulix/image/yaopin3.PNG",1);
+            if(null == match){
+                match = region.wait("D:/software/sikulix/image/yaopin4.PNG",1);
+            }
+            match.click();
+            //寻找修复神石
+            match = region.wait("D:/software/sikulix/image/xfss.PNG",1);
+            match.click();
+            //购买确定
+            match = region.wait("D:/software/sikulix/image/gm.PNG",1);
+            match.click();
+            match = region.wait("D:/software/sikulix/image/qd.PNG",1);
+            match.click();
+            //关闭商铺栏
+            match = region.wait("D:/software/sikulix/image/gbspl.PNG", 2);
+            if(null != match){
+                match.click();
+            }
             //寻找包裹
             match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
             match.click();
             //寻找包裹修复神石
             match = region.wait("D:/software/sikulix/image/xfss2.PNG", 2);
-            if(null != match){
-                match.doubleClick();
-                isTrue = false;
-            }
-
-            if(isTrue){
-                //寻找商铺点击
-                match = region.wait("D:/software/sikulix/image/pu.PNG",1);
-                match.click();
-                //寻找装饰点击
-                match = region.wait("D:/software/sikulix/image/yaopin3.PNG",1);
-                if(null == match){
-                    match = region.wait("D:/software/sikulix/image/yaopin4.PNG",1);
-                }
-                match.click();
-                //寻找修复神石
-                match = region.wait("D:/software/sikulix/image/xfss.PNG",1);
-                match.click();
-                //购买确定
-                match = region.wait("D:/software/sikulix/image/gm.PNG",1);
-                match.click();
-                match = region.wait("D:/software/sikulix/image/qd.PNG",1);
-                match.click();
-                //关闭商铺栏
-                match = region.wait("D:/software/sikulix/image/gbspl.PNG", 2);
-                if(null != match){
-                    match.click();
-                }
-                //寻找包裹
-                match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
-                match.click();
-                //寻找包裹修复神石
-                match = region.wait("D:/software/sikulix/image/xfss2.PNG", 2);
-                match.doubleClick();
-            }
-            //关闭包裹
-            match = region.wait("D:/software/sikulix/image/gbzbl.PNG", 1);
-            if(null != match){
-                match.click();
-            }
-        }catch (Exception e){
-            System.out.println("修复装备失败！！！"+e.getMessage());
+            match.doubleClick();
+        }
+        //关闭包裹
+        match = region.wait("D:/software/sikulix/image/gbzbl.PNG", 1);
+        if(null != match){
+            match.click();
         }
     }
 }
