@@ -51,7 +51,7 @@ public class SikDaGuai {
                     match.setY(match.getY()+80);
                     match.hover();
                     //施毒术
-                    if((count % 6)==0 || count == 1){
+                    if((count % 8)==0 || count == 1){
                         //释放施毒术
                         region.type(Key.F6);
                         Thread.sleep(2000);
@@ -96,14 +96,14 @@ public class SikDaGuai {
                     bsd(bsdReg);
                     //右键跟随教主
                     if((count % 2)==0){
-                        match.setY(match.getY()+100);
+                        match.setY(match.getY()+50);
                         match.rightClick();
                     }else {
-                        match.setY(match.getY()-100);
+                        match.setY(match.getY()-50);
                         match.rightClick();
                     }
 
-                    match = region.wait(CurrencyData.tldJZ,8);
+                    match = region.wait(CurrencyData.tldJZ,15);
                 }
                 count++;
             }
