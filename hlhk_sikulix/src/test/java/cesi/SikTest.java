@@ -11,18 +11,25 @@ public class SikTest {
      * 移动文件到指定位置
      */
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,500,1080);
+        Region region = new Region(0, 601,168,244);
         region.setThrowException(false);
-        Settings.MinSimilarity=0.58;
+        Settings.MinSimilarity=0.8;
+        Match wait = region.wait("D:/software/sikulix/image/mzs.PNG", 0.5);
+        if(null != wait){
+            System.out.println("===================");
+            wait.hover();
+        }else {
+            System.out.println("!!!!!!!!!!!!!!!!!!!");
+        }
 
         //寻找补给
-        Match match = region.wait("D:/software/sikulix/image/bj.PNG", 2);
+      /*  Match match = region.wait("D:/software/sikulix/image/bj.PNG", 2);
         if (null == match){
             match = region.wait("D:/software/sikulix/image/bj2.PNG", 2);
         }
         if(null != match){
             match.hover();
-        }
+        }*/
 
        /* Match match = region.wait("D:/sikuliximage/yidong.png", 2);
         match.hover();

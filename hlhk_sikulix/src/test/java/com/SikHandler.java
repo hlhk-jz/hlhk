@@ -1,6 +1,6 @@
 package com;
 import org.sikuli.script.*;
-import java.util.Iterator;
+import org.sikuli.basics.Settings;
 import java.util.List;
 
 public class SikHandler {
@@ -71,6 +71,22 @@ public class SikHandler {
             //如果找到教主了推出循环
             if (!anyList.isEmpty()){
                 break;
+            }
+            if((n%10)==0){
+                Settings.MinSimilarity=0.9;
+                region.setX(0);
+                region.setY(601);
+                region.setW(168);
+                region.setH(244);
+                Match wait = region.wait("D:/software/sikulix/image/mzs.PNG", 0.5);
+                Settings.MinSimilarity=0.7;
+                region.setX(0);
+                region.setY(0);
+                region.setW(1000);
+                region.setH(800);
+                if(null != wait){
+                    ATuLongDianStart.tld(region);
+                }
             }
             if(n > 40){
                 //随机40次没有怪后，调用随机石方法
