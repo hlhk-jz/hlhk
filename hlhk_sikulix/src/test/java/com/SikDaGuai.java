@@ -16,6 +16,7 @@ public class SikDaGuai {
     //道法
     public static void daGuai(Region region )throws Exception{
         int count = 0;
+        int xzCount = 0;
         //检查宝宝是否在线
         BaoBao.baobao(region);
         Region bsdReg = new Region(139,609,728,264);
@@ -36,7 +37,11 @@ public class SikDaGuai {
                     while (null == match){
                         match = region.wait(CurrencyData.tldJZ,0.5);
                     }
-                    match.setY(match.getY()+80);
+                    if((xzCount%2)==0){
+                        match.setY(match.getY()-30);
+                    }else {
+                        match.setY(match.getY()+80);
+                    }
                     match.hover();
                     //锁定
                     region.type(Key.F2);
@@ -67,7 +72,7 @@ public class SikDaGuai {
                 //锁定
                 region.type(Key.F2);
                 //嗜血术
-                region.type(Key.F6);
+                region.type(Key.F7);
                 //检查药品捡装备
                 if((count % 20)==0){
                     System.out.println("打怪期间检查药品和捡装备");
@@ -76,17 +81,13 @@ public class SikDaGuai {
                     SikYaoPin.zhYaoPin(region);
                     SikYaoPin.bbYaoPin(region);
                     //检查关闭
-                    try {
-                        List<Match> anyList = region.findAnyList(CurrencyData.gbList());
-                        Thread.sleep(1000);
-                        if(!anyList.isEmpty()){
-                            for (Match gbms:anyList){
-                                gbms.click();
-                                Thread.sleep(500);
-                            }
+                    List<Match> anyList = region.findAnyList(CurrencyData.gbList());
+                    Thread.sleep(1000);
+                    if(!anyList.isEmpty()){
+                        for (Match gbms:anyList){
+                            gbms.click();
+                            Thread.sleep(500);
                         }
-                    }catch (Exception e){
-                        e.printStackTrace();
                     }
                 }
                 //合击
@@ -95,14 +96,13 @@ public class SikDaGuai {
                 bsd(bsdReg);
                 //右键跟随教主
                 if((count % 2)==0){
-                    match.setY(match.getY()+50);
+                    match.setX(match.getX()+30);
                     match.rightClick();
                 }else {
-                    match.setY(match.getY()-50);
+                    match.setX(match.getX()-30);
                     match.rightClick();
                 }
-
-                match = region.wait(CurrencyData.tldJZ,15);
+                match = region.wait(CurrencyData.tldJZ,10);
             }
             count++;
         }

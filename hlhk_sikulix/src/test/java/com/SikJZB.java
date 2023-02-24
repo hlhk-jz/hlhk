@@ -12,7 +12,7 @@ public class SikJZB {
     }*/
 
     public static void pickup()throws Exception{
-        Region jzbRegion = new Region(60, 0,1200,800);
+        Region jzbRegion = new Region(60, 0,1000,800);
         jzbRegion.setThrowException(false);
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
         Match bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
@@ -21,6 +21,7 @@ public class SikJZB {
         bgMathc.hover();
         Thread.sleep(500);
         //守护
+        jzbRegion.type(Key.F4);
         jzbRegion.type(Key.F4);
 
         //判断当前地图有哪些装备
@@ -48,7 +49,11 @@ public class SikJZB {
                     }else {
                         location.click();
                     }
-                    location.setY(location.getY()+100);
+                    if((start%2)==0){
+                        location.setY(location.getY()+100);
+                    }else {
+                        location.setY(location.getY()-100);
+                    }
                     location.hover();
                     jzbRegion.type(Key.F4);
                     Thread.sleep(300);
