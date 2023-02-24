@@ -5,6 +5,11 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * a65,b66,c67,d68,e69,f70,g71,h72,i73,j74,
+ * k75,l76,m77,n78,o79,p80,q81,r82,s83,t84,
+ * u85,v86,w87,x88,y89,z90
+ */
 //按键相关操作
 public class AnJianTest extends JFrame implements KeyListener {
     public static void main(String[] args){
