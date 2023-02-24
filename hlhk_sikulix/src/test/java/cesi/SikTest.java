@@ -1,19 +1,22 @@
 package cesi;
-
 import org.sikuli.basics.Settings;
-import org.sikuli.script.Button;
-import org.sikuli.script.Location;
-import org.sikuli.script.Match;
-import org.sikuli.script.Region;
-
+import org.sikuli.script.*;
+import java.awt.*;
+import java.awt.event.KeyEvent;
 public class SikTest {
-    /**
-     * 移动文件到指定位置
-     */
+
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 601,168,244);
         region.setThrowException(false);
-        Settings.MinSimilarity=0.8;
+        /*Robot robot = new Robot();
+        //模拟按下D
+        robot.keyPress(KeyEvent.VK_D);
+        robot.keyPress(KeyEvent.VK_Q);
+        robot.keyPress(KeyEvent.VK_W);
+        robot.keyPress(KeyEvent.VK_E);*/
+
+
+       /* Settings.MinSimilarity=0.8;
         region.setX(659);
         region.setY(561);
         region.setW(255);
@@ -36,7 +39,7 @@ public class SikTest {
             wait.click();
         }else {
             System.out.println("!!!!!!!!!!!!!!!!!!!");
-        }
+        }*/
 
         //寻找补给
       /*  Match match = region.wait("D:/software/sikulix/image/bj.PNG", 2);
@@ -47,6 +50,7 @@ public class SikTest {
             match.hover();
         }*/
 
+      //移动文件到指定位置
        /* Match match = region.wait("D:/sikuliximage/yidong.png", 2);
         match.hover();
         Thread.sleep(500);
