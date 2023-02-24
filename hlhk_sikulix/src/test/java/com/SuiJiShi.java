@@ -1,6 +1,7 @@
 package com;
 
 import com.google.common.collect.Iterators;
+import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
@@ -73,6 +74,74 @@ public class SuiJiShi {
         match = region.wait("D:/software/sikulix/image/gbzbl.PNG", 1);
         if(null != match){
             match.click();
+        }
+    }
+
+
+    //点击回城石
+    public static void isHcs(Region region)throws Exception{
+        Match match = null;
+        //寻找包裹
+        match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+        match.click();
+        //寻找回城石
+        match = region.wait("D:/software/sikulix/image/hc.PNG",1);
+        while (null == match){
+            //寻找包裹
+            match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+            match.click();
+            //寻找回城石
+            match = region.wait("D:/software/sikulix/image/hc.PNG",1);
+            if(null == match){
+                //如果包裹没有回城石，寻找商城
+                match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+                match.click();
+                //寻找补给
+                match = region.wait("D:/software/sikulix/image/bj.PNG",1);
+                if(null == match){
+                    match = region.wait("D:/software/sikulix/image/bj2.PNG",1);
+                }
+                match.click();
+                //寻找回城石
+                match = region.wait("D:/software/sikulix/image/sphc.PNG",1);
+                match.click();
+                //找购买按键
+                match = region.wait("D:/software/sikulix/image/gm.PNG", 2);
+                match.click();
+                //确定
+                match = region.wait("D:/software/sikulix/image/qd.PNG", 2);
+                match.click();
+                //关闭商铺栏
+                match = region.wait("D:/software/sikulix/image/gbspl.PNG", 2);
+                if(null != match){
+                    match.click();
+                }
+            }
+        }
+        match.doubleClick();
+        Thread.sleep(500);
+        //关闭物品栏
+        match = region.wait("D:/software/sikulix/image/gbzbl.PNG", 1);
+        if(null != match){
+            match.click();
+        }
+    }
+
+    //判断是否在土城
+    public static void isTuCheng(Region region)throws Exception{
+        Settings.MinSimilarity=0.9;
+        region.setX(0);
+        region.setY(601);
+        region.setW(168);
+        region.setH(244);
+        Match wait = region.wait("D:/software/sikulix/image/mzs.PNG", 0.5);
+        Settings.MinSimilarity=0.7;
+        region.setX(0);
+        region.setY(0);
+        region.setW(1000);
+        region.setH(800);
+        if(null != wait){
+            ATuLongDianStart.tld(region);
         }
     }
 }

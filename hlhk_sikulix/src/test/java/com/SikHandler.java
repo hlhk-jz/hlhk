@@ -1,6 +1,5 @@
 package com;
 import org.sikuli.script.*;
-import org.sikuli.basics.Settings;
 import java.util.List;
 
 public class SikHandler {
@@ -10,19 +9,14 @@ public class SikHandler {
 
         //如果是在土城，就找新手打宝/屠龙殿地图
         Thread.sleep(500);
-        Match match = region.wait(CurrencyData.tcNpc,1);
-        if(null != match){
-            //新手地图
-            //AXinShouFuliStart.xin(region);
-            //屠龙殿地图
-            ATuLongDianStart.tld(region);
-        }
+        SuiJiShi.isTuCheng(region);
+
         count ++;
 
         //5. 寻找随机石
         SuiJiShi.suiJiShi(region);
         Thread.sleep(1000);
-        Match match2 = region.wait(CurrencyData.zblSjs,0.5);
+        Match match2 = region.wait(CurrencyData.zblSjs,1);
         if(null == match2){
             match2 = region.wait(CurrencyData.zblSjs,1);
         }
@@ -51,6 +45,8 @@ public class SikHandler {
                     Thread.sleep(600);
                     matchyd.rightClick();
                     Thread.sleep(300);
+                    matchyd.rightClick();
+                    Thread.sleep(300);
                 }
                 if(null != yd && (n%2)!=0){
                     //左上
@@ -63,6 +59,8 @@ public class SikHandler {
                     Thread.sleep(600);
                     matchyd.rightClick();
                     Thread.sleep(300);
+                    matchyd.rightClick();
+                    Thread.sleep(300);
                 }
             }
             //寻找教主
@@ -73,25 +71,12 @@ public class SikHandler {
                 break;
             }
             //查看是否在土城
-            if((n%10)==0){
-                Settings.MinSimilarity=0.9;
-                region.setX(0);
-                region.setY(601);
-                region.setW(168);
-                region.setH(244);
-                Match wait = region.wait("D:/software/sikulix/image/mzs.PNG", 0.5);
-                Settings.MinSimilarity=0.7;
-                region.setX(0);
-                region.setY(0);
-                region.setW(1000);
-                region.setH(800);
-                if(null != wait){
-                    ATuLongDianStart.tld(region);
-                }
+            if((n%5)==0){
+               SuiJiShi.isTuCheng(region);
             }
             if(n > 40){
                 //随机40次没有怪后，调用随机石方法
-                System.out.println("随机石超过40检查包裹");
+                System.out.println("随机石超过40检查包裹和药品");
                 SuiJiShi.suiJiShi(region);
                 //检查药品
                 SikYaoPin.zhYaoPin(region);
@@ -123,10 +108,10 @@ public class SikHandler {
             System.out.println("回收装备结束~~~~~~~~");
         }
         //10. 检查药品,主号和宝宝
-      /*  System.out.println("检查主号和宝宝药品开始~~~~~~~~");
+        System.out.println("检查主号和宝宝药品开始~~~~~~~~");
         SikYaoPin.zhYaoPin(region);
         SikYaoPin.bbYaoPin(region);
-        System.out.println("检查主号和宝宝药品结束。。。。。。");*/
+        System.out.println("检查主号和宝宝药品结束。。。。。。");
 
         //11. 检查火龙之心等
         if((count%50)==0){

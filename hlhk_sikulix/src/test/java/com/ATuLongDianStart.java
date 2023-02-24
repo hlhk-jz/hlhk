@@ -1,5 +1,4 @@
 package com;
-import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
@@ -44,13 +43,15 @@ public class ATuLongDianStart {
         int x = 1;
         while (null == match){
             if((x%5)==0){
-                AXinShouFuliStart.isHcs(region);
+                SuiJiShi.isHcs(region);
             }
             //寻找界面下面菜单，调整鼠标位置人物左边移动
             match = region.find("D:/software/sikulix/tulongdian/tldyd.PNG");
             Thread.sleep(500);
             match.setY(match.getY()-350);
             match.hover();
+            Thread.sleep(500);
+            match.rightClick();
             Thread.sleep(500);
             match.rightClick();
             match = region.wait("D:/software/sikulix/tulongdian/tld.PNG",1);
