@@ -21,7 +21,6 @@ public class SikDaGuai {
         BaoBao.baobao(region);
         Region bsdReg = new Region(139,609,728,264);
         bsdReg.setThrowException(false);
-        Match sdMatch = null;
         Match match = region.wait(CurrencyData.tldJZ,0.5);
         if(null == match){
             match = region.wait(CurrencyData.xsJZ,0.5);
@@ -31,64 +30,12 @@ public class SikDaGuai {
         while (null != match){
             //第一次，必须激活教主并且锁定成功
             if(0 == count){
-                while (null == sdMatch){
-                    //寻找教主
-                    match = region.wait(CurrencyData.tldJZ,5);
-                    if(null == match){
-                        Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                        matchyd.setY(matchyd.getY()-377);
-                        matchyd.setX(matchyd.getX()+400);
-                        matchyd.rightClick();
-                        //如果找不到教主了一直寻找
-                        match = region.wait(CurrencyData.tldJZ,1);
-                        if(null == match){
-                            TuiChu.tuiChu(region);
-                        }
-                    }
-                    if((xzCount%2)==0){
-                        match.setY(match.getY()-30);
-                    }else {
-                        match.setY(match.getY()+80);
-                    }
-                    xzCount++;
-                    match.hover();
-                    //锁定
-                    region.type(Key.F2);
-                    //右键激活教主
-                    match.rightClick();
-                    //寻找英雄锁定
-                    sdMatch = region.wait(CurrencyData.ztsd,0.5);
-                }
-                //释放施毒术
-                region.type(Key.F6);
-                Thread.sleep(2000);
-                //查看是否被锁定
-                bsd(region);
-                //释放施毒术
-                region.type(Key.F6);
-                Thread.sleep(2000);
+                sdHj(region);
             }else {
-                //左键鼠标悬浮
-                match.setY(match.getY()+80);
-                match.hover();
-                //施毒术
-                if((count % 8)==0 || count == 1){
-                    match.click();
-                    //释放施毒术
-                    region.type(Key.F6);
-                    Thread.sleep(2000);
-                    //查看是否被锁定
-                    bsd(region);
-                    //释放施毒术
-                    region.type(Key.F6);
-                    Thread.sleep(2000);
-                    //查看是否被锁定
-                    bsd(region);
-                    //无极真气
-                    region.type(Key.F5);
+                //锁定和施毒术无极真气
+                if((count % 7)==0){
+                    sdHj(region);
                 }
-                //锁定
-                region.type(Key.F2);
                 //嗜血术
                 region.type(Key.F7);
                 //检查药品捡装备
@@ -122,7 +69,22 @@ public class SikDaGuai {
                 }
             }
             count++;
-            match = region.wait(CurrencyData.tldJZ,10);
+            match = region.wait(CurrencyData.tldJZ,3);
+            //防止人物重叠怪识别不出来再次查询
+            if(null == match){
+                Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                matchyd.setY(matchyd.getY()-377);
+                matchyd.setX(matchyd.getX()+400);
+                matchyd.rightClick();
+                //如果找不到教主了一直寻找
+                match = region.wait(CurrencyData.tldJZ,1);
+                if(null == match){
+                    matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                    matchyd.setY(matchyd.getY()-377);
+                    matchyd.rightClick();
+                    match = region.wait(CurrencyData.tldJZ,1);
+                }
+            }
         }
     }
 
@@ -144,5 +106,61 @@ public class SikDaGuai {
             e.printStackTrace();
         }
         Settings.MinSimilarity=0.7;
+    }
+
+    //锁定施毒术
+    public static void sdHj(Region region)throws Exception{
+        int xzCount = 0;
+        Match match = null;
+        Match sdMatch = null;
+        while (null == sdMatch){
+            //寻找教主
+            match = region.wait(CurrencyData.tldJZ,5);
+            if(null == match){
+                Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                matchyd.setY(matchyd.getY()-377);
+                matchyd.setX(matchyd.getX()+400);
+                matchyd.rightClick();
+                //如果找不到教主了一直寻找
+                match = region.wait(CurrencyData.tldJZ,1);
+                if(null == match){
+                    matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                    matchyd.setY(matchyd.getY()-377);
+                    matchyd.rightClick();
+                    match = region.wait(CurrencyData.tldJZ,1);
+                    if(null == match){
+                        TuiChu.tuiChu(region);
+                    }
+                }
+            }
+            if((xzCount%2)==0){
+                match.setY(match.getY()-30);
+            }else {
+                match.setY(match.getY()+80);
+            }
+            xzCount++;
+            match.hover();
+            //锁定
+            region.type(Key.F2);
+            //右键激活教主
+            match.rightClick();
+            //寻找英雄锁定
+            sdMatch = region.wait(CurrencyData.ztsd,0.5);
+        }
+        //释放施毒术
+        region.type(Key.F6);
+        Thread.sleep(2000);
+        //查看是否被锁定
+        bsd(region);
+        //释放施毒术
+        region.type(Key.F6);
+        Thread.sleep(2000);
+        //查看是否被锁定
+        bsd(region);
+        //释放施毒术
+        region.type(Key.F6);
+        Thread.sleep(2000);
+        //无极真气
+        region.type(Key.F5);
     }
 }

@@ -13,8 +13,13 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(191, 629,647,173);
         region.setThrowException(false);
+        Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+        matchyd.setY(matchyd.getY()-377);
+        matchyd.hover();
 
-        boolean isTrue = true;
+
+
+       /* boolean isTrue = true;
         Settings.MinSimilarity=0.99;
         Match wait = region.wait("D:/software/sikulix/image/youxia.PNG", 0.5);
         if(null != wait){
@@ -35,11 +40,7 @@ public class SikTest {
                 isTrue = false;
             }
         }
-
-
-
-
-
+*/
         /*Match match2 = region.wait(CurrencyData.zblSjs,1);
         match2.hover();*/
 
