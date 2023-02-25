@@ -7,7 +7,7 @@ import org.sikuli.script.Region;
 //屠龙殿
 public class ATuLongDianStart {
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1000,800);
+        Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
         try {
             tld(region);
@@ -20,7 +20,7 @@ public class ATuLongDianStart {
             Match wait = region.wait("D:/software/sikulix/image/out.PNG", 0.8);
             region.setX(0);
             region.setY(0);
-            region.setW(1000);
+            region.setW(1200);
             region.setH(800);
             if(null != wait){
                 wait.click();

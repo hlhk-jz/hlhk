@@ -3,11 +3,23 @@ import org.sikuli.script.*;
 
 //回收装备
 public class SikHS {
+    /*public static void main(String[] args){
+        try {
+            Region region = new Region(0, 0,1200,800);
+            region.setThrowException(false);
+            jzb(region);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }*/
 
     public static void jzb(Region region)throws Exception{
-        Match match = region.find("D:/software/sikulix/image/hs1.PNG");
+        Match match = region.wait("D:/software/sikulix/image/hs1.PNG",1);
         if(null == match){
-             match = region.find("D:/software/sikulix/image/hs4.PNG");
+            match = region.wait("D:/software/sikulix/image/hs11.PNG",1);
+            if(null == match){
+                match = region.wait("D:/software/sikulix/image/hs4.PNG",1);
+            }
         }
         Thread.sleep(500);
         match.click();

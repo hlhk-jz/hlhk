@@ -12,7 +12,7 @@ public class SikJZB {
     }*/
 
     public static void pickup()throws Exception{
-        Region jzbRegion = new Region(60, 0,1000,800);
+        Region jzbRegion = new Region(60, 0,1200,800);
         jzbRegion.setThrowException(false);
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
         Match bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
