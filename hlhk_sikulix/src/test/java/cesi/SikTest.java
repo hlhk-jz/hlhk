@@ -11,8 +11,11 @@ import java.util.Iterator;
 public class SikTest {
 
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1000,800);
+        Region region = new Region(191, 629,647,173);
         region.setThrowException(false);
+
+
+
 
 
 
