@@ -7,11 +7,11 @@ import java.util.List;
 //打怪
 public class SikDaGuai {
 
-    public static void main(String[] args)throws Exception{
+/*    public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         daGuai(region);
-    }
+    }*/
 
     //道法
     public static void daGuai(Region region )throws Exception{
@@ -32,7 +32,7 @@ public class SikDaGuai {
                 sdHj(region,0);
             }else {
                 //锁定和施毒术无极真气
-                if((count % 8)==0){
+                if((count % 10)==0){
                     sdHj(region,1);
                 }
                 //检查药品捡装备
@@ -103,7 +103,7 @@ public class SikDaGuai {
     //锁定施毒术 type = 0需要激活，1不需要
     public static Match sdHj(Region region,int type)throws Exception{
         System.out.println("锁定施毒术执行！！！！");
-        int xzCount = 0;
+        int xzCount = 1;
         Match match = null;
         Match sdMatch = null;
         while (null == sdMatch){
@@ -127,7 +127,7 @@ public class SikDaGuai {
                     }
                 }
             }
-            if((xzCount%3)==0){
+            if((xzCount%5)==0){
                 match.setY(match.getY()-30);
             }else {
                 match.setY(match.getY()+80);
