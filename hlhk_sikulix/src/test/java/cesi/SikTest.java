@@ -13,10 +13,59 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
+        Match matchyd;
+        if(true){
+            //右下
+            matchyd= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+            matchyd.setY(matchyd.getY()-100);
+            matchyd.setX(matchyd.getX()+400);
+            matchyd.rightClick();
+            Thread.sleep(600);
+            matchyd.rightClick();
+            Thread.sleep(600);
+            matchyd.rightClick();
+            Thread.sleep(300);
+            matchyd.rightClick();
+            Thread.sleep(300);
+            //寻找教主
+            //anyList = region.findAnyList(CurrencyData.jzList());
+            Thread.sleep(1000);
+            if(true){
+                //左上
+                matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                matchyd.setY(matchyd.getY()-500);
+                matchyd.setX(matchyd.getX()-80);
+                matchyd.rightClick();
+                Thread.sleep(600);
+                matchyd.rightClick();
+                Thread.sleep(600);
+                matchyd.rightClick();
+                Thread.sleep(300);
+                matchyd.rightClick();
+                Thread.sleep(300);
+                matchyd.rightClick();
+                Thread.sleep(600);
+                matchyd.rightClick();
+                Thread.sleep(600);
+                matchyd.rightClick();
+                Thread.sleep(300);
+                matchyd.rightClick();
+                Thread.sleep(300);
+                matchyd.rightClick();
+                Thread.sleep(600);
+                matchyd.rightClick();
+                Thread.sleep(300);
+                matchyd.rightClick();
+                Thread.sleep(300);
+            }
+        }
+
+
+
 
         //寻找商铺
-        Match match = region.wait("D:/software/sikulix/image/pu.PNG",1);
-        match.hover();
+      /*  Match match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+        match.hover();*/
 
 
         /*Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);

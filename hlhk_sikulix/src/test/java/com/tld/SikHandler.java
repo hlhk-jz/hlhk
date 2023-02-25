@@ -37,10 +37,11 @@ public class SikHandler {
             anyList = region.findAnyList(CurrencyData.jzList());
             Thread.sleep(1000);
             if(anyList.isEmpty()){
+                Match matchyd;
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
-                if(null != yd && (n%2)==0){
+                if(null != yd){
                     //右下
-                    Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                    matchyd= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                     matchyd.setY(matchyd.getY()-100);
                     matchyd.setX(matchyd.getX()+400);
                     matchyd.rightClick();
@@ -51,20 +52,35 @@ public class SikHandler {
                     Thread.sleep(300);
                     matchyd.rightClick();
                     Thread.sleep(300);
-                }
-                if(null != yd && (n%2)!=0){
-                    //左上
-                    Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                    matchyd.setY(matchyd.getY()-500);
-                    matchyd.setX(matchyd.getX()-80);
-                    matchyd.rightClick();
-                    Thread.sleep(600);
-                    matchyd.rightClick();
-                    Thread.sleep(600);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
+                    //寻找教主
+                    anyList = region.findAnyList(CurrencyData.jzList());
+                    Thread.sleep(1000);
+                    if(anyList.isEmpty()){
+                        //左上
+                        matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                        matchyd.setY(matchyd.getY()-500);
+                        matchyd.setX(matchyd.getX()-80);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                    }
                 }
             }
             //寻找教主
