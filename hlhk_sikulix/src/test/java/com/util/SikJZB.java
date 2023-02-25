@@ -49,13 +49,23 @@ public class SikJZB {
                     }else {
                         location.click();
                     }
-                    if((start%2)==0){
-                        location.setY(location.getY()+100);
-                    }else {
-                        location.setY(location.getY()-100);
+                    if((start%6)==0){
+                        bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+                        bgMathc.setY(bgMathc.getY()-100);
+                        Thread.sleep(300);
+                        bgMathc.hover();
+                        Thread.sleep(300);
+                        //守护
+                        jzbRegion.type(Key.F4);
+                        jzbRegion.type(Key.F4);
+                        bgMathc.setY(bgMathc.getY()-300);
+                        Thread.sleep(300);
+                        bgMathc.hover();
+                        Thread.sleep(300);
+                        //守护
+                        jzbRegion.type(Key.F4);
+                        jzbRegion.type(Key.F4);
                     }
-                    location.hover();
-                    jzbRegion.type(Key.F4);
                     Thread.sleep(300);
                     matchs = jzbRegion.wait(matchs.getImage(),0.5);
                     start ++;

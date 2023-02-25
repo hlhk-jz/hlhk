@@ -11,14 +11,19 @@ import java.util.Iterator;
 public class SikTest {
 
     public static void main(String[] args)throws Exception{
-        Region region = new Region(191, 629,647,173);
+        Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        bgMathc.setY(bgMathc.getY()-300);
+        Thread.sleep(300);
+        bgMathc.hover();
+
+
+
+
+       /* Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
         matchyd.setY(matchyd.getY()-377);
-        matchyd.hover();
-
-
-
+        matchyd.hover();*/
        /* boolean isTrue = true;
         Settings.MinSimilarity=0.99;
         Match wait = region.wait("D:/software/sikulix/image/youxia.PNG", 0.5);

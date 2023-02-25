@@ -16,7 +16,6 @@ public class SikDaGuai {
     //道法
     public static void daGuai(Region region )throws Exception{
         int count = 0;
-        int xzCount = 0;
         //检查宝宝是否在线
         BaoBao.baobao(region);
         Region bsdReg = new Region(139,609,728,264);
@@ -77,12 +76,12 @@ public class SikDaGuai {
                 matchyd.setX(matchyd.getX()+400);
                 matchyd.rightClick();
                 //如果找不到教主了一直寻找
-                match = region.wait(CurrencyData.tldJZ,1);
+                match = region.wait(CurrencyData.tldJZ,3);
                 if(null == match){
                     matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                     matchyd.setY(matchyd.getY()-377);
                     matchyd.rightClick();
-                    match = region.wait(CurrencyData.tldJZ,1);
+                    match = region.wait(CurrencyData.tldJZ,3);
                 }
             }
         }
