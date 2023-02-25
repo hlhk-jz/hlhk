@@ -1,6 +1,8 @@
-package com;
+package com.util;
 
 import com.google.common.collect.Iterators;
+import com.tld.ATuLongDianStart;
+import com.xinshou.XinShouDianStart;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
@@ -29,45 +31,41 @@ public class SuiJiShi {
         if(null == match){
             match = region.wait("D:/software/sikulix/image/sxbg2.PNG", 1);
         }
-        if(null != match){
-            match.click();
-        }
+        match.click();
         //查看随机石总数
         Thread.sleep(500);
+
         Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou4.PNG");
-        if(null == all){
+        Thread.sleep(1000);
+        if(null == all && Iterators.size(all) < 4){
             all = region.findAll("D:/software/sikulix/tulongdian/shitou.PNG");
         }
-        Thread.sleep(1000);
+        Thread.sleep(500);
         int size = Iterators.size(all);
-        if(size < 4){
-            //防止没检查出来，再次查询
-            all = region.findAll("D:/software/sikulix/tulongdian/shitou.PNG");
-            if(Iterators.size(all) < 4){
-                //如果随机石小于指定数量就在商城买点
-                //如果没有随机石，在商城买，寻找商铺
-                match = region.wait("D:/software/sikulix/image/pu.PNG", 2);
+        if(size < 3){
+            //如果随机石小于指定数量就在商城买点
+            //如果没有随机石，在商城买，寻找商铺
+            match = region.wait("D:/software/sikulix/image/pu.PNG", 2);
+            match.click();
+            //寻找补给
+            match = region.wait("D:/software/sikulix/image/bj.PNG", 2);
+            if (null == match){
+                match = region.wait("D:/software/sikulix/image/bj2.PNG", 2);
+            }
+            match.click();
+            //找石头
+            match = region.wait("D:/software/sikulix/image/mst.PNG", 2);
+            match.click();
+            //找购买按键
+            match = region.wait("D:/software/sikulix/image/gm.PNG", 2);
+            match.click();
+            //确定
+            match = region.wait("D:/software/sikulix/image/qd.PNG", 2);
+            match.click();
+            //关闭商铺栏
+            match = region.wait("D:/software/sikulix/image/gbspl.PNG", 2);
+            if(null != match){
                 match.click();
-                //寻找补给
-                match = region.wait("D:/software/sikulix/image/bj.PNG", 2);
-                if (null == match){
-                    match = region.wait("D:/software/sikulix/image/bj2.PNG", 2);
-                }
-                match.click();
-                //找石头
-                match = region.wait("D:/software/sikulix/image/mst.PNG", 2);
-                match.click();
-                //找购买按键
-                match = region.wait("D:/software/sikulix/image/gm.PNG", 2);
-                match.click();
-                //确定
-                match = region.wait("D:/software/sikulix/image/qd.PNG", 2);
-                match.click();
-                //关闭商铺栏
-                match = region.wait("D:/software/sikulix/image/gbspl.PNG", 2);
-                if(null != match){
-                    match.click();
-                }
             }
         }
         //关闭物品栏
@@ -128,7 +126,7 @@ public class SuiJiShi {
     }
 
     //判断是否在土城
-    public static void isTuCheng(Region region)throws Exception{
+    public static void isTuCheng(Region region,int type)throws Exception{
         Settings.MinSimilarity=0.9;
         region.setX(0);
         region.setY(601);
@@ -141,7 +139,14 @@ public class SuiJiShi {
         region.setW(1000);
         region.setH(800);
         if(null != wait){
-            ATuLongDianStart.tld(region);
+            if(type == 0 ){
+                //新手
+                XinShouDianStart.xinshou(region);
+            }
+            if(type == 1){
+                //屠龙殿
+                ATuLongDianStart.tld(region);
+            }
         }
     }
 }

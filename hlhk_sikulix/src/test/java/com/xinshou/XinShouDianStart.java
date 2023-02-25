@@ -1,14 +1,17 @@
-package com;
+package com.xinshou;
+import com.util.CurrencyData;
+import com.util.SuiJiShi;
+import com.tld.SikHandler;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
 //屠龙殿
-public class ATuLongDianStart {
+public class XinShouDianStart {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1000,800);
         region.setThrowException(false);
         try {
-            tld(region);
+            xinshou(region);
         } catch (Exception e) {
             e.printStackTrace();
             region.setX(659);
@@ -31,44 +34,42 @@ public class ATuLongDianStart {
                 wait = region.wait("D:/software/sikulix/image/qdjr.PNG", 0.8);
                 wait.click();
                 Thread.sleep(2000);
-                tld(region);
+                xinshou(region);
             }
         }
     }
 
-    public static void tld(Region region)throws Exception{
+    public static void xinshou(Region region)throws Exception{
         Match match = null;
-        //寻找屠龙殿NPC
-        match = region.wait(CurrencyData.tldNpc,1);
+        //寻找新手福利NPC
+        match = region.wait(CurrencyData.xsNPC,1);
         int x = 1;
         while (null == match){
             if((x%5)==0){
                 SuiJiShi.isHcs(region);
             }
-            //寻找界面下面菜单，调整鼠标位置人物左边移动
-            match = region.find("D:/software/sikulix/tulongdian/tldyd.PNG");
-            Thread.sleep(500);
-            match.setY(match.getY()-350);
+            //寻找界面下面菜单，调整鼠标位置人物向下边移动
+            match = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+            match.setY(match.getY()-150);
+            match.setX(match.getX()+160);
             match.hover();
-            Thread.sleep(500);
+            Thread.sleep(300);
             match.rightClick();
-            Thread.sleep(500);
+            Thread.sleep(300);
             match.rightClick();
-            match = region.wait("D:/software/sikulix/tulongdian/tld.PNG",1);
+            Thread.sleep(300);
+            match.rightClick();
+            match = region.wait(CurrencyData.xsNPC,1);
             x++;
         }
         match.click();
+
         //寻找进入
-        match = region.find("D:/software/sikulix/tulongdian/tldb.PNG");
-        Thread.sleep(600);
+        match = region.wait("D:/software/sikulix/image/ru.PNG",2);
         if(null == match){
-            match = region.find("D:/software/sikulix/tulongdian/tldb.PNG");
+            match = region.wait("D:/software/sikulix/image/ru.PNG",2);
         }
-        if(null == match){
-            tld(region);
-        }
-        //我要进入
         match.click();
-        SikHandler.show(region);
+        XSHandler.show(region);
     }
 }

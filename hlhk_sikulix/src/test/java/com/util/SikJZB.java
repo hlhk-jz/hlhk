@@ -1,4 +1,4 @@
-package com;
+package com.util;
 import org.sikuli.script.*;
 
 import java.util.ArrayList;

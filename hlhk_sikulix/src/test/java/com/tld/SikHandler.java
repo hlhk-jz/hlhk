@@ -1,4 +1,5 @@
-package com;
+package com.tld;
+import com.util.*;
 import org.sikuli.script.*;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class SikHandler {
 
         //如果是在土城，就找新手打宝/屠龙殿地图
         Thread.sleep(500);
-        SuiJiShi.isTuCheng(region);
+        SuiJiShi.isTuCheng(region,1);
 
         count ++;
 
@@ -72,7 +73,7 @@ public class SikHandler {
             }
             //查看是否在土城
             if((n%5)==0){
-               SuiJiShi.isTuCheng(region);
+               SuiJiShi.isTuCheng(region,1);
             }
             if(n > 40){
                 //随机40次没有怪后，调用随机石方法

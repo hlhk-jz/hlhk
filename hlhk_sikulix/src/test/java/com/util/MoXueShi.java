@@ -1,4 +1,4 @@
-package com;
+package com.util;
 
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;

@@ -1,4 +1,4 @@
-package com;
+package com.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +14,8 @@ public class CurrencyData {
     public static String bsd = "D:/software/sikulix/image/bsd.PNG";
     //屠龙殿NPC
     public static String tldNpc = "D:/software/sikulix/tulongdian/tld.PNG";
+    //新手福利
+    public static String xsNPC = "D:/software/sikulix/image/fuli.PNG";
     //土城NPC
     public static String tcNpc = "D:/software/sikulix/image/tc.PNG";
     //装备栏随机石
