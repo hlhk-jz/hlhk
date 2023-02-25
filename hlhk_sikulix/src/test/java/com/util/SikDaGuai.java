@@ -60,21 +60,21 @@ public class SikDaGuai {
                 region.type(Key.F3);
             }
             count++;
-            match = region.wait(CurrencyData.tldJZ,3);
+            match = region.wait(CurrencyData.tldJZ,2);
             //防止人物重叠怪识别不出来再次查询
             if(null == match){
                 Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                 matchyd.setY(matchyd.getY()-377);
                 matchyd.setX(matchyd.getX()+400);
                 matchyd.rightClick();
-                match = region.wait(CurrencyData.tldJZ,3);
+                match = region.wait(CurrencyData.tldJZ,2);
                 if(null == match){
                     //跟随寻找教主
                     region.type(Key.F1);
                     matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                     matchyd.setY(matchyd.getY()-377);
                     matchyd.rightClick();
-                    match = region.wait(CurrencyData.tldJZ,5);
+                    match = region.wait(CurrencyData.tldJZ,3);
                 }
             }
         }
@@ -102,6 +102,7 @@ public class SikDaGuai {
 
     //锁定施毒术 type = 0需要激活，1不需要
     public static Match sdHj(Region region,int type)throws Exception{
+        System.out.println("锁定施毒术执行！！！！");
         int xzCount = 0;
         Match match = null;
         Match sdMatch = null;
@@ -121,6 +122,7 @@ public class SikDaGuai {
                     matchyd.rightClick();
                     match = region.wait(CurrencyData.tldJZ,1);
                     if(null == match){
+                        System.out.println("锁定施毒教主为空~~~~~~~");
                         break;
                     }
                 }
@@ -142,6 +144,7 @@ public class SikDaGuai {
             sdMatch = region.wait(CurrencyData.ztsd,0.5);
         }
         if(null != match){
+            System.out.println("施毒执行。。。。。");
             //释放施毒术
             region.type(Key.F6);
             Thread.sleep(1000);
