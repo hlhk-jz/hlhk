@@ -32,10 +32,18 @@ public class SikDaGuai {
             //第一次，必须激活教主并且锁定成功
             if(0 == count){
                 while (null == sdMatch){
-                    //如果找不到教主了一直寻找
-                    match = region.wait(CurrencyData.tldJZ,0.5);
-                    while (null == match){
-                        match = region.wait(CurrencyData.tldJZ,0.5);
+                    //寻找教主
+                    match = region.wait(CurrencyData.tldJZ,5);
+                    if(null == match){
+                        Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                        matchyd.setY(matchyd.getY()-377);
+                        matchyd.setX(matchyd.getX()+400);
+                        matchyd.rightClick();
+                        //如果找不到教主了一直寻找
+                        match = region.wait(CurrencyData.tldJZ,1);
+                        if(null == match){
+                            TuiChu.tuiChu(region);
+                        }
                     }
                     if((xzCount%2)==0){
                         match.setY(match.getY()-30);

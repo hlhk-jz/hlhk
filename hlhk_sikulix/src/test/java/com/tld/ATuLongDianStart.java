@@ -1,6 +1,7 @@
 package com.tld;
 import com.util.CurrencyData;
 import com.util.SuiJiShi;
+import com.util.TuiChu;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
@@ -13,28 +14,7 @@ public class ATuLongDianStart {
             tld(region);
         } catch (Exception e) {
             e.printStackTrace();
-            region.setX(659);
-            region.setY(561);
-            region.setW(255);
-            region.setH(181);
-            Match wait = region.wait("D:/software/sikulix/image/out.PNG", 0.8);
-            region.setX(0);
-            region.setY(0);
-            region.setW(1200);
-            region.setH(800);
-            if(null != wait){
-                wait.click();
-                wait = region.wait("D:/software/sikulix/image/qdtc.PNG", 0.8);
-                wait.click();
-                Thread.sleep(5000);
-                wait = region.wait("D:/software/sikulix/image/ksjr.PNG", 0.8);
-                wait.click();
-                Thread.sleep(5000);
-                wait = region.wait("D:/software/sikulix/image/qdjr.PNG", 0.8);
-                wait.click();
-                Thread.sleep(2000);
-                tld(region);
-            }
+            TuiChu.tuiChu(region);
         }
     }
 
