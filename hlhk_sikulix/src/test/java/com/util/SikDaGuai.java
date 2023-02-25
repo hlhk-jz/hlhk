@@ -42,6 +42,7 @@ public class SikDaGuai {
                     }else {
                         match.setY(match.getY()+80);
                     }
+                    xzCount++;
                     match.hover();
                     //锁定
                     region.type(Key.F2);
@@ -53,21 +54,23 @@ public class SikDaGuai {
             }else {
                 //左键鼠标悬浮
                 match.setY(match.getY()+80);
-                match.hover();
                 //施毒术
                 if((count % 8)==0 || count == 1){
+                    match.click();
                     //释放施毒术
                     region.type(Key.F6);
                     Thread.sleep(2000);
                     //查看是否被锁定
-                    bsd(bsdReg);
+                    bsd(region);
                     //释放施毒术
                     region.type(Key.F6);
                     Thread.sleep(2000);
                     //查看是否被锁定
-                    bsd(bsdReg);
+                    bsd(region);
                     //无极真气
                     region.type(Key.F5);
+                }else {
+                    match.hover();
                 }
                 //锁定
                 region.type(Key.F2);
@@ -93,7 +96,7 @@ public class SikDaGuai {
                 //合击
                 region.type(Key.F3);
                 //查看是否被锁定
-                bsd(bsdReg);
+                bsd(region);
                 //右键跟随教主
                 if((count % 2)==0){
                     match.setX(match.getX()+30);
@@ -107,6 +110,7 @@ public class SikDaGuai {
             count++;
         }
     }
+
 
     private static void bsd(Region region) {
         Settings.MinSimilarity=0.85;

@@ -14,7 +14,27 @@ public class SikTest {
         Region region = new Region(191, 629,647,173);
         region.setThrowException(false);
 
-
+        boolean isTrue = true;
+        Settings.MinSimilarity=0.99;
+        Match wait = region.wait("D:/software/sikulix/image/youxia.PNG", 0.5);
+        if(null != wait){
+            System.out.println("右下");
+            isTrue = false;
+        }
+        if(isTrue){
+            wait = region.wait("D:/software/sikulix/image/zuoshang.PNG", 0.5);
+            if(null != wait){
+                System.out.println("左上");
+                isTrue = false;
+            }
+        }
+        if(isTrue){
+            wait = region.wait("D:/software/sikulix/image/zuoxia.PNG", 0.5);
+            if(null != wait){
+                System.out.println("左下");
+                isTrue = false;
+            }
+        }
 
 
 
