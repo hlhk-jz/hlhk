@@ -96,7 +96,7 @@ public class XSHandler {
 
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         System.out.println("调用打怪开始！！！！！！");
-        SikDaGuai.daGuai(region);
+        //SikDaGuai.daGuai(region);
         System.out.println("调用打怪结束~~~~~~~~~~~");
 
         //8. 打完怪捡装备,防止漏捡，调用多次

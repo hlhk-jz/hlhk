@@ -20,6 +20,8 @@ public class SikYaoPin {
     }*/
 
     public static void bbYaoPin(Region region)throws Exception {
+        region.setW(1200);
+        region.setH(1000);
         //寻找宝宝包裹
         Match match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
         match.click();

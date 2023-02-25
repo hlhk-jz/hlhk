@@ -13,13 +13,16 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+
+        //寻找商铺
+        Match match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+        match.hover();
+
+
+        /*Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         bgMathc.setY(bgMathc.getY()-300);
         Thread.sleep(300);
-        bgMathc.hover();
-
-
-
+        bgMathc.hover();*/
 
        /* Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
         matchyd.setY(matchyd.getY()-377);

@@ -1,6 +1,8 @@
 package com.tld;
 import com.util.*;
 import org.sikuli.script.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class SikHandler {
@@ -23,6 +25,7 @@ public class SikHandler {
         }
 
         //6. 寻找教主
+        List<Match> anyList = new ArrayList<>();
         Match yd = null;
         int n = 1;
         while (true){
@@ -31,7 +34,7 @@ public class SikHandler {
             match2.doubleClick();
             Thread.sleep(500);
             //寻找教主
-            List<Match> anyList = region.findAnyList(CurrencyData.jzList());
+            anyList = region.findAnyList(CurrencyData.jzList());
             Thread.sleep(1000);
             if(anyList.isEmpty()){
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
@@ -93,6 +96,11 @@ public class SikHandler {
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         System.out.println("调用打怪开始！！！！！！");
         SikDaGuai.daGuai(region);
+        anyList = region.findAnyList(CurrencyData.jzList());
+        Thread.sleep(1000);
+        if(!anyList.isEmpty()){
+            SikDaGuai.daGuai(region);
+        }
         System.out.println("调用打怪结束~~~~~~~~~~~");
 
         //8. 打完怪捡装备,防止漏捡，调用多次
