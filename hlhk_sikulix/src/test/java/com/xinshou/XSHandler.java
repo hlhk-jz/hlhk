@@ -109,7 +109,7 @@ public class XSHandler {
         //9. 回收
         if((count%4)==0){
             System.out.println("回收装备开始！！！！count："+count);
-            SikHS.jzb(region);
+            //SikHS.jzb(region);
             System.out.println("回收装备结束~~~~~~~~");
         }
         //10. 检查药品,主号和宝宝

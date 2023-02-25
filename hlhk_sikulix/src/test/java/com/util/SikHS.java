@@ -3,7 +3,7 @@ import org.sikuli.script.*;
 
 //回收装备
 public class SikHS {
-    /*public static void main(String[] args){
+    public static void main(String[] args){
         try {
             Region region = new Region(0, 0,1200,800);
             region.setThrowException(false);
@@ -11,7 +11,7 @@ public class SikHS {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     public static void jzb(Region region)throws Exception{
         Match match = region.wait("D:/software/sikulix/image/hs1.PNG",1);
@@ -44,7 +44,15 @@ public class SikHS {
         if(null != match){
             match.click();
         }else {
+            region.setX(0);
+            region.setY(0);
+            region.setW(496);
+            region.setH(276);
             jzbData(region);
+            region.setX(0);
+            region.setY(0);
+            region.setW(1200);
+            region.setH(800);
         }
     }
 
@@ -243,8 +251,7 @@ public class SikHS {
 
         if(isTrue){
             //如果一直没有符合的，点击刷新
-            //异常后点刷新
-            match = region.find("D:/software/sikulix/huishou/kqs.PNG");
+            match = region.find("D:/software/sikulix/huishou/sxsx.PNG");
             Thread.sleep(500);
             match.click();
             jzbData(region);
