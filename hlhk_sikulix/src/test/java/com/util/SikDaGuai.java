@@ -59,9 +59,18 @@ public class SikDaGuai {
                     //寻找英雄锁定
                     sdMatch = region.wait(CurrencyData.ztsd,0.5);
                 }
+                //释放施毒术
+                region.type(Key.F6);
+                Thread.sleep(2000);
+                //查看是否被锁定
+                bsd(region);
+                //释放施毒术
+                region.type(Key.F6);
+                Thread.sleep(2000);
             }else {
                 //左键鼠标悬浮
                 match.setY(match.getY()+80);
+                match.hover();
                 //施毒术
                 if((count % 8)==0 || count == 1){
                     match.click();
@@ -77,8 +86,6 @@ public class SikDaGuai {
                     bsd(region);
                     //无极真气
                     region.type(Key.F5);
-                }else {
-                    match.hover();
                 }
                 //锁定
                 region.type(Key.F2);
@@ -113,9 +120,9 @@ public class SikDaGuai {
                     match.setX(match.getX()-30);
                     match.rightClick();
                 }
-                match = region.wait(CurrencyData.tldJZ,10);
             }
             count++;
+            match = region.wait(CurrencyData.tldJZ,10);
         }
     }
 
