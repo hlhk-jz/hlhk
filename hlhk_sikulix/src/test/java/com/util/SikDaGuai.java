@@ -7,11 +7,11 @@ import java.util.List;
 //打怪
 public class SikDaGuai {
 
-   /* public static void main(String[] args)throws Exception{
+    public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         daGuai(region);
-    }*/
+    }
 
     //道法
     public static void daGuai(Region region )throws Exception{
@@ -24,21 +24,19 @@ public class SikDaGuai {
         if(null == match){
             match = region.wait(CurrencyData.xsJZ,0.5);
         }
-        System.out.println("打怪查询："+match);
         //如果教主不为空一直循环打
         while (null != match){
             //第一次，必须激活教主并且锁定成功
+            match.rightClick();
             if(0 == count){
                 sdHj(region,0);
             }else {
                 //锁定和施毒术无极真气
-                if((count % 7)==0){
-                    match = sdHj(region,1);
+                if((count % 8)==0){
+                    sdHj(region,1);
                 }
-                //嗜血术
-                region.type(Key.F7);
                 //检查药品捡装备
-                if((count % 20)==0){
+                if((count % 30)==0){
                     System.out.println("打怪期间检查药品和捡装备");
                     region.type(Key.F12);
                     SikJZB.pickup();
@@ -53,20 +51,13 @@ public class SikDaGuai {
                             Thread.sleep(500);
                         }
                     }
-                    match = region.wait(CurrencyData.tldJZ,1);
                 }
+                //嗜血术
+                Thread.sleep(500);
+                region.type(Key.F7);
+                Thread.sleep(800);
                 //合击
                 region.type(Key.F3);
-                //查看是否被锁定
-                bsd(region);
-                //右键跟随教主
-                if((count % 2)==0){
-                    match.setX(match.getX()+50);
-                    match.rightClick();
-                }else {
-                    match.setX(match.getX()-50);
-                    match.rightClick();
-                }
             }
             count++;
             match = region.wait(CurrencyData.tldJZ,3);
@@ -78,10 +69,12 @@ public class SikDaGuai {
                 matchyd.rightClick();
                 match = region.wait(CurrencyData.tldJZ,3);
                 if(null == match){
+                    //跟随寻找教主
+                    region.type(Key.F1);
                     matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                     matchyd.setY(matchyd.getY()-377);
                     matchyd.rightClick();
-                    match = region.wait(CurrencyData.tldJZ,3);
+                    match = region.wait(CurrencyData.tldJZ,5);
                 }
             }
         }
@@ -141,30 +134,29 @@ public class SikDaGuai {
             match.hover();
             //锁定
             region.type(Key.F2);
+            region.type(Key.F2);
+            Thread.sleep(300);
             //右键激活教主
-            if(type == 0){
-                match.rightClick();
-            }
+            match.rightClick();
             //寻找英雄锁定
             sdMatch = region.wait(CurrencyData.ztsd,0.5);
         }
         if(null != match){
             //释放施毒术
             region.type(Key.F6);
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             //查看是否被锁定
             bsd(region);
             //释放施毒术
             region.type(Key.F6);
-            Thread.sleep(2000);
+            Thread.sleep(1500);
             //查看是否被锁定
             bsd(region);
             //释放施毒术
             region.type(Key.F6);
-            Thread.sleep(2000);
+            Thread.sleep(1500);
             //无极真气
             region.type(Key.F5);
-            match = region.wait(CurrencyData.tldJZ,1);
         }
         return match;
     }
