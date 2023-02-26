@@ -1,4 +1,5 @@
 package com.tld;
+import com.util.ChunShi;
 import com.util.CurrencyData;
 import com.util.SuiJiShi;
 import com.util.TuiChu;
@@ -11,6 +12,8 @@ public class ATuLongDianStart {
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
         try {
+            //将F12移动到聊天栏
+            ChunShi.yd(region);
             tld(region);
         } catch (Exception e) {
             e.printStackTrace();

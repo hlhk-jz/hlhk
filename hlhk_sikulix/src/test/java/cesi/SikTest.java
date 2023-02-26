@@ -4,6 +4,8 @@ import com.util.CurrencyData;
 import com.xinshou.XSHandler;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
+import org.sikuli.script.Button;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
@@ -13,26 +15,20 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        Match match;
-        if(true){
+
+      /*  if(true){
             Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
             matchyd.setY(matchyd.getY()-150);
             matchyd.setX(matchyd.getX()+180);
             matchyd.hover();
-           /* if(true){
+           *//* if(true){
                 //跟随寻找教主
                 region.type(Key.F1);
                 matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                 matchyd.setY(matchyd.getY()-377);
                 matchyd.rightClick();
-            }*/
-        }
-
-
-
-
-
-
+            }*//*
+        }*/
 
         /*Match matchyd;
         if(true){
@@ -172,19 +168,28 @@ public class SikTest {
         if(null != match){
             match.hover();
         }*/
+        Match xiasss = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 2);
+        xiasss.setY(xiasss.getY()-50);
+        xiasss.click();
+        region.type(Key.F12);
+
 
       //移动文件到指定位置
-       /* Match match = region.wait("D:/sikuliximage/yidong.png", 2);
+        Match match = region.wait("D:/software/sikulix/yd/f12.png", 5);
         match.hover();
         Thread.sleep(500);
         //按下左键
         region.mouseDown(Button.LEFT);
-        Location location = new Location(200, 200);
+
+        Match xia = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 2);
+        Location location = xia.getTarget();
+        location.setX(location.getX()+220);
+        location.setY(location.getY()+30);
         //将鼠标指针移动到指定位置
         region.mouseMove(location);
         Thread.sleep(500);
         //松开左键
-        region.mouseUp(Button.LEFT);*/
+        region.mouseUp(Button.LEFT);
     }
 
 
