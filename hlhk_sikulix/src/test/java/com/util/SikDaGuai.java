@@ -71,20 +71,20 @@ public class SikDaGuai {
                 match = region.wait(CurrencyData.tldJZ,2);
                 if(null == match){
                     //跟随寻找教主
-                    region.type(Key.F1);
+                    region.type(Key.F4);
                     matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                     matchyd.setY(matchyd.getY()-377);
                     matchyd.rightClick();
-                    match = region.wait(CurrencyData.tldJZ,3);
-                    region.type(Key.F4);
+                    match = region.wait(CurrencyData.tldJZ,4);
                     if(null == match){
+                        region.type(Key.F1);
                         matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                         matchyd.setY(matchyd.getY()-150);
                         matchyd.setX(matchyd.getX()+180);
                         matchyd.rightClick();
                         Thread.sleep(300);
-                        matchyd.rightClick();
                         region.type(Key.F4);
+                        match = region.wait(CurrencyData.tldJZ,3);
                     }
                 }
             }
