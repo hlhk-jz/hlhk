@@ -172,12 +172,9 @@ public class SikDaGuai {
 
             match = region.wait(CurrencyData.tldJZ,1);
             if(null != match){
+                match.setY(match.getY()+75);
                 match.hover();
-                //释放施毒术
-                region.type(Key.F6);
-                Thread.sleep(1000);
-                //查看是否被锁定
-                bsd(region);
+                Thread.sleep(300);
                 //释放施毒术
                 region.type(Key.F6);
                 Thread.sleep(1500);
