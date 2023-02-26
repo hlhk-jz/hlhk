@@ -76,6 +76,9 @@ public class SikYaoPin {
             match.click();
             //主号包裹中大药
             match = region.wait("D:/software/sikulix/image/zhdy.PNG", 1);
+            if(null == match){
+                match = region.wait("D:/software/sikulix/image/zhdy.PNG", 2);
+            }
             match.rightClick();
             Thread.sleep(500);
             //关闭包裹
