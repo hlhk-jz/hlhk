@@ -106,12 +106,13 @@ public class SikJZB {
         initList.add("D:/software/sikulix/zhuangbei/nh.PNG");
         //黄金
         initList.add("D:/software/sikulix/zhuangbei/hj.PNG");
-        //词金
+        //赤金
         initList.add("D:/software/sikulix/zhuangbei/cj.PNG");
         //霸者之刃
         initList.add("D:/software/sikulix/zhuangbei/bzzr.PNG");
         //奉天
         initList.add("D:/software/sikulix/zhuangbei/ft.PNG");
+        initList.add("D:/software/sikulix/zhuangbei/ft1.PNG");
         //狂战
         initList.add("D:/software/sikulix/zhuangbei/kz3.PNG");
         //强化
