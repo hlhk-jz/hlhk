@@ -29,11 +29,11 @@ public class SikDaGuai {
             //第一次，必须激活教主并且锁定成功
             match.rightClick();
             if(0 == count){
-                sdHj(region,0);
+                sdHj(region);
             }else {
                 //锁定和施毒术无极真气
                 if((count % 10)==0){
-                    sdHj(region,1);
+                    sdHj(region);
                 }
                 //检查药品捡装备
                 if((count % 30)==0){
@@ -112,12 +112,17 @@ public class SikDaGuai {
     }
 
     //锁定施毒术 type = 0需要激活，1不需要
-    public static Match sdHj(Region region,int type)throws Exception{
+    public static Match sdHj(Region region)throws Exception{
         System.out.println("锁定施毒术执行！！！！");
         int xzCount = 1;
+        int sdCount = 1;
         Match match = null;
         Match sdMatch = null;
         while (null == sdMatch){
+            if(sdCount > 15){
+                System.out.println("锁定施毒术执行大于15，结束循环！！！！");
+                break;
+            }
             //寻找教主
             match = region.wait(CurrencyData.tldJZ,5);
             if(null == match){
@@ -125,7 +130,6 @@ public class SikDaGuai {
                 matchyd.setY(matchyd.getY()-377);
                 matchyd.setX(matchyd.getX()+400);
                 matchyd.rightClick();
-                //如果找不到教主了一直寻找
                 match = region.wait(CurrencyData.tldJZ,1);
                 if(null == match){
                     matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
@@ -153,6 +157,7 @@ public class SikDaGuai {
             match.rightClick();
             //寻找英雄锁定
             sdMatch = region.wait(CurrencyData.ztsd,0.5);
+            sdCount++;
         }
         if(null != match){
             System.out.println("施毒执行。。。。。");
