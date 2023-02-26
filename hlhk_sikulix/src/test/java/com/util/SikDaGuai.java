@@ -169,6 +169,25 @@ public class SikDaGuai {
             //释放施毒术
             region.type(Key.F6);
             Thread.sleep(1500);
+
+            match = region.wait(CurrencyData.tldJZ,1);
+            if(null != match){
+                match.hover();
+                //释放施毒术
+                region.type(Key.F6);
+                Thread.sleep(1000);
+                //查看是否被锁定
+                bsd(region);
+                //释放施毒术
+                region.type(Key.F6);
+                Thread.sleep(1500);
+                //查看是否被锁定
+                bsd(region);
+                //释放施毒术
+                region.type(Key.F6);
+                Thread.sleep(1500);
+            }
+
             //无极真气
             region.type(Key.F5);
         }
