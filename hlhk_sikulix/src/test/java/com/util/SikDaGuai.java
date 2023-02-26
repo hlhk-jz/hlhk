@@ -144,6 +144,8 @@ public class SikDaGuai {
             }
             if(xzCount!=5 && xzCount!=10){
                 match.setY(match.getY()+80);
+            }else {
+                match.setX(match.getX()-20);
             }
             xzCount++;
             //锁定
