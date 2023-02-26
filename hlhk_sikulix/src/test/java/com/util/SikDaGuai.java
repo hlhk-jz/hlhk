@@ -36,7 +36,7 @@ public class SikDaGuai {
                     sdHj(region);
                 }
                 //检查药品捡装备
-                if((count % 30)==0){
+                if((count % 15)==0){
                     System.out.println("打怪期间检查药品和捡装备");
                     region.type(Key.F12);
                     SikJZB.pickup();
