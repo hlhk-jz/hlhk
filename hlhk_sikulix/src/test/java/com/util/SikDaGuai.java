@@ -142,13 +142,10 @@ public class SikDaGuai {
                     }
                 }
             }
-            if((xzCount%5)==0){
-                match.setY(match.getY()-30);
-            }else {
+            if(xzCount!=5 && xzCount!=10){
                 match.setY(match.getY()+80);
             }
             xzCount++;
-            match.hover();
             //锁定
             region.type(Key.F2);
             region.type(Key.F2);
@@ -162,24 +159,13 @@ public class SikDaGuai {
         if(null != match){
             System.out.println("施毒执行。。。。。");
             //释放施毒术
-            region.type(Key.F6);
-            Thread.sleep(1000);
-            //查看是否被锁定
-            bsd(region);
-            //释放施毒术
-            region.type(Key.F6);
-            Thread.sleep(1500);
-            //查看是否被锁定
-            bsd(region);
-            //释放施毒术
-            region.type(Key.F6);
-            Thread.sleep(1500);
-
             match = region.wait(CurrencyData.tldJZ,1);
             if(null != match){
-                match.setY(match.getY()+75);
-                match.hover();
-                Thread.sleep(300);
+                match.setY(match.getY()+80);
+                region.type(Key.F6);
+                Thread.sleep(1000);
+                //查看是否被锁定
+                bsd(region);
                 //释放施毒术
                 region.type(Key.F6);
                 Thread.sleep(1500);
@@ -188,10 +174,9 @@ public class SikDaGuai {
                 //释放施毒术
                 region.type(Key.F6);
                 Thread.sleep(1500);
+                //无极真气
+                region.type(Key.F5);
             }
-
-            //无极真气
-            region.type(Key.F5);
         }
         return match;
     }
