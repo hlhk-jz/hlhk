@@ -75,6 +75,13 @@ public class SikDaGuai {
                     matchyd.setY(matchyd.getY()-377);
                     matchyd.rightClick();
                     match = region.wait(CurrencyData.tldJZ,3);
+                    if(null == match){
+                        matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                        matchyd.setY(matchyd.getY()-150);
+                        matchyd.setX(matchyd.getX()+180);
+                        matchyd.rightClick();
+                        matchyd.rightClick();
+                    }
                 }
             }
         }

@@ -13,7 +13,28 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        Match matchyd;
+        Match match;
+        if(true){
+            Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+            matchyd.setY(matchyd.getY()-150);
+            matchyd.setX(matchyd.getX()+180);
+            matchyd.hover();
+           /* if(true){
+                //跟随寻找教主
+                region.type(Key.F1);
+                matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                matchyd.setY(matchyd.getY()-377);
+                matchyd.rightClick();
+            }*/
+        }
+
+
+
+
+
+
+
+        /*Match matchyd;
         if(true){
             //右下
             matchyd= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
@@ -59,7 +80,7 @@ public class SikTest {
                 Thread.sleep(300);
             }
         }
-
+*/
 
 
 

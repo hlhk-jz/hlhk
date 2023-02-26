@@ -76,8 +76,6 @@ public class SikHandler {
                         Thread.sleep(300);
                         matchyd.rightClick();
                         Thread.sleep(300);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
                     }
                 }
             }

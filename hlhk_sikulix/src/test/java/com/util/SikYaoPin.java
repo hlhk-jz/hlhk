@@ -40,6 +40,17 @@ public class SikYaoPin {
         if(size < 2){
             //寻找商铺
             match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+            if(null == match){
+                region.setX(799);
+                region.setY(581);
+                region.setW(361);
+                region.setH(305);
+                match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+                region.setX(0);
+                region.setY(0);
+                region.setW(1200);
+                region.setH(800);
+            }
             match.click();
             //寻找装饰
             match = region.wait("D:/software/sikulix/image/yaopin3.PNG",1);
@@ -94,6 +105,17 @@ public class SikYaoPin {
                 if(null == match){
                     //寻找商铺
                     match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+                    if(null == match){
+                        region.setX(799);
+                        region.setY(581);
+                        region.setW(361);
+                        region.setH(305);
+                        match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+                        region.setX(0);
+                        region.setY(0);
+                        region.setW(1200);
+                        region.setH(800);
+                    }
                     match.click();
                     match = region.wait("D:/software/sikulix/image/yaopin3.PNG",1);
                     if(null == match){
