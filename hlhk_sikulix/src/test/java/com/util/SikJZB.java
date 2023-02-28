@@ -1,4 +1,5 @@
 package com.util;
+import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class SikJZB {
     public static void pickup()throws Exception{
         Region jzbRegion = new Region(60, 0,1200,800);
         jzbRegion.setThrowException(false);
+        Settings.MinSimilarity = 0.65;
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
         Match bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         bgMathc.setY(bgMathc.getY()-100);
@@ -73,6 +75,7 @@ public class SikJZB {
                 start = 1;
             }
         }
+        Settings.MinSimilarity = 0.7;
     }
 
     public static List<Object> initTargetListObj(){
@@ -113,6 +116,7 @@ public class SikJZB {
         //奉天
         initList.add("D:/software/sikulix/zhuangbei/ft.PNG");
         initList.add("D:/software/sikulix/zhuangbei/ft1.PNG");
+        initList.add("D:/software/sikulix/zhuangbei/ftmj.PNG");
         //狂战
         initList.add("D:/software/sikulix/zhuangbei/kz3.PNG");
         //强化
