@@ -1,7 +1,9 @@
 package cesi;
 import com.google.common.collect.Iterators;
+import com.tld.ATuLongDianStart;
 import com.util.CurrencyData;
 import com.xinshou.XSHandler;
+import com.xinshou.XinShouDianStart;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 import org.sikuli.script.Button;
@@ -15,13 +17,33 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(305, 504,438,217);
         region.setThrowException(false);
-        Match match = region.wait(CurrencyData.zblSjs,0.5);
+
+        Settings.MinSimilarity=0.9;
+        region.setX(0);
+        region.setY(601);
+        region.setW(168);
+        region.setH(244);
+        Match wait = region.wait("D:/software/sikulix/image/tldimg.PNG", 0.5);
+        Settings.MinSimilarity=0.7;
+        region.setX(0);
+        region.setY(0);
+        region.setW(1000);
+        region.setH(800);
+        if(null == wait){
+            System.out.println("没在屠龙殿！！！！！");
+        }else {
+            System.out.println("在屠龙殿");
+        }
+
+
+
+       /* Match match = region.wait(CurrencyData.zblSjs,0.5);
         if(null == match){
             match = region.wait(CurrencyData.zblSjs,0.5);
         }
         if(null != match){
             match.doubleClick();
-        }
+        }*/
      /*   Settings.MinSimilarity= 0.95;
         while (true){
             Match matchyd = region.wait("D:/software/sikulix/image/xl.PNG",1);
