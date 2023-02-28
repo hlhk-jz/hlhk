@@ -63,6 +63,9 @@ public class SikDaGuai {
             match = region.wait(CurrencyData.tldJZ,2);
             //防止人物重叠怪识别不出来再次查询
             if(null == match){
+                //关闭弹窗
+                SikJZB.gb(region);
+                Thread.sleep(500);
                 Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                 matchyd.setY(matchyd.getY()-377);
                 matchyd.setX(matchyd.getX()+400);

@@ -18,6 +18,7 @@ public class SikJZB {
         Settings.MinSimilarity = 0.65;
         //关闭弹窗
         gb(jzbRegion);
+        Thread.sleep(1000);
         jzbRegion.type(Key.F12);
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
         Match bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
@@ -73,6 +74,7 @@ public class SikJZB {
         }
         Settings.MinSimilarity = 0.7;
         //关闭弹窗
+        Thread.sleep(1000);
         SikJZB.gb(jzbRegion);
     }
 
