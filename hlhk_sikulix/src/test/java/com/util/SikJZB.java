@@ -9,7 +9,7 @@ public class SikJZB {
   /*  public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
-        pickup(region);
+        pickup();
     }*/
 
     public static void pickup()throws Exception{
