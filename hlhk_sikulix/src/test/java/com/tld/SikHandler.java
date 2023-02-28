@@ -10,9 +10,9 @@ public class SikHandler {
 
     public static void show(Region region)throws Exception {
 
-        //如果是在土城，就找新手打宝/屠龙殿地图
+        //如果是在屠龙殿地图
         Thread.sleep(500);
-        SuiJiShi.isTuCheng(region,1);
+        SuiJiShi.isTuLd(region,1);
 
         count ++;
 
@@ -86,9 +86,9 @@ public class SikHandler {
             if (!anyList.isEmpty()){
                 break;
             }
-            //查看是否在土城
+            //查看是否在屠龙殿
             if((n%5)==0){
-               SuiJiShi.isTuCheng(region,1);
+               SuiJiShi.isTuLd(region,1);
             }
             if(n > 40){
                 //随机40次没有怪后，调用随机石方法
