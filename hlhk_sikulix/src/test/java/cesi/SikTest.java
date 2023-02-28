@@ -13,8 +13,25 @@ import java.util.Iterator;
 public class SikTest {
 
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1200,800);
+        Region region = new Region(305, 504,438,217);
         region.setThrowException(false);
+        Match match = region.wait(CurrencyData.zblSjs,0.5);
+        if(null == match){
+            match = region.wait(CurrencyData.zblSjs,0.5);
+        }
+        if(null != match){
+            match.doubleClick();
+        }
+     /*   Settings.MinSimilarity= 0.95;
+        while (true){
+            Match matchyd = region.wait("D:/software/sikulix/image/xl.PNG",1);
+            if(null != matchyd){
+                System.out.println("血量！！！！！！"+System.currentTimeMillis());
+                Thread.sleep(3000);
+            }
+        }*/
+
+
 
       /*  if(true){
             Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
@@ -168,7 +185,7 @@ public class SikTest {
         if(null != match){
             match.hover();
         }*/
-        Match xiasss = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 2);
+       /* Match xiasss = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 2);
         xiasss.setY(xiasss.getY()-50);
         xiasss.click();
         region.type(Key.F12);
@@ -189,7 +206,7 @@ public class SikTest {
         region.mouseMove(location);
         Thread.sleep(500);
         //松开左键
-        region.mouseUp(Button.LEFT);
+        region.mouseUp(Button.LEFT);*/
     }
 
 
