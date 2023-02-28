@@ -14,7 +14,7 @@ public class XSHandler {
 
         //如果是在土城，就找新手打宝
         Thread.sleep(500);
-        SuiJiShi.isTuCheng(region,0);
+       // SuiJiShi.isTuCheng(region,0);
 
         count ++;
 
@@ -77,7 +77,7 @@ public class XSHandler {
             }
             //查看是否在土城
             if((n%5)==0){
-               SuiJiShi.isTuCheng(region,0);
+               //SuiJiShi.isTuCheng(region,0);
             }
             if(n > 40){
                 //随机40次没有怪后，调用随机石方法
