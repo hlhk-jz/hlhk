@@ -102,8 +102,8 @@ public class XSHandler {
         //8. 打完怪捡装备,防止漏捡，调用多次
         region.type(Key.F12);
         System.out.println("调用捡装备开始！！！！！！");
-        SikJZB.pickup();
-        SikJZB.pickup();
+       /* SikJZB.pickup();
+        SikJZB.pickup();*/
         region.type(Key.F1);
         System.out.println("调用捡装备结束！！！！！！");
         //9. 回收

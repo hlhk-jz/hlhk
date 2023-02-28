@@ -16,6 +16,9 @@ public class SikJZB {
         Region jzbRegion = new Region(60, 0,1200,800);
         jzbRegion.setThrowException(false);
         Settings.MinSimilarity = 0.65;
+        //关闭弹窗
+        gb(jzbRegion);
+        jzbRegion.type(Key.F12);
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
         Match bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         bgMathc.setY(bgMathc.getY()-100);
@@ -31,13 +34,6 @@ public class SikJZB {
         List<Match> any = jzbRegion.findAnyList(initTargetListObj());
         System.out.println("当前地图检测装备数量："+any.size()+" 条！");
         if(0 != any.size()){
-            //查看有没有弹框，有就关闭，防止影响捡装备
-            List<Match> matchGbs = jzbRegion.findAnyList(initGBListObj());
-            if(!matchGbs.isEmpty()){
-                for (Match match: matchGbs){
-                    match.click();
-                }
-            }
             for (Match matchs: any){
                 while (null != matchs){
                     if((start%15)==0){
@@ -76,6 +72,8 @@ public class SikJZB {
             }
         }
         Settings.MinSimilarity = 0.7;
+        //关闭弹窗
+        SikJZB.gb(jzbRegion);
     }
 
     public static List<Object> initTargetListObj(){
@@ -123,6 +121,17 @@ public class SikJZB {
         initList.add("D:/software/sikulix/zhuangbei/qh.PNG");
         initList.add("D:/software/sikulix/zhuangbei/qh2.PNG");
         return initList;
+    }
+
+    public static void gb(Region region)throws Exception{
+        //查看有没有弹框，有就关闭，防止影响捡装备
+        List<Match> matchGbs = region.findAnyList(initGBListObj());
+        if(!matchGbs.isEmpty()){
+            for (Match match: matchGbs){
+                match.click();
+            }
+        }
+        Thread.sleep(1000);
     }
 
     public static List<Object> initGBListObj(){

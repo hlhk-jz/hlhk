@@ -26,6 +26,8 @@ public class SikDaGuai {
         }
         //如果教主不为空一直循环打
         while (null != match){
+            //关闭弹窗
+            SikJZB.gb(region);
             //第一次，必须激活教主并且锁定成功
             match.rightClick();
             if(0 == count){
@@ -35,22 +37,20 @@ public class SikDaGuai {
                 if((count % 10)==0){
                     sdHj(region);
                 }
-                //检查药品捡装备
-                if((count % 15)==0){
-                    System.out.println("打怪期间检查药品和捡装备");
-                    region.type(Key.F12);
+                //检查装备
+                if((count % 10)==0){
+                    System.out.println("打怪期间检查装备~~~~");
                     SikJZB.pickup();
+                    //关闭弹窗
+                    SikJZB.gb(region);
+                }
+                //检查药品
+                if((count % 20)==0){
+                    System.out.println("打怪期间检查药品！！！！");
                     SikYaoPin.zhYaoPin(region);
                     SikYaoPin.bbYaoPin(region);
-                    //检查关闭
-                    List<Match> anyList = region.findAnyList(CurrencyData.gbList());
-                    Thread.sleep(1000);
-                    if(!anyList.isEmpty()){
-                        for (Match gbms:anyList){
-                            gbms.click();
-                            Thread.sleep(500);
-                        }
-                    }
+                    //关闭弹窗
+                    SikJZB.gb(region);
                 }
                 //嗜血术
                 /*Thread.sleep(500);
@@ -166,8 +166,6 @@ public class SikDaGuai {
                 match.setY(match.getY()+80);
                 region.type(Key.F6);
                 Thread.sleep(1000);
-                //查看是否被锁定
-                bsd(region);
                 //释放施毒术
                 region.type(Key.F6);
                 Thread.sleep(1500);

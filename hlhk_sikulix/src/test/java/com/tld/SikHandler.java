@@ -117,14 +117,13 @@ public class SikHandler {
         System.out.println("调用打怪结束~~~~~~~~~~~");
 
         //8. 打完怪捡装备,防止漏捡，调用多次
-        region.type(Key.F12);
         System.out.println("调用捡装备开始！！！！！！");
         SikJZB.pickup();
         SikJZB.pickup();
         region.type(Key.F1);
         System.out.println("调用捡装备结束！！！！！！");
         //9. 回收
-        if((count%4)==0){
+        if((count%3)==0){
             System.out.println("回收装备开始！！！！count："+count);
             SikHS.jzb(region);
             System.out.println("回收装备结束~~~~~~~~");
