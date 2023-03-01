@@ -66,7 +66,12 @@ public class SikDaGuai {
                 //关闭弹窗
                 SikJZB.gb(region);
                 Thread.sleep(500);
-                Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                region.setX(0);
+                region.setY(0);
+                region.setW(1200);
+                region.setH(800);
+                Settings.MinSimilarity= 0.7;
+                Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",2);
                 matchyd.setY(matchyd.getY()-377);
                 matchyd.setX(matchyd.getX()+400);
                 matchyd.rightClick();

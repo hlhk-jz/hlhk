@@ -29,13 +29,13 @@ public class SwController {
                     region.setW(1200);
                     region.setH(800);
                     tcMatch.click();
-                    tcMatch = region.wait("D:/software/sikulix/image/qdtc.PNG", 2);
+                    tcMatch = region.wait("D:/software/sikulix/image/qdtc.PNG", 6);
                     tcMatch.click();
                     Thread.sleep(5000);
-                    tcMatch = region.wait("D:/software/sikulix/image/ksjr.PNG", 2);
+                    tcMatch = region.wait("D:/software/sikulix/image/ksjr.PNG", 6);
                     tcMatch.click();
                     Thread.sleep(5000);
-                    tcMatch = region.wait("D:/software/sikulix/image/qdjr.PNG", 2);
+                    tcMatch = region.wait("D:/software/sikulix/image/qdjr.PNG", 6);
                     tcMatch.click();
                     Thread.sleep(2000);
                 }

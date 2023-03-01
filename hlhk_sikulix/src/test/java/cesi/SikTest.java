@@ -15,10 +15,13 @@ import java.util.Iterator;
 public class SikTest {
 
     public static void main(String[] args)throws Exception{
-        Region region = new Region(305, 504,438,217);
+        Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-
-        Settings.MinSimilarity=0.9;
+        Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+if(null != matchyd){
+    System.out.println("1111111");
+}
+        /*Settings.MinSimilarity=0.9;
         region.setX(0);
         region.setY(601);
         region.setW(168);
@@ -34,7 +37,7 @@ public class SikTest {
         }else {
             System.out.println("在屠龙殿");
         }
-
+*/
 
 
        /* Match match = region.wait(CurrencyData.zblSjs,0.5);
