@@ -1,8 +1,5 @@
 package com.tld;
-import com.util.ChunShi;
-import com.util.CurrencyData;
-import com.util.SuiJiShi;
-import com.util.TuiChu;
+import com.util.*;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
@@ -14,6 +11,9 @@ public class ATuLongDianStart {
         try {
             //将F12移动到聊天栏
             ChunShi.yd(region);
+            //检查药品
+            SikYaoPin.zhYaoPin(region);
+            SikYaoPin.bbYaoPin(region);
             tld(region);
         } catch (Exception e) {
             e.printStackTrace();
