@@ -9,6 +9,7 @@ public class ChunShi {
         yd(region);
     }*/
 
+    //移动F12到聊天栏
     public static void yd(Region region)throws Exception{
         Match xia1 = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 2);
         if(null != xia1){
