@@ -147,8 +147,6 @@ public class SikDaGuai {
                     Thread.sleep(200);
                 }
             }
-            //右键激活教主
-            match.rightClick();
             //寻找英雄锁定
             sdMatch = region.wait(CurrencyData.ztsd,1);
             region.type(Key.F4);
