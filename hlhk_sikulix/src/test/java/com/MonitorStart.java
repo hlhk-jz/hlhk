@@ -1,10 +1,10 @@
-package com.tld;
+package com;
 import com.util.CurrencyData;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 
-// 检查宝宝血量和是否被锁定
-public class MonitorXueLiang {
+//监听
+public class MonitorStart {
     public static void main(String[] args)throws Exception{
         //左上宝宝血量位置区域
         Region region = new Region(0, 0,1000,1000);
