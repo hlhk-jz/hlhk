@@ -80,7 +80,7 @@ public class MonitorStart {
                 region.type(Key.F1);
             }else {
                 //如果没找到随机石，宝宝召回
-                region.type(Key.F8);
+                region.type(Key.F5);
             }
             Thread.sleep(5000);
         }
