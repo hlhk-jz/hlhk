@@ -63,13 +63,14 @@ public class SikDaGuai {
                 region.setY(0);
                 region.setW(1200);
                 region.setH(800);
-                Settings.MinSimilarity= 0.7;
+                Settings.MinSimilarity= 0.8;
                 //关闭弹窗
                 SikJZB.gb(region);
                 Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",2);
                 matchyd.setY(matchyd.getY()-377);
                 matchyd.setX(matchyd.getX()+400);
                 matchyd.rightClick();
+                Settings.MinSimilarity= 0.7;
                 region.type(Key.F4);
                 match = region.wait(CurrencyData.tldJZ,2);
                 if(null == match){

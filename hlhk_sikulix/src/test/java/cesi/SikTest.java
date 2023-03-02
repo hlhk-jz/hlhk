@@ -17,10 +17,15 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
+        Settings.MinSimilarity= 0.8;
         Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+        matchyd.setY(matchyd.getY()-377);
+        matchyd.hover();
+
+/*        Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
 if(null != matchyd){
     System.out.println("1111111");
-}
+}*/
         /*Settings.MinSimilarity=0.9;
         region.setX(0);
         region.setY(601);
