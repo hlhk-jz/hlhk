@@ -95,7 +95,7 @@ public class MoXueShi {
             Thread.sleep(500);
             match.click();
             //扔掉，同时关闭包裹
-            List<Match> matchGbs = region.findAnyList(SikJZB.initGBListObj());
+            List<Match> matchGbs = region.findAnyList(CurrencyData.initGBListObj());
             if(!matchGbs.isEmpty()){
                 for (Match match1 : matchGbs){
                     match1.click();

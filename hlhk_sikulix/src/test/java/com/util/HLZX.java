@@ -55,7 +55,7 @@ public class HLZX {
         match.doubleClick();
         Thread.sleep(500);
         match.click();
-        List<Match> matchGbs = region.findAnyList(SikJZB.initGBListObj());
+        List<Match> matchGbs = region.findAnyList(CurrencyData.initGBListObj());
         if(!matchGbs.isEmpty()){
             for (Match match1 : matchGbs){
                 match1.click();

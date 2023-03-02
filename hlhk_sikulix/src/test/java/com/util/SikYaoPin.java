@@ -12,12 +12,12 @@ import java.util.Iterator;
  */
 
 public class SikYaoPin {
-    public static void main(String[] args)throws Exception{
+  /*  public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         zhYaoPin(region);
-        //bbYaoPin(region);
-    }
+        bbYaoPin(region);
+    }*/
 
     public static void bbYaoPin(Region region)throws Exception {
         region.setW(1200);

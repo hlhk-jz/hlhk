@@ -127,7 +127,7 @@ public class SikJZB {
 
     public static void gb(Region region)throws Exception{
         //查看有没有弹框，有就关闭，防止影响捡装备
-        List<Match> matchGbs = region.findAnyList(initGBListObj());
+        List<Match> matchGbs = region.findAnyList(CurrencyData.initGBListObj());
         Thread.sleep(1000);
         if(!matchGbs.isEmpty()){
             for (Match match: matchGbs){
@@ -136,15 +136,5 @@ public class SikJZB {
             }
         }
         Thread.sleep(1000);
-    }
-
-    public static List<Object> initGBListObj(){
-        List<Object> initList = new ArrayList<>();
-        initList.add("D:/software/sikulix/image/gb.PNG");
-        initList.add("D:/software/sikulix/image/gbspl.PNG");
-        initList.add("D:/software/sikulix/image/bgbg.PNG");
-        initList.add("D:/software/sikulix/image/gb9.PNG");
-        initList.add("D:/software/sikulix/image/gb11.PNG");
-        return initList;
     }
 }

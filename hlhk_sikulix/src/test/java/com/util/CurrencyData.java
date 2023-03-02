@@ -30,12 +30,13 @@ public class CurrencyData {
     }
 
     //关闭
-    public  static List<Object> gbList(){
-        List<Object> list = new ArrayList<>();
-        list.add("D:/software/sikulix/image/bgbg.PNG");
-        list.add("D:/software/sikulix/image/gbspl.PNG");
-        list.add("D:/software/sikulix/image/gbzbl.PNG");
-        list.add("D:/software/sikulix/image/gb6.PNG");
-        return list;
+    public static List<Object> initGBListObj(){
+        List<Object> initList = new ArrayList<>();
+        initList.add("D:/software/sikulix/image/gb.PNG");
+        initList.add("D:/software/sikulix/image/gbspl.PNG");
+        initList.add("D:/software/sikulix/image/bgbg.PNG");
+        initList.add("D:/software/sikulix/image/gb9.PNG");
+        initList.add("D:/software/sikulix/image/gb11.PNG");
+        return initList;
     }
 }
