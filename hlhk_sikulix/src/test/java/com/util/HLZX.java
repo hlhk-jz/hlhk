@@ -55,13 +55,7 @@ public class HLZX {
         match.doubleClick();
         Thread.sleep(500);
         match.click();
-        List<Match> matchGbs = region.findAnyList(CurrencyData.initGBListObj());
-        if(!matchGbs.isEmpty()){
-            for (Match match1 : matchGbs){
-                match1.click();
-                Thread.sleep(800);
-                match1.click();
-            }
-        }
+        //关闭弹窗
+        SikJZB.gb(region);
     }
 }

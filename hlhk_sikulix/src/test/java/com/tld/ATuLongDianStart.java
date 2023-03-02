@@ -22,15 +22,8 @@ public class ATuLongDianStart {
             //检查药品
             SikYaoPin.zhYaoPin(region);
             SikYaoPin.bbYaoPin(region);
-            List<Match> matchGbs = region.findAnyList(CurrencyData.initGBListObj());
-            Thread.sleep(1000);
-            if(!matchGbs.isEmpty()){
-                for (Match match1 : matchGbs){
-                    match1.click();
-                    Thread.sleep(800);
-                    match1.click();
-                }
-            }
+            //关闭弹窗
+            SikJZB.gb(region);
             Match match = null;
             //寻找屠龙殿NPC
             match = region.wait(CurrencyData.tldNpc,1);

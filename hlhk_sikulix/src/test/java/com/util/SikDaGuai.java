@@ -9,7 +9,7 @@ import java.util.Map;
 //打怪
 public class SikDaGuai {
 
-  /*  public static void main(String[] args)throws Exception{
+   /* public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         daGuai(region);
@@ -26,7 +26,14 @@ public class SikDaGuai {
         }
         //如果教主不为空一直循环打
         while (null != match){
-            match.setX(match.getX()+20);
+            if(count > 222){
+                break;
+            }
+            if((count%2)==0){
+                match.setX(match.getX()+20);
+            }else {
+                match.setX(match.getX()-20);
+            }
             match.rightClick();
             //关闭弹窗
             SikJZB.gb(region);
@@ -35,7 +42,7 @@ public class SikDaGuai {
                 sdHj(region);
             }else {
                 //锁定
-                if((count % 10)==0){
+                if((count % 6)==0){
                     sdHj(region);
                 }
                 //合击
@@ -127,24 +134,31 @@ public class SikDaGuai {
                     }
                 }
             }
+
             if(sdCount != 0 && sdCount != 1){
                 System.out.println("下移！！！！！！！");
                 match.setY(match.getY()+80);
+                match.hover();
                 //锁定
                 region.type(Key.F2);
                 Thread.sleep(200);
+                match.rightClick();
 
                 match = region.wait(CurrencyData.tldJZ,1);
                 if(null != match){
                     match.setY(match.getY()+80);
+                    match.hover();
                     region.type(Key.F2);
                     Thread.sleep(200);
+                    match.rightClick();
                 }
                 match = region.wait(CurrencyData.tldJZ,1);
                 if(null != match){
                     match.setY(match.getY()+80);
+                    match.hover();
                     region.type(Key.F2);
                     Thread.sleep(200);
+                    match.rightClick();
                 }
             }
             //寻找英雄锁定

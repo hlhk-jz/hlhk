@@ -7,10 +7,9 @@ import java.util.List;
 
 //检查磨血石
 public class MoXueShi {
-   /* public static void main(String[] args){
+  /*  public static void main(String[] args){
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
-
         jcMXS(region);
     }*/
 
@@ -94,15 +93,8 @@ public class MoXueShi {
             match.doubleClick();
             Thread.sleep(500);
             match.click();
-            //扔掉，同时关闭包裹
-            List<Match> matchGbs = region.findAnyList(CurrencyData.initGBListObj());
-            if(!matchGbs.isEmpty()){
-                for (Match match1 : matchGbs){
-                    match1.click();
-                    Thread.sleep(800);
-                    match1.click();
-                }
-            }
+            //关闭弹窗
+            SikJZB.gb(region);
         }catch (Exception e){
             System.out.println("检查磨血石报错~~~"+e.getMessage());
         }
