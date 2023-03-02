@@ -62,9 +62,9 @@ public class MonitorStart {
         region.setY(0);
         region.setW(211);
         region.setH(60);
-        match = region.wait("D:/software/sikulix/image/xl.PNG",1);
+        match = region.wait("D:/software/sikulix/image/xl.PNG",2);
         if(null != match){
-            System.out.println("血量减少！！！！！！"+System.currentTimeMillis());
+            System.out.println("宝宝血量减少！！！当前时间："+System.currentTimeMillis());
             Settings.MinSimilarity= 0.7;
             region.setX(305);
             region.setY(504);
@@ -93,15 +93,17 @@ public class MonitorStart {
         region.setW(690);
         region.setH(391);
         try {
-            Match match = region.find(CurrencyData.bsd);
+            Match match = region.wait(CurrencyData.bsd,2);
             if(null != match){
-                System.out.println("被锁定！！！！！！");
+                System.out.println("被锁定！！！当前时间："+System.currentTimeMillis()/1000);
                 Match match2 = region.wait("D:/software/sikulix/image/shitou.PNG",0.5);
                 if(null == match2){
                     match2 = region.wait("D:/software/sikulix/image/shitou.PNG",1);
                 }
-                match2.doubleClick();
-                Thread.sleep(300);
+                if(null != match2){
+                    match2.doubleClick();
+                    Thread.sleep(300);
+                }
             }
         }catch (Exception e){
             e.printStackTrace();
