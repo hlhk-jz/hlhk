@@ -10,7 +10,7 @@ public class SikHandler {
 
     public static void handler(Region region)throws Exception {
 
-        //如果是在屠龙殿地图
+        //判断是否在屠龙殿地图
         Thread.sleep(500);
         SuiJiShi.isTuLd(region,1);
 
@@ -107,7 +107,6 @@ public class SikHandler {
 
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         System.out.println("调用打怪开始！！！！！！");
-        region.type(Key.F7);
         SikDaGuai.daGuai(region);
         anyList = region.findAnyList(CurrencyData.jzList());
         Thread.sleep(1000);
@@ -124,7 +123,7 @@ public class SikHandler {
         System.out.println("调用捡装备结束！！！！！！");
         //9. 回收
         if((count%3)==0){
-            System.out.println("回收装备开始！！！！count："+count);
+            System.out.println("回收装备开始！！！！");
             SikHS.jzb(region);
             System.out.println("回收装备结束~~~~~~~~");
         }
