@@ -7,15 +7,54 @@ import org.sikuli.script.*;
 public class MonitorXueLiang {
     public static void main(String[] args)throws Exception{
         //左上宝宝血量位置区域
-        Region region = new Region(133, 438,690,391);
+        Region region = new Region(0, 0,1000,1000);
         region.setThrowException(false);
         while (true){
             //检查是否被锁定
             bsd(region);
             //检查宝宝血量
             bbxl(region);
+            //检查是否需要小退
+            sw(region);
         }
     }
+
+    public static void sw(Region region)throws Exception{
+        Settings.MinSimilarity= 0.99;
+        region.setX(0);
+        region.setY(502);
+        region.setW(317);
+        region.setH(373);
+        Match match = region.wait("D:/software/sikulix/image/sw.PNG", 2);
+        if(null != match){
+            System.out.println("检测到人物需要小退！！当前时间："+System.currentTimeMillis()/1000);
+            //人物需要小退
+            Thread.sleep(2000);
+            region.setX(659);
+            region.setY(561);
+            region.setW(255);
+            region.setH(181);
+            Settings.MinSimilarity= 0.8;
+            match = region.wait("D:/software/sikulix/image/out.PNG", 2);
+            if (null != match) {
+                region.setX(0);
+                region.setY(0);
+                region.setW(1200);
+                region.setH(800);
+                match.click();
+                match = region.wait("D:/software/sikulix/image/qdtc.PNG", 6);
+                match.click();
+                Thread.sleep(5000);
+                match = region.wait("D:/software/sikulix/image/ksjr.PNG", 6);
+                match.click();
+                Thread.sleep(5000);
+                match = region.wait("D:/software/sikulix/image/qdjr.PNG", 6);
+                match.click();
+                Thread.sleep(2000);
+            }
+        }
+    }
+
     public static void bbxl(Region region)throws Exception{
         Match match = null;
         Settings.MinSimilarity= 0.95;
