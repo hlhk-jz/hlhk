@@ -26,6 +26,7 @@ public class SikDaGuai {
         }
         //如果教主不为空一直循环打
         while (null != match){
+            match.rightClick();
             //关闭弹窗
             SikJZB.gb(region);
             //第一次，必须激活教主并且锁定成功
@@ -36,6 +37,8 @@ public class SikDaGuai {
                 if((count % 10)==0){
                     sdHj(region);
                 }
+                //合击
+                region.type(Key.F3);
                 //检查装备
                 if((count % 15)==0){
                     System.out.println("打怪期间检查装备~~~~");
@@ -51,8 +54,6 @@ public class SikDaGuai {
                     //关闭弹窗
                     SikJZB.gb(region);
                 }
-                //合击
-                region.type(Key.F3);
             }
             count++;
             match = region.wait(CurrencyData.tldJZ,2);
