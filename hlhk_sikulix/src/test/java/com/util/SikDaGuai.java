@@ -26,6 +26,7 @@ public class SikDaGuai {
         }
         //如果教主不为空一直循环打
         while (null != match){
+            match.setX(match.getX()+20);
             match.rightClick();
             //关闭弹窗
             SikJZB.gb(region);
@@ -130,12 +131,21 @@ public class SikDaGuai {
                 System.out.println("下移！！！！！！！");
                 match.setY(match.getY()+80);
                 //锁定
-                Thread.sleep(200);
-                match.hover();
                 region.type(Key.F2);
                 Thread.sleep(200);
-                region.type(Key.F2);
-                Thread.sleep(200);
+
+                match = region.wait(CurrencyData.tldJZ,1);
+                if(null != match){
+                    match.setY(match.getY()+80);
+                    region.type(Key.F2);
+                    Thread.sleep(200);
+                }
+                match = region.wait(CurrencyData.tldJZ,1);
+                if(null != match){
+                    match.setY(match.getY()+80);
+                    region.type(Key.F2);
+                    Thread.sleep(200);
+                }
             }
             //右键激活教主
             match.rightClick();

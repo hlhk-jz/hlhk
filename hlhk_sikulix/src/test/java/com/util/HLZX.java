@@ -7,11 +7,11 @@ import java.util.List;
 
 //检查火龙之心
 public class HLZX {
-  /*  public static void main(String[] args)throws Exception{
+    public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         hlzx(region);
-    }*/
+    }
 
     public static void hlzx(Region region)throws Exception{
         Match match;

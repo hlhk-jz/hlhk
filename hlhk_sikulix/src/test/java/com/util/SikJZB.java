@@ -23,6 +23,7 @@ public class SikJZB {
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
         Match bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         bgMathc.setY(bgMathc.getY()-100);
+        bgMathc.setX(bgMathc.getX()-230);
         Thread.sleep(500);
         bgMathc.hover();
         Thread.sleep(500);
@@ -51,6 +52,7 @@ public class SikJZB {
                     if((start%6)==0){
                         bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
                         bgMathc.setY(bgMathc.getY()-100);
+                        bgMathc.setX(bgMathc.getX()-230);
                         Thread.sleep(300);
                         bgMathc.hover();
                         Thread.sleep(300);
