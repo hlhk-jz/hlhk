@@ -104,6 +104,7 @@ public class MonitorStart {
                     match2.doubleClick();
                     Thread.sleep(300);
                 }
+                Thread.sleep(4000);
             }
         }catch (Exception e){
             e.printStackTrace();
