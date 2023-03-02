@@ -3,6 +3,8 @@ import com.util.*;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
+import java.util.List;
+
 //屠龙殿
 public class ATuLongDianStart {
     public static void main(String[] args){
@@ -18,6 +20,15 @@ public class ATuLongDianStart {
             //检查药品
             SikYaoPin.zhYaoPin(region);
             SikYaoPin.bbYaoPin(region);
+            List<Match> matchGbs = region.findAnyList(CurrencyData.initGBListObj());
+            Thread.sleep(1000);
+            if(!matchGbs.isEmpty()){
+                for (Match match1 : matchGbs){
+                    match1.click();
+                    Thread.sleep(800);
+                    match1.click();
+                }
+            }
             Match match = null;
             //寻找屠龙殿NPC
             match = region.wait(CurrencyData.tldNpc,1);
