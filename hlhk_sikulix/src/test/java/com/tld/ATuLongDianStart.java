@@ -17,7 +17,8 @@ public class ATuLongDianStart {
             tld(region);
         } catch (Exception e) {
             e.printStackTrace();
-            TuiChu.tuiChu(region);
+            //异常在次调用tld
+            tld(region);
         }
     }
 
@@ -54,6 +55,6 @@ public class ATuLongDianStart {
         }
         //我要进入
         match.click();
-        SikHandler.show(region);
+        SikHandler.handler(region);
     }
 }

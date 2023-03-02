@@ -8,7 +8,7 @@ import java.util.List;
 public class SikHandler {
     private static long count = 0;
 
-    public static void show(Region region)throws Exception {
+    public static void handler(Region region)throws Exception {
 
         //如果是在屠龙殿地图
         Thread.sleep(500);
@@ -145,6 +145,6 @@ public class SikHandler {
         }
         //12. 循环地柜
         System.out.println("~~~~~~~~~~~本次超级循环数量："+count);
-        show(region);
+        handler(region);
     }
 }
