@@ -29,7 +29,6 @@ public class SikDaGuai {
             //关闭弹窗
             SikJZB.gb(region);
             //第一次，必须激活教主并且锁定成功
-            match.rightClick();
             if(0 == count){
                 sdHj(region);
             }else {
@@ -139,7 +138,7 @@ public class SikDaGuai {
             //右键激活教主
             match.rightClick();
             //寻找英雄锁定
-            sdMatch = region.wait(CurrencyData.ztsd,0.5);
+            sdMatch = region.wait(CurrencyData.ztsd,1);
             region.type(Key.F4);
             sdCount++;
         }
