@@ -15,7 +15,7 @@ public class SikDaGuai {
         daGuai(region);
     }*/
 
-    //法法
+
     public static void daGuai(Region region )throws Exception{
         int count = 0;
         //检查宝宝是否在线
@@ -143,22 +143,15 @@ public class SikDaGuai {
                 region.type(Key.F2);
                 Thread.sleep(200);
                 match.rightClick();
-
-                match = region.wait(CurrencyData.tldJZ,1);
-                if(null != match){
-                    match.setY(match.getY()+80);
-                    match.hover();
-                    region.type(Key.F2);
-                    Thread.sleep(200);
-                    match.rightClick();
-                }
-                match = region.wait(CurrencyData.tldJZ,1);
-                if(null != match){
-                    match.setY(match.getY()+80);
-                    match.hover();
-                    region.type(Key.F2);
-                    Thread.sleep(200);
-                    match.rightClick();
+                for (int i=0;i<5;i++){
+                    match = region.wait(CurrencyData.tldJZ,0.5);
+                    if(null != match){
+                        match.setY(match.getY()+80);
+                        match.hover();
+                        region.type(Key.F2);
+                        Thread.sleep(200);
+                        match.rightClick();
+                    }
                 }
             }
             //寻找英雄锁定
