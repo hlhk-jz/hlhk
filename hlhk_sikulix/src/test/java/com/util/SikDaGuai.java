@@ -26,6 +26,7 @@ public class SikDaGuai {
         }
         //如果教主不为空一直循环打
         while (null != match){
+            System.out.println("循环打怪count："+count);
             if(count > 222){
                 break;
             }
