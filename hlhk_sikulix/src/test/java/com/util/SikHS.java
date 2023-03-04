@@ -52,8 +52,8 @@ public class SikHS {
         }else {
             region.setX(0);
             region.setY(0);
-            region.setW(496);
-            region.setH(276);
+            region.setW(515);
+            region.setH(302);
             pdty(region);
             region.setX(0);
             region.setY(0);
