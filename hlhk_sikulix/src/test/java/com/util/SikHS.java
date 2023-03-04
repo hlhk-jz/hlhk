@@ -1,4 +1,5 @@
 package com.util;
+import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 
 //回收装备
@@ -14,6 +15,7 @@ public class SikHS {
     }
 
     public static void jzb(Region region)throws Exception{
+        Settings.MinSimilarity = 0.7;
         Match match = region.wait("D:/software/sikulix/image/hs1.PNG",1);
         if(null == match){
             match = region.wait("D:/software/sikulix/image/hs11.PNG",1);
