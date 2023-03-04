@@ -37,7 +37,22 @@ public class SikHS {
         if(null ==  match){
             region.type(Key.ENTER);
             region.type(Key.SHIFT);
-            jzb(region);
+            match = region.wait("D:/software/sikulix/image/hs1.PNG",1);
+            if(null == match){
+                match = region.wait("D:/software/sikulix/image/hs11.PNG",1);
+                if(null == match){
+                    match = region.wait("D:/software/sikulix/image/hs4.PNG",1);
+                }
+            }
+            Thread.sleep(500);
+            match.click();
+            Thread.sleep(500);
+            region.type(Key.ENTER);
+            Thread.sleep(500);
+            region.type("@fuwu");
+            Thread.sleep(500);
+            region.type(Key.SPACE);
+            Thread.sleep(500);
         }
         region.type(Key.ENTER);
 
