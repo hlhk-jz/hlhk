@@ -43,13 +43,13 @@ public class SikDaGuai {
                 sdHj(region);
             }else {
                 //锁定
-                if((count % 6)==0){
+                if((count % 5)==0){
                     sdHj(region);
                 }
                 //合击
                 region.type(Key.F3);
                 //检查装备
-                if((count % 15)==0){
+                if((count % 8)==0){
                     System.out.println("打怪期间检查装备~~~~");
                     SikJZB.pickup();
                     //关闭弹窗
