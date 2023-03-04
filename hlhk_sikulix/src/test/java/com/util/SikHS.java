@@ -33,13 +33,16 @@ public class SikHS {
         Thread.sleep(500);
         region.type(Key.SPACE);
         Thread.sleep(500);
-        region.type(Key.ENTER);
-        //查找 回收装备 选项
-        match = region.find("D:/software/sikulix/image/hs2.PNG");
-        Thread.sleep(700);
-        if(null == match){
-            match = region.find("D:/software/sikulix/image/hs3.PNG");
+        match = region.wait("D:/software/sikulix/image/fuwu.PNG",0.8);
+        if(null ==  match){
+            region.type(Key.ENTER);
+            region.type(Key.SHIFT);
+            jzb(region);
         }
+        region.type(Key.ENTER);
+
+        //查找 回收装备 选项
+        match = region.wait("D:/software/sikulix/image/hs2.PNG",2);
         match.click();
         Thread.sleep(500);
         match = region.wait("D:/software/sikulix/image/hs5.PNG",1);
