@@ -13,9 +13,9 @@ public class BaoBao {
 
     public static void baobao(Region region)throws Exception{
         SikJZB.gb(region);
-        Match match = region.find("D:/software/sikulix/image/baobao3.PNG");
+        Match match = region.find("D:/software/sikulix/image/baobao2.PNG");
         if(null == match){
-             match = region.find("D:/software/sikulix/image/baobao3.PNG");
+             match = region.find("D:/software/sikulix/image/baobao2.PNG");
              if(null == match){
                  match = region.find("D:/software/sikulix/image/bbzh.PNG");
                  if(null == match){
