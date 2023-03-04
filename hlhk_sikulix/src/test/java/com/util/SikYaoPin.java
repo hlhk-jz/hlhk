@@ -113,24 +113,24 @@ public class SikYaoPin {
                         region.setY(581);
                         region.setW(361);
                         region.setH(305);
-                        match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+                        match = region.wait("D:/software/sikulix/image/pu.PNG",2);
                         region.setX(0);
                         region.setY(0);
                         region.setW(1200);
                         region.setH(800);
                     }
                     match.click();
-                    match = region.wait("D:/software/sikulix/image/yaopin3.PNG",1);
+                    match = region.wait("D:/software/sikulix/image/yaopin3.PNG",2);
                     if(null == match){
-                        match = region.wait("D:/software/sikulix/image/yaopin4.PNG",1);
+                        match = region.wait("D:/software/sikulix/image/yaopin4.PNG",2);
                     }
                     match.click();
-                    match = region.wait("D:/software/sikulix/image/yaopin2.PNG",1);
+                    match = region.wait("D:/software/sikulix/image/yaopin2.PNG",2);
                     match.click();
                     //购买确定
-                    match = region.wait("D:/software/sikulix/image/gm.PNG",1);
+                    match = region.wait("D:/software/sikulix/image/gm.PNG",2);
                     match.click();
-                    match = region.wait("D:/software/sikulix/image/qd.PNG",1);
+                    match = region.wait("D:/software/sikulix/image/qd.PNG",2);
                     match.click();
                     //关闭商铺栏
                     match = region.wait("D:/software/sikulix/image/gbspl.PNG", 2);
