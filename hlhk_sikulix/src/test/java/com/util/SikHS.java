@@ -5,7 +5,7 @@ import java.util.List;
 
 //回收装备
 public class SikHS {
-/*    public static void main(String[] args){
+    public static void main(String[] args){
         try {
             Region region = new Region(0, 0,1200,800);
             region.setThrowException(false);
@@ -13,7 +13,7 @@ public class SikHS {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     public static void jzb(Region region)throws Exception{
         Settings.MinSimilarity = 0.7;
@@ -91,8 +91,7 @@ public class SikHS {
         //如果没有查到，刷新
         if(isTrue){
             //如果一直没有符合的，点击刷新
-            Match match = region.find("D:/software/sikulix/huishou/sxsx.PNG");
-            Thread.sleep(500);
+            Match match = region.wait("D:/software/sikulix/huishou/sxsx.PNG",1);
             match.click();
             pdty(region);
         }
@@ -103,11 +102,9 @@ public class SikHS {
         Match match = null;
         //被蚊子叮会不会痒
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/wz.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/wz.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/wz1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/wz1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -115,11 +112,9 @@ public class SikHS {
 
         //除夕夜吃饺子
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/cjz.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/cjz.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/cjz1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/cjz1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -127,11 +122,9 @@ public class SikHS {
 
         //多少岁内是未成年
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/wcn.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/wcn.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/wcn1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/wcn1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -139,19 +132,16 @@ public class SikHS {
 
         //企鹅会飞不
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/qe.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/qe.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/qe1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/qe1.PNG",2);
                 match.click();
                 isTrue = false;
             }
         }
         if(isTrue){
             //如果一直没有符合的，点击刷新
-            match = region.find("D:/software/sikulix/huishou/sxsx.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/sxsx.PNG",1);
             match.click();
             pdty(region);
         }
@@ -167,11 +157,9 @@ public class SikHS {
         Match match = null;
         //10086
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/zgyd.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/zgyd.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/zgyd1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/zgyd1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -179,11 +167,9 @@ public class SikHS {
 
         //37度是正常体温不
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/tw.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/tw.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/tw1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/tw1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -191,11 +177,9 @@ public class SikHS {
 
         //天安门在哪个城市
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/tam.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/tam.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/tam1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/tam1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -203,19 +187,16 @@ public class SikHS {
 
         //手表一圈多少小时
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/sb.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/sb.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/sb1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/sb1.PNG",2);
                 match.click();
                 isTrue = false;
             }
         }
         if(isTrue){
             //如果一直没有符合的，点击刷新
-            match = region.find("D:/software/sikulix/huishou/sxsx.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/sxsx.PNG",1);
             match.click();
             pdty(region);
         }
@@ -231,11 +212,9 @@ public class SikHS {
         Match match = null;
         //有多少个英文字母
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/ywzm.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/ywzm.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/ywzm1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/ywzm1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -243,11 +222,9 @@ public class SikHS {
 
         //犯法吗
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/srff.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/srff.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/srff1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/srff1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -255,11 +232,9 @@ public class SikHS {
 
         //吸烟有害吗
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/xy.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/xy.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/xy1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/xy1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -267,19 +242,16 @@ public class SikHS {
 
         //苹果电话属于国产
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/dh.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/dh.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/dh1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/dh1.PNG",2);
                 match.click();
                 isTrue = false;
             }
         }
         if(isTrue){
             //如果一直没有符合的，点击刷新
-            match = region.find("D:/software/sikulix/huishou/sxsx.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/sxsx.PNG",1);
             match.click();
             pdty(region);
         }
@@ -294,22 +266,18 @@ public class SikHS {
         boolean isTrue = true;
         Match match = null;
         //矿泉水属于饮料不
-        match = region.find("D:/software/sikulix/huishou/kqs.PNG");
-        Thread.sleep(500);
+        match = region.wait("D:/software/sikulix/huishou/kqs.PNG",1);
         if(null != match){
-            match = region.find("D:/software/sikulix/huishou/kqs1.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/kqs1.PNG",2);
             match.click();
             isTrue = false;
         }
 
         //一天多少小时
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/xs.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/xs.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/xs1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/xs1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -317,11 +285,9 @@ public class SikHS {
 
         //赵本山哪国人
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/ngr.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/ngr.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/ngr1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/ngr1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -329,11 +295,9 @@ public class SikHS {
 
         //爸爸的爸爸叫什么
         if(isTrue){
-            match = region.find("D:/software/sikulix/huishou/jsm.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/jsm.PNG",1);
             if(null != match){
-                match = region.find("D:/software/sikulix/huishou/jsm1.PNG");
-                Thread.sleep(500);
+                match = region.wait("D:/software/sikulix/huishou/jsm1.PNG",2);
                 match.click();
                 isTrue = false;
             }
@@ -341,8 +305,7 @@ public class SikHS {
 
         if(isTrue){
             //如果一直没有符合的，点击刷新
-            match = region.find("D:/software/sikulix/huishou/sxsx.PNG");
-            Thread.sleep(500);
+            match = region.wait("D:/software/sikulix/huishou/sxsx.PNG",1);
             match.click();
             pdty(region);
         }
