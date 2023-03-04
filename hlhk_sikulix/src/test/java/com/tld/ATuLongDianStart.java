@@ -7,11 +7,11 @@ import java.util.List;
 
 //屠龙殿
 public class ATuLongDianStart {
-    public static void main(String[] args){
+/*    public static void main(String[] args){
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
         tld(region);
-    }
+    }*/
 
     public static void tld(Region region){
         try {
