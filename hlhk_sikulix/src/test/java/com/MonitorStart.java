@@ -29,28 +29,31 @@ public class MonitorStart {
         if(null != match){
             System.out.println("检测到人物需要小退！！当前时间："+System.currentTimeMillis()/1000);
             //人物需要小退
-            Thread.sleep(2000);
-            region.setX(659);
-            region.setY(561);
-            region.setW(255);
-            region.setH(181);
-            Settings.MinSimilarity= 0.8;
-            match = region.wait("D:/software/sikulix/image/out.PNG", 2);
-            if (null != match) {
-                region.setX(0);
-                region.setY(0);
-                region.setW(1200);
-                region.setH(800);
-                match.click();
-                match = region.wait("D:/software/sikulix/image/qdtc.PNG", 6);
-                match.click();
-                Thread.sleep(5000);
-                match = region.wait("D:/software/sikulix/image/ksjr.PNG", 6);
-                match.click();
-                Thread.sleep(5000);
-                match = region.wait("D:/software/sikulix/image/qdjr.PNG", 6);
-                match.click();
-                Thread.sleep(2000);
+            Thread.sleep(5000);
+            match = region.wait("D:/software/sikulix/image/sw.PNG", 2);
+            if(null != match){
+                region.setX(659);
+                region.setY(561);
+                region.setW(255);
+                region.setH(181);
+                Settings.MinSimilarity= 0.8;
+                match = region.wait("D:/software/sikulix/image/out.PNG", 2);
+                if (null != match) {
+                    region.setX(0);
+                    region.setY(0);
+                    region.setW(1200);
+                    region.setH(800);
+                    match.click();
+                    match = region.wait("D:/software/sikulix/image/qdtc.PNG", 6);
+                    match.click();
+                    Thread.sleep(5000);
+                    match = region.wait("D:/software/sikulix/image/ksjr.PNG", 6);
+                    match.click();
+                    Thread.sleep(5000);
+                    match = region.wait("D:/software/sikulix/image/qdjr.PNG", 6);
+                    match.click();
+                    Thread.sleep(2000);
+                }
             }
         }
     }
