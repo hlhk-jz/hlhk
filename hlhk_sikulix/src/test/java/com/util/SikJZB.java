@@ -124,6 +124,12 @@ public class SikJZB {
         //强化
         initList.add("D:/software/sikulix/zhuangbei/qh.PNG");
         initList.add("D:/software/sikulix/zhuangbei/qh2.PNG");
+        //光芒
+        initList.add("D:/software/sikulix/zhuangbei/gm.PNG");
+        //雷霆
+        initList.add("D:/software/sikulix/zhuangbei/lt.PNG");
+        //烈焰
+        initList.add("D:/software/sikulix/zhuangbei/ly.PNG");
         return initList;
     }
 
