@@ -24,13 +24,17 @@ public class SikJZB {
         Match bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         bgMathc.setY(bgMathc.getY()-100);
         bgMathc.setX(bgMathc.getX()-230);
-        Thread.sleep(500);
         bgMathc.hover();
-        Thread.sleep(500);
+        Thread.sleep(300);
         //守护
         jzbRegion.type(Key.F4);
         jzbRegion.type(Key.F4);
-
+        bgMathc.setY(bgMathc.getY()-350);
+        bgMathc.hover();
+        Thread.sleep(300);
+        //守护
+        jzbRegion.type(Key.F4);
+        jzbRegion.type(Key.F4);
         //判断当前地图有哪些装备
         int start = 1;
         List<Match> any = jzbRegion.findAnyList(initTargetListObj());
@@ -48,24 +52,6 @@ public class SikJZB {
                         location.rightClick();
                     }else {
                         location.click();
-                    }
-                    if((start%6)==0){
-                        bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
-                        bgMathc.setY(bgMathc.getY()-100);
-                        bgMathc.setX(bgMathc.getX()-230);
-                        Thread.sleep(300);
-                        bgMathc.hover();
-                        Thread.sleep(300);
-                        //守护
-                        jzbRegion.type(Key.F4);
-                        jzbRegion.type(Key.F4);
-                        bgMathc.setY(bgMathc.getY()-300);
-                        Thread.sleep(300);
-                        bgMathc.hover();
-                        Thread.sleep(300);
-                        //守护
-                        jzbRegion.type(Key.F4);
-                        jzbRegion.type(Key.F4);
                     }
                     Thread.sleep(300);
                     matchs = jzbRegion.wait(matchs.getImage(),0.5);

@@ -122,7 +122,7 @@ public class SikHandler {
         region.type(Key.F1);
         System.out.println("调用捡装备结束！！！！！！");
         //9. 回收
-        if((count%3)==0){
+        if((count%2)==0){
             System.out.println("回收装备开始！！！！");
             SikHS.jzb(region);
             System.out.println("回收装备结束~~~~~~~~");
