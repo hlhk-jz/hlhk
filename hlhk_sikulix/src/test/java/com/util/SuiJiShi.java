@@ -128,12 +128,17 @@ public class SuiJiShi {
 
     //判断是否在屠龙殿
     public static void isTuLd(Region region,int type)throws Exception{
+        Match wait = null;
         Settings.MinSimilarity=0.9;
         region.setX(0);
         region.setY(601);
         region.setW(168);
         region.setH(244);
-        Match wait = region.wait("D:/software/sikulix/image/tldimg.PNG", 0.5);
+        if(0 == type){
+            wait = region.wait("D:/software/sikulix/image/xrdb.PNG", 0.5);
+        }else {
+            wait = region.wait("D:/software/sikulix/image/tldimg.PNG", 0.5);
+        }
         Settings.MinSimilarity=0.7;
         region.setX(0);
         region.setY(0);
@@ -150,4 +155,6 @@ public class SuiJiShi {
             }
         }
     }
+
+
 }

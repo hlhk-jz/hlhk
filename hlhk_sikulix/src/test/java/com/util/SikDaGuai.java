@@ -9,60 +9,67 @@ import java.util.Map;
 //打怪
 public class SikDaGuai {
 
-    public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1920,1080);
+    public static void main(String[] args) throws Exception {
+        Region region = new Region(0, 0, 1920, 1080);
         region.setThrowException(false);
-        daGuai(region);
+        xsGuai(region);
     }
 
-
-    public static void daGuai(Region region )throws Exception{
+    //屠龙殿打怪
+    public static void daGuai(Region region) throws Exception {
         int count = 0;
         //检查宝宝是否在线
         BaoBao.baobao(region);
-        Match match = region.wait(CurrencyData.tldJZ,0.5);
-        if(null == match){
-            match = region.wait(CurrencyData.xsJZ,0.5);
+        Match match = region.wait(CurrencyData.tldJZ, 0.5);
+        if (null == match) {
+            match = region.wait(CurrencyData.xsJZ, 0.5);
         }
         //如果教主不为空一直循环打
-        while (null != match){
-            System.out.println("循环打怪count："+count);
-            if(count > 222){
+        while (null != match) {
+            System.out.println("循环打怪count：" + count);
+            if (count > 222) {
                 break;
             }
-            if((count%2)==0){
-                match.setX(match.getX()+30);
-            }else {
-                match.setX(match.getX()-30);
+            if ((count % 2) == 0) {
+                match.setX(match.getX() + 30);
+            } else {
+                match.setX(match.getX() - 30);
             }
             match.rightClick();
             //关闭弹窗
             SikJZB.gb(region);
             //第一次，必须激活教主并且锁定成功
-            if(0 == count){
+            if (0 == count) {
                 sdHj(region);
-            }else {
+            } else {
                 //锁定
-                if((count % 10)==0){
+                if ((count % 10) == 0) {
                     sdHj(region);
                     System.out.println("打怪期间检查装备~~~~");
                     SikJZB.pickup();
                     //关闭弹窗
                     SikJZB.gb(region);
-                }else {
-                    match = region.wait(CurrencyData.tldJZ,2);
-                    if(null != match){
-                        match.setY(match.getY()+80);
+                } else {
+                    match = region.wait(CurrencyData.tldJZ, 2);
+                    if (null != match) {
+                        match.setY(match.getY() + 80);
                         match.hover();
                         Thread.sleep(300);
                         region.type(Key.F6);
                         Thread.sleep(500);
+                    }else {
+                        match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+                        match.setY(match.getY()-300);
+                        match.setX(match.getX()-400);
+                        Thread.sleep(300);
+                        region.type(Key.F6);
+                        Thread.sleep(300);
                     }
                 }
                 //合击
                 region.type(Key.F3);
                 //检查药品
-                if((count % 30)==0){
+                if ((count % 30) == 0) {
                     System.out.println("打怪期间检查药品！！！！");
                     SikYaoPin.zhYaoPin(region);
                     SikYaoPin.bbYaoPin(region);
@@ -71,41 +78,41 @@ public class SikDaGuai {
                 }
             }
             count++;
-            match = region.wait(CurrencyData.tldJZ,2);
+            match = region.wait(CurrencyData.tldJZ, 2);
             //防止人物重叠怪识别不出来再次查询
-            if(null == match){
+            if (null == match) {
                 region.setX(0);
                 region.setY(0);
                 region.setW(1200);
                 region.setH(800);
-                Settings.MinSimilarity= 0.8;
+                Settings.MinSimilarity = 0.8;
                 //关闭弹窗
                 SikJZB.gb(region);
-                Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",2);
-                matchyd.setY(matchyd.getY()-377);
-                matchyd.setX(matchyd.getX()+400);
+                Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 2);
+                matchyd.setY(matchyd.getY() - 377);
+                matchyd.setX(matchyd.getX() + 400);
                 matchyd.rightClick();
-                Settings.MinSimilarity= 0.7;
+                Settings.MinSimilarity = 0.7;
                 region.type(Key.F4);
-                match = region.wait(CurrencyData.tldJZ,2);
-                if(null == match){
+                match = region.wait(CurrencyData.tldJZ, 2);
+                if (null == match) {
                     //跟随寻找教主
                     region.type(Key.F4);
-                    matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                    matchyd.setY(matchyd.getY()-377);
+                    matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 1);
+                    matchyd.setY(matchyd.getY() - 377);
                     matchyd.rightClick();
-                    match = region.wait(CurrencyData.tldJZ,2);
-                    if(null == match){
+                    match = region.wait(CurrencyData.tldJZ, 2);
+                    if (null == match) {
                         region.type(Key.F1);
-                        matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                        matchyd.setY(matchyd.getY()-150);
-                        matchyd.setX(matchyd.getX()+180);
+                        matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 1);
+                        matchyd.setY(matchyd.getY() - 150);
+                        matchyd.setX(matchyd.getX() + 180);
                         matchyd.rightClick();
                         Thread.sleep(300);
                         matchyd.rightClick();
                         Thread.sleep(300);
                         region.type(Key.F4);
-                        match = region.wait(CurrencyData.tldJZ,4);
+                        match = region.wait(CurrencyData.tldJZ, 4);
                     }
                 }
             }
@@ -114,48 +121,48 @@ public class SikDaGuai {
 
 
     //锁定
-    public static Match sdHj(Region region)throws Exception{
+    public static Match sdHj(Region region) throws Exception {
         System.out.println("锁定教主执行！！！！");
         Match match = null;
         Match sdMatch = null;
         int sdCount = 0;
-        while (null == sdMatch){
-            if(sdCount > 15){
+        while (null == sdMatch) {
+            if (sdCount > 15) {
                 System.out.println("锁定执行大于15，结束循环！！！！");
                 break;
             }
             //寻找教主
-            match = region.wait(CurrencyData.tldJZ,2);
-            if(null == match){
-                Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                matchyd.setY(matchyd.getY()-377);
-                matchyd.setX(matchyd.getX()+400);
+            match = region.wait(CurrencyData.tldJZ, 2);
+            if (null == match) {
+                Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 1);
+                matchyd.setY(matchyd.getY() - 377);
+                matchyd.setX(matchyd.getX() + 400);
                 matchyd.rightClick();
-                match = region.wait(CurrencyData.tldJZ,1);
-                if(null == match){
-                    matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                    matchyd.setY(matchyd.getY()-377);
+                match = region.wait(CurrencyData.tldJZ, 1);
+                if (null == match) {
+                    matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 1);
+                    matchyd.setY(matchyd.getY() - 377);
                     matchyd.rightClick();
-                    match = region.wait(CurrencyData.tldJZ,1);
-                    if(null == match){
+                    match = region.wait(CurrencyData.tldJZ, 1);
+                    if (null == match) {
                         System.out.println("寻找锁定教主为空~~~~~~~");
                         break;
                     }
                 }
             }
 
-            if(sdCount != 0 && sdCount != 1){
+            if (sdCount != 0 && sdCount != 1) {
                 System.out.println("下移！！！！！！！");
-                match.setY(match.getY()+80);
+                match.setY(match.getY() + 80);
                 match.hover();
                 //锁定
                 region.type(Key.F2);
                 Thread.sleep(200);
                 match.rightClick();
-                for (int i=0;i<3;i++){
-                    match = region.wait(CurrencyData.tldJZ,0.5);
-                    if(null != match){
-                        match.setY(match.getY()+80);
+                for (int i = 0; i < 3; i++) {
+                    match = region.wait(CurrencyData.tldJZ, 0.5);
+                    if (null != match) {
+                        match.setY(match.getY() + 80);
                         match.hover();
                         region.type(Key.F2);
                         Thread.sleep(200);
@@ -164,14 +171,14 @@ public class SikDaGuai {
                         Thread.sleep(200);
                     }
                     //寻找英雄锁定
-                    sdMatch = region.wait(CurrencyData.ztsd,1);
+                    sdMatch = region.wait(CurrencyData.ztsd, 1);
                     region.type(Key.F4);
-                    if(null != sdMatch){
+                    if (null != sdMatch) {
                         break;
                     }
                 }
-            }else {
-                match.setY(match.getY()-20);
+            } else {
+                match.setY(match.getY() - 20);
                 match.hover();
                 Thread.sleep(300);
                 match.rightClick();
@@ -180,4 +187,83 @@ public class SikDaGuai {
         }
         return match;
     }
+
+    //新手福利打怪
+    public static void xsGuai(Region region) throws Exception {
+        int count = 0;
+        //检查宝宝是否在线
+        BaoBao.baobao(region);
+        Match match = region.wait(CurrencyData.tldJZ, 0.5);
+        if (null == match) {
+            match = region.wait(CurrencyData.xsJZ, 0.5);
+        }
+        //如果教主不为空一直循环打
+        while (null != match) {
+            System.out.println("循环打怪count：" + count);
+            if ((count % 2) == 0) {
+                match.setY(match.getY() -10);
+                match.setX(match.getX() + 30);
+            } else {
+                match.setY(match.getY() -10);
+                match.setX(match.getX() - 30);
+            }
+            match.rightClick();
+            //关闭弹窗
+            SikJZB.gb(region);
+            //第一次，必须激活教主并且锁定成功
+            if (0 == count) {
+                sdHj(region);
+            } else {
+                //锁定
+                if ((count % 5) == 0) {
+                    sdHj(region);
+                    System.out.println("打怪期间检查装备~~~~");
+                    SikJZB.pickup();
+                    //关闭弹窗
+                    SikJZB.gb(region);
+                } else {
+                    match = region.wait(CurrencyData.xsJZ, 2);
+                    if (null != match) {
+                        match.setY(match.getY() + 80);
+                        match.hover();
+                        Thread.sleep(300);
+                        region.type(Key.F6);
+                        Thread.sleep(500);
+                    }else {
+                        match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+                        match.setY(match.getY()-300);
+                        match.setX(match.getX()-400);
+                        Thread.sleep(300);
+                        region.type(Key.F6);
+                        Thread.sleep(300);
+                    }
+                }
+                //合击
+                region.type(Key.F3);
+            }
+            count++;
+            match = region.wait(CurrencyData.xsJZ, 2);
+            //防止人物重叠怪识别不出来再次查询
+            if(null == match){
+                match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+                match.setY(match.getY()-300);
+                match.rightClick();
+                Thread.sleep(400);
+                match.rightClick();
+                Thread.sleep(400);
+                match = region.wait(CurrencyData.xsJZ, 2);
+                if(null == match){
+                    match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+                    match.setY(match.getY()-300);
+                    match.setX(200);
+                    match.rightClick();
+                    Thread.sleep(400);
+                    match.rightClick();
+                    Thread.sleep(400);
+                    match = region.wait(CurrencyData.xsJZ, 2);
+                }
+            }
+        }
+    }
 }
+

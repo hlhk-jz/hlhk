@@ -12,15 +12,15 @@ public class XSHandler {
 
     public static void show(Region region)throws Exception {
 
-        //如果是在土城，就找新手打宝
+        //如果是在新手福利地图
         Thread.sleep(500);
-       // SuiJiShi.isTuCheng(region,0);
+        SuiJiShi.isTuLd(region,0);
 
         count ++;
 
         //5. 寻找随机石
         SuiJiShi.suiJiShi(region);
-        Thread.sleep(300);
+        Thread.sleep(1000);
         Match match2 = region.wait(CurrencyData.zblSjs,1);
         if(null == match2){
             match2 = region.wait(CurrencyData.zblSjs,1);
@@ -38,11 +38,12 @@ public class XSHandler {
             List<Match> anyList = region.findAnyList(CurrencyData.jzList());
             Thread.sleep(1000);
             if(anyList.isEmpty()){
+                Match matchyd;
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
-                if(null != yd && (n%2)==0){
-                    //右下
-                    Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                    matchyd.setY(matchyd.getY()-100);
+                if(null != yd){
+                    //右上
+                    matchyd= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                    matchyd.setY(matchyd.getY()-500);
                     matchyd.setX(matchyd.getX()+400);
                     matchyd.rightClick();
                     Thread.sleep(600);
@@ -52,20 +53,31 @@ public class XSHandler {
                     Thread.sleep(300);
                     matchyd.rightClick();
                     Thread.sleep(300);
-                }
-                if(null != yd && (n%2)!=0){
-                    //左上
-                    Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                    matchyd.setY(matchyd.getY()-500);
-                    matchyd.setX(matchyd.getX()-80);
-                    matchyd.rightClick();
-                    Thread.sleep(600);
-                    matchyd.rightClick();
-                    Thread.sleep(600);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
+                    //寻找教主
+                    anyList = region.findAnyList(CurrencyData.jzList());
+                    Thread.sleep(1000);
+                    if(anyList.isEmpty()){
+                        //左下
+                        matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                        matchyd.setY(matchyd.getY()-160);
+                        matchyd.setX(matchyd.getX()-80);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
+                        Thread.sleep(600);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
+                    }
                 }
             }
             //寻找教主
@@ -75,9 +87,9 @@ public class XSHandler {
             if (!anyList.isEmpty()){
                 break;
             }
-            //查看是否在土城
+            //查看是否在新手打宝
             if((n%5)==0){
-               //SuiJiShi.isTuCheng(region,0);
+               SuiJiShi.isTuLd(region,0);
             }
             if(n > 40){
                 //随机40次没有怪后，调用随机石方法
@@ -96,7 +108,7 @@ public class XSHandler {
 
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         System.out.println("调用打怪开始！！！！！！");
-        //SikDaGuai.daGuai(region);
+        SikDaGuai.xsGuai(region);
         System.out.println("调用打怪结束~~~~~~~~~~~");
 
         //8. 打完怪捡装备,防止漏捡，调用多次

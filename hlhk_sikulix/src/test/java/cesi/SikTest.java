@@ -12,14 +12,18 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class SikTest {
 
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        Match match = region.wait("D:/software/sikulix/image/sxbg1.PNG", 1);
-        match.click();
+
+        Match  match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+        match.setY(match.getY()-300);
+        match.setX(match.getX()-400);
+        match.hover();
 
 
        /* Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
