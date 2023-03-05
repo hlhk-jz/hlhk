@@ -12,7 +12,7 @@ public class SikDaGuai {
     public static void main(String[] args) throws Exception {
         Region region = new Region(0, 0, 1920, 1080);
         region.setThrowException(false);
-        xsGuai(region);
+        daGuai(region);
     }
 
     //屠龙殿打怪
@@ -186,84 +186,6 @@ public class SikDaGuai {
             sdCount++;
         }
         return match;
-    }
-
-    //新手福利打怪
-    public static void xsGuai(Region region) throws Exception {
-        int count = 0;
-        //检查宝宝是否在线
-        BaoBao.baobao(region);
-        Match match = region.wait(CurrencyData.tldJZ, 0.5);
-        if (null == match) {
-            match = region.wait(CurrencyData.xsJZ, 0.5);
-        }
-        //如果教主不为空一直循环打
-        while (null != match) {
-            System.out.println("循环打怪count：" + count);
-            if ((count % 2) == 0) {
-                match.setY(match.getY() -10);
-                match.setX(match.getX() + 30);
-            } else {
-                match.setY(match.getY() -10);
-                match.setX(match.getX() - 30);
-            }
-            match.rightClick();
-            //关闭弹窗
-            SikJZB.gb(region);
-            //第一次，必须激活教主并且锁定成功
-            if (0 == count) {
-                sdHj(region);
-            } else {
-                //锁定
-                if ((count % 5) == 0) {
-                    sdHj(region);
-                    System.out.println("打怪期间检查装备~~~~");
-                    SikJZB.pickup();
-                    //关闭弹窗
-                    SikJZB.gb(region);
-                } else {
-                    match = region.wait(CurrencyData.xsJZ, 2);
-                    if (null != match) {
-                        match.setY(match.getY() + 80);
-                        match.hover();
-                        Thread.sleep(300);
-                        region.type(Key.F6);
-                        Thread.sleep(500);
-                    }else {
-                        match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
-                        match.setY(match.getY()-300);
-                        match.setX(match.getX()-400);
-                        Thread.sleep(300);
-                        region.type(Key.F6);
-                        Thread.sleep(300);
-                    }
-                }
-                //合击
-                region.type(Key.F3);
-            }
-            count++;
-            match = region.wait(CurrencyData.xsJZ, 2);
-            //防止人物重叠怪识别不出来再次查询
-            if(null == match){
-                match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
-                match.setY(match.getY()-300);
-                match.rightClick();
-                Thread.sleep(400);
-                match.rightClick();
-                Thread.sleep(400);
-                match = region.wait(CurrencyData.xsJZ, 2);
-                if(null == match){
-                    match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
-                    match.setY(match.getY()-300);
-                    match.setX(200);
-                    match.rightClick();
-                    Thread.sleep(400);
-                    match.rightClick();
-                    Thread.sleep(400);
-                    match = region.wait(CurrencyData.xsJZ, 2);
-                }
-            }
-        }
     }
 }
 

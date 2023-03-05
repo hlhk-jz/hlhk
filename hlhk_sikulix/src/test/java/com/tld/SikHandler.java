@@ -12,10 +12,8 @@ public class SikHandler {
 
         //判断是否在屠龙殿地图
         Thread.sleep(500);
-        SuiJiShi.isTuLd(region,1);
-
+        SuiJiShi.isTuLd(region);
         count ++;
-
         //5. 寻找随机石
         SuiJiShi.suiJiShi(region);
         Thread.sleep(1000);
@@ -88,7 +86,7 @@ public class SikHandler {
             }
             //查看是否在屠龙殿
             if((n%5)==0){
-               SuiJiShi.isTuLd(region,1);
+               SuiJiShi.isTuLd(region);
             }
             if(n > 40){
                 //随机40次没有怪后，调用随机石方法
