@@ -109,16 +109,28 @@ public class MonitorStart {
                 if(null != match2){
                     match2.doubleClick();
                     Thread.sleep(300);
+                    region.type(Key.F1);
+                    Thread.sleep(300);
+                    region.type(Key.F1);
+                    Thread.sleep(300);
+                    region.type(Key.F1);
+                    Thread.sleep(300);
+                    region.type(Key.F1);
+                    Thread.sleep(4000);
+                }else {
+                    //召回
+                    Thread.sleep(300);
+                    region.type(Key.F5);
+                    Thread.sleep(300);
+                    match2 = region.wait("D:/software/sikulix/image/shitou.PNG",0.5);
+                    if(null == match2){
+                        match2 = region.wait("D:/software/sikulix/image/shitou.PNG",1);
+                    }
+                    if(null != match2){
+                        match2.doubleClick();
+                    }
                 }
-                region.type(Key.F1);
-                Thread.sleep(300);
-                region.type(Key.F1);
-                Thread.sleep(300);
-                region.type(Key.F1);
-                Thread.sleep(300);
-                region.type(Key.F1);
-                Thread.sleep(300);
-                Thread.sleep(4000);
+
             }
         }catch (Exception e){
             e.printStackTrace();
