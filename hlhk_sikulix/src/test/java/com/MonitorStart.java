@@ -110,6 +110,14 @@ public class MonitorStart {
                     match2.doubleClick();
                     Thread.sleep(300);
                 }
+                region.type(Key.F1);
+                Thread.sleep(300);
+                region.type(Key.F1);
+                Thread.sleep(300);
+                region.type(Key.F1);
+                Thread.sleep(300);
+                region.type(Key.F1);
+                Thread.sleep(300);
                 Thread.sleep(4000);
             }
         }catch (Exception e){
