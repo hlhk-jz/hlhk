@@ -31,6 +31,10 @@ public class SuiJiShi {
         if(null == match){
             match = region.wait("D:/software/sikulix/image/sxbg2.PNG", 1);
         }
+        if(null == match){
+            SikJZB.gb(region);
+            suiJiShi(region);
+        }
         match.click();
         //查看随机石总数
         Thread.sleep(500);
