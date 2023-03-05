@@ -134,7 +134,7 @@ public class SikHandler {
         System.out.println("检查主号和宝宝药品结束。。。。。。");
 
         //11. 检查火龙之心等
-        if((count%50)==0){
+        if((count%30)==0){
             //火龙之心
             HLZX.hlzx(region);
             //检查磨血石，如果有人龙印只修装备就可以
