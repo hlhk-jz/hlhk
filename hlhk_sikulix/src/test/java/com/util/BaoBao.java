@@ -5,7 +5,7 @@ import org.sikuli.script.Region;
 
 //检查宝宝是否挂了
 public class BaoBao {
-/*    public static void main(String[] args)throws Exception{
+   /* public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
         baobao(region);
@@ -22,6 +22,8 @@ public class BaoBao {
                      match = region.find("D:/software/sikulix/image/bbzh.PNG");
                  }
                  match.click();
+                 match.setX(match.getX()-30);
+                 match.hover();
                  match = region.wait("D:/software/sikulix/image/baobao2.PNG",5);
              }
         }
