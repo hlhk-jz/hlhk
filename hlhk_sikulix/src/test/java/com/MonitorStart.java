@@ -116,6 +116,10 @@ public class MonitorStart {
                     region.type(Key.F1);
                     Thread.sleep(300);
                     region.type(Key.F1);
+                    Thread.sleep(300);
+                    region.type(Key.F1);
+                    Thread.sleep(300);
+                    region.type(Key.F1);
                     Thread.sleep(4000);
                 }else {
                     //召回

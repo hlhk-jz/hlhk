@@ -31,9 +31,9 @@ public class SikDaGuai {
                 break;
             }
             if((count%2)==0){
-                match.setX(match.getX()+20);
+                match.setX(match.getX()+30);
             }else {
-                match.setX(match.getX()-20);
+                match.setX(match.getX()-30);
             }
             match.rightClick();
             //关闭弹窗
@@ -161,11 +161,19 @@ public class SikDaGuai {
                         region.type(Key.F3);
                         Thread.sleep(200);
                     }
+                    //寻找英雄锁定
+                    sdMatch = region.wait(CurrencyData.ztsd,1);
+                    region.type(Key.F4);
+                    if(null != sdMatch){
+                        break;
+                    }
                 }
+            }else {
+                match.setY(match.getY()-20);
+                match.hover();
+                Thread.sleep(300);
+                match.rightClick();
             }
-            //寻找英雄锁定
-            sdMatch = region.wait(CurrencyData.ztsd,1);
-            region.type(Key.F4);
             sdCount++;
         }
         return match;
