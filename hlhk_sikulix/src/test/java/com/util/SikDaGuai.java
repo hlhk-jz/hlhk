@@ -102,6 +102,7 @@ public class SikDaGuai {
                         matchyd.setX(matchyd.getX()+180);
                         matchyd.rightClick();
                         Thread.sleep(300);
+                        matchyd.rightClick();
                         region.type(Key.F4);
                         match = region.wait(CurrencyData.tldJZ,4);
                     }
