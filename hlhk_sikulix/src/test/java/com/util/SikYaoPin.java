@@ -37,7 +37,7 @@ public class SikYaoPin {
             match.click();
         }
 
-        if(size < 5){
+        if(size < 4){
             //寻找商铺
             match = region.wait("D:/software/sikulix/image/pu.PNG",1);
             if(null == match){

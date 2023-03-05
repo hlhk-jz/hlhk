@@ -18,13 +18,17 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        Match match = region.wait("D:/software/sikulix/image/sxbg1.PNG", 1);
+        match.click();
+
+
+       /* Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         bgMathc.setY(bgMathc.getY()-100);
         bgMathc.setX(bgMathc.getX()-230);
         bgMathc.hover();
         bgMathc.setY(bgMathc.getY()-350);
         bgMathc.hover();
-
+*/
        /* Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         match.setY(match.getY()-100);
         match.setX(match.getX()-230);

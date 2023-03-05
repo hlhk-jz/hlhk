@@ -29,19 +29,16 @@ public class SuiJiShi {
         //寻找刷新按键
         match = region.wait("D:/software/sikulix/image/sxbg.PNG", 1);
         if(null == match){
-            match = region.wait("D:/software/sikulix/image/sxbg2.PNG", 1);
+            match = region.wait("D:/software/sikulix/image/sxbg1.PNG", 1);
         }
-        if(null == match){
-            SikJZB.gb(region);
-            suiJiShi(region);
+        if(null != match){
+            match.click();
         }
-        match.click();
         //查看随机石总数
         Thread.sleep(500);
-
         Iterator<Match> all = region.findAll("D:/software/sikulix/tulongdian/shitou4.PNG");
         Thread.sleep(1000);
-        if(null == all && Iterators.size(all) < 4){
+        if(null == all && Iterators.size(all) < 3){
             all = region.findAll("D:/software/sikulix/tulongdian/shitou.PNG");
         }
         Thread.sleep(500);

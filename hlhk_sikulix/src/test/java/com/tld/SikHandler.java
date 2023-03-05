@@ -136,11 +136,13 @@ public class SikHandler {
         //11. 检查火龙之心等
         if((count%30)==0){
             //火龙之心
+            System.out.println("检查宝宝火龙之心修复装备开始！时间："+System.currentTimeMillis()/1000);
             HLZX.hlzx(region);
             //检查磨血石，如果有人龙印只修装备就可以
            // MoXueShi.jcMXS(region);
             //修复装备
             XiuFuZB.xfzb(region);
+            System.out.println("火龙之心检查装备结束！时间："+System.currentTimeMillis()/1000);
         }
         //12. 循环地柜
         System.out.println("~~~~~~~~~~~本次超级循环数量："+count);
