@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SikJZB {
- /*   public static void main(String[] args)throws Exception{
+    public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         pickup();
-    }*/
+    }
 
     public static void pickup()throws Exception{
         Region jzbRegion = new Region(60, 0,1200,800);

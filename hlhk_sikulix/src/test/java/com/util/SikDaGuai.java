@@ -9,11 +9,11 @@ import java.util.Map;
 //打怪
 public class SikDaGuai {
 
-   /* public static void main(String[] args)throws Exception{
+    public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         daGuai(region);
-    }*/
+    }
 
 
     public static void daGuai(Region region )throws Exception{
@@ -43,18 +43,24 @@ public class SikDaGuai {
                 sdHj(region);
             }else {
                 //锁定
-                if((count % 5)==0){
+                if((count % 10)==0){
                     sdHj(region);
-                }
-                //合击
-                region.type(Key.F3);
-                //检查装备
-                if((count % 8)==0){
                     System.out.println("打怪期间检查装备~~~~");
                     SikJZB.pickup();
                     //关闭弹窗
                     SikJZB.gb(region);
+                }else {
+                    match = region.wait(CurrencyData.tldJZ,2);
+                    if(null != match){
+                        match.setY(match.getY()+80);
+                        match.hover();
+                        Thread.sleep(300);
+                        region.type(Key.F6);
+                        Thread.sleep(500);
+                    }
                 }
+                //合击
+                region.type(Key.F3);
                 //检查药品
                 if((count % 30)==0){
                     System.out.println("打怪期间检查药品！！！！");
@@ -144,7 +150,7 @@ public class SikDaGuai {
                 region.type(Key.F2);
                 Thread.sleep(200);
                 match.rightClick();
-                for (int i=0;i<5;i++){
+                for (int i=0;i<3;i++){
                     match = region.wait(CurrencyData.tldJZ,0.5);
                     if(null != match){
                         match.setY(match.getY()+80);
@@ -152,6 +158,8 @@ public class SikDaGuai {
                         region.type(Key.F2);
                         Thread.sleep(200);
                         match.rightClick();
+                        region.type(Key.F3);
+                        Thread.sleep(200);
                     }
                 }
             }
