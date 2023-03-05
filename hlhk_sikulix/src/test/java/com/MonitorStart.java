@@ -84,6 +84,12 @@ public class MonitorStart {
                 match.doubleClick();
                 //跟随
                 region.type(Key.F1);
+
+                match = region.wait("D:/software/sikulix/image/sw.PNG", 2);
+                if(null != match){
+                    //人物需要小退，将宝宝召回
+                    region.type(Key.F5);
+                }
             }else {
                 //如果没找到随机石，宝宝召回
                 region.type(Key.F5);
