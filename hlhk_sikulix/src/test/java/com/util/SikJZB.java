@@ -76,6 +76,7 @@ public class SikJZB {
         initList.add("D:/software/sikulix/zhuangbei/hs.PNG");
         //开天
         initList.add("D:/software/sikulix/zhuangbei/kt.PNG");
+        initList.add("D:/software/sikulix/zhuangbei/kt1.PNG");
         //玄天
         initList.add("D:/software/sikulix/zhuangbei/xt.PNG");
         //圣魔
