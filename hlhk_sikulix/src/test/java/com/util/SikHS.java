@@ -5,7 +5,7 @@ import java.util.List;
 
 //回收装备
 public class SikHS {
-    public static void main(String[] args){
+   /* public static void main(String[] args){
         try {
             Region region = new Region(0, 0,1200,800);
             region.setThrowException(false);
@@ -13,7 +13,7 @@ public class SikHS {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public static void jzb(Region region)throws Exception{
         Settings.MinSimilarity = 0.7;

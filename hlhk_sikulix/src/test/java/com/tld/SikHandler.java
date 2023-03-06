@@ -122,7 +122,11 @@ public class SikHandler {
         //9. 回收
         if((count%2)==0){
             System.out.println("回收装备开始！！！！");
-            SikHS.jzb(region);
+            try {
+                SikHS.jzb(region);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             System.out.println("回收装备结束~~~~~~~~");
         }
         //10. 检查药品,主号和宝宝
