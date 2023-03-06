@@ -115,6 +115,10 @@ public class MonitorStart {
                 if(null != match2){
                     match2.doubleClick();
                     Thread.sleep(300);
+                    match2.doubleClick();
+                    Thread.sleep(300);
+                    match2.doubleClick();
+                    Thread.sleep(300);
                     region.type(Key.F1);
                     Thread.sleep(300);
                     region.type(Key.F1);
@@ -129,6 +133,12 @@ public class MonitorStart {
                     Thread.sleep(4000);
                 }else {
                     //召回
+                    Thread.sleep(300);
+                    region.type(Key.F5);
+                    Thread.sleep(300);
+                    region.type(Key.F5);
+                    Thread.sleep(300);
+                    region.type(Key.F5);
                     Thread.sleep(300);
                     region.type(Key.F5);
                     Thread.sleep(300);
