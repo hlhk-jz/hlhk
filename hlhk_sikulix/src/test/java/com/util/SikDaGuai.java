@@ -46,11 +46,12 @@ public class SikDaGuai {
             } else {
                 //锁定
                 if ((count % 10) == 0) {
-                    sdHj(region);
                     System.out.println("打怪期间检查装备~~~~");
                     SikJZB.pickup();
                     //关闭弹窗
                     SikJZB.gb(region);
+                    //锁定
+                    sdHj(region);
                 } else {
                     match = region.wait(CurrencyData.tldJZ, 2);
                     if (null != match) {
