@@ -36,7 +36,7 @@ public class CurrencyData {
 
     //矿泉水属于饮料不
     public static String KQS = "D:/software/sikulix/huishou/kqs.PNG";
-    public static String KQS1 = "D:/software/sikulix/huishou/kqs.PNG";
+    public static String KQS1 = "D:/software/sikulix/huishou/kqs1.PNG";
     //一天多少小时
     public static String XS = "D:/software/sikulix/huishou/xs.PNG";
     public static String XS1 = "D:/software/sikulix/huishou/xs1.PNG";

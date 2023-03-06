@@ -79,30 +79,31 @@ public class SikHS {
 
     //判断是哪一组
     public static void pdty(Region region)throws Exception{
+        Region ziReg = new Region(0,114,399,134);
         boolean isTrue = true;
         List<Match> list = region.findAnyList(CurrencyData.san1Str());
         if(!list.isEmpty()){
-          hs1(region);
+          hs1(region,ziReg);
           isTrue = false;
         }
         if(isTrue){
             list = region.findAnyList(CurrencyData.san2Str());
             if(!list.isEmpty()){
-                hs2(region);
+                hs2(region,ziReg);
                 isTrue = false;
             }
         }
         if(isTrue){
             list = region.findAnyList(CurrencyData.san3Str());
             if(!list.isEmpty()){
-                hs3(region);
+                hs3(region,ziReg);
                 isTrue = false;
             }
         }
         if(isTrue){
             list = region.findAnyList(CurrencyData.san4Str());
             if(!list.isEmpty()){
-                hs4(region);
+                hs4(region,ziReg);
                 isTrue = false;
             }
         }
@@ -115,14 +116,14 @@ public class SikHS {
         }
     }
 
-    private static void hs4(Region region)throws Exception {
+    private static void hs4(Region region,Region ziReg)throws Exception {
         boolean isTrue = true;
         Match match = null;
         //被蚊子叮会不会痒
         if(isTrue){
             match = region.wait(CurrencyData.WZ,1);
             if(null != match){
-                match = region.wait(CurrencyData.WZ1,2);
+                match = ziReg.wait(CurrencyData.WZ1,2);
                 match.click();
                 isTrue = false;
             }
@@ -132,7 +133,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.CJZ,1);
             if(null != match){
-                match = region.wait(CurrencyData.CJZ1,2);
+                match = ziReg.wait(CurrencyData.CJZ1,2);
                 match.click();
                 isTrue = false;
             }
@@ -142,7 +143,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.WCN,1);
             if(null != match){
-                match = region.wait(CurrencyData.WCN1,2);
+                match = ziReg.wait(CurrencyData.WCN1,2);
                 match.click();
                 isTrue = false;
             }
@@ -152,7 +153,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.QE,1);
             if(null != match){
-                match = region.wait(CurrencyData.QE1,2);
+                match = ziReg.wait(CurrencyData.QE1,2);
                 match.click();
                 isTrue = false;
             }
@@ -170,14 +171,14 @@ public class SikHS {
         match.click();
     }
 
-    private static void hs3(Region region)throws Exception {
+    private static void hs3(Region region,Region ziReg)throws Exception {
         boolean isTrue = true;
         Match match = null;
         //10086
         if(isTrue){
             match = region.wait(CurrencyData.ZGYD,1);
             if(null != match){
-                match = region.wait(CurrencyData.ZGYD1,2);
+                match = ziReg.wait(CurrencyData.ZGYD1,2);
                 match.click();
                 isTrue = false;
             }
@@ -187,7 +188,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.TW,1);
             if(null != match){
-                match = region.wait(CurrencyData.TW1,2);
+                match = ziReg.wait(CurrencyData.TW1,2);
                 match.click();
                 isTrue = false;
             }
@@ -197,7 +198,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.TAM,1);
             if(null != match){
-                match = region.wait(CurrencyData.TAM1,2);
+                match = ziReg.wait(CurrencyData.TAM1,2);
                 match.click();
                 isTrue = false;
             }
@@ -207,7 +208,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.SB,1);
             if(null != match){
-                match = region.wait(CurrencyData.SB1,2);
+                match = ziReg.wait(CurrencyData.SB1,2);
                 match.click();
                 isTrue = false;
             }
@@ -225,14 +226,14 @@ public class SikHS {
         match.click();
     }
 
-    private static void hs2(Region region)throws Exception {
+    private static void hs2(Region region,Region ziReg)throws Exception {
         boolean isTrue = true;
         Match match = null;
         //有多少个英文字母
         if(isTrue){
             match = region.wait(CurrencyData.YWZM,1);
             if(null != match){
-                match = region.wait(CurrencyData.YWZM1,2);
+                match = ziReg.wait(CurrencyData.YWZM1,2);
                 match.click();
                 isTrue = false;
             }
@@ -242,7 +243,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.SRFF,1);
             if(null != match){
-                match = region.wait(CurrencyData.SRFF1,2);
+                match = ziReg.wait(CurrencyData.SRFF1,2);
                 match.click();
                 isTrue = false;
             }
@@ -252,7 +253,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.XY,1);
             if(null != match){
-                match = region.wait(CurrencyData.XY1,2);
+                match = ziReg.wait(CurrencyData.XY1,2);
                 match.click();
                 isTrue = false;
             }
@@ -262,7 +263,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.DH,1);
             if(null != match){
-                match = region.wait(CurrencyData.DH1,2);
+                match = ziReg.wait(CurrencyData.DH1,2);
                 match.click();
                 isTrue = false;
             }
@@ -280,13 +281,13 @@ public class SikHS {
         match.click();
     }
 
-    private static void hs1(Region region) throws Exception{
+    private static void hs1(Region region,Region ziReg) throws Exception{
         boolean isTrue = true;
         Match match = null;
         //矿泉水属于饮料不
         match = region.wait(CurrencyData.KQS,1);
         if(null != match){
-            match = region.wait(CurrencyData.KQS1,2);
+            match = ziReg.wait(CurrencyData.KQS1,2);
             match.click();
             isTrue = false;
         }
@@ -295,7 +296,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.XS,1);
             if(null != match){
-                match = region.wait(CurrencyData.XS1,2);
+                match = ziReg.wait(CurrencyData.XS1,2);
                 match.click();
                 isTrue = false;
             }
@@ -305,7 +306,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.NGR,1);
             if(null != match){
-                match = region.wait(CurrencyData.NGR1,2);
+                match = ziReg.wait(CurrencyData.NGR1,2);
                 match.click();
                 isTrue = false;
             }
@@ -315,7 +316,7 @@ public class SikHS {
         if(isTrue){
             match = region.wait(CurrencyData.JSM,1);
             if(null != match){
-                match = region.wait(CurrencyData.JSM1,2);
+                match = ziReg.wait(CurrencyData.JSM1,2);
                 match.click();
                 isTrue = false;
             }
