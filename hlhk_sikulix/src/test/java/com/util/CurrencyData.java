@@ -1,4 +1,9 @@
 package com.util;
+import org.sikuli.script.Key;
+import org.sikuli.script.Match;
+import org.sikuli.script.Region;
+import org.springframework.util.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 public class CurrencyData {
@@ -113,5 +118,27 @@ public class CurrencyData {
         list.add(TAM);
         list.add(SB);
         return list;
+    }
+
+    public static void isTrue(Region region)throws Exception{
+        //在捡装备时，如果被锁定或者宝宝血量减少，随机石
+        if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get("isTrue"))){
+            Match match2 = region.wait(CurrencyData.zblSjs,1);
+            if(null == match2){
+                match2 = region.wait(CurrencyData.zblSjs,1);
+            }
+            if(null != match2){
+                match2.doubleClick();
+                Thread.sleep(300);
+                region.type(Key.F1);
+                match2.doubleClick();
+                Thread.sleep(300);
+                region.type(Key.F1);
+                Thread.sleep(300);
+                region.type(Key.F1);
+            }else {
+                region.type(Key.F5);
+            }
+        }
     }
 }

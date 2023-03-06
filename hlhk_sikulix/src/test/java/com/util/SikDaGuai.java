@@ -38,6 +38,8 @@ public class SikDaGuai {
             match.rightClick();
             //关闭弹窗
             SikJZB.gb(region);
+            //如果被锁定或者宝宝血量减少，随机石
+            CurrencyData.isTrue(region);
             //第一次，必须激活教主并且锁定成功
             if (0 == count) {
                 sdHj(region);
@@ -131,6 +133,8 @@ public class SikDaGuai {
                 System.out.println("锁定执行大于15，结束循环！！！！");
                 break;
             }
+            //如果被锁定或者宝宝血量减少，随机石
+            CurrencyData.isTrue(region);
             //寻找教主
             match = region.wait(CurrencyData.tldJZ, 2);
             if (null == match) {

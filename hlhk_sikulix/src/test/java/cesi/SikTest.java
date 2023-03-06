@@ -15,13 +15,18 @@ import java.util.List;
 public class SikTest {
 
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1200,800);
-        region.setThrowException(false);
-
-        Match  match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+        Region jzbRegion = new Region(60, 0,1200,800);
+        jzbRegion.setThrowException(false);
+        Settings.MinSimilarity = 0.65;
+        Match match2 = jzbRegion.wait(CurrencyData.zblSjs,1);
+        if(null == match2){
+            match2 = jzbRegion.wait(CurrencyData.zblSjs,1);
+        }
+        match2.hover();
+       /* Match  match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
         match.setY(match.getY()-300);
         match.setX(match.getX()-400);
-        match.hover();
+        match.hover();*/
 
 
        /* Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);

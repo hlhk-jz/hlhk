@@ -1,7 +1,10 @@
 package com;
 import com.util.CurrencyData;
+import com.util.RedisUtils;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
+
+import java.util.concurrent.TimeUnit;
 
 //监听
 public class MonitorStart {
@@ -71,6 +74,7 @@ public class MonitorStart {
         match = region.wait("D:/software/sikulix/image/xl.PNG",2);
         if(null != match){
             System.out.println("宝宝血量减少！！！当前时间："+System.currentTimeMillis());
+            RedisUtils.redisTemplate.opsForValue().set("isTrue","true",10, TimeUnit.SECONDS);
             Settings.MinSimilarity= 0.7;
             region.setX(305);
             region.setY(504);
@@ -108,13 +112,12 @@ public class MonitorStart {
             Match match = region.wait(CurrencyData.bsd,2);
             if(null != match){
                 System.out.println("被锁定！！！当前时间："+System.currentTimeMillis()/1000);
+                RedisUtils.redisTemplate.opsForValue().set("isTrue","true",10, TimeUnit.SECONDS);
                 Match match2 = region.wait("D:/software/sikulix/image/shitou.PNG",0.5);
                 if(null == match2){
                     match2 = region.wait("D:/software/sikulix/image/shitou.PNG",1);
                 }
                 if(null != match2){
-                    match2.doubleClick();
-                    Thread.sleep(300);
                     match2.doubleClick();
                     Thread.sleep(300);
                     match2.doubleClick();
