@@ -54,6 +54,8 @@ public class SikJZB {
                         location.click();
                     }
                     Thread.sleep(300);
+                    bgMathc.hover();
+                    Thread.sleep(300);
                     matchs = jzbRegion.wait(matchs.getImage(),0.5);
                     start ++;
                 }
