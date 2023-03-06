@@ -110,9 +110,10 @@ public class SikJZB {
         initList.add("D:/software/sikulix/zhuangbei/ftmj.PNG");
         //狂战
         initList.add("D:/software/sikulix/zhuangbei/kz3.PNG");
+        //屠龙
+        initList.add("D:/software/sikulix/zhuangbei/tl.PNG");
         //强化
         initList.add("D:/software/sikulix/zhuangbei/qh.PNG");
-        initList.add("D:/software/sikulix/zhuangbei/qh2.PNG");
         //光芒
         initList.add("D:/software/sikulix/zhuangbei/gm.PNG");
         //雷霆
