@@ -50,9 +50,9 @@ public class MonitorStart {
                     match = region.wait("D:/software/sikulix/image/ksjr.PNG", 6);
                     match.click();
                     Thread.sleep(5000);
-                    match = region.wait("D:/software/sikulix/image/qdjr.PNG", 6);
+                    match = region.wait("D:/software/sikulix/image/qdjr.PNG", 5);
                     if(null == match){
-                        match = region.wait("D:/software/sikulix/image/qdjr.PNG", 6);
+                        match = region.wait("D:/software/sikulix/image/qdjr.PNG", 5);
                     }
                     match.click();
                     Thread.sleep(2000);
