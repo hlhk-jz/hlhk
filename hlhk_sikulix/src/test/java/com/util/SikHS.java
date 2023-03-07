@@ -9,7 +9,7 @@ public class SikHS {
         try {
             Region region = new Region(0, 0,1200,800);
             region.setThrowException(false);
-            jzb(region);
+            hs(region);
         } catch (Exception e) {
             e.printStackTrace();
         }
