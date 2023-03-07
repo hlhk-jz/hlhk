@@ -50,6 +50,8 @@ public class SikHandler {
                     Thread.sleep(300);
                     matchyd.rightClick();
                     Thread.sleep(300);
+                    matchyd.rightClick();
+                    Thread.sleep(300);
                     //寻找教主
                     anyList = region.findAnyList(CurrencyData.jzList());
                     Thread.sleep(1000);
@@ -70,6 +72,8 @@ public class SikHandler {
                         Thread.sleep(600);
                         matchyd.rightClick();
                         Thread.sleep(600);
+                        matchyd.rightClick();
+                        Thread.sleep(300);
                         matchyd.rightClick();
                         Thread.sleep(300);
                         matchyd.rightClick();
