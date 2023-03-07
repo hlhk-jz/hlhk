@@ -15,7 +15,7 @@ public class SikHS {
         }
     }*/
 
-    public static void jzb(Region region)throws Exception{
+    public static void hs(Region region)throws Exception{
         Settings.MinSimilarity = 0.7;
         Match match = region.wait("D:/software/sikulix/image/hs1.PNG",1);
         if(null == match){

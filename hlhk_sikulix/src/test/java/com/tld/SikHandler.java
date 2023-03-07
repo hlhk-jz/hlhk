@@ -123,7 +123,7 @@ public class SikHandler {
         if((count%2)==0){
             System.out.println("回收装备开始！！！！");
             try {
-                SikHS.jzb(region);
+                SikHS.hs(region);
             } catch (Exception e) {
                 e.printStackTrace();
             }
