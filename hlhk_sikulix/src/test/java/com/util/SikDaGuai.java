@@ -45,7 +45,7 @@ public class SikDaGuai {
                 sdHj(region);
             } else {
                 //锁定
-                if ((count % 10) == 0) {
+                if ((count % 6) == 0) {
                     System.out.println("打怪期间检查装备~~~~");
                     SikJZB.pickup();
                     //关闭弹窗
@@ -72,7 +72,7 @@ public class SikDaGuai {
                 //合击
                 region.type(Key.F3);
                 //检查药品
-                if ((count % 30) == 0) {
+                if ((count % 20) == 0) {
                     System.out.println("打怪期间检查药品！！！！");
                     SikYaoPin.zhYaoPin(region);
                     SikYaoPin.bbYaoPin(region);
@@ -157,7 +157,7 @@ public class SikDaGuai {
             }
 
             if (sdCount != 0 && sdCount != 1) {
-                System.out.println("下移！！！！！！！");
+                System.out.println("下移锁定英雄！！！！！！！");
                 match.setY(match.getY() + 80);
                 match.hover();
                 //锁定
