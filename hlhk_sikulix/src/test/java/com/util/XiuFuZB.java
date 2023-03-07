@@ -5,11 +5,11 @@ import org.sikuli.script.Region;
 
 //修复装备
 public class XiuFuZB {
-    public static void main(String[] args)throws Exception{
+  /*  public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         xfzb(region);
-    }
+    }*/
 
     public static void xfzb(Region region){
         try {
