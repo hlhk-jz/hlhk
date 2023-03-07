@@ -311,6 +311,16 @@ public class SikHS {
             }
         }
 
+        //什么瓜不能吃
+        if(isTrue){
+            match = region.wait(CurrencyData.BCG,1);
+            if(null != match){
+                match = ziReg.wait(CurrencyData.BCG1,2);
+                match.click();
+                isTrue = false;
+            }
+        }
+
         //爸爸的爸爸叫什么
         if(isTrue){
             match = region.wait(CurrencyData.JSM,1);

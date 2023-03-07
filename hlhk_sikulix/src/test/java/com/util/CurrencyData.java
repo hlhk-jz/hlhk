@@ -51,12 +51,16 @@ public class CurrencyData {
     //爸爸的爸爸叫什么
     public static String JSM = "D:/software/sikulix/huishou/jsm.PNG";
     public static String JSM1 = "D:/software/sikulix/huishou/jsm1.PNG";
+    //什么瓜不能吃
+    public static String BCG = "D:/software/sikulix/huishou/bcg.PNG";
+    public static String BCG1 = "D:/software/sikulix/huishou/bcg1.PNG";
     public static List<Object> san1Str(){
         List<Object> list = new ArrayList<>();
         list.add(KQS);
         list.add(XS);
         list.add(NGR);
         list.add(JSM);
+        list.add(BCG);
         return list;
     }
     //被蚊子叮会不会痒
