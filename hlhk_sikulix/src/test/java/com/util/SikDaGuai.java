@@ -44,6 +44,7 @@ public class SikDaGuai {
             if (0 == count) {
                 sdHj(region);
             } else {
+                region.type(Key.F4);
                 //锁定
                 if ((count % 6) == 0) {
                     System.out.println("打怪期间检查装备~~~~");
@@ -130,6 +131,7 @@ public class SikDaGuai {
         Match sdMatch = null;
         int sdCount = 0;
         while (null == sdMatch) {
+            region.type(Key.F4);
             if (sdCount > 15) {
                 System.out.println("锁定执行大于15，结束循环！！！！");
                 break;
@@ -144,6 +146,7 @@ public class SikDaGuai {
                 matchyd.setX(matchyd.getX() + 400);
                 matchyd.rightClick();
                 match = region.wait(CurrencyData.tldJZ, 1);
+                region.type(Key.F4);
                 if (null == match) {
                     matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 1);
                     matchyd.setY(matchyd.getY() - 377);
