@@ -24,7 +24,6 @@ public class SikHS {
                 match = region.wait("D:/software/sikulix/image/hs4.PNG",1);
             }
         }
-        Thread.sleep(500);
         match.click();
         Thread.sleep(500);
         region.type(Key.ENTER);
