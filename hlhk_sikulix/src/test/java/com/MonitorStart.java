@@ -47,13 +47,15 @@ public class MonitorStart {
                     region.setW(1200);
                     region.setH(800);
                     match.click();
-                    match = region.wait("D:/software/sikulix/image/qdtc.PNG", 10);
+                    match = region.wait("D:/software/sikulix/image/qdtc.PNG", 6);
                     match.click();
-                    match = region.wait("D:/software/sikulix/image/ksjr.PNG", 10);
+                    Thread.sleep(5000);
+                    match = region.wait("D:/software/sikulix/image/ksjr.PNG", 6);
                     match.click();
-                    match = region.wait("D:/software/sikulix/image/qdjr.PNG", 10);
+                    Thread.sleep(5000);
+                    match = region.wait("D:/software/sikulix/image/qdjr.PNG", 5);
                     if(null == match){
-                        match = region.wait("D:/software/sikulix/image/qdjr1.PNG", 10);
+                        match = region.wait("D:/software/sikulix/image/qdjr1.PNG", 2);
                     }
                     match.click();
                     Thread.sleep(2000);
