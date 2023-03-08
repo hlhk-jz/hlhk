@@ -14,12 +14,12 @@ public class MonitorStart {
         region.setThrowException(false);
         while (true){
             try {
-                //检查是否被锁定
-                bsd(region);
-                //检查宝宝血量
-                bbxl(region);
                 //检查是否需要小退
                 sw(region);
+                //检查宝宝血量
+                bbxl(region);
+                //检查是否被锁定
+                bsd(region);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -32,12 +32,12 @@ public class MonitorStart {
         region.setY(502);
         region.setW(317);
         region.setH(373);
-        Match match = region.wait("D:/software/sikulix/image/sw.PNG", 2);
+        Match match = region.wait("D:/software/sikulix/image/sw.PNG", 1);
         if(null != match){
             //防止上线后血量没加上来，睡眠一会在次判断
             Thread.sleep(5000);
             //人物需要小退
-            match = region.wait("D:/software/sikulix/image/sw.PNG", 2);
+            match = region.wait("D:/software/sikulix/image/sw.PNG", 1);
             if(null != match){
                 System.out.println("检测到人物需要小退！！当前时间："+System.currentTimeMillis()/1000);
                 //存储redis判断条件
