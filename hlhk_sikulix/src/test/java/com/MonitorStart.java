@@ -56,7 +56,7 @@ public class MonitorStart {
         match = region.wait("D:/software/sikulix/image/xl.PNG",2);
         if(null != match){
             System.out.println("宝宝血量减少！！！当前时间："+System.currentTimeMillis());
-            RedisUtils.redisTemplate.opsForValue().set("isTrue","true",15, TimeUnit.SECONDS);
+            RedisUtils.redisTemplate.opsForValue().set(CurrencyData.SDKEY,"true",15, TimeUnit.SECONDS);
             Thread.sleep(15000);
         }
     }
@@ -70,7 +70,7 @@ public class MonitorStart {
         Match match = region.wait(CurrencyData.bsd,2);
         if(null != match){
             System.out.println("被锁定！！！当前时间："+System.currentTimeMillis()/1000);
-            RedisUtils.redisTemplate.opsForValue().set("isTrue","true",15, TimeUnit.SECONDS);
+            RedisUtils.redisTemplate.opsForValue().set(CurrencyData.SDKEY,"true",15, TimeUnit.SECONDS);
             Thread.sleep(15000);
         }
     }

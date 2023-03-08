@@ -59,8 +59,9 @@ public class ATuLongDianStart {
             SikHandler.handler(region);
         } catch (Exception e) {
             e.printStackTrace();
+            CurrencyData.isTrue(region, 9999);
             try {
-                Thread.sleep(10000);
+                Thread.sleep(2000);
             } catch (InterruptedException e1) {
                 e1.printStackTrace();
             }

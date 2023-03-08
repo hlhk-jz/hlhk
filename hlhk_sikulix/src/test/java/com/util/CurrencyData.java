@@ -126,7 +126,8 @@ public class CurrencyData {
         return list;
     }
 
-    public static final String SWKEY = "isTrue";
+    public static final String SWKEY = "swKey";
+    public static final String SDKEY = "sdKey";
     public static void isTrue(Region region,int type){
         try {
             if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SWKEY))){
@@ -156,6 +157,11 @@ public class CurrencyData {
                     Thread.sleep(2000);
                 }
                 RedisUtils.redisTemplate.delete(SWKEY);
+                region.setX(0);
+                region.setY(0);
+                region.setW(1200);
+                region.setH(800);
+                Settings.MinSimilarity= 0.7;
                 return;
             }
         } catch (Exception e) {
@@ -165,7 +171,7 @@ public class CurrencyData {
         //被锁定或者宝宝血量减少,只在打怪，捡装备时判断
         if(0 == type){
             try {
-                if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get("isTrue"))){
+                if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SDKEY))){
                     Match match2 = region.wait(CurrencyData.zblSjs,1);
                     if(null == match2){
                         match2 = region.wait(CurrencyData.zblSjs,1);
@@ -182,6 +188,7 @@ public class CurrencyData {
                     }else {
                         region.type(Key.F5);
                     }
+                    RedisUtils.redisTemplate.delete(SDKEY);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
