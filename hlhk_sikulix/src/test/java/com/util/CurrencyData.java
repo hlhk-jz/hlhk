@@ -1,4 +1,6 @@
 package com.util;
+import org.sikuli.basics.Settings;
+import org.sikuli.script.FindFailed;
 import org.sikuli.script.Key;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
@@ -124,24 +126,72 @@ public class CurrencyData {
         return list;
     }
 
-    public static void isTrue(Region region)throws Exception{
-        //在捡装备时，如果被锁定或者宝宝血量减少，随机石
-        if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get("isTrue"))){
-            Match match2 = region.wait(CurrencyData.zblSjs,1);
-            if(null == match2){
-                match2 = region.wait(CurrencyData.zblSjs,1);
+    public static final String SWKEY = "swKey";
+    public static final String SDKEY = "sdKey";
+    public static void isTrue(Region region,int type){
+        try {
+            if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SWKEY))){
+                region.setX(659);
+                region.setY(561);
+                region.setW(255);
+                region.setH(181);
+                Settings.MinSimilarity= 0.8;
+                Match match = region.wait("D:/software/sikulix/image/out.PNG", 2);
+                if (null != match) {
+                    region.setX(0);
+                    region.setY(0);
+                    region.setW(1200);
+                    region.setH(800);
+                    match.click();
+                    match = region.wait("D:/software/sikulix/image/qdtc.PNG", 6);
+                    match.click();
+                    Thread.sleep(5000);
+                    match = region.wait("D:/software/sikulix/image/ksjr.PNG", 6);
+                    match.click();
+                    Thread.sleep(5000);
+                    match = region.wait("D:/software/sikulix/image/qdjr.PNG", 5);
+                    if(null == match){
+                        match = region.wait("D:/software/sikulix/image/qdjr1.PNG", 2);
+                    }
+                    match.click();
+                    Thread.sleep(2000);
+                }
+                RedisUtils.redisTemplate.delete(SWKEY);
+                region.setX(0);
+                region.setY(0);
+                region.setW(1200);
+                region.setH(800);
+                Settings.MinSimilarity= 0.7;
+                return;
             }
-            if(null != match2){
-                match2.doubleClick();
-                Thread.sleep(300);
-                region.type(Key.F1);
-                match2.doubleClick();
-                Thread.sleep(300);
-                region.type(Key.F1);
-                Thread.sleep(300);
-                region.type(Key.F1);
-            }else {
-                region.type(Key.F5);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //被锁定或者宝宝血量减少,只在打怪，捡装备时判断
+        if(0 == type){
+            try {
+                if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SDKEY))){
+                    Match match2 = region.wait(CurrencyData.zblSjs,1);
+                    if(null == match2){
+                        match2 = region.wait(CurrencyData.zblSjs,1);
+                    }
+                    if(null != match2){
+                        match2.doubleClick();
+                        Thread.sleep(300);
+                        region.type(Key.F1);
+                        match2.doubleClick();
+                        Thread.sleep(300);
+                        region.type(Key.F1);
+                        Thread.sleep(300);
+                        region.type(Key.F1);
+                    }else {
+                        region.type(Key.F5);
+                    }
+                    RedisUtils.redisTemplate.delete(SDKEY);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }

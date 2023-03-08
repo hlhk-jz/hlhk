@@ -41,9 +41,13 @@ public class SikJZB {
         if(0 != any.size()){
             for (Match matchs: any){
                 while (null != matchs){
-                    //在捡装备时，如果被锁定或者宝宝血量减少，随机石
-                    CurrencyData.isTrue(jzbRegion);
-
+                    //判断小退，锁定
+                    CurrencyData.isTrue(jzbRegion,0);
+                    jzbRegion.setX(60);
+                    jzbRegion.setY(0);
+                    jzbRegion.setW(1200);
+                    jzbRegion.setH(800);
+                    Settings.MinSimilarity= 0.65;
                     if((start%15)==0){
                         //如果捡15次没捡到结束本次
                         break;

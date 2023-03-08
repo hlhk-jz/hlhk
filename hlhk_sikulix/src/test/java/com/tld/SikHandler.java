@@ -1,5 +1,6 @@
 package com.tld;
 import com.util.*;
+import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 
 import java.util.ArrayList;
@@ -124,7 +125,7 @@ public class SikHandler {
         region.type(Key.F1);
         System.out.println("调用捡装备结束！！！！！！");
         //9. 回收
-        if((count%2)==0){
+        if((count%3)==0){
             System.out.println("回收装备开始！！！！");
             try {
                 SikHS.hs(region);
@@ -152,6 +153,11 @@ public class SikHandler {
         }
         //12. 循环地柜
         System.out.println("~~~~~~~~~~~本次超级循环数量："+count);
+        region.setX(0);
+        region.setY(0);
+        region.setW(1200);
+        region.setH(800);
+        Settings.MinSimilarity= 0.7;
         handler(region);
     }
 }
