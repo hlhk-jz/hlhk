@@ -38,8 +38,6 @@ public class SikDaGuai {
             match.rightClick();
             //关闭弹窗
             SikJZB.gb(region);
-            //判断小退，锁定
-            CurrencyData.isTrue(region,0);
             //第一次，必须激活教主并且锁定成功
             if (0 == count) {
                 sdHj(region);
@@ -80,6 +78,8 @@ public class SikDaGuai {
                     //关闭弹窗
                     SikJZB.gb(region);
                 }
+                //判断小退，锁定
+                CurrencyData.isTrue(region,0);
             }
             count++;
             match = region.wait(CurrencyData.tldJZ, 2);
