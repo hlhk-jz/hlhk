@@ -12,7 +12,7 @@ public class SikDaGuai {
     public static void main(String[] args) throws Exception {
         Region region = new Region(0, 0, 1920, 1080);
         region.setThrowException(false);
-        daGuai(region);
+        xsDaguai(region);
     }
 
     //屠龙殿打怪
@@ -85,11 +85,6 @@ public class SikDaGuai {
             match = region.wait(CurrencyData.tldJZ, 2);
             //防止人物重叠怪识别不出来再次查询
             if (null == match) {
-                region.setX(0);
-                region.setY(0);
-                region.setW(1200);
-                region.setH(800);
-                Settings.MinSimilarity = 0.8;
                 //关闭弹窗
                 SikJZB.gb(region);
                 Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 2);
@@ -119,6 +114,97 @@ public class SikDaGuai {
                         match = region.wait(CurrencyData.tldJZ, 4);
                     }
                 }
+            }
+        }
+    }
+
+    //新手打怪
+    public static void xsDaguai(Region region) throws Exception {
+        int count = 0;
+        //检查宝宝是否在线
+        BaoBao.baobao(region);
+        Match match = region.wait(CurrencyData.tldJZ, 0.5);
+        if (null == match) {
+            match = region.wait(CurrencyData.xsJZ, 0.5);
+        }
+        //如果教主不为空一直循环打
+        while (null != match) {
+            System.out.println("循环打怪count：" + count);
+            if (count > 100) {
+                System.out.println("打怪超过指定次数结束循环");
+                break;
+            }
+            //防止地图位置卡怪缩小地图
+            if(count > 5){
+                region.setX(307);
+                region.setY(160);
+                region.setW(390);
+                region.setH(340);
+                match = region.wait(CurrencyData.xsJZ, 1);
+                if(null == match){
+                    System.out.println("缩小地图检查结束循环");
+                    break;
+                }
+                region.setX(0);
+                region.setY(0);
+                region.setW(1200);
+                region.setH(800);
+            }
+            region.type(Key.F4);
+            //激活教主
+            if((count%2)== 0){
+                match.setY(match.getY()-20);
+                match.rightClick();
+            }else {
+                match.setX(match.getX()-20);
+                match.rightClick();
+            }
+
+            if((count%4)== 0 && count != 0){
+                System.out.println("打怪捡装备开始");
+                SikJZB.pickup();
+                System.out.println("打怪捡装备开始");
+            }
+
+            //锁定合击
+            match = region.wait(CurrencyData.xsJZ, 1);
+            if(null != match){
+                match.setY(match.getY() + 80);
+                match.hover();
+                region.type(Key.F2);
+                Thread.sleep(200);
+                match.rightClick();
+                region.type(Key.F3);
+                Thread.sleep(200);
+            }
+
+            //流星火雨
+            match = region.wait(CurrencyData.xsJZ, 1);
+            if(null != match){
+                match.setY(match.getY() + 80);
+                match.hover();
+                region.type(Key.F6);
+                Thread.sleep(300);
+                region.type(Key.F3);
+                Thread.sleep(300);
+            }
+            SikJZB.gb(region);
+            count++;
+            match = region.wait(CurrencyData.xsJZ, 1);
+            //防止人物重叠怪识别不出来再次查询
+            if (null == match) {
+                region.setX(0);
+                region.setY(0);
+                region.setW(1200);
+                region.setH(800);
+                Settings.MinSimilarity = 0.8;
+                Match matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 1);
+                matchyd.setY(matchyd.getY() - 377);
+                matchyd.setX(matchyd.getX() + 400);
+                matchyd.rightClick();
+                Settings.MinSimilarity = 0.7;
+                region.type(Key.F4);
+                match = region.wait(CurrencyData.xsJZ, 1);
             }
         }
     }

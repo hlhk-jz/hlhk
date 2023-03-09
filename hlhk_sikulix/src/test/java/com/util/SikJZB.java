@@ -130,6 +130,10 @@ public class SikJZB {
     }
 
     public static void gb(Region region)throws Exception{
+        region.setX(0);
+        region.setY(0);
+        region.setH(800);
+        region.setW(1200);
         //查看有没有弹框，有就关闭，防止影响捡装备
         List<Match> matchGbs = region.findAnyList(CurrencyData.initGBListObj());
         Thread.sleep(1000);

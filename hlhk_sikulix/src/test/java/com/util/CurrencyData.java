@@ -19,6 +19,8 @@ public class CurrencyData {
     public static String bsd = "D:/software/sikulix/image/bsd.PNG";
     //屠龙殿NPC
     public static String tldNpc = "D:/software/sikulix/tulongdian/tld.PNG";
+    //新手NPC
+    public static String xsNpc = "D:/software/sikulix/image/fuli.PNG";
     //装备栏随机石
     public static String zblSjs = "D:/software/sikulix/image/shitou.PNG";
 

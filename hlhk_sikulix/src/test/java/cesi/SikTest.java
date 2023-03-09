@@ -15,14 +15,20 @@ import java.util.List;
 public class SikTest {
 
     public static void main(String[] args)throws Exception{
-        Region jzbRegion = new Region(60, 0,1200,800);
-        jzbRegion.setThrowException(false);
-        Settings.MinSimilarity = 0.65;
+        Region region = new Region(0, 0,1200,800);
+        region.setThrowException(false);
+
+        //寻找界面下面菜单，调整鼠标位置人物左边移动
+        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        bgMathc.hover();
+
+
+
+        /*Settings.MinSimilarity = 0.65;
         Match match2 = jzbRegion.wait(CurrencyData.zblSjs,1);
         if(null == match2){
             match2 = jzbRegion.wait(CurrencyData.zblSjs,1);
-        }
-        match2.hover();
+        }*/
        /* Match  match = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
         match.setY(match.getY()-300);
         match.setX(match.getX()-400);

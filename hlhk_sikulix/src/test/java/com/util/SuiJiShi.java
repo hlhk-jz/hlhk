@@ -1,6 +1,7 @@
 package com.util;
 import com.google.common.collect.Iterators;
 import com.tld.ATuLongDianStart;
+import com.xinshou.AXinShouDianStart;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
@@ -138,6 +139,24 @@ public class SuiJiShi {
         region.setH(800);
         if(null == wait){
             ATuLongDianStart.tld(region);
+        }
+    }
+
+    //判断是否在新手地图
+    public static void isXinShou(Region region)throws Exception{
+        Settings.MinSimilarity=0.9;
+        region.setX(0);
+        region.setY(601);
+        region.setW(168);
+        region.setH(244);
+        Match wait = region.wait("D:/software/sikulix/xinshou/xsdb.PNG", 0.5);
+        Settings.MinSimilarity=0.7;
+        region.setX(0);
+        region.setY(0);
+        region.setW(1000);
+        region.setH(800);
+        if(null == wait){
+            AXinShouDianStart.xinshou(region);
         }
     }
 }
