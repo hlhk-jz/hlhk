@@ -110,11 +110,11 @@ public class SikHandler {
 
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         System.out.println("调用打怪开始！！！！！！");
-        SikDaGuai.daGuai(region);
+        TldDaGuai.daGuai(region);
         anyList = region.findAnyList(CurrencyData.jzList());
         Thread.sleep(1000);
         if(!anyList.isEmpty()){
-            SikDaGuai.daGuai(region);
+            TldDaGuai.daGuai(region);
         }
         System.out.println("调用打怪结束~~~~~~~~~~~");
 

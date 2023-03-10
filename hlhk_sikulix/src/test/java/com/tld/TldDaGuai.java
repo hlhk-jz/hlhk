@@ -1,4 +1,8 @@
-package com.util;
+package com.tld;
+import com.util.BaoBao;
+import com.util.CurrencyData;
+import com.util.SikJZB;
+import com.util.SikYaoPin;
 import org.opencv.core.Mat;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
@@ -7,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 //打怪
-public class SikDaGuai {
+public class TldDaGuai {
 
     public static void main(String[] args) throws Exception {
         Region region = new Region(0, 0, 1920, 1080);
