@@ -24,6 +24,15 @@ public class CurrencyData {
     //装备栏随机石
     public static String zblSjs = "D:/software/sikulix/image/shitou.PNG";
 
+    //聊天窗口屏幕
+    public static Region ckRegion = new Region(142,620,722,199);
+    //新手地图缩小地图打怪
+    public static Region sxRegion = new Region(291,148,440,337);
+    static {
+        sxRegion.setThrowException(false);
+        ckRegion.setThrowException(false);
+    }
+
     //屠龙殿/ 新手 教主
     public  static List<Object> jzList(){
         List<Object> list = new ArrayList<>();
@@ -130,8 +139,10 @@ public class CurrencyData {
 
     public static final String SWKEY = "swKey";
     public static final String SDKEY = "sdKey";
+
     public static void isTrue(Region region,int type){
         try {
+            //是否需要小退
             if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SWKEY))){
                 region.setX(659);
                 region.setY(561);

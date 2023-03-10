@@ -58,6 +58,8 @@ public class SikJZB {
                         location.rightClick();
                     }else {
                         location.click();
+                        Thread.sleep(300);
+                        jzbRegion.type(Key.F3);
                     }
                     Thread.sleep(300);
                     bgMathc.hover();

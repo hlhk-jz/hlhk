@@ -19,8 +19,45 @@ public class SikTest {
         region.setThrowException(false);
 
         //寻找界面下面菜单，调整鼠标位置人物左边移动
-        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
-        bgMathc.hover();
+        Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        //上
+        /*match.setY(match.getY()-500);
+        match.setX(match.getX()-400);
+        match.hover();*/
+
+        //下
+       /* match.setY(match.getY()-80);
+        match.setX(match.getX()-400);
+        match.hover();*/
+       for (int sdCount=0;sdCount<9;sdCount++){
+           Match bgMatch = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+           if(1==sdCount || 5== sdCount){
+               bgMatch.setY(bgMatch.getY()-500);
+               bgMatch.setX(bgMatch.getX()-400);
+               bgMatch.rightClick();
+           }else
+           if(2==sdCount || 6== sdCount){
+               bgMatch.setY(bgMatch.getY()-80);
+               bgMatch.setX(bgMatch.getX()-400);
+               bgMatch.rightClick();
+           }else
+           if(3==sdCount || 7== sdCount){
+               bgMatch.setY(bgMatch.getY()-300);
+               bgMatch.setX(bgMatch.getX()-600);
+               bgMatch.rightClick();
+           }else
+           if(4==sdCount || 8== sdCount){
+               bgMatch.setY(bgMatch.getY()-300);
+               bgMatch.setX(bgMatch.getX()-150);
+               bgMatch.rightClick();
+           }else {}
+
+       }
+
+        //右
+        /*match.setY(match.getY()-300);
+        match.setX(match.getX()-150);
+        match.hover();*/
 
 
 
