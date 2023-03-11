@@ -7,11 +7,11 @@ import java.util.List;
 
 //检查磨血石
 public class MoXueShi {
-  /*  public static void main(String[] args){
+    public static void main(String[] args){
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         jcMXS(region);
-    }*/
+    }
 
     public static void jcMXS(Region region){
         try {
@@ -73,18 +73,16 @@ public class MoXueShi {
             match.doubleClick();
             //再次寻找磨血石，扔掉
             match = region.wait("D:/software/sikulix/image/mxs2.PNG", 1);
-            match.click();
-            //寻找包裹，鼠标悬浮上方，单机把旧的扔掉
-            match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
-            match.setY(match.getY()-100);
-            match.hover();
-            Thread.sleep(500);
-            match.click();
-            //关闭物品栏
-            match = region.wait("D:/software/sikulix/image/gbzbl.PNG", 1);
             if(null != match){
                 match.click();
+                match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+                match.setY(match.getY()-100);
+                match.hover();
+                Thread.sleep(500);
+                match.click();
             }
+            //关闭物品栏
+            SikJZB.gb(region);
             //寻找宝宝包裹
             match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
             match.click();
@@ -95,6 +93,8 @@ public class MoXueShi {
             match.click();
             //关闭弹窗
             SikJZB.gb(region);
+            SikJZB.gb(region);
+            match.click();
         }catch (Exception e){
             System.out.println("检查磨血石报错~~~"+e.getMessage());
         }
