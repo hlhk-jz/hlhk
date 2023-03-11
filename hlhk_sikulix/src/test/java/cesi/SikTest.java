@@ -16,15 +16,21 @@ import java.util.List;
 public class SikTest {
 
     public static void main(String[] args)throws Exception{
-        Region region = new Region(196, 87,465,243);
+        Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        Thread.sleep(300);
+        Match match = region.wait("D:/software/sikulix/huishou/rjb.PNG",1);
+        if(null != match){
+            match = region.wait("D:/software/sikulix/huishou/rjb1.PNG",1);
+            match.hover();
+        }
+
+       /* Thread.sleep(300);
         Iterator<Match> all = region.findAll("D:/software/sikulix/xinshou/kg.PNG");
         if(null != all){
             int size = Iterators.size(all);
             System.out.println("=== "+size);
         }
-
+*/
         //寻找界面下面菜单，调整鼠标位置人物左边移动
        // Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         //上

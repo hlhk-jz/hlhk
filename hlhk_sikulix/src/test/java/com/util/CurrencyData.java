@@ -58,6 +58,12 @@ public class CurrencyData {
     //矿泉水属于饮料不
     public static String KQS = "D:/software/sikulix/huishou/kqs.PNG";
     public static String KQS1 = "D:/software/sikulix/huishou/kqs1.PNG";
+    //玫瑰什么颜色
+    public static String MGYS = "D:/software/sikulix/huishou/mgys.PNG";
+    public static String MGYS1 = "D:/software/sikulix/huishou/mgys1.PNG";
+    //大便是
+    public static String DBS = "D:/software/sikulix/huishou/dbs.PNG";
+    public static String DBS1 = "D:/software/sikulix/huishou/dbs1.PNG";
     //一天多少小时
     public static String XS = "D:/software/sikulix/huishou/xs.PNG";
     public static String XS1 = "D:/software/sikulix/huishou/xs1.PNG";
@@ -73,8 +79,10 @@ public class CurrencyData {
     public static List<Object> san1Str(){
         List<Object> list = new ArrayList<>();
         list.add(KQS);
+        list.add(MGYS);
         list.add(XS);
         list.add(NGR);
+        list.add(DBS);
         list.add(JSM);
         list.add(BCG);
         return list;
@@ -82,6 +90,12 @@ public class CurrencyData {
     //被蚊子叮会不会痒
     public static String WZ = "D:/software/sikulix/huishou/wz.PNG";
     public static String WZ1 = "D:/software/sikulix/huishou/wz1.PNG";
+    //水果是
+    public static String SGS = "D:/software/sikulix/huishou/sgs.PNG";
+    public static String SGS1 = "D:/software/sikulix/huishou/sgs1.PNG";
+    //好好学习
+    public static String HHXX = "D:/software/sikulix/huishou/hhxx.PNG";
+    public static String HHXX1 = "D:/software/sikulix/huishou/hhxx1.PNG";
     //除夕夜吃饺子
     public static String CJZ = "D:/software/sikulix/huishou/cjz.PNG";
     public static String CJZ1 = "D:/software/sikulix/huishou/cjz1.PNG";
@@ -95,6 +109,8 @@ public class CurrencyData {
         List<Object> list = new ArrayList<>();
         list.add(WZ);
         list.add(CJZ);
+        list.add(HHXX);
+        list.add(SGS);
         list.add(WCN);
         list.add(QE);
         return list;
@@ -105,6 +121,9 @@ public class CurrencyData {
     //犯法吗
     public static String SRFF = "D:/software/sikulix/huishou/srff.PNG";
     public static String SRFF1 = "D:/software/sikulix/huishou/srff1.PNG";
+    //人有几笔
+    public static String RJB = "D:/software/sikulix/huishou/rjb.PNG";
+    public static String RJB1 = "D:/software/sikulix/huishou/srff1.PNG";
     //吸烟有害吗
     public static String XY = "D:/software/sikulix/huishou/xy.PNG";
     public static String XY1 = "D:/software/sikulix/huishou/xy1.PNG";
@@ -114,6 +133,7 @@ public class CurrencyData {
     public static List<Object> san2Str(){
         List<Object> list = new ArrayList<>();
         list.add(YWZM);
+        list.add(RJB);
         list.add(SRFF);
         list.add(XY);
         list.add(DH);
@@ -125,6 +145,9 @@ public class CurrencyData {
     //37度是正常体温不
     public static String TW = "D:/software/sikulix/huishou/tw.PNG";
     public static String TW1 = "D:/software/sikulix/huishou/tw1.PNG";
+    //哪些食物是算的
+    public static String SSD = "D:/software/sikulix/huishou/ssd.PNG";
+    public static String SSD1 = "D:/software/sikulix/huishou/ssd1.PNG";
     //天安门在哪个城市
     public static String TAM = "D:/software/sikulix/huishou/tam.PNG";
     public static String TAM1 = "D:/software/sikulix/huishou/tam1.PNG";
@@ -134,6 +157,7 @@ public class CurrencyData {
     public static List<Object> san3Str(){
         List<Object> list = new ArrayList<>();
         list.add(ZGYD);
+        list.add(SSD);
         list.add(TW);
         list.add(TAM);
         list.add(SB);

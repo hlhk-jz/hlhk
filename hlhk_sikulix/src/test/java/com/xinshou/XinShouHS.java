@@ -102,6 +102,26 @@ public class XinShouHS {
             }
         }
 
+        //水果是
+        if(isTrue){
+            match = region.wait(CurrencyData.SGS,1);
+            if(null != match){
+                match = ziReg.wait(CurrencyData.SGS1,2);
+                match.click();
+                isTrue = false;
+            }
+        }
+
+        //好好学习
+        if(isTrue){
+            match = region.wait(CurrencyData.HHXX,1);
+            if(null != match){
+                match = ziReg.wait(CurrencyData.HHXX1,2);
+                match.click();
+                isTrue = false;
+            }
+        }
+
         //多少岁内是未成年
         if(isTrue){
             match = region.wait(CurrencyData.WCN,1);
@@ -144,6 +164,16 @@ public class XinShouHS {
             match = region.wait(CurrencyData.ZGYD,1);
             if(null != match){
                 match = ziReg.wait(CurrencyData.ZGYD1,2);
+                match.click();
+                isTrue = false;
+            }
+        }
+
+        //哪些食物是酸的
+        if(isTrue){
+            match = region.wait(CurrencyData.SSD,1);
+            if(null != match){
+                match = ziReg.wait(CurrencyData.SSD1,2);
                 match.click();
                 isTrue = false;
             }
@@ -216,6 +246,16 @@ public class XinShouHS {
             }
         }
 
+        //人有几笔
+        if(isTrue){
+            match = region.wait(CurrencyData.RJB,1);
+            if(null != match){
+                match = ziReg.wait(CurrencyData.RJB1,2);
+                match.click();
+                isTrue = false;
+            }
+        }
+
         //吸烟有害吗
         if(isTrue){
             match = region.wait(CurrencyData.XY,1);
@@ -259,6 +299,26 @@ public class XinShouHS {
             match = ziReg.wait(CurrencyData.KQS1,2);
             match.click();
             isTrue = false;
+        }
+
+        //玫瑰什么颜色
+        if(isTrue) {
+            match = region.wait(CurrencyData.MGYS, 1);
+            if (null != match) {
+                match = ziReg.wait(CurrencyData.MGYS1, 2);
+                match.click();
+                isTrue = false;
+            }
+        }
+
+        //大便是
+        if(isTrue) {
+            match = region.wait(CurrencyData.DBS, 1);
+            if (null != match) {
+                match = ziReg.wait(CurrencyData.DBS1, 2);
+                match.click();
+                isTrue = false;
+            }
         }
 
         //一天多少小时
