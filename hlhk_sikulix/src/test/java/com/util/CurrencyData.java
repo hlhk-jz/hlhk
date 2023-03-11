@@ -28,9 +28,12 @@ public class CurrencyData {
     public static Region ckRegion = new Region(142,620,722,199);
     //新手地图缩小地图打怪
     public static Region sxRegion = new Region(291,148,440,337);
+    //新手地图地图打怪
+    public static Region xszgRegion = new Region(62,101,828,396);
     //新手地图查看空格回收
     public static Region kgRegion = new Region(196, 87,465,243);
     static {
+        xszgRegion.setThrowException(false);
         kgRegion.setThrowException(false);
         sxRegion.setThrowException(false);
         ckRegion.setThrowException(false);

@@ -87,7 +87,7 @@ public class XsDaGuai {
                     matchyd.rightClick();
                     Settings.MinSimilarity = 0.7;
                     region.type(Key.F4);
-                    match = region.wait(CurrencyData.xsJZ, 1);
+                    match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 1);
                 }
             }
         }

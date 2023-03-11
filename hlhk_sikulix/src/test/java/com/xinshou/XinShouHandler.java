@@ -36,7 +36,7 @@ public class XinShouHandler {
             match2.doubleClick();
             Thread.sleep(500);
             //寻找教主
-            jzMatch = region.wait(CurrencyData.tldJZ,1);
+            jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
             if(null == jzMatch){
                 Match matchyd;
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
@@ -56,7 +56,7 @@ public class XinShouHandler {
                     matchyd.rightClick();
                     Thread.sleep(300);
                     //寻找教主
-                    jzMatch = region.wait(CurrencyData.tldJZ,1);
+                    jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
                     if(null == jzMatch){
                         //左上
                         matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
@@ -83,7 +83,7 @@ public class XinShouHandler {
                 }
             }
             //寻找教主
-            jzMatch = region.wait(CurrencyData.tldJZ,1);
+            jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
             //如果找到教主了推出循环
             if (null != jzMatch){
                 break;
@@ -108,7 +108,7 @@ public class XinShouHandler {
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         System.out.println("调用打怪开始！！！！！！");
         XsDaGuai.xsDaguai(region,jzMatch);
-        jzMatch = region.wait(CurrencyData.xsJZ,1);
+        jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
         if(null != jzMatch){
             XsDaGuai.xsDaguai(region,jzMatch);
         }
@@ -118,6 +118,8 @@ public class XinShouHandler {
         SikJZB.pickup();
 
         //8. 回收装备
+        match2 = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+        match2.click();
         Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/xinshou/kg.PNG");
         if(null == all){
             System.out.println("回收装备开始~~~");
