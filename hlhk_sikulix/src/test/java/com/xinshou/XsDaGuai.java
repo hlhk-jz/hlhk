@@ -22,12 +22,11 @@ public class XsDaGuai {
         int count = 0;
         //检查宝宝是否在线
         BaoBao.baobao(region);
-        //跟随
-        region.type(Key.F1);
         //如果教主不为空一直循环打
         while (null != match) {
             //合击
-            if((count%8)==0){
+            if((count%6)==0){
+                region.type(Key.F1);
                 match.setY(match.getY()-10);
                 match.rightClick();
             }else {
@@ -37,13 +36,13 @@ public class XsDaGuai {
                 region.type(Key.F3);
             }
             System.out.println("循环打怪count：" + count);
-            if (count > 80) {
+            if (count > 150) {
                 System.out.println("打怪超过指定次数结束循环");
                 break;
             }
             //判断小退，锁定
             CurrencyData.isTrue(region,0);
-            if((count%4)== 0 && count != 0){
+            if((count%6)== 0 && count != 0){
                 System.out.println("打怪捡装备开始");
                 SikJZB.pickup();
                 System.out.println("打怪捡装备开始");
