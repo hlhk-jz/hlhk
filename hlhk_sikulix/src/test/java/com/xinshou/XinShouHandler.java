@@ -12,7 +12,6 @@ import java.util.List;
 
 public class XinShouHandler {
     private static long count = 0;
-
     public static void handler(Region region)throws Exception {
         //判断是否在新手地图
         Thread.sleep(500);
@@ -113,9 +112,6 @@ public class XinShouHandler {
             XsDaGuai.xsDaguai(region,jzMatch);
         }
         System.out.println("调用打怪结束~~~~~~~~~~~");
-
-        //捡装备
-        SikJZB.pickup();
 
         //8. 回收装备
         match2 = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
