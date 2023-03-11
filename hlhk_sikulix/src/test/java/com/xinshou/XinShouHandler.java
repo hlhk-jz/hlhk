@@ -173,7 +173,7 @@ public class XinShouHandler {
             XinShouHS.xshs(region);
         } catch (Exception e) {
             e.printStackTrace();
-            XinShouHS.xshs(region);
+            tcHuiShou(region);
         }
         AXinShouDianStart.xinshou(region);
     }
