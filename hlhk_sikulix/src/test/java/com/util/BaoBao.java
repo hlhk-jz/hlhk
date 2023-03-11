@@ -13,9 +13,9 @@ public class BaoBao {
 
     public static void baobao(Region region)throws Exception{
         SikJZB.gb(region);
-        Match match = region.find("D:/software/sikulix/image/baobao2.PNG");
+        Match match = region.find("D:/software/sikulix/image/baobao6.PNG");
         while (null == match){
-             match = region.find("D:/software/sikulix/image/baobao2.PNG");
+             match = region.find("D:/software/sikulix/image/baobao6.PNG");
              if(null == match){
                  match = region.find("D:/software/sikulix/image/bbzh.PNG");
                  if(null == match){
@@ -24,7 +24,7 @@ public class BaoBao {
                  match.click();
                  match.setX(match.getX()-30);
                  match.hover();
-                 match = region.wait("D:/software/sikulix/image/baobao2.PNG",5);
+                 match = region.wait("D:/software/sikulix/image/baobao6.PNG",5);
              }
         }
     }
