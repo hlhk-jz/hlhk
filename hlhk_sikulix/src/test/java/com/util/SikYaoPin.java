@@ -1,6 +1,7 @@
 package com.util;
 
 import com.google.common.collect.Iterators;
+import org.sikuli.basics.Settings;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
@@ -91,6 +92,7 @@ public class SikYaoPin {
     }
 
     public static void zhYaoPin(Region region)throws Exception{
+        Settings.MinSimilarity = 0.7;
             Match match = null;
             //寻找包裹
             match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);

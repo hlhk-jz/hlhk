@@ -18,12 +18,61 @@ public class XsDaGuai {
     }
 
     public static void xsDaguai(Region region,Match match) throws Exception {
-        Match matchyd;
         int count = 0;
         //检查宝宝是否在线
         BaoBao.baobao(region);
+        while (null != match){
+            match.setY(match.getY()+80);
+            match.click();
+            //查看合击是否已满
+            Settings.MinSimilarity = 0.9;
+            Match hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
+            if(null != hjMatch){
+                System.out.println("释放合击！！！！");
+                region.type(Key.F3);
+                //查看是否释放成功
+                Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
+                if(null != cgMatch){
+                    System.out.println("释放合击成功~~~~~");
+                    //释放合击成功后，只打当前怪
+                    while (true){
+                        //判断是否锁定
+                        CurrencyData.isTrue(region,0);
+                        Settings.MinSimilarity = 0.9;
+                        hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
+                        if(null != hjMatch){
+                            //释放合击
+                            Thread.sleep(800);
+                            region.type(Key.F3);
+                            cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
+                            if(null == cgMatch){
+                                System.out.println("当前怪打完，查找下一个！！！");
+                                //捡装备
+                                SikJZB.pickup();
+                                SikYaoPin.zhYaoPin(region);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            if (count > 100) {
+                System.out.println("打怪超过指定次数结束循环");
+                break;
+            }
+            count++;
+            Settings.MinSimilarity = 0.7;
+            if (count > 10) {
+                System.out.println("打怪大于指定次数，缩小地图~~~~~~");
+                match = CurrencyData.sxRegion.wait(CurrencyData.xsJZ, 2);
+            }else {
+                match = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ, 3);
+            }
+        }
+
+
         //如果教主不为空一直循环打
-        while (null != match) {
+      /*  while (null != match) {
             //合击
             if((count%6)==0){
                 region.type(Key.F1);
@@ -90,6 +139,6 @@ public class XsDaGuai {
                     match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 1);
                 }
             }
-        }
+        }*/
     }
 }
