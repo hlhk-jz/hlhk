@@ -32,7 +32,7 @@ public class AXinShouDianStart {
             match = region.wait(CurrencyData.xsNpc,1);
             int x = 1;
             while (null == match){
-                if((x%4)==0){
+                if((x%3)==0){
                     SuiJiShi.isHcs(region);
                 }
                 //寻找界面下面菜单，调整鼠标位置人物下边移动
