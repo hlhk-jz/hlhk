@@ -101,6 +101,15 @@ public class XinShouHS {
                 isTrue = false;
             }
         }
+        //红颜色的是
+        if(isTrue){
+            match = region.wait(CurrencyData.HYS,1);
+            if(null != match){
+                match = ziReg.wait(CurrencyData.HYS1,2);
+                match.click();
+                isTrue = false;
+            }
+        }
 
         //水果是
         if(isTrue){

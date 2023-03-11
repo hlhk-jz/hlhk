@@ -108,11 +108,15 @@ public class CurrencyData {
     //企鹅会飞不
     public static String QE = "D:/software/sikulix/huishou/qe.PNG";
     public static String QE1 = "D:/software/sikulix/huishou/qe1.PNG";
+    //红颜色的食物是
+    public static String HYS = "D:/software/sikulix/huishou/hys.PNG";
+    public static String HYS1 = "D:/software/sikulix/huishou/hys1.PNG";
     public static List<Object> san4Str(){
         List<Object> list = new ArrayList<>();
         list.add(WZ);
         list.add(CJZ);
         list.add(HHXX);
+        list.add(HYS);
         list.add(SGS);
         list.add(WCN);
         list.add(QE);
