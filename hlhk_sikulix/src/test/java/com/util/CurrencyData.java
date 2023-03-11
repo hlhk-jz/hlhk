@@ -137,9 +137,13 @@ public class CurrencyData {
     //苹果电话属于国产
     public static String DH = "D:/software/sikulix/huishou/dh.PNG";
     public static String DH1 = "D:/software/sikulix/huishou/dh1.PNG";
+    //道士用的技能是
+    public static String DSY = "D:/software/sikulix/huishou/dsy.PNG";
+    public static String DSY1 = "D:/software/sikulix/huishou/dsy1.PNG";
     public static List<Object> san2Str(){
         List<Object> list = new ArrayList<>();
         list.add(YWZM);
+        list.add(DSY);
         list.add(RJB);
         list.add(SRFF);
         list.add(XY);
@@ -155,7 +159,7 @@ public class CurrencyData {
     //37度是正常体温不
     public static String TW = "D:/software/sikulix/huishou/tw.PNG";
     public static String TW1 = "D:/software/sikulix/huishou/tw1.PNG";
-    //哪些食物是算的
+    //哪些食物是酸的
     public static String SSD = "D:/software/sikulix/huishou/ssd.PNG";
     public static String SSD1 = "D:/software/sikulix/huishou/ssd1.PNG";
     //可以吃的是

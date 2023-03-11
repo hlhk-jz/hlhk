@@ -262,6 +262,15 @@ public class XinShouHS {
                 isTrue = false;
             }
         }
+        //道士用的技能
+        if(isTrue){
+            match = region.wait(CurrencyData.DSY,1);
+            if(null != match){
+                match = ziReg.wait(CurrencyData.DSY1,2);
+                match.click();
+                isTrue = false;
+            }
+        }
 
         //犯法吗
         if(isTrue){
