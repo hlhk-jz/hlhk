@@ -1,7 +1,6 @@
 package com.xinshou;
 import com.util.CurrencyData;
-import org.sikuli.basics.Settings;
-import org.sikuli.script.Key;
+import com.util.SikJZB;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 import java.util.List;
@@ -21,6 +20,7 @@ public class XinShouHS {
     }
 
     public static void xshs(Region region)throws Exception{
+        SikJZB.gb(region);
         Match match = region.wait("D:/software/sikulix/image/hs5.PNG",2);
         //如果没有回收问题，点击回收
         if(null != match){
@@ -164,6 +164,15 @@ public class XinShouHS {
             match = region.wait(CurrencyData.ZGYD,1);
             if(null != match){
                 match = ziReg.wait(CurrencyData.ZGYD1,2);
+                match.click();
+                isTrue = false;
+            }
+        }
+        //可以吃的是
+        if(isTrue){
+            match = region.wait(CurrencyData.KYC,1);
+            if(null != match){
+                match = ziReg.wait(CurrencyData.KYC1,2);
                 match.click();
                 isTrue = false;
             }

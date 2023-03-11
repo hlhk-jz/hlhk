@@ -169,7 +169,12 @@ public class XinShouHandler {
             x++;
         }
         match.click();
-        XinShouHS.xshs(region);
+        try {
+            XinShouHS.xshs(region);
+        } catch (Exception e) {
+            e.printStackTrace();
+            XinShouHS.xshs(region);
+        }
         AXinShouDianStart.xinshou(region);
     }
 }

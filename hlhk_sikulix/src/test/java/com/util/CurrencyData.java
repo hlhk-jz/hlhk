@@ -148,6 +148,9 @@ public class CurrencyData {
     //哪些食物是算的
     public static String SSD = "D:/software/sikulix/huishou/ssd.PNG";
     public static String SSD1 = "D:/software/sikulix/huishou/ssd1.PNG";
+    //可以吃的是
+    public static String KYC = "D:/software/sikulix/huishou/kyc.PNG";
+    public static String KYC1 = "D:/software/sikulix/huishou/kyc1.PNG";
     //天安门在哪个城市
     public static String TAM = "D:/software/sikulix/huishou/tam.PNG";
     public static String TAM1 = "D:/software/sikulix/huishou/tam1.PNG";
@@ -161,6 +164,7 @@ public class CurrencyData {
         list.add(TW);
         list.add(TAM);
         list.add(SB);
+        list.add(KYC);
         return list;
     }
 
