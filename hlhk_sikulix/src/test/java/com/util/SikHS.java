@@ -202,6 +202,15 @@ public class SikHS {
                 isTrue = false;
             }
         }
+        //水泥可以做
+        if(isTrue){
+            match = region.wait(CurrencyData.SNS,1);
+            if(null != match){
+                match = ziReg.wait(CurrencyData.SNS1,2);
+                match.click();
+                isTrue = false;
+            }
+        }
         //可以吃的是
         if(isTrue){
             match = region.wait(CurrencyData.KYC,1);

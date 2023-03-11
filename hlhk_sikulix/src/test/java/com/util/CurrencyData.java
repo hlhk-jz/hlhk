@@ -145,6 +145,9 @@ public class CurrencyData {
     //10086
     public static String ZGYD = "D:/software/sikulix/huishou/zgyd.PNG";
     public static String ZGYD1 = "D:/software/sikulix/huishou/zgyd1.PNG";
+    //水泥可以做？
+    public static String SNS = "D:/software/sikulix/huishou/sns.PNG";
+    public static String SNS1 = "D:/software/sikulix/huishou/sns1.PNG";
     //37度是正常体温不
     public static String TW = "D:/software/sikulix/huishou/tw.PNG";
     public static String TW1 = "D:/software/sikulix/huishou/tw1.PNG";
@@ -164,6 +167,7 @@ public class CurrencyData {
         List<Object> list = new ArrayList<>();
         list.add(ZGYD);
         list.add(SSD);
+        list.add(SNS);
         list.add(TW);
         list.add(TAM);
         list.add(SB);
