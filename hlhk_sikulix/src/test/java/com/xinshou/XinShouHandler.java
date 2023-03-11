@@ -7,6 +7,7 @@ import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class XinShouHandler {
@@ -117,7 +118,8 @@ public class XinShouHandler {
         SikJZB.pickup();
 
         //8. 回收装备
-        if((count % 3)== 0){
+        Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/xinshou/kg.PNG");
+        if(null == all){
             System.out.println("回收装备开始~~~");
             tcHuiShou(region);
             System.out.println("回收装备结束~~~");

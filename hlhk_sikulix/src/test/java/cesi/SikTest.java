@@ -2,6 +2,7 @@ package cesi;
 import com.google.common.collect.Iterators;
 import com.tld.ATuLongDianStart;
 import com.util.CurrencyData;
+import com.util.SikJZB;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 import org.sikuli.script.Button;
@@ -15,11 +16,17 @@ import java.util.List;
 public class SikTest {
 
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1200,800);
+        Region region = new Region(196, 87,465,243);
         region.setThrowException(false);
+        Thread.sleep(300);
+        Iterator<Match> all = region.findAll("D:/software/sikulix/xinshou/kg.PNG");
+        if(null != all){
+            int size = Iterators.size(all);
+            System.out.println("=== "+size);
+        }
 
         //寻找界面下面菜单，调整鼠标位置人物左边移动
-        Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+       // Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         //上
         /*match.setY(match.getY()-500);
         match.setX(match.getX()-400);
@@ -29,7 +36,7 @@ public class SikTest {
        /* match.setY(match.getY()-80);
         match.setX(match.getX()-400);
         match.hover();*/
-       for (int sdCount=0;sdCount<9;sdCount++){
+       /*for (int sdCount=0;sdCount<9;sdCount++){
            Match bgMatch = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
            if(1==sdCount || 5== sdCount){
                bgMatch.setY(bgMatch.getY()-500);
@@ -52,7 +59,7 @@ public class SikTest {
                bgMatch.rightClick();
            }else {}
 
-       }
+       }*/
 
         //右
         /*match.setY(match.getY()-300);
