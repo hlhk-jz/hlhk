@@ -41,7 +41,7 @@ public class MonitorStart {
             if(null != match){
                 System.out.println("检测到人物需要小退！！当前时间："+System.currentTimeMillis()/1000);
                 //存储redis判断条件
-                RedisUtils.redisTemplate.opsForValue().set(CurrencyData.SWKEY,"true");
+                RedisUtils.redisTemplate.opsForValue().set(CurrencyData.SWKEY,"true",60, TimeUnit.SECONDS);
             }
         }
     }
