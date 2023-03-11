@@ -82,6 +82,9 @@ public class XsDaGuai {
                     matchyd.setY(matchyd.getY() - 377);
                     matchyd.setX(matchyd.getX() + 400);
                     matchyd.rightClick();
+                    region.type(Key.F4);
+                    Thread.sleep(300);
+                    matchyd.rightClick();
                     Settings.MinSimilarity = 0.7;
                     region.type(Key.F4);
                     match = region.wait(CurrencyData.xsJZ, 1);

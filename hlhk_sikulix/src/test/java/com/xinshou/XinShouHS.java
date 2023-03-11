@@ -8,7 +8,7 @@ import java.util.List;
 
 //新手回收，没有回收权限回土城
 public class XinShouHS {
-     /*  public static void main(String[] args){
+       public static void main(String[] args){
         try {
             Region region = new Region(0, 0,1200,800);
             region.setThrowException(false);
@@ -18,7 +18,7 @@ public class XinShouHS {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     public static void xshs(Region region)throws Exception{
         Match match = region.wait("D:/software/sikulix/image/hs5.PNG",2);
