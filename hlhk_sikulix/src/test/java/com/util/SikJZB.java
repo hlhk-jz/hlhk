@@ -48,13 +48,15 @@ public class SikJZB {
                     jzbRegion.setW(1200);
                     jzbRegion.setH(800);
                     Settings.MinSimilarity= 0.65;
-                    if((start%15)==0){
+                    if((start%10)==0){
                         //如果捡15次没捡到结束本次
                         break;
                     }
                     Location location = matchs.getTarget();
                     location.setY(location.getY()+8);
                     if(start == 1){
+                        location.rightClick();
+                        Thread.sleep(300);
                         location.rightClick();
                     }else {
                         location.click();
