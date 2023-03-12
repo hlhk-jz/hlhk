@@ -31,7 +31,7 @@ public class CurrencyData {
     //新手地图地图打怪
     public static Region xszgRegion = new Region(62,101,828,396);
     //新手地图查看空格回收
-    public static Region kgRegion = new Region(196, 87,465,243);
+    public static Region kgRegion = new Region(4, 80,779,255);
     //合击条位置
     public static Region hjRegion = new Region(791, 644,88,165);
     static {

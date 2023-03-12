@@ -23,7 +23,7 @@ public class SikTest {
 
        /* csDaGuai(region);
 */
-        Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/xinshou/kg.PNG");
+        Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/tulongdian/shitou2.PNG");
         System.out.println(Iterators.size(all));
 
    /*     Match match = region.wait("D:/software/sikulix/huishou/rjb.PNG",1);
