@@ -13,32 +13,24 @@ import java.util.Iterator;
  */
 
 public class SikYaoPin {
-  /*  public static void main(String[] args)throws Exception{
+    public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1920,1080);
         region.setThrowException(false);
         zhYaoPin(region);
-        bbYaoPin(region);
-    }*/
+        //bbYaoPin(region);
+    }
 
     public static void bbYaoPin(Region region)throws Exception {
+        SikJZB.gb(region);
         region.setW(1200);
         region.setH(1000);
         //寻找宝宝包裹
         Match match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
         match.click();
         //寻找宝宝包裹大药品
-        Iterator<Match> all = region.findAll("D:/software/sikulix/image/bbyp.PNG");
-        int size = 0;
-        if(null != all){
-            size = Iterators.size(all);
-        }
-        //关闭宝宝包裹
-        match = region.wait("D:/software/sikulix/image/bgbg.PNG",1);
-        if(null != match){
-            match.click();
-        }
-
-        if(size < 4){
+        match = region.wait("D:/software/sikulix/image/bbyp.PNG",2);
+        SikJZB.gb(region);
+        if(null == match){
             //寻找商铺
             match = region.wait("D:/software/sikulix/image/pu.PNG",1);
             if(null == match){
@@ -83,28 +75,19 @@ public class SikYaoPin {
             match.rightClick();
             Thread.sleep(500);
             //关闭包裹
-            match = region.wait("D:/software/sikulix/image/gbzbl.PNG", 1);
-            if(null != match){
-                match.click();
-            }
-
+            SikJZB.gb(region);
         }
     }
 
     public static void zhYaoPin(Region region)throws Exception{
-        Settings.MinSimilarity = 0.7;
-            Match match = null;
+            Settings.MinSimilarity = 0.7;
+            SikJZB.gb(region);
             //寻找包裹
-            match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
+            Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
             match.click();
-            int size = 0;
-
-            Iterator<Match> all = region.findAll("D:/software/sikulix/image/yaopin1.PNG");
-            if(null != all){
-                size = Iterators.size(all);
-            }
-            //如果小药小于4
-            if(size < 4){
+            match = region.wait("D:/software/sikulix/image/bbyp.PNG",2);
+            SikJZB.gb(region);
+            if(null == match){
                 //如果没有大药就买
                 match = region.wait("D:/software/sikulix/image/yaopin2.PNG",1);
                 if(null == match){
