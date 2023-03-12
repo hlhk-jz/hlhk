@@ -125,7 +125,13 @@ public class XinShouHandler {
             if(null == all){
                 match2 = CurrencyData.kgRegion.wait("D:/software/sikulix/image/xxy",1);
                 if(null != match2){
-                    match2.click();
+                    //如果包裹满了将血药吃了
+                    match2.doubleClick();
+                    match2 = CurrencyData.kgRegion.wait("D:/software/sikulix/image/xxy",1);
+                    if(null != match2){
+                        //如果包裹满了将血药吃了
+                        match2.doubleClick();
+                    }
                 }
             }
             tcHuiShou(region);
