@@ -42,6 +42,7 @@ public class XinShouHS {
     //判断是哪一组
     public static void pdty(Region region)throws Exception{
         Region ziReg = new Region(0,114,399,134);
+        ziReg.setThrowException(false);
         boolean isTrue = true;
         List<Match> list = region.findAnyList(CurrencyData.san1Str());
         if(!list.isEmpty()){

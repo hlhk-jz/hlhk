@@ -76,7 +76,7 @@ public class XsDaGuai {
             }
             count++;
             Settings.MinSimilarity = 0.7;
-            if (count > 5) {
+            if (count > 3) {
                 isTrue = true;
                 System.out.println("打怪大于指定次数，缩小地图~~~~~~");
                 match = CurrencyData.sxRegion.wait(CurrencyData.xsJZ, 2);
