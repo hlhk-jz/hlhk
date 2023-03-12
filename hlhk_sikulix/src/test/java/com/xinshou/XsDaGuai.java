@@ -25,7 +25,7 @@ public class XsDaGuai {
             match.setY(match.getY()+80);
             match.click();
             //查看合击是否已满
-            Settings.MinSimilarity = 0.9;
+            Settings.MinSimilarity = 0.99;
             Match hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
             if(null != hjMatch){
                 System.out.println("释放合击！！！！");
@@ -38,7 +38,7 @@ public class XsDaGuai {
                     while (true){
                         //判断是否锁定
                         CurrencyData.isTrue(region,0);
-                        Settings.MinSimilarity = 0.9;
+                        Settings.MinSimilarity = 0.99;
                         hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
                         if(null != hjMatch){
                             //释放合击
