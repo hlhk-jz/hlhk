@@ -36,7 +36,7 @@ public class SuiJiShi {
         Thread.sleep(500);
         Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/tulongdian/shitou4.PNG");
         Thread.sleep(1000);
-        if(null == all && Iterators.size(all) < 3){
+        if(null == all || Iterators.size(all) < 3){
             all = region.findAll("D:/software/sikulix/tulongdian/shitou.PNG");
         }
         Thread.sleep(500);
