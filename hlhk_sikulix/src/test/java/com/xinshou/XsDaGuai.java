@@ -45,6 +45,7 @@ public class XsDaGuai {
                     while (true){
                         //判断是否锁定
                         CurrencyData.isTrue(region,0);
+                        BaoBao.baobao(region);
                         Settings.MinSimilarity = 0.99;
                         hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
                         if(null != hjMatch){

@@ -234,6 +234,7 @@ public class CurrencyData {
         if(0 == type){
             try {
                 if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SDKEY))){
+                    System.out.println("检测到宝宝血量减少/被锁定。。。。。。。");
                     Match match2 = region.wait(CurrencyData.zblSjs,1);
                     if(null == match2){
                         match2 = region.wait(CurrencyData.zblSjs,1);
