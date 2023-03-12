@@ -18,6 +18,7 @@ public class XsDaGuai {
     }
 
     public static void xsDaguai(Region region,Match match) throws Exception {
+        boolean isTrue = false;
         int count = 0;
         //检查宝宝是否在线
         BaoBao.baobao(region);
@@ -34,6 +35,10 @@ public class XsDaGuai {
                 region.type(Key.F3);
                 //查看是否释放成功
                 Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
+                if(isTrue && null == cgMatch){
+                    System.out.println("判断当前打怪有墙，结束循环！！！！！");
+                    break;
+                }
                 if(null != cgMatch){
                     System.out.println("释放合击成功~~~~~");
                     //释放合击成功后，只打当前怪
@@ -66,6 +71,7 @@ public class XsDaGuai {
             count++;
             Settings.MinSimilarity = 0.7;
             if (count > 5) {
+                isTrue = true;
                 System.out.println("打怪大于指定次数，缩小地图~~~~~~");
                 match = CurrencyData.sxRegion.wait(CurrencyData.xsJZ, 2);
             }else {
