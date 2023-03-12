@@ -180,6 +180,7 @@ public class XinShouHandler {
             Thread.sleep(500);
             match.rightClick();
             match = region.wait("D:/software/sikulix/xinshou/hszb.PNG",1);
+            Thread.sleep(500);
             x++;
         }
         match.click();
