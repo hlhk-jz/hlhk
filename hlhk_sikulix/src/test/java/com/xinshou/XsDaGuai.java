@@ -22,8 +22,10 @@ public class XsDaGuai {
         //检查宝宝是否在线
         BaoBao.baobao(region);
         while (null != match){
+            region.type(Key.F1);
             match.setY(match.getY()+80);
             match.click();
+            Thread.sleep(500);
             //查看合击是否已满
             Settings.MinSimilarity = 0.99;
             Match hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
@@ -64,6 +66,8 @@ public class XsDaGuai {
             Settings.MinSimilarity = 0.7;
             if (count > 5) {
                 System.out.println("打怪大于指定次数，缩小地图~~~~~~");
+                region.type(Key.F1);
+                Thread.sleep(500);
                 match = CurrencyData.sxRegion.wait(CurrencyData.xsJZ, 2);
             }else {
                 match = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ, 3);
