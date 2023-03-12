@@ -51,6 +51,7 @@ public class XsDaGuai {
                                 System.out.println("当前怪打完，查找下一个！！！");
                                 //捡装备
                                 SikJZB.pickup();
+                                region.type(Key.F1);
                                 SikYaoPin.zhYaoPin(region);
                                 break;
                             }
@@ -66,83 +67,10 @@ public class XsDaGuai {
             Settings.MinSimilarity = 0.7;
             if (count > 5) {
                 System.out.println("打怪大于指定次数，缩小地图~~~~~~");
-                region.type(Key.F1);
-                Thread.sleep(500);
                 match = CurrencyData.sxRegion.wait(CurrencyData.xsJZ, 2);
             }else {
                 match = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ, 3);
             }
         }
-
-
-        //如果教主不为空一直循环打
-      /*  while (null != match) {
-            //合击
-            if((count%6)==0){
-                region.type(Key.F1);
-                match.setY(match.getY()-10);
-                match.rightClick();
-            }else {
-                match.setY(match.getY()+80);
-                match.click();
-                Thread.sleep(300);
-                region.type(Key.F3);
-            }
-            System.out.println("循环打怪count：" + count);
-            if (count > 150) {
-                System.out.println("打怪超过指定次数结束循环");
-                break;
-            }
-            //判断小退，锁定
-            CurrencyData.isTrue(region,0);
-            if((count%6)== 0 && count != 0){
-                System.out.println("打怪捡装备开始");
-                SikJZB.pickup();
-                System.out.println("打怪捡装备开始");
-                SikYaoPin.zhYaoPin(region);
-            }
-
-            SikJZB.gb(region);
-            count++;
-            if(count > 5){
-                System.out.println("打怪大于指定次数，缩小地图~~~~~~");
-                match = CurrencyData.sxRegion.wait(CurrencyData.xsJZ, 1);
-                //防止人物重叠怪识别不出来再次查询
-                if (null == match) {
-                    region.setX(0);
-                    region.setY(0);
-                    region.setW(1200);
-                    region.setH(800);
-                    Settings.MinSimilarity = 0.8;
-                    matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 1);
-                    matchyd.setY(matchyd.getY() - 377);
-                    matchyd.setX(matchyd.getX() + 400);
-                    matchyd.rightClick();
-                    Settings.MinSimilarity = 0.7;
-                    region.type(Key.F4);
-                    match = CurrencyData.sxRegion.wait(CurrencyData.xsJZ, 1);
-                }
-            }else {
-                match = region.wait(CurrencyData.xsJZ, 1);
-                //防止人物重叠怪识别不出来再次查询
-                if (null == match) {
-                    region.setX(0);
-                    region.setY(0);
-                    region.setW(1200);
-                    region.setH(800);
-                    Settings.MinSimilarity = 0.8;
-                    matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 1);
-                    matchyd.setY(matchyd.getY() - 377);
-                    matchyd.setX(matchyd.getX() + 400);
-                    matchyd.rightClick();
-                    region.type(Key.F4);
-                    Thread.sleep(300);
-                    matchyd.rightClick();
-                    Settings.MinSimilarity = 0.7;
-                    region.type(Key.F4);
-                    match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 1);
-                }
-            }
-        }*/
     }
 }
