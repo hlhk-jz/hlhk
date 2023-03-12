@@ -1,5 +1,6 @@
 package com.xinshou;
 
+import com.google.common.collect.Iterators;
 import com.util.*;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Key;
@@ -112,12 +113,14 @@ public class XinShouHandler {
             XsDaGuai.xsDaguai(region,jzMatch);
         }
         System.out.println("调用打怪结束~~~~~~~~~~~");
+        //捡装备
+        SikJZB.pickup();
 
         //8. 回收装备
         match2 = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
         match2.click();
         Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/xinshou/kg.PNG");
-        if(null == all){
+        if(null == all || Iterators.size(all)<=3){
             System.out.println("回收装备开始~~~");
             tcHuiShou(region);
             System.out.println("回收装备结束~~~");
