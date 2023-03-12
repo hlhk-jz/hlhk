@@ -35,6 +35,7 @@ public class XsDaGuai {
                 region.type(Key.F3);
                 //查看是否释放成功
                 Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
+                System.out.println(isTrue+";"+cgMatch);
                 if(isTrue && null == cgMatch){
                     System.out.println("判断当前打怪有墙，结束循环！！！！！");
                     break;

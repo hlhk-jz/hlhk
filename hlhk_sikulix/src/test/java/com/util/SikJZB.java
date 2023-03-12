@@ -12,7 +12,7 @@ public class SikJZB {
     }
 
     public static void pickup()throws Exception{
-        Region jzbRegion = new Region(60, 0,1200,800);
+        Region jzbRegion = new Region(60, 0,1200,900);
         jzbRegion.setThrowException(false);
         Settings.MinSimilarity = 0.65;
         //关闭弹窗
