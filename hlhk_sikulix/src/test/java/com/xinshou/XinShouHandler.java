@@ -107,10 +107,10 @@ public class XinShouHandler {
 
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         System.out.println("调用打怪开始！！！！！！");
-        XsDaGuai.xsDaguai(region,jzMatch);
+        XsDaGuai.xsDaguai(region);
         jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
         if(null != jzMatch){
-            XsDaGuai.xsDaguai(region,jzMatch);
+            XsDaGuai.xsDaguai(region);
         }
         System.out.println("调用打怪结束~~~~~~~~~~~");
         //捡装备
