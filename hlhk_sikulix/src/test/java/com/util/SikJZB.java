@@ -53,7 +53,6 @@ public class SikJZB {
                     if(start == 1){
                         location.rightClick();
                         Thread.sleep(300);
-                        location.rightClick();
                     }else {
                         location.click();
                         Thread.sleep(300);
