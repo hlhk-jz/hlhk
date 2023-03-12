@@ -1,8 +1,5 @@
 package com.xinshou;
-import com.util.BaoBao;
-import com.util.CurrencyData;
-import com.util.SikJZB;
-import com.util.SikYaoPin;
+import com.util.*;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Key;
 import org.sikuli.script.Match;
@@ -20,6 +17,7 @@ public class XsDaGuai {
     public static void xsDaguai(Region region) throws Exception {
         boolean isTrue = false;
         int count = 0;
+        int hlCount = 1;
         //检查宝宝是否在线
         BaoBao.baobao(region);
         Match match = region.wait(CurrencyData.xsJZ, 1);
@@ -67,7 +65,18 @@ public class XsDaGuai {
                                     break;
                                 }
                             }
+                            if(hlCount > 100){
+                                //防止没有火龙之心
+                                System.out.println("打怪期间检查到宝宝没有火龙之心！！！！！！！！！！！！！！");
+                                Settings.MinSimilarity = 0.7;
+                                Thread.sleep(500);
+                                HLZX.hlzx(region);
+                                Settings.MinSimilarity = 0.99;
+                                Thread.sleep(500);
+                            }
+                            hlCount ++;
                         }
+                        hlCount = 1;
                     }
                 }
             if (count > 100) {

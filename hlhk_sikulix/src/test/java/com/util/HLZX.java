@@ -15,6 +15,7 @@ public class HLZX {
 
     public static void hlzx(Region region){
         try {
+            SikJZB.gb(region);
             Match match;
             //寻找宝宝包裹
             match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
@@ -80,6 +81,7 @@ public class HLZX {
             match.click();
         }catch (Exception e){
             e.printStackTrace();
+            hlzx(region);
         }
     }
 }
