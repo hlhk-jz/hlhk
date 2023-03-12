@@ -10,27 +10,28 @@ public class AXinShouDianStart {
         region.setThrowException(false);
         xinshou(region);
     }
-
+    static int x = 1;
     public static void xinshou(Region region){
         try {
+            if(x == 1){
+                SikJZB.gb(region);
+                //检查宝宝是否在线
+                BaoBao.baobao(region);
+                //将F12移动到聊天栏
+                ChunShi.yd(region);
+                //检查药品
+                SikYaoPin.bbYaoPin(region);
+                SikYaoPin.zhYaoPin(region);
+            }
             //新区上线会有召唤，查看是否有
             Match match = region.wait("D:/software/sikulix/xinshou/zh.PNG", 1);
-            if(null != match){
+           /* if(null != match){
                 match.click();
-            }
-            SikJZB.gb(region);
-            //检查宝宝是否在线
-            BaoBao.baobao(region);
-            //将F12移动到聊天栏
-            ChunShi.yd(region);
-            //检查药品
-            SikYaoPin.bbYaoPin(region);
-            SikYaoPin.zhYaoPin(region);
+            }*/
             //关闭弹窗
             SikJZB.gb(region);
             //寻找新手npc
             match = region.wait(CurrencyData.xsNpc,1);
-            int x = 1;
             while (null == match){
                 if((x%3)==0){
                     SuiJiShi.isHcs(region);
@@ -54,6 +55,7 @@ public class AXinShouDianStart {
                 xinshou(region);
             }
             //我要进入
+            x = 1;
             match.click();
             XinShouHandler.handler(region);
         } catch (Exception e) {
