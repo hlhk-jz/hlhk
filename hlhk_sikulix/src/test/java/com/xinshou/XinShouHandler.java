@@ -148,6 +148,7 @@ public class XinShouHandler {
     }
 
     private static void tcHuiShou(Region region)throws Exception {
+        SikJZB.gb(region);
         //回城
         SuiJiShi.isHcs(region);
         //寻找装备回收
