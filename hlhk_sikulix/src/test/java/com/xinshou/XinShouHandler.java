@@ -120,7 +120,7 @@ public class XinShouHandler {
         match2 = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
         match2.click();
         Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/xinshou/kg.PNG");
-        if(null == all || Iterators.size(all)<=3){
+        if(null == all || Iterators.size(all)<=4){
             System.out.println("回收装备开始~~~");
             tcHuiShou(region);
             System.out.println("回收装备结束~~~");
