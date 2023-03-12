@@ -11,27 +11,32 @@ public class BaoBao {
         baobao(region);
     }
 
-    public static void baobao(Region region)throws Exception{
-        SikJZB.gb(region);
-        Match match = region.find("D:/software/sikulix/image/baobao6.PNG");
-        while (null == match){
+    public static void baobao(Region region){
+        try {
             SikJZB.gb(region);
-            match = region.find("D:/software/sikulix/image/baobao6.PNG");
-            Thread.sleep(500);
-             if(null == match){
-                 System.out.println("检测到宝宝不在线，召唤中！！！！！！");
-                 match = region.find("D:/software/sikulix/image/bbzh.PNG");
-                 Thread.sleep(500);
-                 if(null == match){
-                     match = region.find("D:/software/sikulix/image/bbzh.PNG");
-                 }
-                 Thread.sleep(500);
-                 match.click();
-                 match.setX(match.getX()-30);
-                 match.hover();
-                 match = region.wait("D:/software/sikulix/image/baobao6.PNG",5);
-                 Thread.sleep(500);
-             }
+            Match match = region.find("D:/software/sikulix/image/baobao6.PNG");
+            while (null == match){
+                SikJZB.gb(region);
+                match = region.find("D:/software/sikulix/image/baobao6.PNG");
+                Thread.sleep(500);
+                if(null == match){
+                    System.out.println("检测到宝宝不在线，召唤中！！！！！！");
+                    match = region.wait("D:/software/sikulix/image/bbzh.PNG",1);
+                    Thread.sleep(500);
+                    if(null == match){
+                        match = region.wait("D:/software/sikulix/image/bbzh.PNG",3);
+                    }
+                    Thread.sleep(500);
+                    match.click();
+                    match.setX(match.getX()-30);
+                    match.hover();
+                    match = region.wait("D:/software/sikulix/image/baobao6.PNG",5);
+                    Thread.sleep(500);
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            baobao(region);
         }
     }
 }
