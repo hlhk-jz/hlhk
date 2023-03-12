@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SikJZB {
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1920,1080);
+        Region region = new Region(60, 0,1200,900);
         region.setThrowException(false);
         pickup();
     }
@@ -20,7 +20,7 @@ public class SikJZB {
         Thread.sleep(1000);
         region.type(Key.F12);
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
-        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
         bgMathc.setY(bgMathc.getY()-100);
         bgMathc.setX(bgMathc.getX()-230);
         bgMathc.hover();
