@@ -12,41 +12,37 @@ public class SikJZB {
     }
 
     public static void pickup()throws Exception{
-        Region jzbRegion = new Region(60, 0,1200,900);
-        jzbRegion.setThrowException(false);
+        Region region = new Region(60, 0,1200,900);
+        region.setThrowException(false);
         Settings.MinSimilarity = 0.65;
         //关闭弹窗
-        gb(jzbRegion);
+        gb(region);
         Thread.sleep(1000);
-        jzbRegion.type(Key.F12);
+        region.type(Key.F12);
         //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
-        Match bgMathc = jzbRegion.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
         bgMathc.setY(bgMathc.getY()-100);
         bgMathc.setX(bgMathc.getX()-230);
         bgMathc.hover();
         Thread.sleep(300);
         //守护
-        jzbRegion.type(Key.F4);
-        jzbRegion.type(Key.F4);
+        region.type(Key.F4);
+        region.type(Key.F4);
         bgMathc.setY(bgMathc.getY()-350);
         bgMathc.hover();
         Thread.sleep(300);
         //守护
-        jzbRegion.type(Key.F4);
-        jzbRegion.type(Key.F4);
+        region.type(Key.F4);
+        region.type(Key.F4);
         //判断当前地图有哪些装备
         int start = 1;
-        List<Match> any = jzbRegion.findAnyList(initTargetListObj());
+        List<Match> any = CurrencyData.jzbRegion.findAnyList(initTargetListObj());
         System.out.println("当前地图检测装备数量："+any.size()+" 条！");
         if(0 != any.size()){
             for (Match matchs: any){
                 while (null != matchs){
                     //判断小退，锁定
-                    CurrencyData.isTrue(jzbRegion,0);
-                    jzbRegion.setX(60);
-                    jzbRegion.setY(0);
-                    jzbRegion.setW(1200);
-                    jzbRegion.setH(800);
+                    CurrencyData.isTrue(region,0);
                     Settings.MinSimilarity= 0.65;
                     if((start%10)==0){
                         //如果捡15次没捡到结束本次
@@ -61,12 +57,12 @@ public class SikJZB {
                     }else {
                         location.click();
                         Thread.sleep(300);
-                        jzbRegion.type(Key.F3);
+                        region.type(Key.F3);
                     }
                     Thread.sleep(300);
                     bgMathc.hover();
                     Thread.sleep(300);
-                    matchs = jzbRegion.wait(matchs.getImage(),0.5);
+                    matchs = CurrencyData.jzbRegion.wait(matchs.getImage(),0.5);
                     start ++;
                 }
                 start = 1;
@@ -75,7 +71,7 @@ public class SikJZB {
         Settings.MinSimilarity = 0.7;
         //关闭弹窗
         Thread.sleep(1000);
-        SikJZB.gb(jzbRegion);
+        SikJZB.gb(region);
     }
 
     public static List<Object> initTargetListObj(){

@@ -23,7 +23,6 @@ public class CurrencyData {
     public static String xsNpc = "D:/software/sikulix/image/fuli.PNG";
     //装备栏随机石
     public static String zblSjs = "D:/software/sikulix/image/shitou.PNG";
-
     //聊天窗口屏幕
     public static Region ckRegion = new Region(142,620,722,199);
     //新手地图缩小地图打怪
@@ -34,7 +33,10 @@ public class CurrencyData {
     public static Region kgRegion = new Region(4, 80,779,255);
     //合击条位置
     public static Region hjRegion = new Region(791, 644,88,165);
+    //捡装备
+    public static Region jzbRegion = new Region(211, 39,660,542);
     static {
+        jzbRegion.setThrowException(false);
         hjRegion.setThrowException(false);
         xszgRegion.setThrowException(false);
         kgRegion.setThrowException(false);
