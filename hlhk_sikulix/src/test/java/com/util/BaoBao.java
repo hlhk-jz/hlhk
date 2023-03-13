@@ -1,5 +1,6 @@
 package com.util;
 
+import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
@@ -12,6 +13,7 @@ public class BaoBao {
     }
 
     public static void baobao(Region region){
+        Settings.MinSimilarity = 0.7;
         try {
             SikJZB.gb(region);
             Match match = region.find("D:/software/sikulix/image/baobao6.PNG");

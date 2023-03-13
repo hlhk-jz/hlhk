@@ -15,7 +15,6 @@ public class XsDaGuai {
     }
 
     public static void xsDaguai(Region region) throws Exception {
-        boolean isTrue = false;
         int count = 0;
         int hlCount = 1;
         //检查宝宝是否在线
@@ -26,34 +25,33 @@ public class XsDaGuai {
             match.setY(match.getY()+80);
             match.click();
             Thread.sleep(500);
-            if(count > 3){
-                //查看合击是否已满
-                Settings.MinSimilarity = 0.99;
-                Match hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
-                if(null != hjMatch){
-                    System.out.println("释放合击！！！！");
+            //释放合击
+            region.type(Key.F3);
+            Settings.MinSimilarity = 0.99;
+            Thread.sleep(800);
+            //查看是否释放成功
+            Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 1);
+            if(null != cgMatch){
+                //再次判断合击
+                cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 12);
+                if(null != cgMatch){
                     region.type(Key.F3);
-                    Thread.sleep(1000);
-                    //查看是否释放成功
-                    Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 1);
-                    System.out.println(isTrue+";"+cgMatch);
-                    if(isTrue && null == cgMatch){
-                        System.out.println("判断当前打怪有墙，结束循环！！！！！");
-                        break;
-                    }
+                    Thread.sleep(800);
+                    cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 1);
                     if(null != cgMatch){
                         System.out.println("释放合击成功~~~~~");
-                        //释放合击成功后，只打当前怪
                         while (true){
                             //判断是否锁定
                             CurrencyData.isTrue(region,0);
                             BaoBao.baobao(region);
                             Settings.MinSimilarity = 0.99;
-                            hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
-                            if(null != hjMatch){
+                            //查看合击是否满了
+                            cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
+                            if(null != cgMatch){
                                 //释放合击
                                 Thread.sleep(800);
                                 region.type(Key.F3);
+                                Thread.sleep(300);
                                 cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
                                 if(null == cgMatch){
                                     System.out.println("当前怪打完，查找下一个！！！");
@@ -66,7 +64,7 @@ public class XsDaGuai {
                                     break;
                                 }
                             }
-                            if(hlCount > 100){
+                            if(hlCount > 50){
                                 //防止没有火龙之心
                                 System.out.println("打怪期间检查到宝宝没有火龙之心！！！！！！！！！！！！！！");
                                 Settings.MinSimilarity = 0.7;
@@ -86,9 +84,8 @@ public class XsDaGuai {
             //判断是否锁定
             CurrencyData.isTrue(region,0);
             if (count > 3) {
-                isTrue = true;
-                System.out.println("打怪大于指定次数，缩小地图~~~~~~");
-                match = CurrencyData.sxRegion.wait(CurrencyData.xsJZ, 2);
+                System.out.println("打怪大于指定次数结束本次循环！！！！！！");
+                break;
             }else {
                 match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 2);
             }
