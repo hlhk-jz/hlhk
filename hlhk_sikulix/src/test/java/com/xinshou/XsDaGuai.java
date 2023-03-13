@@ -26,7 +26,7 @@ public class XsDaGuai {
             match.setY(match.getY()+80);
             match.click();
             Thread.sleep(500);
-            if(count > 2){
+            if(count > 3){
                 //查看合击是否已满
                 Settings.MinSimilarity = 0.99;
                 Match hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);

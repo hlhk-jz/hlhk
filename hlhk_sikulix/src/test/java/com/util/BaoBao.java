@@ -33,9 +33,11 @@ public class BaoBao {
                     match = region.wait("D:/software/sikulix/image/baobao6.PNG",5);
                     Thread.sleep(500);
                 }
+                if(null != match){
+                    //检查宝宝血药
+                    SikYaoPin.bbYaoPin(region);
+                }
             }
-            //检查宝宝血药
-            SikYaoPin.bbYaoPin(region);
         }catch (Exception e){
             e.printStackTrace();
             baobao(region);
