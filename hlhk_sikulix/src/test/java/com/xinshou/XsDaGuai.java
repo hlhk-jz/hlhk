@@ -20,15 +20,16 @@ public class XsDaGuai {
         int hlCount = 1;
         //检查宝宝是否在线
         BaoBao.baobao(region);
+        region.type(Key.F1);
         Match match = region.wait(CurrencyData.xsJZ, 1);
         while (null != match){
-            region.type(Key.F1);
             match.setY(match.getY()+80);
             match.click();
             Thread.sleep(500);
-            //查看合击是否已满
-            Settings.MinSimilarity = 0.99;
-            Match hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
+            if(count > 2){
+                //查看合击是否已满
+                Settings.MinSimilarity = 0.99;
+                Match hjMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
                 if(null != hjMatch){
                     System.out.println("释放合击！！！！");
                     region.type(Key.F3);
@@ -79,9 +80,6 @@ public class XsDaGuai {
                         hlCount = 1;
                     }
                 }
-            if (count > 100) {
-                System.out.println("打怪超过指定次数结束循环");
-                break;
             }
             count++;
             Settings.MinSimilarity = 0.7;
@@ -90,7 +88,7 @@ public class XsDaGuai {
                 System.out.println("打怪大于指定次数，缩小地图~~~~~~");
                 match = CurrencyData.sxRegion.wait(CurrencyData.xsJZ, 2);
             }else {
-                match = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ, 3);
+                match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 2);
             }
         }
     }

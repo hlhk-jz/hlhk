@@ -21,10 +21,25 @@ public class SikTest {
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
 
+        int s = 0;
+        for (int i = 0;i< 5;i++){
+            if(s > 2){
+                System.out.println("########");
+            }
+
+            s++;
+            if(s > 3){
+                System.out.println("===========");
+            }else {
+                System.out.println("!!!!!");
+
+            }
+        }
+
        /* csDaGuai(region);
 */
-        Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/tulongdian/shitou2.PNG");
-        System.out.println(Iterators.size(all));
+       /* Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/tulongdian/shitou2.PNG");
+        System.out.println(Iterators.size(all));*/
 
    /*     Match match = region.wait("D:/software/sikulix/huishou/rjb.PNG",1);
         if(null != match){
