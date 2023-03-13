@@ -74,6 +74,10 @@ public class XinShouHS {
         if(isTrue){
             //如果一直没有符合的，点击刷新
             Match match = region.wait("D:/software/sikulix/huishou/sxsx.PNG",1);
+            if(null == match){
+                System.out.println("未查询到刷新按钮！！！！！");
+                XinShouHandler.tcHuiShou(region);
+            }
             match.click();
             pdty(region);
         }

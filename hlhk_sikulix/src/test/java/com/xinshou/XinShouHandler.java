@@ -159,7 +159,7 @@ public class XinShouHandler {
         handler(region);
     }
 
-    private static void tcHuiShou(Region region)throws Exception {
+    public static void tcHuiShou(Region region)throws Exception {
         SikJZB.gb(region);
         //回城
         SuiJiShi.isHcs(region);
@@ -183,6 +183,7 @@ public class XinShouHandler {
             Thread.sleep(500);
             x++;
         }
+        Thread.sleep(500);
         match.click();
         try {
             XinShouHS.xshs(region);
