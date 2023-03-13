@@ -34,6 +34,8 @@ public class BaoBao {
                     Thread.sleep(500);
                 }
             }
+            //检查宝宝血药
+            SikYaoPin.bbYaoPin(region);
         }catch (Exception e){
             e.printStackTrace();
             baobao(region);
