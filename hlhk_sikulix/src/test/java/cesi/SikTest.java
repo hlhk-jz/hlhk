@@ -20,8 +20,10 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
+       Match match = region.wait("D:/software/sikulix/image/bbzh.PNG",3);
+       match.hover();
 
-        int s = 0;
+   /*     int s = 0;
         for (int i = 0;i< 5;i++){
             if(s > 2){
                 System.out.println("########");
@@ -34,7 +36,7 @@ public class SikTest {
                 System.out.println("!!!!!");
 
             }
-        }
+        }*/
 
        /* csDaGuai(region);
 */
