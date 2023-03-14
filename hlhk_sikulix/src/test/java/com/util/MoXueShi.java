@@ -29,6 +29,7 @@ public class MoXueShi {
                 Thread.sleep(500);
                 match.click();
                 Thread.sleep(500);
+                CurrencyData.isTrue(region,1);
                 //寻找魔血石
                 match = region.wait("D:/software/sikulix/image/mxs2.PNG", 1);
             }

@@ -182,6 +182,7 @@ public class XinShouHandler {
             match.rightClick();
             match = region.wait("D:/software/sikulix/xinshou/hszb.PNG",1);
             Thread.sleep(500);
+            CurrencyData.isTrue(region,1);
             x++;
         }
         Thread.sleep(500);

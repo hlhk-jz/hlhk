@@ -46,6 +46,7 @@ public class AXinShouDianStart {
                 Thread.sleep(500);
                 match.rightClick();
                 match = region.wait(CurrencyData.xsNpc,2);
+                CurrencyData.isTrue(region,1);
                 x++;
             }
             match.click();
