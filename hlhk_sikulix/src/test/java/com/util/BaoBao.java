@@ -39,6 +39,7 @@ public class BaoBao {
                     //检查宝宝血药
                     SikYaoPin.bbYaoPin(region);
                 }
+                CurrencyData.isTrue(region,0);
             }
         }catch (Exception e){
             e.printStackTrace();

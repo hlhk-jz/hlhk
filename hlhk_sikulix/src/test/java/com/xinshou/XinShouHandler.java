@@ -35,6 +35,7 @@ public class XinShouHandler {
             //点击随机石
             match2.doubleClick();
             Thread.sleep(500);
+            region.type(Key.F1);
             //寻找教主
             jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
             if(null == jzMatch){

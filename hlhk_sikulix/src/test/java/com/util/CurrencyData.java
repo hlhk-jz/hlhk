@@ -195,6 +195,7 @@ public class CurrencyData {
         try {
             //是否需要小退
             if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SWKEY))){
+                System.out.println("检测人物需要小退！！！！！");
                 region.setX(659);
                 region.setY(561);
                 region.setW(255);
@@ -232,7 +233,7 @@ public class CurrencyData {
             e.printStackTrace();
         }
 
-        //被锁定或者宝宝血量减少,只在打怪，捡装备时判断
+        //被锁定或者宝宝血量减少,只在打怪，捡装备时判断，判断宝宝是否在线
         if(0 == type){
             try {
                 if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SDKEY))){
@@ -259,5 +260,10 @@ public class CurrencyData {
                 e.printStackTrace();
             }
         }
+        Settings.MinSimilarity = 0.7;
+        region.setX(0);
+        region.setY(0);
+        region.setW(1200);
+        region.setH(800);
     }
 }
