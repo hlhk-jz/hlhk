@@ -225,7 +225,7 @@ public class CurrencyData {
                 region.setX(0);
                 region.setY(0);
                 region.setW(1200);
-                region.setH(800);
+                region.setH(900);
                 Settings.MinSimilarity= 0.7;
                 return;
             }
@@ -238,6 +238,9 @@ public class CurrencyData {
             try {
                 if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SDKEY))){
                     System.out.println("检测到宝宝血量减少/被锁定。。。。。。。");
+                    region.type(Key.F5);
+                    Thread.sleep(300);
+                    region.type(Key.F5);
                     Match match2 = region.wait(CurrencyData.zblSjs,1);
                     if(null == match2){
                         match2 = region.wait(CurrencyData.zblSjs,1);
@@ -251,8 +254,6 @@ public class CurrencyData {
                         region.type(Key.F1);
                         Thread.sleep(300);
                         region.type(Key.F1);
-                    }else {
-                        region.type(Key.F5);
                     }
                     RedisUtils.redisTemplate.delete(SDKEY);
                 }
