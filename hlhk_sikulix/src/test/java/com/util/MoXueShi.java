@@ -29,7 +29,7 @@ public class MoXueShi {
                 Thread.sleep(500);
                 match.click();
                 Thread.sleep(500);
-                CurrencyData.isTrue(region,1);
+                CurrencyData.isTrue(region,0);
                 //寻找魔血石
                 match = region.wait("D:/software/sikulix/image/mxs2.PNG", 1);
             }
@@ -97,7 +97,7 @@ public class MoXueShi {
             SikJZB.gb(region);
             match.click();
         }catch (Exception e){
-            System.out.println("检查磨血石报错~~~"+e.getMessage());
+            e.printStackTrace();
         }
     }
 }

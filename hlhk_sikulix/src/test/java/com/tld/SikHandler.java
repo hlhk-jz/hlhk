@@ -35,6 +35,7 @@ public class SikHandler {
             //寻找教主
             anyList = region.findAnyList(CurrencyData.jzList());
             Thread.sleep(1000);
+            CurrencyData.isTrue(region,0 );
             if(anyList.isEmpty()){
                 Match matchyd;
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);

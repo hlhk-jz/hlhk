@@ -38,6 +38,7 @@ public class XinShouHandler {
             region.type(Key.F1);
             //寻找教主
             jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
+            CurrencyData.isTrue(region,0 );
             if(null == jzMatch){
                 Match matchyd;
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);

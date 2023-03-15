@@ -1,6 +1,5 @@
 package com.util;
 import com.tld.ATuLongDianStart;
-import com.xinshou.AXinShouDianStart;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
@@ -149,7 +148,7 @@ public class SuiJiShi {
         region.setW(1000);
         region.setH(800);
         if(null == wait){
-            AXinShouDianStart.xinshou(region);
+           // AXinShouDianStart.xinshou(region);
         }
     }
 }

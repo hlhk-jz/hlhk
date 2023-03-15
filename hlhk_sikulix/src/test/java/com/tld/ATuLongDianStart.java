@@ -39,6 +39,7 @@ public class ATuLongDianStart {
                 match.hover();
                 Thread.sleep(500);
                 match.rightClick();
+                CurrencyData.isTrue(region,1 );
                 Thread.sleep(500);
                 match.rightClick();
                 match = region.wait("D:/software/sikulix/tulongdian/tld.PNG",1);
