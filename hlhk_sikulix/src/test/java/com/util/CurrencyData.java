@@ -1,13 +1,10 @@
 package com.util;
 import org.sikuli.basics.Settings;
-import org.sikuli.script.FindFailed;
 import org.sikuli.script.Key;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 import org.springframework.util.StringUtils;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 public class CurrencyData {
     //屠龙殿教主标识
     public static String tldJZ = "D:/software/sikulix/image/jiaozhu2.PNG";
@@ -63,129 +60,81 @@ public class CurrencyData {
         return initList;
     }
 
-    //矿泉水属于饮料不
-    public static String KQS = "D:/software/sikulix/huishou/kqs.PNG";
-    public static String KQS1 = "D:/software/sikulix/huishou/kqs1.PNG";
-    //玫瑰什么颜色
-    public static String MGYS = "D:/software/sikulix/huishou/mgys.PNG";
-    public static String MGYS1 = "D:/software/sikulix/huishou/mgys1.PNG";
-    //大便是
-    public static String DBS = "D:/software/sikulix/huishou/dbs.PNG";
-    public static String DBS1 = "D:/software/sikulix/huishou/dbs1.PNG";
-    //一天多少小时
-    public static String XS = "D:/software/sikulix/huishou/xs.PNG";
-    public static String XS1 = "D:/software/sikulix/huishou/xs1.PNG";
-    //赵本山哪国人
-    public static String NGR = "D:/software/sikulix/huishou/ngr.PNG";
-    public static String NGR1 = "D:/software/sikulix/huishou/ngr1.PNG";
-    //爸爸的爸爸叫什么
-    public static String JSM = "D:/software/sikulix/huishou/jsm.PNG";
-    public static String JSM1 = "D:/software/sikulix/huishou/jsm1.PNG";
-    //什么瓜不能吃
-    public static String BCG = "D:/software/sikulix/huishou/bcg.PNG";
-    public static String BCG1 = "D:/software/sikulix/huishou/bcg1.PNG";
-    public static List<Object> san1Str(){
-        List<Object> list = new ArrayList<>();
-        list.add(KQS);
-        list.add(MGYS);
-        list.add(XS);
-        list.add(NGR);
-        list.add(DBS);
-        list.add(JSM);
-        list.add(BCG);
-        return list;
-    }
-    //被蚊子叮会不会痒
-    public static String WZ = "D:/software/sikulix/huishou/wz.PNG";
-    public static String WZ1 = "D:/software/sikulix/huishou/wz1.PNG";
-    //水果是
-    public static String SGS = "D:/software/sikulix/huishou/sgs.PNG";
-    public static String SGS1 = "D:/software/sikulix/huishou/sgs1.PNG";
-    //好好学习
-    public static String HHXX = "D:/software/sikulix/huishou/hhxx.PNG";
-    public static String HHXX1 = "D:/software/sikulix/huishou/hhxx1.PNG";
-    //除夕夜吃饺子
-    public static String CJZ = "D:/software/sikulix/huishou/cjz.PNG";
-    public static String CJZ1 = "D:/software/sikulix/huishou/cjz1.PNG";
-    //多少岁内是未成年
-    public static String WCN = "D:/software/sikulix/huishou/wcn.PNG";
-    public static String WCN1 = "D:/software/sikulix/huishou/wcn1.PNG";
-    //企鹅会飞不
-    public static String QE = "D:/software/sikulix/huishou/qe.PNG";
-    public static String QE1 = "D:/software/sikulix/huishou/qe1.PNG";
-    //红颜色的食物是
-    public static String HYS = "D:/software/sikulix/huishou/hys.PNG";
-    public static String HYS1 = "D:/software/sikulix/huishou/hys1.PNG";
-    public static List<Object> san4Str(){
-        List<Object> list = new ArrayList<>();
-        list.add(WZ);
-        list.add(CJZ);
-        list.add(HHXX);
-        list.add(HYS);
-        list.add(SGS);
-        list.add(WCN);
-        list.add(QE);
-        return list;
-    }
-    //有多少个英文字母
-    public static String YWZM = "D:/software/sikulix/huishou/ywzm.PNG";
-    public static String YWZM1 = "D:/software/sikulix/huishou/ywzm1.PNG";
-    //犯法吗
-    public static String SRFF = "D:/software/sikulix/huishou/srff.PNG";
-    public static String SRFF1 = "D:/software/sikulix/huishou/srff1.PNG";
-    //人有几笔
-    public static String RJB = "D:/software/sikulix/huishou/rjb.PNG";
-    public static String RJB1 = "D:/software/sikulix/huishou/srff1.PNG";
-    //吸烟有害吗
-    public static String XY = "D:/software/sikulix/huishou/xy.PNG";
-    public static String XY1 = "D:/software/sikulix/huishou/xy1.PNG";
-    //苹果电话属于国产
-    public static String DH = "D:/software/sikulix/huishou/dh.PNG";
-    public static String DH1 = "D:/software/sikulix/huishou/dh1.PNG";
-    //道士用的技能是
-    public static String DSY = "D:/software/sikulix/huishou/dsy.PNG";
-    public static String DSY1 = "D:/software/sikulix/huishou/dsy1.PNG";
-    public static List<Object> san2Str(){
-        List<Object> list = new ArrayList<>();
-        list.add(YWZM);
-        list.add(DSY);
-        list.add(RJB);
-        list.add(SRFF);
-        list.add(XY);
-        list.add(DH);
-        return list;
-    }
-    //10086
-    public static String ZGYD = "D:/software/sikulix/huishou/zgyd.PNG";
-    public static String ZGYD1 = "D:/software/sikulix/huishou/zgyd1.PNG";
-    //水泥可以做？
-    public static String SNS = "D:/software/sikulix/huishou/sns.PNG";
-    public static String SNS1 = "D:/software/sikulix/huishou/sns1.PNG";
-    //37度是正常体温不
-    public static String TW = "D:/software/sikulix/huishou/tw.PNG";
-    public static String TW1 = "D:/software/sikulix/huishou/tw1.PNG";
-    //哪些食物是酸的
-    public static String SSD = "D:/software/sikulix/huishou/ssd.PNG";
-    public static String SSD1 = "D:/software/sikulix/huishou/ssd1.PNG";
-    //可以吃的是
-    public static String KYC = "D:/software/sikulix/huishou/kyc.PNG";
-    public static String KYC1 = "D:/software/sikulix/huishou/kyc1.PNG";
-    //天安门在哪个城市
-    public static String TAM = "D:/software/sikulix/huishou/tam.PNG";
-    public static String TAM1 = "D:/software/sikulix/huishou/tam1.PNG";
-    //手表一圈多少小时
-    public static String SB = "D:/software/sikulix/huishou/sb.PNG";
-    public static String SB1 = "D:/software/sikulix/huishou/sb1.PNG";
-    public static List<Object> san3Str(){
-        List<Object> list = new ArrayList<>();
-        list.add(ZGYD);
-        list.add(SSD);
-        list.add(SNS);
-        list.add(TW);
-        list.add(TAM);
-        list.add(SB);
-        list.add(KYC);
-        return list;
+    public enum ZBenum{
+        //矿泉水属于饮料不
+        KQS(1,"D:/software/sikulix/huishou/kqs.PNG","D:/software/sikulix/huishou/kqs1.PNG"),
+        //玫瑰什么颜色
+        MGYS(2,"D:/software/sikulix/huishou/mgys.PNG","D:/software/sikulix/huishou/mgys1.PNG"),
+        //大便是
+        DBS(3,"D:/software/sikulix/huishou/dbs.PNG","D:/software/sikulix/huishou/dbs1.PNG"),
+        //一天多少小时
+        XS(4,"D:/software/sikulix/huishou/xs.PNG","D:/software/sikulix/huishou/xs1.PNG"),
+        //赵本山哪国人
+        NGR(5,"D:/software/sikulix/huishou/ngr.PNG","D:/software/sikulix/huishou/ngr1.PNG"),
+        //爸爸的爸爸叫什么
+        JSM(6,"D:/software/sikulix/huishou/jsm.PNG","D:/software/sikulix/huishou/jsm1.PNG"),
+        //什么瓜不能吃
+        BCG(7,"D:/software/sikulix/huishou/bcg.PNG","D:/software/sikulix/huishou/bcg1.PNG"),
+        //被蚊子叮会不会痒
+        WZ(8,"D:/software/sikulix/huishou/wz.PNG","D:/software/sikulix/huishou/wz1.PNG"),
+        //水果是
+        SGS(9,"D:/software/sikulix/huishou/sgs.PNG","D:/software/sikulix/huishou/sgs1.PNG"),
+        //好好学习
+        HHXX(10,"D:/software/sikulix/huishou/hhxx.PNG","D:/software/sikulix/huishou/hhxx1.PNG"),
+        //除夕夜吃饺子
+        CJZ(11,"D:/software/sikulix/huishou/cjz.PNG","D:/software/sikulix/huishou/cjz1.PNG"),
+        //多少岁内是未成年
+        WCN(12,"D:/software/sikulix/huishou/wcn.PNG","D:/software/sikulix/huishou/wcn1.PNG"),
+        //企鹅会飞不
+        QE(13,"D:/software/sikulix/huishou/qe.PNG","D:/software/sikulix/huishou/qe1.PNG"),
+        //红颜色的食物是
+        HYS(14,"D:/software/sikulix/huishou/hys.PNG","D:/software/sikulix/huishou/hys1.PNG"),
+        //有多少个英文字母
+        YWZM(15,"D:/software/sikulix/huishou/ywzm.PNG","D:/software/sikulix/huishou/ywzm1.PNG"),
+        //犯法吗
+        SRFF(16,"D:/software/sikulix/huishou/srff.PNG","D:/software/sikulix/huishou/srff1.PNG"),
+        //人有几笔
+        RJB(17,"D:/software/sikulix/huishou/rjb.PNG","D:/software/sikulix/huishou/rjb1.PNG"),
+        //吸烟有害吗
+        XY(18,"D:/software/sikulix/huishou/xy.PNG","D:/software/sikulix/huishou/xy1.PNG"),
+        //苹果电话属于国产
+        DH(19,"D:/software/sikulix/huishou/dh.PNG","D:/software/sikulix/huishou/dh1.PNG"),
+        //道士用的技能是
+        DSY(20,"D:/software/sikulix/huishou/dsy.PNG","D:/software/sikulix/huishou/dsy1.PNG"),
+        //10086
+        ZGYD(21,"D:/software/sikulix/huishou/zgyd.PNG","D:/software/sikulix/huishou/zgyd1.PNG"),
+        //水泥可以做
+        SNS(22,"D:/software/sikulix/huishou/sns.PNG","D:/software/sikulix/huishou/sns1.PNG"),
+        //37度是正常体温不
+        TW(23,"D:/software/sikulix/huishou/tw.PNG","D:/software/sikulix/huishou/tw1.PNG"),
+        //哪些食物是酸的
+        SSD(24,"D:/software/sikulix/huishou/ssd.PNG","D:/software/sikulix/huishou/ssd1.PNG"),
+        //可以吃的是
+        KYC(25,"D:/software/sikulix/huishou/kyc.PNG","D:/software/sikulix/huishou/kyc1.PNG"),
+        //天安门在哪个城市
+        TAM(26,"D:/software/sikulix/huishou/tam.PNG","D:/software/sikulix/huishou/tam1.PNG"),
+        //手表一圈多少小时
+        SB(27,"D:/software/sikulix/huishou/sb.PNG","D:/software/sikulix/huishou/sb1.PNG");
+
+        private int type;
+        private String target1;
+        private String target2;
+
+        ZBenum(int type,String target1,String target2){
+            this.type = type;
+            this.target1 = target1;
+            this.target2 = target2;
+        }
+        public static Map<String, Object> getMap(Integer... list) {
+            Map<String, Object> map = new HashMap<>();
+            List<Integer> integers = Arrays.asList(list);
+            for (ZBenum zBenum : ZBenum.values()){
+                if(integers.contains(zBenum.type)){
+                    map.put(zBenum.target1,zBenum.target2 );
+                }
+            }
+            return map;
+        }
     }
 
     public static final String SWKEY = "swKey";
