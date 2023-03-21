@@ -114,7 +114,33 @@ public class CurrencyData {
         //天安门在哪个城市
         TAM(26,"D:/software/sikulix/huishou/tam.PNG","D:/software/sikulix/huishou/tam1.PNG"),
         //手表一圈多少小时
-        SB(27,"D:/software/sikulix/huishou/sb.PNG","D:/software/sikulix/huishou/sb1.PNG");
+        SB(27,"D:/software/sikulix/huishou/sb.PNG","D:/software/sikulix/huishou/sb1.PNG"),
+        //飞机需要什么才能起飞
+        FJ(28,"D:/software/sikulix/huishou/fj.PNG","D:/software/sikulix/huishou/fj1.PNG"),
+        //马化腾创办的是
+        MHT(29,"D:/software/sikulix/huishou/mht.PNG","D:/software/sikulix/huishou/mht1.PNG"),
+        //红绿灯红色代表
+        HLD(30,"D:/software/sikulix/huishou/hld.PNG","D:/software/sikulix/huishou/hld1.PNG"),
+        //辣椒面吃在嘴里什么味道
+        LJM(31,"D:/software/sikulix/huishou/ljm.PNG","D:/software/sikulix/huishou/ljm1.PNG"),
+        //什么动物最抗冻
+        DW(32,"D:/software/sikulix/huishou/dw.PNG","D:/software/sikulix/huishou/dw1.PNG"),
+        //毛巾有何作用
+        MJ(33,"D:/software/sikulix/huishou/mj.PNG","D:/software/sikulix/huishou/mj1.PNG"),
+        //哪个人智商最高
+        RZS(34,"D:/software/sikulix/huishou/rzs.PNG","D:/software/sikulix/huishou/rzs1.PNG"),
+        //法师用的技能是
+        FSY(35,"D:/software/sikulix/huishou/fsy.PNG","D:/software/sikulix/huishou/fsy1.PNG"),
+        //哪种汽车品牌最贵
+        QCP(36,"D:/software/sikulix/huishou/qcp.PNG","D:/software/sikulix/huishou/qcp1.PNG"),
+        //什么动物在天上飞
+        TSF(37,"D:/software/sikulix/huishou/tsf.PNG","D:/software/sikulix/huishou/tsf1.PNG"),
+        //吃饭需要
+        CFX(38,"D:/software/sikulix/huishou/cfxPNG","D:/software/sikulix/huishou/cfx1.PNG"),
+        //十九层楼上是几层
+        SJC(39,"D:/software/sikulix/huishou/sjc.PNG","D:/software/sikulix/huishou/sjc1.PNG"),
+        //手机可以拨通
+        SJB(40,"D:/software/sikulix/huishou/sjb.PNG","D:/software/sikulix/huishou/sjb1.PNG");
 
         private int type;
         private String target1;
