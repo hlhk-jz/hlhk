@@ -140,7 +140,13 @@ public class CurrencyData {
         //十九层楼上是几层
         SJC(39,"D:/software/sikulix/huishou/sjc.PNG","D:/software/sikulix/huishou/sjc1.PNG"),
         //手机可以拨通
-        SJB(40,"D:/software/sikulix/huishou/sjb.PNG","D:/software/sikulix/huishou/sjb1.PNG");
+        SJB(40,"D:/software/sikulix/huishou/sjb.PNG","D:/software/sikulix/huishou/sjb1.PNG"),
+        //中秋吃
+        CYB(41,"D:/software/sikulix/huishou/cyb.PNG","D:/software/sikulix/huishou/cyb1.PNG"),
+        //唐僧徒弟
+        TST(42,"D:/software/sikulix/huishou/tst.PNG","D:/software/sikulix/huishou/tst1.PNG"),
+        //什么动物是吃素的
+        YCS(43,"D:/software/sikulix/huishou/ycs.PNG","D:/software/sikulix/huishou/ycs1.PNG");
 
         private int type;
         private String target1;
