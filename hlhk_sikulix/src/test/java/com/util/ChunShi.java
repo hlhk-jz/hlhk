@@ -3,11 +3,11 @@ package com.util;
 import org.sikuli.script.*;
 
 public class ChunShi {
-  /*  public static void main(String[] args)throws Exception{
+   public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
         yd(region);
-    }*/
+    }
 
     //移动F12到聊天栏
     public static void yd(Region region)throws Exception{

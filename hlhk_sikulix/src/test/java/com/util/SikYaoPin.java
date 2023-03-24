@@ -20,62 +20,66 @@ public class SikYaoPin {
         //bbYaoPin(region);
     }
 
-    public static void bbYaoPin(Region region)throws Exception {
-        SikJZB.gb(region);
-        region.setW(1200);
-        region.setH(1000);
-        //寻找宝宝包裹
-        Match match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
-        match.click();
-        //寻找宝宝包裹大药品
-        match = region.wait("D:/software/sikulix/image/bbyp.PNG",2);
-        SikJZB.gb(region);
-        if(null == match){
-            //寻找商铺
-            match = region.wait("D:/software/sikulix/image/pu.PNG",1);
-            if(null == match){
-                region.setX(799);
-                region.setY(581);
-                region.setW(361);
-                region.setH(305);
-                match = region.wait("D:/software/sikulix/image/pu.PNG",1);
-                region.setX(0);
-                region.setY(0);
-                region.setW(1200);
-                region.setH(800);
-            }
-            match.click();
-            //寻找装饰
-            match = region.wait("D:/software/sikulix/image/yaopin3.PNG",1);
-            if(null == match){
-                match = region.wait("D:/software/sikulix/image/yaopin4.PNG",1);
-            }
-            match.click();
-            //寻找商铺药品
-            match = region.wait("D:/software/sikulix/image/yaopin2.PNG",1);
-            match.click();
-            //购买确定
-            match = region.wait("D:/software/sikulix/image/gm.PNG",1);
-            match.click();
-            match = region.wait("D:/software/sikulix/image/qd.PNG",1);
-            match.click();
-            //关闭商铺栏
-            match = region.wait("D:/software/sikulix/image/gbspl.PNG", 1);
-            if(null != match){
-                match.click();
-            }
-            //寻找包裹
-            match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
-            match.click();
-            //主号包裹中大药
-            match = region.wait("D:/software/sikulix/image/zhdy.PNG", 1);
-            if(null == match){
-                match = region.wait("D:/software/sikulix/image/zhdy.PNG", 2);
-            }
-            match.rightClick();
-            Thread.sleep(500);
-            //关闭包裹
+    public static void bbYaoPin(Region region){
+        try {
             SikJZB.gb(region);
+            region.setW(1200);
+            region.setH(1000);
+            //寻找宝宝包裹
+            Match match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
+            match.click();
+            //寻找宝宝包裹大药品
+            match = region.wait("D:/software/sikulix/image/bbyp.PNG",2);
+            SikJZB.gb(region);
+            if(null == match){
+                //寻找商铺
+                match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+                if(null == match){
+                    region.setX(799);
+                    region.setY(581);
+                    region.setW(361);
+                    region.setH(305);
+                    match = region.wait("D:/software/sikulix/image/pu.PNG",1);
+                    region.setX(0);
+                    region.setY(0);
+                    region.setW(1200);
+                    region.setH(800);
+                }
+                match.click();
+                //寻找装饰
+                match = region.wait("D:/software/sikulix/image/yaopin3.PNG",1);
+                if(null == match){
+                    match = region.wait("D:/software/sikulix/image/yaopin4.PNG",1);
+                }
+                match.click();
+                //寻找商铺药品
+                match = region.wait("D:/software/sikulix/image/yaopin2.PNG",1);
+                match.click();
+                //购买确定
+                match = region.wait("D:/software/sikulix/image/gm.PNG",1);
+                match.click();
+                match = region.wait("D:/software/sikulix/image/qd.PNG",1);
+                match.click();
+                //关闭商铺栏
+                match = region.wait("D:/software/sikulix/image/gbspl.PNG", 1);
+                if(null != match){
+                    match.click();
+                }
+                //寻找包裹
+                match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
+                match.click();
+                //主号包裹中大药
+                match = region.wait("D:/software/sikulix/image/zhdy.PNG", 1);
+                if(null == match){
+                    match = region.wait("D:/software/sikulix/image/zhdy.PNG", 2);
+                }
+                match.rightClick();
+                Thread.sleep(500);
+                //关闭包裹
+                SikJZB.gb(region);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
