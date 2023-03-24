@@ -162,6 +162,11 @@ public class XinShouHandler {
     }
 
     public static void tcHuiShou(Region region)throws Exception {
+        Settings.MinSimilarity=0.7;
+        region.setX(0);
+        region.setY(0);
+        region.setW(1200);
+        region.setH(800);
         SikJZB.gb(region);
         //回城
         SuiJiShi.isHcs(region);

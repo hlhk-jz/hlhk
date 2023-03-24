@@ -148,7 +148,9 @@ public class CurrencyData {
         //什么动物是吃素的
         YCS(43,"D:/software/sikulix/huishou/ycs.PNG","D:/software/sikulix/huishou/ycs1.PNG"),
         //王宝强姓
-        WBQ(44,"D:/software/sikulix/huishou/wbq.PNG","D:/software/sikulix/huishou/wbq1.PNG");
+        WBQ(44,"D:/software/sikulix/huishou/wbq.PNG","D:/software/sikulix/huishou/wbq1.PNG"),
+        //羊有几只眼
+        JZY(45,"D:/software/sikulix/huishou/jzy.PNG","D:/software/sikulix/huishou/jzy1.PNG");
 
         private int type;
         private String target1;
@@ -179,38 +181,7 @@ public class CurrencyData {
             //是否需要小退
             if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SWKEY))){
                 System.out.println("检测人物需要小退！！！！！");
-                region.setX(659);
-                region.setY(561);
-                region.setW(255);
-                region.setH(181);
-                Settings.MinSimilarity= 0.8;
-                Match match = region.wait("D:/software/sikulix/image/out.PNG", 2);
-                if (null != match) {
-                    region.setX(0);
-                    region.setY(0);
-                    region.setW(1200);
-                    region.setH(800);
-                    match.click();
-                    match = region.wait("D:/software/sikulix/image/qdtc.PNG", 6);
-                    match.click();
-                    Thread.sleep(5000);
-                    match = region.wait("D:/software/sikulix/image/ksjr.PNG", 6);
-                    match.click();
-                    Thread.sleep(5000);
-                    match = region.wait("D:/software/sikulix/image/qdjr.PNG", 5);
-                    if(null == match){
-                        match = region.wait("D:/software/sikulix/image/qdjr1.PNG", 2);
-                    }
-                    match.click();
-                    Thread.sleep(2000);
-                }
-                RedisUtils.redisTemplate.delete(SWKEY);
-                region.setX(0);
-                region.setY(0);
-                region.setW(1200);
-                region.setH(900);
-                Settings.MinSimilarity= 0.7;
-                return;
+                xiaoTui(region);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -249,5 +220,40 @@ public class CurrencyData {
         region.setY(0);
         region.setW(1200);
         region.setH(800);
+    }
+
+    public static void xiaoTui(Region region)throws Exception{
+        region.setX(659);
+        region.setY(561);
+        region.setW(255);
+        region.setH(181);
+        Settings.MinSimilarity= 0.8;
+        Match match = region.wait("D:/software/sikulix/image/out.PNG", 2);
+        if (null != match) {
+            region.setX(0);
+            region.setY(0);
+            region.setW(1200);
+            region.setH(800);
+            match.click();
+            match = region.wait("D:/software/sikulix/image/qdtc.PNG", 6);
+            match.click();
+            Thread.sleep(5000);
+            match = region.wait("D:/software/sikulix/image/ksjr.PNG", 6);
+            match.click();
+            Thread.sleep(5000);
+            match = region.wait("D:/software/sikulix/image/qdjr.PNG", 5);
+            if(null == match){
+                match = region.wait("D:/software/sikulix/image/qdjr1.PNG", 2);
+            }
+            match.click();
+            Thread.sleep(2000);
+        }
+        RedisUtils.redisTemplate.delete(SWKEY);
+        region.setX(0);
+        region.setY(0);
+        region.setW(1200);
+        region.setH(900);
+        Settings.MinSimilarity= 0.7;
+        return;
     }
 }
