@@ -146,7 +146,9 @@ public class CurrencyData {
         //唐僧徒弟
         TST(42,"D:/software/sikulix/huishou/tst.PNG","D:/software/sikulix/huishou/tst1.PNG"),
         //什么动物是吃素的
-        YCS(43,"D:/software/sikulix/huishou/ycs.PNG","D:/software/sikulix/huishou/ycs1.PNG");
+        YCS(43,"D:/software/sikulix/huishou/ycs.PNG","D:/software/sikulix/huishou/ycs1.PNG"),
+        //王宝强姓
+        WBQ(44,"D:/software/sikulix/huishou/wbq.PNG","D:/software/sikulix/huishou/wbq1.PNG");
 
         private int type;
         private String target1;

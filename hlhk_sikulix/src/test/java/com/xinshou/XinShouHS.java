@@ -45,7 +45,7 @@ public class XinShouHS {
     public static void pdty(Region region)throws Exception{
         Region ziReg = new Region(0,114,399,134);
         ziReg.setThrowException(false);
-        Map<String,Object> map = CurrencyData.ZBenum.getMap(28,30,29,41,42,32,39,36,28,43,40);
+        Map<String,Object> map = CurrencyData.ZBenum.getMap(28,30,29,41,42,32,39,36,28,43,40,44);
         Set<String> set = map.keySet();
         Match match = null;
         boolean isTrue = true;
