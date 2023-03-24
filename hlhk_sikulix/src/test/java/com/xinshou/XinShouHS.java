@@ -73,7 +73,6 @@ public class XinShouHS {
                 }
                 break;
             }
-
         }
 
         //如果没有查到，刷新
