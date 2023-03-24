@@ -41,7 +41,7 @@ public class XinShouHS {
         }
     }
 
-    //判断是哪一组
+
     public static void pdty(Region region)throws Exception{
         Region ziReg = new Region(0,114,399,134);
         ziReg.setThrowException(false);
@@ -71,5 +71,16 @@ public class XinShouHS {
             match.click();
             pdty(region);
         }
+
+        match = region.wait("D:/software/sikulix/image/hs6.PNG",1);
+        if(null == match){
+            match = region.wait("D:/software/sikulix/image/hs6.PNG",3);
+        }
+        match.click();
+        match = region.wait("D:/software/sikulix/image/hs6.PNG",1);
+        if(null == match){
+            match = region.wait("D:/software/sikulix/image/hs6.PNG",3);
+        }
+        match.click();
     }
 }
