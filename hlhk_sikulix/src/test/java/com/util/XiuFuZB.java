@@ -13,6 +13,7 @@ public class XiuFuZB {
 
     public static void xfzb(Region region){
         try {
+            SikJZB.gb(region);
             boolean isTrue = true;
             Match match;
             //寻找包裹
@@ -66,6 +67,7 @@ public class XiuFuZB {
             SikJZB.gb(region);
         }catch (Exception e){
             e.printStackTrace();
+            xfzb(region);
         }
     }
 }

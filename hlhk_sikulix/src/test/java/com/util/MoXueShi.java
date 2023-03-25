@@ -1,5 +1,6 @@
 package com.util;
 
+import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
@@ -15,13 +16,21 @@ public class MoXueShi {
 
     public static void jcMXS(Region region){
         try {
+            SikJZB.gb(region);
             Match match;
+            region.setX(0);
+            region.setY(0);
+            region.setW(1200);
+            region.setH(800);
+            Settings.MinSimilarity = 0.7;
             //寻找背包
             match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
             match.click();
             //寻找魔血石
             match = region.wait("D:/software/sikulix/image/mxs2.PNG", 1);
             while (null != match){
+                match.click();
+                Thread.sleep(500);
                 //寻找包裹，鼠标悬浮上方，单机把旧的扔掉
                 match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
                 match.setY(match.getY()-100);
@@ -98,6 +107,7 @@ public class MoXueShi {
             match.click();
         }catch (Exception e){
             e.printStackTrace();
+            jcMXS(region);
         }
     }
 }

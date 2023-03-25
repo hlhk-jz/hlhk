@@ -145,11 +145,15 @@ public class XinShouHandler {
             //火龙之心
             System.out.println("检查宝宝火龙之心修复装备开始！时间："+System.currentTimeMillis()/1000);
             HLZX.hlzx(region);
-            //检查磨血石，如果有人龙印只修装备就可以
-            MoXueShi.jcMXS(region);
-            //修复装备
-            XiuFuZB.xfzb(region);
             System.out.println("火龙之心检查装备结束！时间："+System.currentTimeMillis()/1000);
+            //检查磨血石，如果有人龙印只修装备就可以
+            System.out.println("检查魔血石开始！！！！");
+            MoXueShi.jcMXS(region);
+            System.out.println("检查魔血石结束~~~~~~");
+            //修复装备
+            System.out.println("修复装备开始！！！！");
+            XiuFuZB.xfzb(region);
+            System.out.println("修复装备结束~~~~~~");
         }
         //12. 循环地柜
         System.out.println("~~~~~~~~~~~本次超级循环数量："+count);
