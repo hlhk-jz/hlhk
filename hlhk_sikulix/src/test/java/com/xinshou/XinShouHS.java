@@ -55,7 +55,7 @@ public class XinShouHS {
         Settings.MinSimilarity=0.85;
         Match match = null;
         boolean isTrue = true;
-        Map<String,Object> map = CurrencyData.ZBenum.getMap(28,30,29,34,25,45,41,42,32,39,36,28,43,40,44);
+        Map<String,Object> map = CurrencyData.ZBenum.getMap(28,30,29,31,34,25,45,41,42,32,39,36,28,43,40,44);
         Set<String> set = map.keySet();
         List<Object> keyList = new ArrayList<>(set);
         List<List<Object>> partition = Lists.partition(keyList, 3);
