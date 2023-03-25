@@ -8,7 +8,7 @@ public class SikJZB {
     public static void main(String[] args)throws Exception{
         Region region = new Region(60, 0,1200,900);
         region.setThrowException(false);
-        pickup();
+        gb(region);
     }
 
     public static void pickup()throws Exception{

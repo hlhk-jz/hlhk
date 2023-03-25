@@ -57,6 +57,8 @@ public class CurrencyData {
         initList.add("D:/software/sikulix/image/bgbg.PNG");
         initList.add("D:/software/sikulix/image/gb9.PNG");
         initList.add("D:/software/sikulix/image/gb11.PNG");
+        initList.add("D:/software/sikulix/image/gb111.PNG");
+        initList.add("D:/software/sikulix/image/gb222.PNG");
         return initList;
     }
 
