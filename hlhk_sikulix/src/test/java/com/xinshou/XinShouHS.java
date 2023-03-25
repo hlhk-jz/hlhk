@@ -6,6 +6,7 @@ import com.util.SikJZB;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +78,16 @@ public class XinShouHS {
 
         //如果没有查到，刷新
         if(isTrue){
+            //判断是否刷新过，如果刷新过就小退下
+            String xiaoTui_key = RedisUtils.redisTemplate.opsForValue().get("xiaoTui_key");
+            if(!StringUtils.isEmpty(xiaoTui_key) && "true".equals(xiaoTui_key)){
+                RedisUtils.redisTemplate.opsForValue().set("xiaoTui_key","false");
+                CurrencyData.xiaoTui(region);
+                Thread.sleep(2000);
+                //小退後重新回收
+                XinShouHandler.tcHuiShou(region);
+            }
+
             //如果一直没有符合的，点击刷新
             match = region.wait("D:/software/sikulix/huishou/sxsx.PNG",1);
             if(null == match){
@@ -98,10 +109,9 @@ public class XinShouHS {
             match = region.wait("D:/software/sikulix/xinshou/qdhs.PNG",2);
         }
         match.click();
-        Thread.sleep(1000);
-        //判断是否刷新过，如果刷新过就小退下
+
         String xiaoTui_key = RedisUtils.redisTemplate.opsForValue().get("xiaoTui_key");
-        if(null != xiaoTui_key && "true".equals(xiaoTui_key)){
+        if(!StringUtils.isEmpty(xiaoTui_key) && "true".equals(xiaoTui_key)){
             RedisUtils.redisTemplate.opsForValue().set("xiaoTui_key","false");
             CurrencyData.xiaoTui(region);
             Thread.sleep(2000);
