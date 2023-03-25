@@ -93,12 +93,12 @@ public class XinShouHS {
             match = region.wait("D:/software/sikulix/image/hs6.PNG",3);
         }
         match.click();
-        match = region.wait("D:/software/sikulix/image/hs6.PNG",1);
+        match = region.wait("D:/software/sikulix/xinshou/qdhs.PNG",2);
         if(null == match){
-            match = region.wait("D:/software/sikulix/image/hs6.PNG",3);
+            match = region.wait("D:/software/sikulix/xinshou/qdhs.PNG",2);
         }
         match.click();
-
+        Thread.sleep(1000);
         //判断是否刷新过，如果刷新过就小退下
         String xiaoTui_key = RedisUtils.redisTemplate.opsForValue().get("xiaoTui_key");
         if(null != xiaoTui_key && "true".equals(xiaoTui_key)){
