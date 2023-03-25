@@ -26,6 +26,7 @@ public class XsDaGuai {
             match.click();
             Thread.sleep(500);
             //释放合击
+            SikJZB.gb(region);
             region.type(Key.F3);
             Settings.MinSimilarity = 0.99;
             Thread.sleep(800);
