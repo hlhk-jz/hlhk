@@ -20,8 +20,13 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-       Match match = region.wait("D:/software/sikulix/image/bbzh.PNG",3);
-       match.hover();
+        Settings.MinSimilarity = 0.7;
+        Iterator<Match> all = region.findAll("D:/software/sikulix/image/yaopin1.PNG");
+        int size = Iterators.size(all);
+        System.out.println(size);
+
+   /*    Match match = region.wait("D:/software/sikulix/image/bbzh.PNG",3);
+       match.hover();*/
 
    /*     int s = 0;
         for (int i = 0;i< 5;i++){

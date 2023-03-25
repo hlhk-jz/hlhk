@@ -95,6 +95,11 @@ public class SikYaoPin {
                 //如果没有大药就买
                 match = region.wait("D:/software/sikulix/image/yaopin2.PNG",1);
                 if(null == match){
+                    //检查小药
+                    Iterator<Match> all = region.findAll("D:/software/sikulix/image/yaopin1.PNG");
+                    if(null != all && Iterators.size(all)>=5){
+                        return;
+                    }
                     //寻找商铺
                     match = region.wait("D:/software/sikulix/image/pu.PNG",1);
                     if(null == match){
