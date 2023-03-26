@@ -8,7 +8,7 @@ public class SikJZB {
     public static void main(String[] args)throws Exception{
         Region region = new Region(60, 0,1200,900);
         region.setThrowException(false);
-        gb(region);
+        pickup();
     }
 
     public static void pickup()throws Exception{
@@ -40,6 +40,7 @@ public class SikJZB {
         System.out.println("当前地图检测装备数量："+any.size()+" 条！");
         if(0 != any.size()){
             for (Match matchs: any){
+                matchs = CurrencyData.jzbRegion.wait(matchs.getImage(),0.5);
                 while (null != matchs){
                     //判断小退，锁定
                     CurrencyData.isTrue(region,0);
