@@ -72,9 +72,6 @@ public class MoXueShi {
             if(null != match){
                 match.click();
             }
-            //寻找背包
-            /*match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
-            match.click();*/
             //寻找魔血石
             match = region.wait("D:/software/sikulix/image/mxs2.PNG", 1);
             match.rightClick();
@@ -103,8 +100,8 @@ public class MoXueShi {
             match.click();
             //关闭弹窗
             SikJZB.gb(region);
-            SikJZB.gb(region);
             match.click();
+            System.out.println("更换魔血石成功~~~~~~~~");
         }catch (Exception e){
             e.printStackTrace();
             //检查宝宝是否在线

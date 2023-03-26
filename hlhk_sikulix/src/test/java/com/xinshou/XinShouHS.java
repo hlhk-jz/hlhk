@@ -28,11 +28,17 @@ public class XinShouHS {
     }
 
     public static void xshs(Region region)throws Exception{
+        SikJZB.gb(region);
         Match match = region.wait("D:/software/sikulix/image/hs5.PNG",2);
         //如果没有回收问题，点击回收
         if(null != match){
             match.click();
             match = region.wait("D:/software/sikulix/xinshou/qdhs.PNG",2);
+            if(null == match){
+                if(null == match){
+                    XinShouHandler.tcHuiShou(region);
+                }
+            }
             match.click();
         }else {
             region.setX(0);
@@ -108,10 +114,16 @@ public class XinShouHS {
         if(null == match){
             match = region.wait("D:/software/sikulix/image/hs6.PNG",3);
         }
+        if(null == match){
+            XinShouHandler.tcHuiShou(region);
+        }
         match.click();
         match = region.wait("D:/software/sikulix/xinshou/qdhs.PNG",2);
         if(null == match){
             match = region.wait("D:/software/sikulix/xinshou/qdhs.PNG",2);
+        }
+        if(null == match){
+            XinShouHandler.tcHuiShou(region);
         }
         match.click();
 

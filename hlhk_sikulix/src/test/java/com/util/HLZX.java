@@ -79,6 +79,7 @@ public class HLZX {
             //关闭弹窗
             SikJZB.gb(region);
             match.click();
+            System.out.println("更换火龙之心成功~~~~~~~~~~");
         }catch (Exception e){
             e.printStackTrace();
             //查看宝宝是否在线
