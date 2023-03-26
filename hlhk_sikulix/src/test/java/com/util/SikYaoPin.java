@@ -80,6 +80,8 @@ public class SikYaoPin {
                 SikJZB.gb(region);
             }
         }catch (Exception e){
+            //检查宝宝是否在线
+            BaoBao.baobao(region);
             e.printStackTrace();
         }
     }

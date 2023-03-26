@@ -107,6 +107,8 @@ public class MoXueShi {
             match.click();
         }catch (Exception e){
             e.printStackTrace();
+            //检查宝宝是否在线
+            BaoBao.baobao(region);
             jcMXS(region);
         }
     }

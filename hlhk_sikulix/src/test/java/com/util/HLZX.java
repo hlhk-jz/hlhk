@@ -81,6 +81,8 @@ public class HLZX {
             match.click();
         }catch (Exception e){
             e.printStackTrace();
+            //查看宝宝是否在线
+            BaoBao.baobao(region);
             hlzx(region);
         }
     }
