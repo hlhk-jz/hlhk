@@ -17,6 +17,7 @@ public class MoXueShi {
     public static void jcMXS(Region region){
         try {
             SikJZB.gb(region);
+            CurrencyData.isTrue(region,1);
             Match match;
             region.setX(0);
             region.setY(0);

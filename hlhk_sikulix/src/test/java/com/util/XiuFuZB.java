@@ -14,6 +14,7 @@ public class XiuFuZB {
     public static void xfzb(Region region){
         try {
             SikJZB.gb(region);
+            CurrencyData.isTrue(region,1);
             boolean isTrue = true;
             Match match;
             //寻找包裹
@@ -65,6 +66,7 @@ public class XiuFuZB {
             }
             //关闭包裹
             SikJZB.gb(region);
+            System.out.println("修复装备成功~~~~~~~~");
         }catch (Exception e){
             e.printStackTrace();
             xfzb(region);

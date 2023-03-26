@@ -197,6 +197,9 @@ public class XinShouHandler {
         }
         Thread.sleep(500);
         match = region.wait("D:/software/sikulix/xinshou/hszb.PNG",3);
+        if(null == match){
+            tcHuiShou(region);
+        }
         match.click();
         try {
             XinShouHS.xshs(region);
