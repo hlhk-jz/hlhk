@@ -141,7 +141,7 @@ public class XinShouHandler {
         }
 
         //11. 检查火龙之心等
-        if((count%10)==0){
+        if((count%8)==0){
             //火龙之心
             System.out.println("检查宝宝火龙之心修复装备开始！时间："+System.currentTimeMillis()/1000);
             HLZX.hlzx(region);
