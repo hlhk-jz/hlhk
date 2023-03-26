@@ -13,6 +13,7 @@ public class BaoBao {
     }
 
     public static void baobao(Region region){
+        System.out.println("检测宝宝是否在线！！！！");
         Settings.MinSimilarity = 0.7;
         try {
             SikJZB.gb(region);

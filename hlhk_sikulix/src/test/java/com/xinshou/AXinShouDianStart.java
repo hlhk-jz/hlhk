@@ -23,15 +23,10 @@ public class AXinShouDianStart {
                 SikYaoPin.bbYaoPin(region);
                 SikYaoPin.zhYaoPin(region);
             }
-            //新区上线会有召唤，查看是否有
-            Match match = region.wait("D:/software/sikulix/xinshou/zh.PNG", 1);
-           /* if(null != match){
-                match.click();
-            }*/
             //关闭弹窗
             SikJZB.gb(region);
             //寻找新手npc
-            match = region.wait(CurrencyData.xsNpc,1);
+            Match match = region.wait(CurrencyData.xsNpc,1);
             while (null == match){
                 if((x%3)==0){
                     SuiJiShi.isHcs(region);

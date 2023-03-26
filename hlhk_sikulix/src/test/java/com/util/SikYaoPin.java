@@ -22,6 +22,7 @@ public class SikYaoPin {
 
     public static void bbYaoPin(Region region){
         try {
+            System.out.println("检测宝宝药品！！！！！");
             SikJZB.gb(region);
             region.setW(1200);
             region.setH(1000);
@@ -84,6 +85,7 @@ public class SikYaoPin {
     }
 
     public static void zhYaoPin(Region region)throws Exception{
+        System.out.println("检测主号药品！！！！！");
             Settings.MinSimilarity = 0.7;
             SikJZB.gb(region);
             //寻找包裹
