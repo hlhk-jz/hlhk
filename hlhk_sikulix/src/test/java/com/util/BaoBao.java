@@ -44,6 +44,7 @@ public class BaoBao {
             }
         }catch (Exception e){
             e.printStackTrace();
+            CurrencyData.isTrue(region,1 );
             baobao(region);
         }
     }
