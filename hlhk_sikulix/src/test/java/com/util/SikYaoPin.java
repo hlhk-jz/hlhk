@@ -24,8 +24,10 @@ public class SikYaoPin {
         try {
             System.out.println("检测宝宝药品！！！！！");
             SikJZB.gb(region);
-            region.setW(1200);
+            region.setX(0);
+            region.setY(0);
             region.setH(1000);
+            region.setW(1200);
             //寻找宝宝包裹
             Match match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
             match.click();
