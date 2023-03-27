@@ -92,6 +92,7 @@ public class XsDaGuai {
                 if(null == match){
                     match= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                     if(null != match){
+                        match.setY(match.getY()-80);
                         match.rightClick();
                         Thread.sleep(300);
                         match.rightClick();
