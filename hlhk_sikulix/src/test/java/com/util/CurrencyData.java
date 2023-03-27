@@ -32,7 +32,11 @@ public class CurrencyData {
     public static Region hjRegion = new Region(791, 644,88,165);
     //捡装备
     public static Region jzbRegion = new Region(211, 39,660,542);
+    //宝宝召唤位置
+    public static Region bbzhRegion = new Region(720, 563,291,173);
+
     static {
+        bbzhRegion.setThrowException(false);
         jzbRegion.setThrowException(false);
         hjRegion.setThrowException(false);
         xszgRegion.setThrowException(false);

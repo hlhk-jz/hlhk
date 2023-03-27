@@ -24,15 +24,17 @@ public class BaoBao {
                 Thread.sleep(500);
                 if(null == match){
                     System.out.println("检测到宝宝不在线，召唤中！！！！！！");
-                    match = region.wait("D:/software/sikulix/image/bbzh.PNG",1);
+                    match = CurrencyData.bbzhRegion.wait("D:/software/sikulix/image/bbzh.PNG",1);
                     Thread.sleep(500);
                     if(null == match){
-                        match = region.wait("D:/software/sikulix/image/bbzh.PNG",3);
+                        match = CurrencyData.bbzhRegion.wait("D:/software/sikulix/image/bbzh.PNG",3);
                     }
                     Thread.sleep(500);
                     match.click();
                     match.setX(match.getX()-30);
+                    Thread.sleep(300);
                     match.hover();
+                    Thread.sleep(300);
                     match = region.wait("D:/software/sikulix/image/baobao6.PNG",5);
                     Thread.sleep(500);
                 }
