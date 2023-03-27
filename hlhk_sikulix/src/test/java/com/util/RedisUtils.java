@@ -10,17 +10,17 @@ public class RedisUtils {
         RedisStandaloneConfiguration rsc = new RedisStandaloneConfiguration();
         rsc.setPort(6379);
         rsc.setHostName("localhost");
-       /* JedisPoolConfig poolConfig = jedisPoolConfig();
+        JedisPoolConfig poolConfig = jedisPoolConfig();
         JedisClientConfiguration jedisPoolConfig = JedisClientConfiguration.builder()
-                .usePooling().poolConfig(poolConfig).build();*/
-        //RedisConnectionFactory fac = new JedisConnectionFactory(rsc,jedisPoolConfig);
-        RedisConnectionFactory fac = new JedisConnectionFactory(rsc);
+                .usePooling().poolConfig(poolConfig).build();
+        RedisConnectionFactory fac = new JedisConnectionFactory(rsc,jedisPoolConfig);
+        //RedisConnectionFactory fac = new JedisConnectionFactory(rsc);
         redisTemplate.setConnectionFactory(fac);
-       // redisTemplate.setEnableTransactionSupport(true);
+        redisTemplate.setEnableTransactionSupport(true);
         redisTemplate.afterPropertiesSet();
     }
     //https://www.cnblogs.com/jpfss/p/11265036.html 连接参数详解
- /*   public static JedisPoolConfig jedisPoolConfig() {
+    public static JedisPoolConfig jedisPoolConfig() {
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         //连接池中的最大空闲连接
         poolConfig.setMaxIdle(8);
@@ -37,5 +37,5 @@ public class RedisUtils {
         //当一个连接使用完归还到连接池时是否进行验证
         poolConfig.setTestOnReturn(false);
         return poolConfig;
-    }*/
+    }
 }
