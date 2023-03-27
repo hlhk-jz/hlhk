@@ -30,6 +30,7 @@
         <module>hlhk_exception</module>
         <module>hlhk_https</module>
         <module>hlhk_sikulix</module>
+        <module>hlhk-docker</module>
     </modules>
 
     <dependencies>

@@ -84,7 +84,7 @@ public class XsDaGuai {
             Settings.MinSimilarity = 0.7;
             //判断是否锁定
             CurrencyData.isTrue(region,0);
-            if (count > 3) {
+            if (count > 2) {
                 System.out.println("打怪大于指定次数结束本次循环！！！！！！");
                 break;
             }else {
