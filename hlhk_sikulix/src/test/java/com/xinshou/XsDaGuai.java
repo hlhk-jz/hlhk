@@ -84,11 +84,21 @@ public class XsDaGuai {
             Settings.MinSimilarity = 0.7;
             //判断是否锁定
             CurrencyData.isTrue(region,0);
-            if (count > 2) {
+            if (count > 3) {
                 System.out.println("打怪大于指定次数结束本次循环！！！！！！");
                 break;
             }else {
                 match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 2);
+                if(null == match){
+                    match= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
+                    if(null != match){
+                        match.rightClick();
+                        Thread.sleep(300);
+                        match.rightClick();
+                        region.type(Key.F4);
+                        match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 1);
+                    }
+                }
             }
         }
     }
