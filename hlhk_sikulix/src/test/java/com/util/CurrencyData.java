@@ -156,7 +156,9 @@ public class CurrencyData {
         //王宝强姓
         WBQ(44,"D:/software/sikulix/huishou/wbq.PNG","D:/software/sikulix/huishou/wbq1.PNG"),
         //羊有几只眼
-        JZY(45,"D:/software/sikulix/huishou/jzy.PNG","D:/software/sikulix/huishou/jzy1.PNG");
+        JZY(45,"D:/software/sikulix/huishou/jzy.PNG","D:/software/sikulix/huishou/jzy1.PNG"),
+        //太阳每天从东方升起
+        TYD(46,"D:/software/sikulix/huishou/tyd.PNG","D:/software/sikulix/huishou/tyd1.PNG");
 
         private int type;
         private String target1;
