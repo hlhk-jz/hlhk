@@ -111,17 +111,12 @@ public class SikHandler {
 
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         System.out.println("调用打怪开始！！！！！！");
-        TldDaGuai.daGuai(region);
-        anyList = region.findAnyList(CurrencyData.jzList());
-        Thread.sleep(1000);
-        if(!anyList.isEmpty()){
-            TldDaGuai.daGuai(region);
-        }
+        //TldDaGuai.daGuai(region);
+        TldDaGuai.zdDaguai(region);
         System.out.println("调用打怪结束~~~~~~~~~~~");
 
         //8. 打完怪捡装备,防止漏捡，调用多次
         System.out.println("调用捡装备开始！！！！！！");
-        SikJZB.pickup();
         SikJZB.pickup();
         region.type(Key.F1);
         System.out.println("调用捡装备结束！！！！！！");
