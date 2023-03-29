@@ -1,9 +1,11 @@
 package com.tld;
+import com.google.common.collect.Iterators;
 import com.util.*;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class SikHandler {
@@ -111,7 +113,6 @@ public class SikHandler {
 
         //7. 循环打怪直到没有怪为止,防止没打完，调用两次
         System.out.println("调用打怪开始！！！！！！");
-        //TldDaGuai.daGuai(region);
         TldDaGuai.zdDaguai(region);
         System.out.println("调用打怪结束~~~~~~~~~~~");
 
@@ -121,31 +122,28 @@ public class SikHandler {
         region.type(Key.F1);
         System.out.println("调用捡装备结束！！！！！！");
         //9. 回收
-        if((count%3)==0){
-            System.out.println("回收装备开始！！！！");
-            try {
-                SikHS.hs(region);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            System.out.println("回收装备结束~~~~~~~~");
+        match2 = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+        match2.click();
+        Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/xinshou/kg.PNG");
+        if(null == all || Iterators.size(all)<=4){
+            System.out.println("回收装备开始~~~");
+            SikHS.hs(region);
+            System.out.println("回收装备结束~~~");
         }
         //10. 检查药品,主号和宝宝
-        System.out.println("检查主号和宝宝药品开始~~~~~~~~");
-        SikYaoPin.zhYaoPin(region);
-        SikYaoPin.bbYaoPin(region);
-        System.out.println("检查主号和宝宝药品结束。。。。。。");
-
-        //11. 检查火龙之心等
-        if((count%10)==0){
+        if((count%8)==0){
             //火龙之心
             System.out.println("检查宝宝火龙之心修复装备开始！时间："+System.currentTimeMillis()/1000);
             HLZX.hlzx(region);
-            //检查磨血石，如果有人龙印只修装备就可以
-           // MoXueShi.jcMXS(region);
-            //修复装备
-            XiuFuZB.xfzb(region);
             System.out.println("火龙之心检查装备结束！时间："+System.currentTimeMillis()/1000);
+            //检查磨血石，如果有人龙印只修装备就可以
+            System.out.println("检查魔血石开始！！！！");
+            MoXueShi.jcMXS(region);
+            System.out.println("检查魔血石结束~~~~~~");
+            //修复装备
+            System.out.println("修复装备开始！！！！");
+            XiuFuZB.xfzb(region);
+            System.out.println("修复装备结束~~~~~~");
         }
         //12. 循环地柜
         System.out.println("~~~~~~~~~~~本次超级循环数量："+count);

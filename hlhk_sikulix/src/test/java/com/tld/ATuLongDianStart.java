@@ -15,6 +15,8 @@ public class ATuLongDianStart {
 
     public static void tld(Region region){
         try {
+            //关闭弹窗
+            SikJZB.gb(region);
             //检查宝宝是否在线
             BaoBao.baobao(region);
             //将F12移动到聊天栏
