@@ -120,7 +120,10 @@ public class XinShouHandler {
         Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/xinshou/kg.PNG");
         if(null == all || Iterators.size(all)<=4){
             System.out.println("回收装备开始~~~");
-            if(null == all){
+            //正常命令回收
+            SikHS.hs(region);
+            //无法在线回收情况回土城
+          /*  if(null == all){
                 match2 = CurrencyData.kgRegion.wait("D:/software/sikulix/image/xxy",1);
                 if(null != match2){
                     //如果包裹满了将血药吃了
@@ -132,7 +135,7 @@ public class XinShouHandler {
                     }
                 }
             }
-            tcHuiShou(region);
+            tcHuiShou(region);*/
             System.out.println("回收装备结束~~~");
         }
 
