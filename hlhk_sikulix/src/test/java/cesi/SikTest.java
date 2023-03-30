@@ -19,7 +19,7 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-
+CurrencyData.rhlmx();
 
    /*    Match match = region.wait("D:/software/sikulix/image/bbzh.PNG",3);
        match.hover();*/

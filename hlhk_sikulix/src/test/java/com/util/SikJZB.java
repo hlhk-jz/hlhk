@@ -114,6 +114,8 @@ public class SikJZB {
         initList.add("D:/software/sikulix/zhuangbei/lt.PNG");
         //烈焰
         initList.add("D:/software/sikulix/zhuangbei/ly.PNG");
+        //100元寶
+        initList.add("D:/software/sikulix/zhuangbei/yibai.PNG");
         return initList;
     }
 

@@ -259,6 +259,12 @@ public class CurrencyData {
                 bgMathc.click();
                 wait = CurrencyData.kgRegion.wait(CurrencyData.MXS, 1);
             }
+            wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
+            while (null != wait){
+                wait.doubleClick();
+                CurrencyData.isTrue(region,9999 );
+                wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
+            }
             SikJZB.gb(region);
         } catch (Exception e) {
             e.printStackTrace();
