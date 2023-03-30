@@ -38,7 +38,7 @@ public class SikHandler {
             //寻找教主
             anyList = region.findAnyList(CurrencyData.jzList());
             Thread.sleep(1000);
-            CurrencyData.isTrue(region,0 );
+            CurrencyData.isTrue(region,9999 );
             if(anyList.isEmpty()){
                 Match matchyd;
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
@@ -119,6 +119,7 @@ public class SikHandler {
 
         //8. 打完怪捡装备,防止漏捡，调用多次
         System.out.println("调用捡装备开始！！！！！！");
+        SikJZB.pickup();
         SikJZB.pickup();
         region.type(Key.F1);
         System.out.println("调用捡装备结束！！！！！！");
