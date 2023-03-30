@@ -18,7 +18,7 @@ public class SikJZB {
         //关闭弹窗
         gb(region);
         //英雄守护，防止捡装备不方便
-        Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
+        Match bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
         shcg(bgMathc);
         Thread.sleep(300);
         region.type(Key.F12);
@@ -148,7 +148,7 @@ public class SikJZB {
             region.type(Key.F4);
             Match wait = CurrencyData.ckRegion.wait("D:/software/sikulix/img/shcg.PNG", 1);
             if (null == wait){
-                bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
+                bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
                 bgMathc.setY(bgMathc.getY()-350);
                 bgMathc.hover();
                 Thread.sleep(300);
@@ -156,7 +156,7 @@ public class SikJZB {
                 region.type(Key.F4);
                 wait = CurrencyData.ckRegion.wait("D:/software/sikulix/img/shcg.PNG", 1);
                 if(null == wait){
-                    bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
+                    bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
                     bgMathc.setX(bgMathc.getX()-700);;
                     bgMathc.setY(bgMathc.getY()-100);
                     bgMathc.hover();

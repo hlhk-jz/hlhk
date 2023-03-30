@@ -6,6 +6,8 @@ import org.sikuli.script.Region;
 import org.springframework.util.StringUtils;
 import java.util.*;
 public class CurrencyData {
+    //包裹图标
+    public static String BGuo = "D:/software/sikulix/image/baoguo.PNG";
     //屠龙殿教主标识
     public static String tldJZ = "D:/software/sikulix/image/jiaozhu2.PNG";
     //新手教主标识
@@ -38,8 +40,11 @@ public class CurrencyData {
     public static Region jzbRegion = new Region(211, 39,660,542);
     //宝宝召唤位置
     public static Region bbzhRegion = new Region(720, 563,291,173);
+    //包裹位置商铺也能看到
+    public static Region bgRegion = new Region(830, 518,215,290);
 
     static {
+        bgRegion.setThrowException(false);
         bbzhRegion.setThrowException(false);
         jzbRegion.setThrowException(false);
         hjRegion.setThrowException(false);
