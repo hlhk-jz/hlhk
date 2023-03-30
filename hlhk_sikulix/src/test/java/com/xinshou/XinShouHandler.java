@@ -14,6 +14,7 @@ import java.util.List;
 public class XinShouHandler {
     private static long count = 0;
     public static void handler(Region region)throws Exception {
+        CurrencyData.rhlmx();
         //判断是否在新手地图
         Thread.sleep(500);
         SuiJiShi.isXinShou(region);

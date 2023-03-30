@@ -20,6 +20,10 @@ public class CurrencyData {
     public static String xsNpc = "D:/software/sikulix/image/fuli.PNG";
     //装备栏随机石
     public static String zblSjs = "D:/software/sikulix/image/shitou.PNG";
+    //火龍之心
+    public static String HLZX = "D:/software/sikulix/image/hlzx.PNG";
+    //魔血石
+    public static String MXS = "D:/software/sikulix/image/mxs2.PNG";
     //聊天窗口屏幕
     public static Region ckRegion = new Region(142,620,722,199);
     //新手地图缩小地图打怪
@@ -228,6 +232,37 @@ public class CurrencyData {
         region.setY(0);
         region.setW(1200);
         region.setH(800);
+    }
+
+    //將背包多餘魔血石和火龍之心扔了
+    public static void rhlmx(){
+        try {
+            Region region = new Region(0, 0,1200,800);
+            region.setThrowException(false);
+            SikJZB.gb(region);
+            Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
+            bgMathc.click();
+            Match wait = CurrencyData.kgRegion.wait(CurrencyData.HLZX, 1);
+            while (null != wait){
+                wait.click();
+                bgMathc.setY(bgMathc.getY()-100);
+                bgMathc.hover();
+                CurrencyData.isTrue(region,9999 );
+                bgMathc.click();
+                wait = CurrencyData.kgRegion.wait(CurrencyData.HLZX, 1);
+            }
+            wait = CurrencyData.kgRegion.wait(CurrencyData.MXS, 1);
+            while (null != wait){
+                wait.click();
+                bgMathc.hover();
+                CurrencyData.isTrue(region,9999 );
+                bgMathc.click();
+                wait = CurrencyData.kgRegion.wait(CurrencyData.MXS, 1);
+            }
+            SikJZB.gb(region);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void xiaoTui(Region region)throws Exception{
