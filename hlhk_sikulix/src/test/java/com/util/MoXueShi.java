@@ -50,7 +50,7 @@ public class MoXueShi {
             //寻找补给
             match = region.wait("D:/software/sikulix/image/bj.PNG", 1);
             if (null == match){
-                match = region.wait("D:/software/sikulix/image/bj2.PNG", 1);
+                match = region.wait("D:/software/sikulix/image/bj2.PNG", 4);
             }
             match.click();
             //寻找魔血石
