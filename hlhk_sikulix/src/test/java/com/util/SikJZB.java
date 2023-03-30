@@ -17,11 +17,11 @@ public class SikJZB {
         Settings.MinSimilarity = 0.65;
         //关闭弹窗
         gb(region);
-        Thread.sleep(1000);
-        region.type(Key.F12);
         //英雄守护，防止捡装备不方便
         Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
         shcg(bgMathc);
+        Thread.sleep(300);
+        region.type(Key.F12);
         //判断当前地图有哪些装备
         int start = 1;
         List<Match> any = CurrencyData.jzbRegion.findAnyList(initTargetListObj());
