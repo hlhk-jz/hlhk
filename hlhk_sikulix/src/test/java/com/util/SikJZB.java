@@ -34,7 +34,7 @@ public class SikJZB {
                     CurrencyData.isTrue(region,0);
                     Settings.MinSimilarity= 0.65;
                     if((start%10)==0){
-                        //如果捡15次没捡到结束本次
+                        //如果捡指定次数没捡到结束本次循环
                         break;
                     }
                     Location location = matchs.getTarget();
