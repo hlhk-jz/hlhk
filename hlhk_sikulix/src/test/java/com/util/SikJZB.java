@@ -66,6 +66,16 @@ public class SikJZB {
         List<Object> initList = new ArrayList<>();
         //倚天
         initList.add("D:/software/sikulix/zhuangbei/yt.PNG");
+        //狂雷
+        initList.add("D:/software/sikulix/zhuangbei/kl.PNG");
+        //通云
+        initList.add("D:/software/sikulix/zhuangbei/ty.PNG");
+        //逆火
+        initList.add("D:/software/sikulix/zhuangbei/nh.PNG");
+        //黄金
+        initList.add("D:/software/sikulix/zhuangbei/hj.PNG");
+        //赤金
+        initList.add("D:/software/sikulix/zhuangbei/cj.PNG");
         //星王
         initList.add("D:/software/sikulix/zhuangbei/xw.PNG");
         //混世
@@ -86,16 +96,6 @@ public class SikJZB {
         initList.add("D:/software/sikulix/zhuangbei/zs.PNG");
         //震天
         initList.add("D:/software/sikulix/zhuangbei/zt.PNG");
-        //狂雷
-        initList.add("D:/software/sikulix/zhuangbei/kl.PNG");
-        //通云
-        initList.add("D:/software/sikulix/zhuangbei/ty.PNG");
-        //逆火
-        initList.add("D:/software/sikulix/zhuangbei/nh.PNG");
-        //黄金
-        initList.add("D:/software/sikulix/zhuangbei/hj.PNG");
-        //赤金
-        initList.add("D:/software/sikulix/zhuangbei/cj.PNG");
         //霸者之刃
         initList.add("D:/software/sikulix/zhuangbei/bzzr.PNG");
         //奉天
