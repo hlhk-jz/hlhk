@@ -19,21 +19,9 @@ public class SikJZB {
         gb(region);
         Thread.sleep(1000);
         region.type(Key.F12);
-        //寻找包裹,让鼠标悬浮背包上面，英雄守护那，防止捡装备不方便
+        //英雄守护，防止捡装备不方便
         Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
-        bgMathc.setY(bgMathc.getY()-100);
-        bgMathc.setX(bgMathc.getX()-230);
-        bgMathc.hover();
-        Thread.sleep(300);
-        //守护
-        region.type(Key.F4);
-        region.type(Key.F4);
-        bgMathc.setY(bgMathc.getY()-350);
-        bgMathc.hover();
-        Thread.sleep(300);
-        //守护
-        region.type(Key.F4);
-        region.type(Key.F4);
+        shcg(bgMathc);
         //判断当前地图有哪些装备
         int start = 1;
         List<Match> any = CurrencyData.jzbRegion.findAnyList(initTargetListObj());
@@ -144,5 +132,47 @@ public class SikJZB {
             }
         }
         Thread.sleep(1000);
+    }
+
+    public static void shcg(Match bgMathc){
+        try {
+            Region region = new Region(0, 0,1200,800);
+            region.setThrowException(false);
+            bgMathc.setY(bgMathc.getY()-100);
+            bgMathc.setX(bgMathc.getX()-230);
+            bgMathc.hover();
+            Thread.sleep(300);
+            region.type(Key.F4);
+            region.type(Key.F4);
+            Match wait = CurrencyData.ckRegion.wait("D:/software/sikulix/img/shcg.PNG", 1);
+            if (null == wait){
+                bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
+                bgMathc.setY(bgMathc.getY()-350);
+                bgMathc.hover();
+                Thread.sleep(300);
+                region.type(Key.F4);
+                region.type(Key.F4);
+                wait = CurrencyData.ckRegion.wait("D:/software/sikulix/img/shcg.PNG", 1);
+                if(null == wait){
+                    bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
+                    bgMathc.setX(bgMathc.getX()-700);;
+                    bgMathc.setY(bgMathc.getY()-100);
+                    bgMathc.hover();
+                    Thread.sleep(300);
+                    region.type(Key.F4);
+                    region.type(Key.F4);
+                    wait = CurrencyData.ckRegion.wait("D:/software/sikulix/img/shcg.PNG", 1);
+                    if(null == wait){
+                        bgMathc.setY(bgMathc.getY()-300);
+                        bgMathc.hover();
+                        Thread.sleep(300);
+                        region.type(Key.F4);
+                        region.type(Key.F4);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -17,13 +17,11 @@ import java.util.List;
 
 public class SikTest {
 
+
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        Match match= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
 
-        match.setY(match.getY()-80);
-        match.rightClick();
    /*    Match match = region.wait("D:/software/sikulix/image/bbzh.PNG",3);
        match.hover();*/
 
