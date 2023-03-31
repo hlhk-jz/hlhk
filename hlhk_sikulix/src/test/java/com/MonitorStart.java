@@ -3,6 +3,7 @@ import com.util.CurrencyData;
 import com.util.RedisUtils;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
+import org.springframework.util.StringUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -53,11 +54,18 @@ public class MonitorStart {
         region.setY(0);
         region.setW(211);
         region.setH(60);
-        match = region.wait("D:/software/sikulix/image/xl.PNG",2);
+        match = region.wait("D:/software/sikulix/image/xl.PNG",1);
         if(null != match){
-            System.out.println("宝宝血量减少！！！当前时间："+System.currentTimeMillis());
-            RedisUtils.redisTemplate.opsForValue().set(CurrencyData.SDKEY,"true",15, TimeUnit.SECONDS);
-            Thread.sleep(15000);
+            if(StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(CurrencyData.SDKEY))){
+                System.out.println("宝宝血量减少！！！当前时间："+System.currentTimeMillis());
+                region.type(Key.F5 );
+                Thread.sleep(300);
+                region.type(Key.F5 );
+                Thread.sleep(300);
+                region.type(Key.F5 );
+                RedisUtils.redisTemplate.opsForValue().set(CurrencyData.SDKEY,"true",60, TimeUnit.SECONDS);
+                Thread.sleep(1000);
+            }
         }
     }
 
@@ -67,11 +75,18 @@ public class MonitorStart {
         region.setY(438);
         region.setW(690);
         region.setH(391);
-        Match match = region.wait(CurrencyData.bsd,2);
+        Match match = region.wait(CurrencyData.bsd,1);
         if(null != match){
-            System.out.println("被锁定！！！当前时间："+System.currentTimeMillis()/1000);
-            RedisUtils.redisTemplate.opsForValue().set(CurrencyData.SDKEY,"true",15, TimeUnit.SECONDS);
-            Thread.sleep(15000);
+            if(StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(CurrencyData.SDKEY))){
+                System.out.println("被锁定！！！当前时间："+System.currentTimeMillis()/1000);
+                region.type(Key.F5 );
+                Thread.sleep(300);
+                region.type(Key.F5 );
+                Thread.sleep(300);
+                region.type(Key.F5 );
+                RedisUtils.redisTemplate.opsForValue().set(CurrencyData.SDKEY,"true",60, TimeUnit.SECONDS);
+                Thread.sleep(1000);
+            }
         }
     }
 }

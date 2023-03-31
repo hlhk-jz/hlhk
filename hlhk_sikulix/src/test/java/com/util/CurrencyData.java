@@ -6,6 +6,8 @@ import org.sikuli.script.Region;
 import org.springframework.util.StringUtils;
 import java.util.*;
 public class CurrencyData {
+    //宝宝
+    public static String BAOBAO = "D:/software/sikulix/image/baobao6.PNG";
     //包裹图标
     public static String BGuo = "D:/software/sikulix/image/baoguo.PNG";
     //屠龙殿教主标识
@@ -205,7 +207,7 @@ public class CurrencyData {
         }
 
         //被锁定或者宝宝血量减少,只在打怪，捡装备时判断，判断宝宝是否在线
-        if(0 == type){
+     /*   if(0 == type){
             try {
                 if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SDKEY))){
                     System.out.println("检测到宝宝血量减少/被锁定。。。。。。。");
@@ -231,7 +233,7 @@ public class CurrencyData {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+        }*/
         Settings.MinSimilarity = 0.7;
         region.setX(0);
         region.setY(0);

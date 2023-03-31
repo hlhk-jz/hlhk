@@ -16,11 +16,10 @@ public class BaoBao {
         Settings.MinSimilarity = 0.7;
         try {
             SikJZB.gb(region);
-            Match match = region.find("D:/software/sikulix/image/baobao6.PNG");
+            Match match = region.wait(CurrencyData.BAOBAO,1);
             while (null == match){
                 SikJZB.gb(region);
-                match = region.find("D:/software/sikulix/image/baobao6.PNG");
-                Thread.sleep(500);
+                match = region.wait(CurrencyData.BAOBAO,1);
                 if(null == match){
                     System.out.println("检测到宝宝不在线，召唤中！！！！！！");
                     match = CurrencyData.bbzhRegion.wait("D:/software/sikulix/image/bbzh.PNG",1);
@@ -34,7 +33,7 @@ public class BaoBao {
                     Thread.sleep(300);
                     match.hover();
                     Thread.sleep(300);
-                    match = region.wait("D:/software/sikulix/image/baobao6.PNG",5);
+                    match = region.wait(CurrencyData.BAOBAO,5);
                     Thread.sleep(500);
                 }
                 if(null != match){
