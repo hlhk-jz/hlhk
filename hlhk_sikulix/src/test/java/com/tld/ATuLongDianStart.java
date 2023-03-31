@@ -3,8 +3,6 @@ import com.util.*;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
-import java.util.List;
-
 //屠龙殿
 public class ATuLongDianStart {
     public static void main(String[] args){
@@ -59,7 +57,7 @@ public class ATuLongDianStart {
             }
             //我要进入
             match.click();
-            SikHandler.handler(region);
+            TuLongDianHandler.handler(region);
         } catch (Exception e) {
             e.printStackTrace();
             CurrencyData.isTrue(region, 9999);
