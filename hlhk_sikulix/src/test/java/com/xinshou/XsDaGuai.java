@@ -100,6 +100,7 @@ public class XsDaGuai {
                         match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 1);
                     }
                 }
+                region.type(Key.F1);
             }
         }
     }

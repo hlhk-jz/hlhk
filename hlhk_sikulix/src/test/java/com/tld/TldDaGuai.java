@@ -104,6 +104,7 @@ public class TldDaGuai {
                         match = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ, 1);
                     }
                 }
+                region.type(Key.F1);
             }
         }
     }
