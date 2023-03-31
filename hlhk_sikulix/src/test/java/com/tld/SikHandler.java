@@ -124,8 +124,15 @@ public class SikHandler {
         region.type(Key.F1);
         System.out.println("调用捡装备结束！！！！！！");
         //9. 回收
-        match2 = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
+        match2 = CurrencyData.bgRegion.wait(CurrencyData.BGuo,1);
         match2.click();
+        //如果有100元宝点了
+        Match wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
+        while (null != wait){
+            wait.doubleClick();
+            CurrencyData.isTrue(region,9999 );
+            wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
+        }
         Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/xinshou/kg.PNG");
         if(null == all || Iterators.size(all)<=4){
             System.out.println("回收装备开始~~~");
