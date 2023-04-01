@@ -49,6 +49,7 @@ public class TldDaGuai {
                             //判断是否锁定
                             CurrencyData.isTrue(region,0);
                             BaoBao.baobao(region);
+                            SikYaoPin.zhYaoPin(region);
                             Settings.MinSimilarity = 0.99;
                             //查看合击是否满了
                             cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);

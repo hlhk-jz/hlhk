@@ -93,7 +93,7 @@ public class SikYaoPin {
             Settings.MinSimilarity = 0.7;
             SikJZB.gb(region);
             //寻找包裹
-            Match match = region.wait("D:/software/sikulix/image/baoguo.PNG", 2);
+            Match match = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 2);
             match.click();
             match = region.wait("D:/software/sikulix/image/bbyp.PNG",2);
             SikJZB.gb(region);
