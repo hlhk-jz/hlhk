@@ -40,11 +40,11 @@ public class BaoBao {
                     //检查宝宝血药
                     SikYaoPin.bbYaoPin(region);
                 }
-                CurrencyData.isTrue(region,0);
+                CurrencyData.isTrue(region);
             }
         }catch (Exception e){
             e.printStackTrace();
-            CurrencyData.isTrue(region,1 );
+            CurrencyData.isTrue(region);
             baobao(region);
         }
     }

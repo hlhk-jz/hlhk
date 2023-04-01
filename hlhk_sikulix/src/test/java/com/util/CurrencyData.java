@@ -195,7 +195,7 @@ public class CurrencyData {
     public static final String SWKEY = "swKey";
     public static final String SDKEY = "sdKey";
 
-    public static void isTrue(Region region,int type){
+    public static void isTrue(Region region){
         try {
             //是否需要小退
             if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SWKEY))){
@@ -205,40 +205,6 @@ public class CurrencyData {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        //被锁定或者宝宝血量减少,只在打怪，捡装备时判断，判断宝宝是否在线
-     /*   if(0 == type){
-            try {
-                if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SDKEY))){
-                    System.out.println("检测到宝宝血量减少/被锁定。。。。。。。");
-                    region.type(Key.F5);
-                    Thread.sleep(300);
-                    region.type(Key.F5);
-                    Match match2 = region.wait(CurrencyData.zblSjs,1);
-                    if(null == match2){
-                        match2 = region.wait(CurrencyData.zblSjs,1);
-                    }
-                    if(null != match2){
-                        match2.doubleClick();
-                        Thread.sleep(300);
-                        region.type(Key.F1);
-                        match2.doubleClick();
-                        Thread.sleep(300);
-                        region.type(Key.F1);
-                        Thread.sleep(300);
-                        region.type(Key.F1);
-                    }
-                    RedisUtils.redisTemplate.delete(SDKEY);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }*/
-        Settings.MinSimilarity = 0.7;
-        region.setX(0);
-        region.setY(0);
-        region.setW(1200);
-        region.setH(800);
     }
 
     //將背包多餘魔血石和火龍之心扔了
@@ -254,7 +220,7 @@ public class CurrencyData {
                 wait.click();
                 bgMathc.setY(bgMathc.getY()-100);
                 bgMathc.hover();
-                CurrencyData.isTrue(region,9999 );
+                CurrencyData.isTrue(region);
                 bgMathc.click();
                 wait = CurrencyData.kgRegion.wait(CurrencyData.HLZX, 1);
             }
@@ -262,14 +228,14 @@ public class CurrencyData {
             while (null != wait){
                 wait.click();
                 bgMathc.hover();
-                CurrencyData.isTrue(region,9999 );
+                CurrencyData.isTrue(region );
                 bgMathc.click();
                 wait = CurrencyData.kgRegion.wait(CurrencyData.MXS, 1);
             }
             wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
             while (null != wait){
                 wait.doubleClick();
-                CurrencyData.isTrue(region,9999 );
+                CurrencyData.isTrue(region);
                 wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
             }
             SikJZB.gb(region);

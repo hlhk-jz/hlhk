@@ -41,7 +41,7 @@ public class AXinShouDianStart {
                 Thread.sleep(500);
                 match.rightClick();
                 match = region.wait(CurrencyData.xsNpc,2);
-                CurrencyData.isTrue(region,1);
+                CurrencyData.isTrue(region);
                 x++;
             }
             match.click();
@@ -56,7 +56,7 @@ public class AXinShouDianStart {
             XinShouHandler.handler(region);
         } catch (Exception e) {
             e.printStackTrace();
-            CurrencyData.isTrue(region, 9999);
+            CurrencyData.isTrue(region);
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e1) {

@@ -31,7 +31,7 @@ public class SikJZB {
                 matchs = CurrencyData.jzbRegion.wait(matchs.getImage(),0.5);
                 while (null != matchs){
                     //判断小退，锁定
-                    CurrencyData.isTrue(region,0);
+                    CurrencyData.isTrue(region);
                     Settings.MinSimilarity= 0.65;
                     if((start%10)==0){
                         //如果捡指定次数没捡到结束本次循环

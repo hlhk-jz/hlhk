@@ -17,7 +17,7 @@ public class MoXueShi {
     public static void jcMXS(Region region){
         try {
             SikJZB.gb(region);
-            CurrencyData.isTrue(region,1);
+            CurrencyData.isTrue(region);
             Match match;
             region.setX(0);
             region.setY(0);
@@ -39,7 +39,7 @@ public class MoXueShi {
                 Thread.sleep(500);
                 match.click();
                 Thread.sleep(500);
-                CurrencyData.isTrue(region,0);
+                CurrencyData.isTrue(region);
                 //寻找魔血石
                 match = region.wait("D:/software/sikulix/image/mxs2.PNG", 1);
             }

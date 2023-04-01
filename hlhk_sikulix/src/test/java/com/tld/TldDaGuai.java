@@ -47,7 +47,7 @@ public class TldDaGuai {
                         System.out.println("释放合击成功~~~~~");
                         while (true){
                             //判断是否锁定
-                            CurrencyData.isTrue(region,0);
+                            CurrencyData.isTrue(region);
                             BaoBao.baobao(region);
                             SikYaoPin.zhYaoPin(region);
                             Settings.MinSimilarity = 0.99;
@@ -88,7 +88,7 @@ public class TldDaGuai {
             count++;
             Settings.MinSimilarity = 0.7;
             //判断是否锁定
-            CurrencyData.isTrue(region,0);
+            CurrencyData.isTrue(region);
             if (count > 3) {
                 System.out.println("打怪大于指定次数结束本次循环！！！！！！");
                 break;
