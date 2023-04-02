@@ -48,7 +48,6 @@ public class TldDaGuai {
                             //判断是否锁定
                             CurrencyData.isTrue(region);
                             BaoBao.baobao(region);
-                            SikYaoPin.zhYaoPin(region);
                             Settings.MinSimilarity = 0.99;
                             //查看合击是否满了
                             cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
@@ -68,6 +67,7 @@ public class TldDaGuai {
                                     count = 1;
                                     break;
                                 }
+                                SikYaoPin.zhYaoPin(region);
                             }
                             if(hlCount > 50){
                                 //防止没有火龙之心

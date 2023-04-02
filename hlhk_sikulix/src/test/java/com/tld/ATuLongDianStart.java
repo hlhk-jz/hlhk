@@ -44,13 +44,11 @@ public class ATuLongDianStart {
                 match = region.wait("D:/software/sikulix/tulongdian/tld.PNG",1);
                 x++;
             }
+            Thread.sleep(1000);
             match = region.wait("D:/software/sikulix/tulongdian/tld.PNG",1);
             match.click();
             //寻找进入
             match = region.wait("D:/software/sikulix/tulongdian/tldb.PNG",1);
-            if(null == match){
-                match = region.find("D:/software/sikulix/tulongdian/tldb.PNG");
-            }
             if(null == match){
                 tld(region);
             }
