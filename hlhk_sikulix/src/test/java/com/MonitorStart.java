@@ -56,14 +56,14 @@ public class MonitorStart {
         region.setH(60);
         match = region.wait("D:/software/sikulix/image/xl.PNG",1);
         if(null != match){
-            if(StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(CurrencyData.SDKEY))){
+            if(StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(CurrencyData.XLKEY))){
                 System.out.println("宝宝血量减少！！！当前时间："+System.currentTimeMillis());
                 region.type(Key.F5 );
                 Thread.sleep(300);
                 region.type(Key.F5 );
                 Thread.sleep(300);
                 region.type(Key.F5 );
-                RedisUtils.redisTemplate.opsForValue().set(CurrencyData.SDKEY,"true",60, TimeUnit.SECONDS);
+                RedisUtils.redisTemplate.opsForValue().set(CurrencyData.XLKEY,"true",280, TimeUnit.SECONDS);
                 Thread.sleep(1000);
             }
         }

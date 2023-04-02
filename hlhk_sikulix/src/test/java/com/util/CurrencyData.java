@@ -194,6 +194,7 @@ public class CurrencyData {
 
     public static final String SWKEY = "swKey";
     public static final String SDKEY = "sdKey";
+    public static final String XLKEY = "XLKEY";
 
     public static void isTrue(Region region){
         try {
