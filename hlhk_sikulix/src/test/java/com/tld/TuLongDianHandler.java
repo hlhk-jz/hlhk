@@ -4,6 +4,7 @@ import com.util.*;
 import com.xinshou.AXinShouDianStart;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,8 +28,8 @@ public class TuLongDianHandler {
         }
 
         //6. 寻找教主
-        List<Match> anyList = new ArrayList<>();
         Match yd = null;
+        Match jzMatch;
         int n = 1;
         while (true){
             n++;
@@ -37,10 +38,10 @@ public class TuLongDianHandler {
             Thread.sleep(500);
             region.type(Key.F1);
             //寻找教主
-            anyList = region.findAnyList(CurrencyData.jzList());
+            jzMatch = region.wait(CurrencyData.tldJZ,1);
             Thread.sleep(1000);
             CurrencyData.isTrue(region );
-            if(anyList.isEmpty()){
+            if(null == jzMatch){
                 Match matchyd;
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
                 if(null != yd){
@@ -59,9 +60,9 @@ public class TuLongDianHandler {
                     matchyd.rightClick();
                     Thread.sleep(300);
                     //寻找教主
-                    anyList = region.findAnyList(CurrencyData.jzList());
+                    jzMatch = region.wait(CurrencyData.tldJZ,1);
                     Thread.sleep(1000);
-                    if(anyList.isEmpty()){
+                    if(null == jzMatch){
                         //左上
                         matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                         matchyd.setY(matchyd.getY()-500);
@@ -88,10 +89,10 @@ public class TuLongDianHandler {
                 }
             }
             //寻找教主
-            anyList = region.findAnyList(CurrencyData.jzList());
+            jzMatch = region.wait(CurrencyData.tldJZ,1);
             Thread.sleep(1000);
             //如果找到教主了推出循环
-            if (!anyList.isEmpty()){
+            if (null != jzMatch){
                 break;
             }
             //查看是否在屠龙殿
