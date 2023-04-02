@@ -1,6 +1,7 @@
 package com.xinshou;
 
 import com.google.common.collect.Iterators;
+import com.tld.ATuLongDianStart;
 import com.util.*;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Key;
@@ -100,6 +101,7 @@ public class XinShouHandler {
                 System.out.println("随机石超过40检查包裹");
                 SuiJiShi.suiJiShi(region);
                 n = 1;
+                ATuLongDianStart.tld(region);
             }
             //寻找随机石，因为有可能随机石在其它位置了，所以在查一遍
             match2 = region.wait("D:/software/sikulix/tulongdian/shitou.PNG",0.5);

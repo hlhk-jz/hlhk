@@ -1,6 +1,7 @@
 package com.tld;
 import com.google.common.collect.Iterators;
 import com.util.*;
+import com.xinshou.AXinShouDianStart;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 
@@ -104,6 +105,7 @@ public class TuLongDianHandler {
                 //检查药品
                 SikYaoPin.zhYaoPin(region);
                 n = 1;
+                AXinShouDianStart.xinshou(region);
             }
             //寻找随机石，因为有可能随机石在其它位置了，所以在查一遍
             match2 = region.wait("D:/software/sikulix/tulongdian/shitou.PNG",0.5);
