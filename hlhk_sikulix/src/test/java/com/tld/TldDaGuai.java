@@ -22,7 +22,6 @@ public class TldDaGuai {
         //检查宝宝是否在线
         BaoBao.baobao(region);
         //查看主号药品
-        SikYaoPin.zhYaoPin(region);
         region.type(Key.F1);
         Match match = region.wait(CurrencyData.tldJZ, 1);
         while (null != match){

@@ -46,8 +46,7 @@ public class ATuLongDianStart {
             }
             match.click();
             //寻找进入
-            match = region.find("D:/software/sikulix/tulongdian/tldb.PNG");
-            Thread.sleep(600);
+            match = region.wait("D:/software/sikulix/tulongdian/tldb.PNG",1);
             if(null == match){
                 match = region.find("D:/software/sikulix/tulongdian/tldb.PNG");
             }
