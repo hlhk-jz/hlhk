@@ -20,7 +20,6 @@ public class ATuLongDianStart {
             //将F12移动到聊天栏
             ChunShi.yd(region);
             //检查药品
-            SikYaoPin.zhYaoPin(region);
             SikYaoPin.bbYaoPin(region);
             //关闭弹窗
             SikJZB.gb(region);
