@@ -3,6 +3,7 @@ package com.util;
 import com.google.common.collect.Iterators;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.FindFailed;
+import org.sikuli.script.Key;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
@@ -93,10 +94,10 @@ public class SikYaoPin {
             Settings.MinSimilarity = 0.7;
             SikJZB.gb(region);
             //寻找包裹
-            Match match = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 2);
-            match.click();
-            match = region.wait("D:/software/sikulix/image/bbyp.PNG",2);
-            SikJZB.gb(region);
+            region.type(Key.F9);
+            Match match = region.wait("D:/software/sikulix/image/bbyp.PNG",2);
+            //关闭包裹
+            region.type(Key.F9);
             if(null == match){
                 //如果没有大药就买
                 match = region.wait("D:/software/sikulix/image/yaopin2.PNG",1);
@@ -139,11 +140,7 @@ public class SikYaoPin {
                     }
                 }
             }
-            //关闭包裹
-            match = region.wait("D:/software/sikulix/image/gbzbl.PNG", 1);
-            if(null != match){
-                match.click();
-            }
+            SikJZB.gb(region);
     }
 
 }
