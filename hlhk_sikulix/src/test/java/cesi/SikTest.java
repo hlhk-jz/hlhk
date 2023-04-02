@@ -21,7 +21,13 @@ public class SikTest {
         region.setThrowException(false);
 
         Match bgMathc = CurrencyData.bgRegion.wait("D:/software/sikulix/image/baoguo.PNG", 5);
+        bgMathc.setY(bgMathc.getY()-450);
+        bgMathc.setX(bgMathc.getX()-450);
         bgMathc.hover();
+
+
+
+
 
    /*    Match match = region.wait("D:/software/sikulix/image/bbzh.PNG",3);
        match.hover();*/

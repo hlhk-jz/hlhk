@@ -39,6 +39,14 @@ public class SikJZB {
                         //如果捡指定次数没捡到结束本次循环
                         break;
                     }
+                    if(start == 6){
+                        bgMathc = CurrencyData.bgRegion.wait("D:/software/sikulix/image/baoguo.PNG", 5);
+                        bgMathc.setY(bgMathc.getY()-450);
+                        bgMathc.setX(bgMathc.getX()-450);
+                        bgMathc.hover();
+                        Thread.sleep(300);
+                        region.type(Key.F4);
+                    }
                     Location location = matchs.getTarget();
                     location.setY(location.getY()+8);
                     if(start == 1){
