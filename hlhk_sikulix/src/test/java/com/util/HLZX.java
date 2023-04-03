@@ -8,7 +8,7 @@ import java.util.List;
 //检查火龙之心
 public class HLZX {
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1920,1080);
+        Region region = new Region(0, 0,1200,1080);
         region.setThrowException(false);
         hlzx(region);
     }
@@ -17,9 +17,8 @@ public class HLZX {
         try {
             SikJZB.gb();
             CurrencyData.isTrue();
-            Match match;
             //寻找宝宝包裹
-            match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
+            Match match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
             match.click();
             //寻找宝宝包裹火龙之心
             match = region.wait("D:/software/sikulix/image/hlzx.PNG", 1);
@@ -31,7 +30,7 @@ public class HLZX {
             }
             //关闭弹窗
             SikJZB.gb();
-            match = region.wait("D:/software/sikulix/image/pu.PNG", 1);
+            match = CurrencyData.bgRegion.wait("D:/software/sikulix/image/pu.PNG", 1);
             match.click();
             //寻找补给
             match = region.wait("D:/software/sikulix/image/bj.PNG", 1);

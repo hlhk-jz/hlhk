@@ -19,7 +19,6 @@ public class SikJZB {
         Match bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
         shcg(bgMathc);
         Thread.sleep(300);
-        CurrencyData.bgRegion.type(Key.F12);
         //判断当前地图有哪些装备
         int start = 1;
         List<Match> any = CurrencyData.jzbRegion.findAnyList(initTargetListObj());
