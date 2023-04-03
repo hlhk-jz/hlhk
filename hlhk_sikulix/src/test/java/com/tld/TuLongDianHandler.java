@@ -120,6 +120,7 @@ public class TuLongDianHandler {
         TldDaGuai.zdDaguai(region);
         System.out.println("调用打怪结束~~~~~~~~~~~");
         //检查宝宝药品
+        SikYaoPin.zhYaoPin(region);
         SikYaoPin.bbYaoPin(region);
 
         //8. 打完怪捡装备,防止漏捡，调用多次

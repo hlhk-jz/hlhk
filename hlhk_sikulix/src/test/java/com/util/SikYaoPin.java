@@ -118,7 +118,7 @@ public class SikYaoPin {
                         region.setX(0);
                         region.setY(0);
                         region.setW(1200);
-                        region.setH(800);
+                        region.setH(1000);
                     }
                     match.click();
                     match = region.wait("D:/software/sikulix/image/yaopin3.PNG",2);

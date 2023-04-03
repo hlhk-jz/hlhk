@@ -63,8 +63,8 @@ public class TldDaGuai {
                                     count = 1;
                                     break;
                                 }
-                                SikYaoPin.zhYaoPin(region);
                             }
+                            SikYaoPin.zhYaoPin(region);
                             if(hlCount > 50){
                                 //防止没有火龙之心
                                 System.out.println("打怪期间检查到宝宝没有火龙之心！！！！！！！！！！！！！！");
