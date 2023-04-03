@@ -119,6 +119,8 @@ public class TuLongDianHandler {
         System.out.println("调用打怪开始！！！！！！");
         TldDaGuai.zdDaguai(region);
         System.out.println("调用打怪结束~~~~~~~~~~~");
+        //检查宝宝药品
+        SikYaoPin.bbYaoPin(region);
 
         //8. 打完怪捡装备,防止漏捡，调用多次
         System.out.println("调用捡装备开始！！！！！！");
@@ -141,7 +143,7 @@ public class TuLongDianHandler {
             SikHS.hs(region);
             System.out.println("回收装备结束~~~");
         }
-        //10. 检查药品,主号和宝宝
+        //10. 火龙之心等。。
         if((count%8)==0){
             //火龙之心
             System.out.println("检查宝宝火龙之心修复装备开始！时间："+System.currentTimeMillis()/1000);

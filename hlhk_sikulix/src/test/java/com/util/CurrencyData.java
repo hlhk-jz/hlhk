@@ -272,11 +272,6 @@ public class CurrencyData {
             Thread.sleep(2000);
         }
         RedisUtils.redisTemplate.delete(SWKEY);
-        region.setX(0);
-        region.setY(0);
-        region.setW(1200);
-        region.setH(900);
         Settings.MinSimilarity= 0.7;
-        return;
     }
 }

@@ -21,19 +21,17 @@ public class TldDaGuai {
         int hlCount = 1;
         //检查宝宝是否在线
         BaoBao.baobao(region);
-        //查看主号药品
         region.type(Key.F1);
         Match match = region.wait(CurrencyData.tldJZ, 1);
         while (null != match){
             match.setY(match.getY()+80);
             match.click();
-            Thread.sleep(500);
+            Thread.sleep(1000);
             //释放合击
             region.type(Key.F3);
             Settings.MinSimilarity = 0.99;
-            Thread.sleep(800);
             //查看是否释放成功
-            Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 1);
+            Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
             if(null != cgMatch){
                 //再次判断合击
                 cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 12);
@@ -61,8 +59,7 @@ public class TldDaGuai {
                                     //捡装备
                                     SikJZB.pickup();
                                     region.type(Key.F1);
-                                    SikYaoPin.zhYaoPin(region);
-                                    Thread.sleep(1500);
+                                    Thread.sleep(300);
                                     count = 1;
                                     break;
                                 }
