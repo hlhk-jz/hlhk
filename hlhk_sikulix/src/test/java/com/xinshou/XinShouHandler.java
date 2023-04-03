@@ -40,7 +40,7 @@ public class XinShouHandler {
             region.type(Key.F1);
             //寻找教主
             jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
-            CurrencyData.isTrue(region);
+            CurrencyData.isTrue();
             if(null == jzMatch){
                 Match matchyd;
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
@@ -194,7 +194,7 @@ public class XinShouHandler {
             match.rightClick();
             match = region.wait("D:/software/sikulix/xinshou/hszb.PNG",1);
             Thread.sleep(500);
-            CurrencyData.isTrue(region);
+            CurrencyData.isTrue();
             x++;
         }
         Thread.sleep(500);

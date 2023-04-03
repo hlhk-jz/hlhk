@@ -106,7 +106,7 @@ public class SuiJiShi {
                     match.click();
                 }
             }
-            CurrencyData.isTrue(region);
+            CurrencyData.isTrue();
         }
         match.doubleClick();
         Thread.sleep(500);

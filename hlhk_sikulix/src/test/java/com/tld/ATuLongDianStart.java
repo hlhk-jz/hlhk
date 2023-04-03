@@ -38,7 +38,7 @@ public class ATuLongDianStart {
                 match.hover();
                 Thread.sleep(500);
                 match.rightClick();
-                CurrencyData.isTrue(region);
+                CurrencyData.isTrue();
                 Thread.sleep(500);
                 match.rightClick();
                 match = region.wait("D:/software/sikulix/tulongdian/tld.PNG",1);
@@ -57,7 +57,7 @@ public class ATuLongDianStart {
             TuLongDianHandler.handler(region);
         } catch (Exception e) {
             e.printStackTrace();
-            CurrencyData.isTrue(region);
+            CurrencyData.isTrue();
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e1) {

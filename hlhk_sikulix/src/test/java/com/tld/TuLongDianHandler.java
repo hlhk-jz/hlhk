@@ -40,7 +40,7 @@ public class TuLongDianHandler {
             //寻找教主
             jzMatch = region.wait(CurrencyData.tldJZ,1);
             Thread.sleep(1000);
-            CurrencyData.isTrue(region );
+            CurrencyData.isTrue( );
             if(null == jzMatch){
                 Match matchyd;
                 yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
@@ -132,7 +132,7 @@ public class TuLongDianHandler {
         Match wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
         while (null != wait){
             wait.doubleClick();
-            CurrencyData.isTrue(region );
+            CurrencyData.isTrue();
             wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
         }
         Iterator<Match> all = CurrencyData.kgRegion.findAll("D:/software/sikulix/xinshou/kg.PNG");

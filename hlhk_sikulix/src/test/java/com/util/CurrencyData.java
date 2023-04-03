@@ -224,7 +224,7 @@ public class CurrencyData {
                 wait.click();
                 bgMathc.setY(bgMathc.getY()-100);
                 bgMathc.hover();
-                CurrencyData.isTrue(region);
+                CurrencyData.isTrue();
                 bgMathc.click();
                 wait = CurrencyData.kgRegion.wait(CurrencyData.HLZX, 1);
             }
@@ -232,14 +232,14 @@ public class CurrencyData {
             while (null != wait){
                 wait.click();
                 bgMathc.hover();
-                CurrencyData.isTrue(region );
+                CurrencyData.isTrue();
                 bgMathc.click();
                 wait = CurrencyData.kgRegion.wait(CurrencyData.MXS, 1);
             }
             wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
             while (null != wait){
                 wait.doubleClick();
-                CurrencyData.isTrue(region);
+                CurrencyData.isTrue();
                 wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
             }
             SikJZB.gb();

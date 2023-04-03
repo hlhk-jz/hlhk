@@ -14,7 +14,7 @@ public class XiuFuZB {
     public static void xfzb(Region region){
         try {
             SikJZB.gb();
-            CurrencyData.isTrue(region);
+            CurrencyData.isTrue();
             boolean isTrue = true;
             Match match;
             //寻找包裹
