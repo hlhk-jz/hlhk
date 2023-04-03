@@ -14,8 +14,6 @@ public class CurrencyData {
     public static String tldJZ = "D:/software/sikulix/image/jiaozhu2.PNG";
     //新手教主标识
     public static String xsJZ = "D:/software/sikulix/image/jiaozhu1.PNG";
-    //主体锁定目标
-    public static String ztsd = "D:/software/sikulix/image/ztsd.PNG";
     //被锁定
     public static String bsd = "D:/software/sikulix/image/bsd.PNG";
     //屠龙殿NPC
@@ -28,10 +26,9 @@ public class CurrencyData {
     public static String HLZX = "D:/software/sikulix/image/hlzx.PNG";
     //魔血石
     public static String MXS = "D:/software/sikulix/image/mxs2.PNG";
+
     //聊天窗口屏幕
     public static Region ckRegion = new Region(142,620,722,199);
-    //新手地图缩小地图打怪
-    public static Region sxRegion = new Region(291,148,440,337);
     //新手地图地图打怪
     public static Region xszgRegion = new Region(62,101,828,396);
     //新手地图查看空格回收
@@ -55,7 +52,6 @@ public class CurrencyData {
         hjRegion.setThrowException(false);
         xszgRegion.setThrowException(false);
         kgRegion.setThrowException(false);
-        sxRegion.setThrowException(false);
         ckRegion.setThrowException(false);
     }
 
