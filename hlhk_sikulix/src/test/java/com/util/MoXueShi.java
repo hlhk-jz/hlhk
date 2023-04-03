@@ -16,7 +16,7 @@ public class MoXueShi {
 
     public static void jcMXS(Region region){
         try {
-            SikJZB.gb(region);
+            SikJZB.gb();
             CurrencyData.isTrue(region);
             Match match;
             region.setX(0);
@@ -90,7 +90,7 @@ public class MoXueShi {
                 match.click();
             }
             //关闭物品栏
-            SikJZB.gb(region);
+            SikJZB.gb();
             //寻找宝宝包裹
             match = region.wait("D:/software/sikulix/image/bbbg.PNG", 1);
             match.click();
@@ -100,7 +100,7 @@ public class MoXueShi {
             Thread.sleep(500);
             match.click();
             //关闭弹窗
-            SikJZB.gb(region);
+            SikJZB.gb();
             match.click();
             System.out.println("更换魔血石成功~~~~~~~~");
         }catch (Exception e){

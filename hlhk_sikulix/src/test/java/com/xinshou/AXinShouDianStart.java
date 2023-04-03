@@ -14,7 +14,7 @@ public class AXinShouDianStart {
     public static void xinshou(Region region){
         try {
             if(x == 1){
-                SikJZB.gb(region);
+                SikJZB.gb();
                 //检查宝宝是否在线
                 BaoBao.baobao(region);
                 //将F12移动到聊天栏
@@ -24,7 +24,7 @@ public class AXinShouDianStart {
                 SikYaoPin.zhYaoPin(region);
             }
             //关闭弹窗
-            SikJZB.gb(region);
+            SikJZB.gb();
             //寻找新手npc
             Match match = region.wait(CurrencyData.xsNpc,1);
             while (null == match){

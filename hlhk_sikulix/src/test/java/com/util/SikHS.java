@@ -24,7 +24,7 @@ public class SikHS {
 
     public static void hs(Region region)throws Exception{
         Settings.MinSimilarity = 0.7;
-        SikJZB.gb(region);
+        SikJZB.gb();
         Match match = region.wait("D:/software/sikulix/image/hs1.PNG",1);
         if(null == match){
             match = region.wait("D:/software/sikulix/image/hs11.PNG",1);

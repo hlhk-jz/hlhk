@@ -13,7 +13,7 @@ public class XiuFuZB {
 
     public static void xfzb(Region region){
         try {
-            SikJZB.gb(region);
+            SikJZB.gb();
             CurrencyData.isTrue(region);
             boolean isTrue = true;
             Match match;
@@ -58,14 +58,14 @@ public class XiuFuZB {
                     match.click();
                     match = region.wait("D:/software/sikulix/image/xfss2.PNG", 2);
                     if(null == match){
-                        SikJZB.gb(region);
+                        SikJZB.gb();
                         xfzb(region);
                     }
                 }
                 match.doubleClick();
             }
             //关闭包裹
-            SikJZB.gb(region);
+            SikJZB.gb();
             System.out.println("修复装备成功~~~~~~~~");
         }catch (Exception e){
             e.printStackTrace();

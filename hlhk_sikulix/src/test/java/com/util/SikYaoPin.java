@@ -24,7 +24,7 @@ public class SikYaoPin {
     public static void bbYaoPin(Region region){
         try {
             System.out.println("检测宝宝药品！！！！！");
-            SikJZB.gb(region);
+            SikJZB.gb();
             region.setX(0);
             region.setY(0);
             region.setH(1000);
@@ -34,7 +34,7 @@ public class SikYaoPin {
             match.click();
             //寻找宝宝包裹大药品
             match = region.wait("D:/software/sikulix/image/bbyp.PNG",2);
-            SikJZB.gb(region);
+            SikJZB.gb();
             if(null == match){
                 //寻找商铺
                 match = region.wait("D:/software/sikulix/image/pu.PNG",1);
@@ -80,7 +80,7 @@ public class SikYaoPin {
                 match.rightClick();
                 Thread.sleep(500);
                 //关闭包裹
-                SikJZB.gb(region);
+                SikJZB.gb();
             }
         }catch (Exception e){
             //检查宝宝是否在线
@@ -92,7 +92,7 @@ public class SikYaoPin {
     public static void zhYaoPin(Region region)throws Exception{
         System.out.println("检测主号药品！！！！！");
             Settings.MinSimilarity = 0.7;
-            SikJZB.gb(region);
+            SikJZB.gb();
             //寻找包裹
             region.type(Key.F9);
             Match match = region.wait("D:/software/sikulix/image/bbyp.PNG",2);
@@ -140,7 +140,7 @@ public class SikYaoPin {
                     }
                 }
             }
-            SikJZB.gb(region);
+            SikJZB.gb();
     }
 
 }

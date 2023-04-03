@@ -28,7 +28,7 @@ public class XinShouHS {
     }
 
     public static void xshs(Region region)throws Exception{
-        SikJZB.gb(region);
+        SikJZB.gb();
         Match match = region.wait("D:/software/sikulix/image/hs5.PNG",2);
         //如果没有回收问题，点击回收
         if(null != match){

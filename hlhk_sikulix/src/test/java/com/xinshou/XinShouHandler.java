@@ -173,7 +173,7 @@ public class XinShouHandler {
         region.setY(0);
         region.setW(1200);
         region.setH(800);
-        SikJZB.gb(region);
+        SikJZB.gb();
         //回城
         SuiJiShi.isHcs(region);
         //寻找装备回收

@@ -8,17 +8,15 @@ public class SikJZB {
     public static void main(String[] args)throws Exception{
         Region region = new Region(60, 0,1200,900);
         region.setThrowException(false);
-        Match bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
-
-        shcg(bgMathc);
+       gb();
     }
 
     public static void pickup()throws Exception{
-        Region region = new Region(60, 0,1200,900);
+        Region region = new Region(124, 45,888,556);
         region.setThrowException(false);
         Settings.MinSimilarity = 0.65;
         //关闭弹窗
-        gb(region);
+        gb();
         //英雄守护，防止捡装备不方便
         Match bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
         shcg(bgMathc);
@@ -69,7 +67,7 @@ public class SikJZB {
         Settings.MinSimilarity = 0.7;
         //关闭弹窗
         Thread.sleep(1000);
-        SikJZB.gb(region);
+        SikJZB.gb();
     }
 
     public static List<Object> initTargetListObj(){
@@ -129,13 +127,9 @@ public class SikJZB {
         return initList;
     }
 
-    public static void gb(Region region)throws Exception{
-        region.setX(0);
-        region.setY(0);
-        region.setH(800);
-        region.setW(1200);
+    public static void gb()throws Exception{
         //查看有没有弹框，有就关闭，防止影响捡装备
-        List<Match> matchGbs = region.findAnyList(CurrencyData.initGBListObj());
+        List<Match> matchGbs = CurrencyData.currenRegion.findAnyList(CurrencyData.initGBListObj());
         Thread.sleep(1000);
         if(!matchGbs.isEmpty()){
             for (Match match: matchGbs){

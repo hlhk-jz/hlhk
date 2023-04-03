@@ -44,8 +44,11 @@ public class CurrencyData {
     public static Region bbzhRegion = new Region(720, 563,291,173);
     //包裹位置商铺也能看到
     public static Region bgRegion = new Region(830, 518,215,290);
+    //关闭扫描界面
+    public static Region currenRegion = new Region(2, 18,1020,774);
 
     static {
+        currenRegion.setThrowException(false);
         bgRegion.setThrowException(false);
         bbzhRegion.setThrowException(false);
         jzbRegion.setThrowException(false);
@@ -213,7 +216,7 @@ public class CurrencyData {
         try {
             Region region = new Region(0, 0,1200,800);
             region.setThrowException(false);
-            SikJZB.gb(region);
+            SikJZB.gb();
             Match bgMathc = region.wait("D:/software/sikulix/image/baoguo.PNG", 5);
             bgMathc.click();
             Match wait = CurrencyData.kgRegion.wait(CurrencyData.HLZX, 1);
@@ -239,7 +242,7 @@ public class CurrencyData {
                 CurrencyData.isTrue(region);
                 wait = CurrencyData.kgRegion.wait("D:/software/sikulix/image/yuanbao.PNG", 1);
             }
-            SikJZB.gb(region);
+            SikJZB.gb();
         } catch (Exception e) {
             e.printStackTrace();
         }

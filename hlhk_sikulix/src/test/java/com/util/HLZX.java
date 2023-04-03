@@ -15,7 +15,7 @@ public class HLZX {
 
     public static void hlzx(Region region){
         try {
-            SikJZB.gb(region);
+            SikJZB.gb();
             CurrencyData.isTrue(region);
             Match match;
             //寻找宝宝包裹
@@ -26,11 +26,11 @@ public class HLZX {
             if(null != match){
                 match.click();
                 //关闭弹窗
-                SikJZB.gb(region);
+                SikJZB.gb();
                 match.click();
             }
             //关闭弹窗
-            SikJZB.gb(region);
+            SikJZB.gb();
             match = region.wait("D:/software/sikulix/image/pu.PNG", 1);
             match.click();
             //寻找补给
@@ -58,7 +58,7 @@ public class HLZX {
             //寻找包裹火龙之心
             match = region.wait("D:/software/sikulix/image/hlzx.PNG", 2);
             if(null == match){
-                SikJZB.gb(region);
+                SikJZB.gb();
                 match = region.wait("D:/software/sikulix/image/baoguo.PNG", 1);
                 match.click();
                 match = region.wait("D:/software/sikulix/image/hlzx.PNG", 2);
@@ -78,7 +78,7 @@ public class HLZX {
             Thread.sleep(500);
             match.click();
             //关闭弹窗
-            SikJZB.gb(region);
+            SikJZB.gb();
             match.click();
             System.out.println("更换火龙之心成功~~~~~~~~~~");
         }catch (Exception e){

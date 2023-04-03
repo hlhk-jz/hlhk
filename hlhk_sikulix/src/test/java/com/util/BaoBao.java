@@ -15,10 +15,10 @@ public class BaoBao {
     public static void baobao(Region region){
         Settings.MinSimilarity = 0.7;
         try {
-            SikJZB.gb(region);
+            SikJZB.gb();
             Match match = region.wait(CurrencyData.BAOBAO,1);
             while (null == match){
-                SikJZB.gb(region);
+                SikJZB.gb();
                 match = region.wait(CurrencyData.BAOBAO,1);
                 if(null == match){
                     System.out.println("检测到宝宝不在线，召唤中！！！！！！");

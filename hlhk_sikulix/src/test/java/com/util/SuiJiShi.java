@@ -16,7 +16,7 @@ public class SuiJiShi {
     }
     //查看随机石是否充足
     public static void suiJiShi(Region region)throws Exception{
-        SikJZB.gb(region);
+        SikJZB.gb();
         region.setX(0);
         region.setY(0);
         region.setW(1200);
