@@ -29,7 +29,6 @@ public class TldDaGuai {
             match.click();
             Thread.sleep(500);
             //释放合击
-            SikJZB.gb();
             region.type(Key.F3);
             Settings.MinSimilarity = 0.99;
             Thread.sleep(800);
@@ -86,6 +85,7 @@ public class TldDaGuai {
             }
             count++;
             Settings.MinSimilarity = 0.7;
+            SikJZB.gb();
             //判断是否锁定
             CurrencyData.isTrue();
             if (count > 3) {
