@@ -199,12 +199,12 @@ public class CurrencyData {
     public static final String SDKEY = "sdKey";
     public static final String XLKEY = "XLKEY";
 
-    public static void isTrue(Region region){
+    public static void isTrue(){
         try {
             //是否需要小退
             if(!StringUtils.isEmpty(RedisUtils.redisTemplate.opsForValue().get(SWKEY))){
                 System.out.println("检测人物需要小退！！！！！");
-                xiaoTui(region);
+                xiaoTui();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -248,7 +248,8 @@ public class CurrencyData {
         }
     }
 
-    public static void xiaoTui(Region region)throws Exception{
+    public static void xiaoTui()throws Exception{
+        Region region = new Region(0,0);
         region.setX(659);
         region.setY(561);
         region.setW(255);

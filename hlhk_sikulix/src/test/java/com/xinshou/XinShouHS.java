@@ -130,7 +130,7 @@ public class XinShouHS {
         String xiaoTui_key = RedisUtils.redisTemplate.opsForValue().get("xiaoTui_key");
         if(!StringUtils.isEmpty(xiaoTui_key) && "true".equals(xiaoTui_key)){
             RedisUtils.redisTemplate.opsForValue().set("xiaoTui_key","false");
-            CurrencyData.xiaoTui(region);
+            CurrencyData.xiaoTui();
             Thread.sleep(2000);
         }
     }

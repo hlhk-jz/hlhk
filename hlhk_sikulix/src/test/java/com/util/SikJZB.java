@@ -8,12 +8,10 @@ public class SikJZB {
     public static void main(String[] args)throws Exception{
         Region region = new Region(60, 0,1200,900);
         region.setThrowException(false);
-       gb();
+     pickup();
     }
 
     public static void pickup()throws Exception{
-        Region region = new Region(124, 45,888,556);
-        region.setThrowException(false);
         Settings.MinSimilarity = 0.65;
         //关闭弹窗
         gb();
@@ -21,7 +19,7 @@ public class SikJZB {
         Match bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
         shcg(bgMathc);
         Thread.sleep(300);
-        region.type(Key.F12);
+        CurrencyData.bgRegion.type(Key.F12);
         //判断当前地图有哪些装备
         int start = 1;
         List<Match> any = CurrencyData.jzbRegion.findAnyList(initTargetListObj());
@@ -31,7 +29,7 @@ public class SikJZB {
                 matchs = CurrencyData.jzbRegion.wait(matchs.getImage(),0.5);
                 while (null != matchs){
                     //判断小退，锁定
-                    CurrencyData.isTrue(region);
+                    CurrencyData.isTrue();
                     Settings.MinSimilarity= 0.65;
                     if((start%10)==0){
                         //如果捡指定次数没捡到结束本次循环
@@ -43,7 +41,7 @@ public class SikJZB {
                         bgMathc.setX(bgMathc.getX()-450);
                         bgMathc.hover();
                         Thread.sleep(300);
-                        region.type(Key.F4);
+                        CurrencyData.bgRegion.type(Key.F4);
                     }
                     Location location = matchs.getTarget();
                     location.setY(location.getY()+8);
@@ -53,7 +51,7 @@ public class SikJZB {
                     }else {
                         location.click();
                         Thread.sleep(300);
-                        region.type(Key.F3);
+                        CurrencyData.bgRegion.type(Key.F3);
                     }
                     Thread.sleep(300);
                     bgMathc.hover();
