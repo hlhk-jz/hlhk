@@ -6,11 +6,11 @@ public class ChunShi {
    public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        yd(region);
+        //yd(region);
     }
 
     //移动F12到聊天栏
-    public static void yd(Region region){
+  /*  public static void yd(Region region){
        try {
            Match xia1 = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG", 2);
            if(null != xia1){
@@ -41,5 +41,5 @@ public class ChunShi {
        }catch (Exception e){
            e.printStackTrace();
        }
-    }
+    }*/
 }
