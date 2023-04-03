@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TuLongDianHandler {
-    private static long count = 0;
+    private static long count = 1;
 
     public static void handler(Region region)throws Exception {
         CurrencyData.rhlmx();
@@ -144,7 +144,7 @@ public class TuLongDianHandler {
             System.out.println("回收装备结束~~~");
         }
         //10. 火龙之心等。。
-        if((count%8)==0){
+        if((count%30)==0){
             //火龙之心
             System.out.println("检查宝宝火龙之心修复装备开始！时间："+System.currentTimeMillis()/1000);
             HLZX.hlzx(region);
