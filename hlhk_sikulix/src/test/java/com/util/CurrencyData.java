@@ -43,8 +43,11 @@ public class CurrencyData {
     public static Region bgRegion = new Region(830, 518,215,290);
     //关闭扫描界面
     public static Region currenRegion = new Region(2, 18,1020,774);
+    //关闭扫描界面
+    public static Region zblSjsRegion = new Region(364, 555,348,137);
 
     static {
+        zblSjsRegion.setThrowException(false);
         currenRegion.setThrowException(false);
         bgRegion.setThrowException(false);
         bbzhRegion.setThrowException(false);

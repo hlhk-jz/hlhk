@@ -23,11 +23,10 @@ public class XinShouHandler {
         //5. 寻找随机石
         SuiJiShi.suiJiShi(region);
         Thread.sleep(300);
-        Match match2 = region.wait(CurrencyData.zblSjs,1);
+        Match match2 = CurrencyData.zblSjsRegion.wait(CurrencyData.zblSjs,1);
         if(null == match2){
-            match2 = region.wait(CurrencyData.zblSjs,1);
+             match2 = CurrencyData.zblSjsRegion.wait(CurrencyData.zblSjs,3);
         }
-
         //6. 寻找教主
         Match jzMatch = null;
         Match yd = null;

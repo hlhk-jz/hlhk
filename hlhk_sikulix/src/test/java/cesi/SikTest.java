@@ -19,12 +19,9 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
+        Match match2 = CurrencyData.zblSjsRegion.wait(CurrencyData.zblSjs,1);
 
-        Match bgMathc = CurrencyData.bgRegion.wait("D:/software/sikulix/image/baoguo.PNG", 5);
-        bgMathc.setY(bgMathc.getY()-450);
-        bgMathc.setX(bgMathc.getX()-450);
-        bgMathc.hover();
-
+        match2.hover();
 
 
 
