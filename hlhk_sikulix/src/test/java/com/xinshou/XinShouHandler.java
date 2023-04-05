@@ -17,12 +17,12 @@ public class XinShouHandler {
     public static void handler(Region region)throws Exception {
         CurrencyData.rhlmx();
         //判断是否在新手地图
-        Thread.sleep(500);
+        Thread.sleep(300);
         SuiJiShi.isXinShou(region);
         count ++;
         //5. 寻找随机石
         SuiJiShi.suiJiShi(region);
-        Thread.sleep(1000);
+        Thread.sleep(300);
         Match match2 = region.wait(CurrencyData.zblSjs,1);
         if(null == match2){
             match2 = region.wait(CurrencyData.zblSjs,1);
