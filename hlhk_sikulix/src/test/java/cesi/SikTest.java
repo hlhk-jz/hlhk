@@ -17,11 +17,15 @@ import java.util.List;
 
 public class SikTest {
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1200,800);
+        /*Region region = new Region(0, 0,1200,800);
+        region.setThrowException(false);*/
+        Region region = new Region(206, 641,436,160);
         region.setThrowException(false);
-        Match match2 = CurrencyData.zblSjsRegion.wait(CurrencyData.zblSjs,1);
 
-        match2.hover();
+        Match wait = region.wait("D:/software/sikulix/img/qwmb.PNG", 1);
+        if(null != wait){
+            wait.click();
+        }
 
 
 

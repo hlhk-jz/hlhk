@@ -41,52 +41,14 @@ public class XinShouHandler {
             jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
             CurrencyData.isTrue();
             if(null == jzMatch){
-                Match matchyd;
-                yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
-                if(null != yd){
-                    //右下
-                    matchyd= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                    matchyd.setX(matchyd.getX()+400);
-                    matchyd.setY(matchyd.getY()-500);
-                    matchyd.rightClick();
-                    Thread.sleep(600);
-                    matchyd.rightClick();
-                    Thread.sleep(600);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
-                    //寻找教主
-                    jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
-                    if(null == jzMatch){
-                        //左上
-                        matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                        matchyd.setY(matchyd.getY()-150);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                    }
+                jzMatch = region.wait("D:/software/sikulix/img/qwmb.PNG", 1);
+                if(null != jzMatch){
+                    jzMatch.click();
+                    Thread.sleep(2000);
                 }
             }
             //寻找教主
-            jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
+            jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,2);
             //如果找到教主了推出循环
             if (null != jzMatch){
                 break;
