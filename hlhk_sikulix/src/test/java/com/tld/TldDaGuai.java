@@ -98,10 +98,10 @@ public class TldDaGuai {
                         Thread.sleep(300);
                         match.rightClick();
                         region.type(Key.F4);
-                        match = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ, 1);
+                        region.type(Key.F4);
+                        match = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ, 2);
                     }
                 }
-                region.type(Key.F1);
             }
         }
     }
