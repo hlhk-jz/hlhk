@@ -44,14 +44,14 @@ public class TuLongDianHandler {
                 jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
                 if(null != jzMatch){
                     jzMatch.click();
-                    jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,4);
+                    jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ,4);
                     if(null != jzMatch){
                         jzMatch.click();
                     }
                 }
             }
             //寻找教主
-            jzMatch = region.wait(CurrencyData.tldJZ,1);
+            jzMatch = region.wait(CurrencyData.tldJZ,2);
             //如果找到教主了推出循环
             if (null != jzMatch){
                 break;

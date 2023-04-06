@@ -23,7 +23,7 @@ public class SikTest {
         region.setThrowException(false);
 
         Match bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
-        bgMathc.setX(bgMathc.getX()-600);;
+        bgMathc.setX(bgMathc.getX()-700);
         bgMathc.setY(bgMathc.getY()-300);
         bgMathc.hover();
 

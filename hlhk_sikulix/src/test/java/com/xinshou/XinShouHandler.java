@@ -51,7 +51,7 @@ public class XinShouHandler {
                 }
             }
             //寻找教主
-            jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
+            jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,2);
             //如果找到教主了推出循环
             if (null != jzMatch){
                 break;
