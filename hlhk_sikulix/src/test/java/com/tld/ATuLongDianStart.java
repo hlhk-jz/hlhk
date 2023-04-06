@@ -21,9 +21,8 @@ public class ATuLongDianStart {
             SikYaoPin.bbYaoPin(region);
             //关闭弹窗
             SikJZB.gb();
-            Match match = null;
             //寻找屠龙殿NPC
-            match = region.wait(CurrencyData.tldNpc,1);
+            Match match = region.wait(CurrencyData.tldNpc,1);
             int x = 1;
             while (null == match){
                 if((x%5)==0){
