@@ -41,7 +41,7 @@ public class XinShouHandler {
             jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
             CurrencyData.isTrue();
             if(null == jzMatch){
-                jzMatch = region.wait("D:/software/sikulix/img/qwmb.PNG", 1);
+                jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
                 if(null != jzMatch){
                     jzMatch.click();
                     Thread.sleep(2000);
