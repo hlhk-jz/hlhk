@@ -50,10 +50,9 @@ public class TldDaGuai {
                             cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
                             if(null != cgMatch){
                                 //释放合击
-                                Thread.sleep(800);
                                 region.type(Key.F3);
-                                Thread.sleep(300);
-                                cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
+                                region.type(Key.F3);
+                                cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 1.5);
                                 if(null == cgMatch){
                                     System.out.println("当前怪打完，查找下一个！！！");
                                     //捡装备

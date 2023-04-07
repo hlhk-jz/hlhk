@@ -27,18 +27,16 @@ public class XinShouHandler {
              match2 = CurrencyData.zblSjsRegion.wait(CurrencyData.zblSjs,3);
         }
         //6. 寻找教主
-        Match jzMatch = null;
-        Match yd = null;
+        Match jzMatch;
         int n = 1;
         while (true){
             n++;
             //点击随机石
             match2.doubleClick();
-            Thread.sleep(500);
+            CurrencyData.isTrue();
             region.type(Key.F1);
             //寻找教主
             jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
-            CurrencyData.isTrue();
             if(null == jzMatch){
                 jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
                 if(null != jzMatch){
@@ -71,9 +69,9 @@ public class XinShouHandler {
                 ATuLongDianStart.tld(region);
             }
             //寻找随机石，因为有可能随机石在其它位置了，所以在查一遍
-            match2 = region.wait("D:/software/sikulix/tulongdian/shitou.PNG",0.5);
+            match2 = CurrencyData.zblSjsRegion.wait(CurrencyData.zblSjs,1);
             if(null == match2){
-                match2 = region.wait("D:/software/sikulix/tulongdian/shitou2.PNG",0.5);
+                match2 = CurrencyData.zblSjsRegion.wait(CurrencyData.zblSjs,3);
             }
         }
 
@@ -81,8 +79,14 @@ public class XinShouHandler {
         System.out.println("调用打怪开始！！！！！！");
         XsDaGuai.xsDaguai(region);
         System.out.println("调用打怪结束~~~~~~~~~~~");
+        //检查宝宝药品
+        SikYaoPin.zhYaoPin(region);
+        SikYaoPin.bbYaoPin(region);
         //捡装备
+        System.out.println("调用捡装备开始！！！！！！");
         SikJZB.pickup();
+        region.type(Key.F1);
+        System.out.println("调用捡装备结束！！！！！！");
 
         //8. 回收装备
         match2 = region.wait("D:/software/sikulix/image/baoguo.PNG",1);
@@ -127,11 +131,6 @@ public class XinShouHandler {
         }
         //12. 循环地柜
         System.out.println("~~~~~~~~~~~本次超级循环数量："+count);
-        region.setX(0);
-        region.setY(0);
-        region.setW(1200);
-        region.setH(800);
-        Settings.MinSimilarity= 0.7;
         handler(region);
     }
 

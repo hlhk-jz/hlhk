@@ -15,30 +15,27 @@ public class TuLongDianHandler {
 
     public static void handler(Region region)throws Exception {
         //判断是否在屠龙殿地图
-        Thread.sleep(500);
+        Thread.sleep(300);
         SuiJiShi.isTuLd(region);
         count ++;
         //5. 寻找随机石
         SuiJiShi.suiJiShi(region);
-        Thread.sleep(1000);
+        Thread.sleep(300);
         Match match2 = CurrencyData.zblSjsRegion.wait(CurrencyData.zblSjs,1);
         if(null == match2){
             match2 = CurrencyData.zblSjsRegion.wait(CurrencyData.zblSjs,3);
         }
         //6. 寻找教主
-        Match yd = null;
         Match jzMatch;
         int n = 1;
         while (true){
             n++;
             //点击随机石
             match2.doubleClick();
-            Thread.sleep(500);
+            CurrencyData.isTrue();
             region.type(Key.F1);
             //寻找教主
             jzMatch = region.wait(CurrencyData.tldJZ,1);
-            Thread.sleep(1000);
-            CurrencyData.isTrue( );
             if(null == jzMatch){
                 jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
                 if(null != jzMatch){
@@ -54,7 +51,7 @@ public class TuLongDianHandler {
                 }
             }
             //寻找教主
-            jzMatch = region.wait(CurrencyData.tldJZ,2);
+            jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ,2);
             //如果找到教主了推出循环
             if (null != jzMatch){
                 break;
@@ -126,11 +123,6 @@ public class TuLongDianHandler {
         }
         //12. 循环地柜
         System.out.println("~~~~~~~~~~~本次超级循环数量："+count);
-        region.setX(0);
-        region.setY(0);
-        region.setW(1200);
-        region.setH(800);
-        Settings.MinSimilarity= 0.7;
         handler(region);
     }
 }
