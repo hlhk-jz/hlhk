@@ -29,12 +29,12 @@ public class XinShouHandler {
         //6. 寻找教主
         Match jzMatch;
         int n = 1;
+        region.type(Key.F1);
         while (true){
             n++;
             //点击随机石
             match2.doubleClick();
             CurrencyData.isTrue();
-            region.type(Key.F1);
             //寻找教主
             jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,1);
             if(null == jzMatch){

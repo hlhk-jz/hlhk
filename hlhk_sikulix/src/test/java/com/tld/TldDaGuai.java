@@ -90,14 +90,15 @@ public class TldDaGuai {
             }else {
                 match = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ, 1);
                 if(null == match){
+                    region.type(Key.F1);
+                    Thread.sleep(300);
+                    region.type(Key.F1);
                     match= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                     if(null != match){
                         match.setY(match.getY()-80);
                         match.rightClick();
                         Thread.sleep(300);
                         match.rightClick();
-                        region.type(Key.F4);
-                        region.type(Key.F4);
                         match = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ, 2);
                     }
                 }

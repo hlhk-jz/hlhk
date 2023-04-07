@@ -22,10 +22,11 @@ public class SikTest {
         Region region = new Region(206, 641,436,160);
         region.setThrowException(false);
 
-        Match bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
-        bgMathc.setX(bgMathc.getX()-700);
-        bgMathc.setY(bgMathc.getY()-300);
-        bgMathc.hover();
+        Match gjMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/gj.PNG", 1);
+        while (null == gjMatch){
+            region.type(Key.F1);
+            gjMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/gj.PNG", 1);
+        }
 
 
 
