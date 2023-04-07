@@ -47,6 +47,12 @@ public class TuLongDianHandler {
                     jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ,4);
                     if(null != jzMatch){
                         jzMatch.click();
+                    }else {
+                        jzMatch = CurrencyData.bgRegion.wait(CurrencyData.BGuo,1);
+                        if(null != jzMatch){
+                            jzMatch.setY(jzMatch.getY()-60);
+                            jzMatch.click();
+                        }
                     }
                 }
             }
