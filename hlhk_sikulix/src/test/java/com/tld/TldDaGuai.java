@@ -31,7 +31,7 @@ public class TldDaGuai {
             region.type(Key.F3);
             Settings.MinSimilarity = 0.99;
             //查看是否释放成功
-            Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
+            Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 3);
             if(null != cgMatch){
                 //再次判断合击
                 cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 12);
