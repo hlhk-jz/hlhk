@@ -17,12 +17,15 @@ public class ATuLongDianStart {
             SikJZB.gb();
             //检查宝宝是否在线
             BaoBao.baobao(region);
+            //将F12移动到聊天栏
+            //ChunShi.yd(region);
             //检查药品
             SikYaoPin.bbYaoPin(region);
             //关闭弹窗
             SikJZB.gb();
+            Match match = null;
             //寻找屠龙殿NPC
-            Match match = region.wait(CurrencyData.tldNpc,1);
+            match = region.wait(CurrencyData.tldNpc,1);
             int x = 1;
             while (null == match){
                 if((x%5)==0){
