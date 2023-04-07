@@ -2,7 +2,7 @@ package com.util;
 
 import org.sikuli.script.*;
 
-public class ChunShi {
+public class YiDong {
    public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);

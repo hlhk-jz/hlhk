@@ -86,7 +86,7 @@ public class XsDaGuai {
                 System.out.println("打怪大于指定次数结束本次循环！！！！！！");
                 break;
             }else {
-                match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 2);
+                match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 1);
                 if(null == match){
                     match= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
                     if(null != match){
