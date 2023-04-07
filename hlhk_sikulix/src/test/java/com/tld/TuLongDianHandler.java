@@ -14,7 +14,6 @@ public class TuLongDianHandler {
     private static long count = 1;
 
     public static void handler(Region region)throws Exception {
-        CurrencyData.rhlmx();
         //判断是否在屠龙殿地图
         Thread.sleep(500);
         SuiJiShi.isTuLd(region);
@@ -44,6 +43,10 @@ public class TuLongDianHandler {
                 jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
                 if(null != jzMatch){
                     jzMatch.click();
+                    jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
+                    if(null != jzMatch){
+                        jzMatch.click();
+                    }
                     jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ,4);
                     if(null != jzMatch){
                         jzMatch.click();
@@ -107,6 +110,7 @@ public class TuLongDianHandler {
         }
         //10. 火龙之心等。。
         if((count%30)==0){
+            CurrencyData.rhlmx();
             //火龙之心
             System.out.println("检查宝宝火龙之心修复装备开始！时间："+System.currentTimeMillis()/1000);
             HLZX.hlzx(region);

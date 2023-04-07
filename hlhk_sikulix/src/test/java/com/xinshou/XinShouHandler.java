@@ -15,7 +15,6 @@ import java.util.List;
 public class XinShouHandler {
     private static long count = 1;
     public static void handler(Region region)throws Exception {
-        CurrencyData.rhlmx();
         //判断是否在新手地图
         Thread.sleep(300);
         SuiJiShi.isXinShou(region);
@@ -44,6 +43,10 @@ public class XinShouHandler {
                 jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
                 if(null != jzMatch){
                     jzMatch.click();
+                    jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
+                    if(null != jzMatch){
+                        jzMatch.click();
+                    }
                     jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ,4);
                     if(null != jzMatch){
                         jzMatch.click();
@@ -108,6 +111,7 @@ public class XinShouHandler {
 
         //11. 检查火龙之心等
         if((count%30)==0){
+            CurrencyData.rhlmx();
             //火龙之心
             System.out.println("检查宝宝火龙之心修复装备开始！时间："+System.currentTimeMillis()/1000);
             HLZX.hlzx(region);
