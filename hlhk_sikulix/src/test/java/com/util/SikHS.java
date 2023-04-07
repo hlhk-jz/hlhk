@@ -32,7 +32,9 @@ public class SikHS {
                 match = region.wait("D:/software/sikulix/image/hs4.PNG",1);
             }
         }
-        match.click();
+        if(null != match){
+            match.click();
+        }
         Thread.sleep(500);
         region.type(Key.ENTER);
         Thread.sleep(500);

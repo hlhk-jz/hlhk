@@ -24,14 +24,12 @@ public class XsDaGuai {
         while (null != match){
             match.setY(match.getY()+80);
             match.click();
-            Thread.sleep(500);
+            Thread.sleep(1000);
             //释放合击
-            SikJZB.gb();
             region.type(Key.F3);
             Settings.MinSimilarity = 0.99;
-            Thread.sleep(800);
             //查看是否释放成功
-            Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 1);
+            Match cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 3);
             if(null != cgMatch){
                 //再次判断合击
                 cgMatch = CurrencyData.hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 12);
@@ -82,6 +80,7 @@ public class XsDaGuai {
             }
             count++;
             Settings.MinSimilarity = 0.7;
+            SikJZB.gb();
             //判断是否锁定
             CurrencyData.isTrue();
             if (count > 3) {
@@ -97,10 +96,10 @@ public class XsDaGuai {
                         Thread.sleep(300);
                         match.rightClick();
                         region.type(Key.F4);
-                        match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 1);
+                        region.type(Key.F4);
+                        match = CurrencyData.xszgRegion.wait(CurrencyData.xsJZ, 2);
                     }
                 }
-                region.type(Key.F1);
             }
         }
     }

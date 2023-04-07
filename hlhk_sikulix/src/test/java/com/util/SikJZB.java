@@ -141,8 +141,8 @@ public class SikJZB {
         try {
             Region region = new Region(0, 0,1200,800);
             region.setThrowException(false);
-            bgMathc.setY(bgMathc.getY()-100);
-            bgMathc.setX(bgMathc.getX()-230);
+            bgMathc.setY(bgMathc.getY()-300);
+            bgMathc.setX(bgMathc.getX()-170);
             bgMathc.hover();
             Thread.sleep(300);
             region.type(Key.F4);
@@ -150,29 +150,12 @@ public class SikJZB {
             Match wait = CurrencyData.ckRegion.wait("D:/software/sikulix/img/shcg.PNG", 1);
             if (null == wait){
                 bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
-                bgMathc.setY(bgMathc.getY()-350);
+                bgMathc.setX(bgMathc.getX()-700);
+                bgMathc.setY(bgMathc.getY()-300);
                 bgMathc.hover();
                 Thread.sleep(300);
                 region.type(Key.F4);
                 region.type(Key.F4);
-                wait = CurrencyData.ckRegion.wait("D:/software/sikulix/img/shcg.PNG", 1);
-                if(null == wait){
-                    bgMathc = CurrencyData.bgRegion.wait(CurrencyData.BGuo, 5);
-                    bgMathc.setX(bgMathc.getX()-700);;
-                    bgMathc.setY(bgMathc.getY()-100);
-                    bgMathc.hover();
-                    Thread.sleep(300);
-                    region.type(Key.F4);
-                    region.type(Key.F4);
-                    wait = CurrencyData.ckRegion.wait("D:/software/sikulix/img/shcg.PNG", 1);
-                    if(null == wait){
-                        bgMathc.setY(bgMathc.getY()-300);
-                        bgMathc.hover();
-                        Thread.sleep(300);
-                        region.type(Key.F4);
-                        region.type(Key.F4);
-                    }
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();

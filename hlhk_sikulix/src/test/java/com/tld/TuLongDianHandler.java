@@ -14,7 +14,6 @@ public class TuLongDianHandler {
     private static long count = 1;
 
     public static void handler(Region region)throws Exception {
-        CurrencyData.rhlmx();
         //判断是否在屠龙殿地图
         Thread.sleep(500);
         SuiJiShi.isTuLd(region);
@@ -41,55 +40,21 @@ public class TuLongDianHandler {
             Thread.sleep(1000);
             CurrencyData.isTrue( );
             if(null == jzMatch){
-                Match matchyd;
-                yd = region.wait("D:/software/sikulix/image/youxia.PNG",0.3);
-                if(null != yd){
-                    //右下
-                    matchyd= region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                    matchyd.setY(matchyd.getY()-100);
-                    matchyd.setX(matchyd.getX()+400);
-                    matchyd.rightClick();
-                    Thread.sleep(600);
-                    matchyd.rightClick();
-                    Thread.sleep(600);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
-                    matchyd.rightClick();
-                    Thread.sleep(300);
-                    //寻找教主
-                    jzMatch = region.wait(CurrencyData.tldJZ,1);
-                    Thread.sleep(1000);
-                    if(null == jzMatch){
-                        //左上
-                        matchyd = region.wait("D:/software/sikulix/tulongdian/tldyd.PNG",1);
-                        matchyd.setY(matchyd.getY()-500);
-                        matchyd.setX(matchyd.getX()-80);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(600);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
-                        matchyd.rightClick();
-                        Thread.sleep(300);
+                jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
+                if(null != jzMatch){
+                    jzMatch.click();
+                    jzMatch = CurrencyData.ckRegion.wait("D:/software/sikulix/img/qwmb.PNG", 1);
+                    if(null != jzMatch){
+                        jzMatch.click();
+                    }
+                    jzMatch = CurrencyData.xszgRegion.wait(CurrencyData.tldJZ,4);
+                    if(null != jzMatch){
+                        jzMatch.click();
                     }
                 }
             }
             //寻找教主
-            jzMatch = region.wait(CurrencyData.tldJZ,1);
-            Thread.sleep(1000);
+            jzMatch = region.wait(CurrencyData.tldJZ,2);
             //如果找到教主了推出循环
             if (null != jzMatch){
                 break;
@@ -145,6 +110,7 @@ public class TuLongDianHandler {
         }
         //10. 火龙之心等。。
         if((count%30)==0){
+            CurrencyData.rhlmx();
             //火龙之心
             System.out.println("检查宝宝火龙之心修复装备开始！时间："+System.currentTimeMillis()/1000);
             HLZX.hlzx(region);
