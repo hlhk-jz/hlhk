@@ -1,4 +1,5 @@
 package cesi;
+import com.CongQiStart;
 import com.google.common.collect.Iterators;
 import com.tld.ATuLongDianStart;
 import com.util.CurrencyData;
@@ -17,21 +18,18 @@ import java.util.List;
 
 public class SikTest {
     public static void main(String[] args)throws Exception{
-        /*Region region = new Region(0, 0,1200,800);
-        region.setThrowException(false);*/
-        Region region = new Region(206, 641,436,160);
+        Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
 
+
+
+       /* Region region = new Region(206, 641,436,160);
+        region.setThrowException(false);
         Match  jzMatch = CurrencyData.bgRegion.wait(CurrencyData.BGuo,1);
         if(null != jzMatch){
             jzMatch.setY(jzMatch.getY()-60);
             jzMatch.click();
-        }
-
-
-
-
-
+        }*/
    /*    Match match = region.wait("D:/software/sikulix/image/bbzh.PNG",3);
        match.hover();*/
 
@@ -357,48 +355,6 @@ if(null != matchyd){
         Thread.sleep(500);
         //松开左键
         region.mouseUp(Button.LEFT);*/
-    }
-
-    private static void csDaGuai(Region region) {
-        try {
-            Region hjRegion = new Region(791, 644,88,165);
-            hjRegion.setThrowException(false);
-            Match match = region.wait(CurrencyData.tldJZ, 1);
-            while (null != match){
-                match.setY(match.getY()+80);
-                match.click();
-                //查看合击是否已满
-                Settings.MinSimilarity = 0.9;
-                Match hjMatch = hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
-                if(null != hjMatch){
-                    System.out.println("释放合击！！！！");
-                    region.type(Key.F3);
-                    //查看是否释放成功
-                    Match cgMatch = hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
-                    if(null != cgMatch){
-                        System.out.println("释放合击成功~~~~~");
-                        //释放合击成功后，只打当前怪
-                        while (true){
-                            hjMatch = hjRegion.wait("D:/software/sikulix/heji/hj1.PNG", 1);
-                            if(null != hjMatch){
-                                //释放合击
-                                region.type(Key.F3);
-                                cgMatch = hjRegion.wait("D:/software/sikulix/heji/hj2.PNG", 2);
-                                if(null == cgMatch){
-                                    System.out.println("当前怪打完，查找下一个！！！");
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-                Settings.MinSimilarity = 0.7;
-                match = region.wait(CurrencyData.tldJZ, 3);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
     }
 
 
