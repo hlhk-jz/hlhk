@@ -6,16 +6,9 @@ import org.sikuli.script.Region;
 //新手
 public class AXinShouDianStart {
     public static void main(String[] args){
-        /*Region region = new Region(0, 0,1200,800);
+        Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-        xinshou(region);*/
-        while (true){
-            try {
-                Thread.sleep(50000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        xinshou(region);
     }
     static int x = 1;
     public static void xinshou(Region region){
