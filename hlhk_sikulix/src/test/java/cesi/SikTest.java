@@ -20,9 +20,6 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
         Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);
-
-
-
        /* Region region = new Region(206, 641,436,160);
         region.setThrowException(false);
         Match  jzMatch = CurrencyData.bgRegion.wait(CurrencyData.BGuo,1);

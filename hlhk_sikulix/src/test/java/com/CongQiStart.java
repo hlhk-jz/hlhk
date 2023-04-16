@@ -3,7 +3,31 @@ import org.sikuli.script.*;
 //重启
 public class CongQiStart {
     public static void main(String[] args)throws Exception{
-        cq();
+        //csydwz();
+        //cq();
+    }
+
+    //测试移动左上位置
+    private static void csydwz() {
+        try {
+            Match xia1 = CongQiStart.tjReg.wait("D:/software/sikulix/cq/rw.PNG", 2);
+            xia1.hover();
+            Thread.sleep(500);
+            CongQiStart.tjReg.mouseDown(Button.LEFT);
+            Match xia = CongQiStart.tjReg.wait("D:/software/sikulix/cq/dn.PNG", 2);
+            Location location = xia.getTarget();
+            location.setX(location.getX()+58);
+            location.setY(location.getY()-30);
+            //将鼠标指针移动到指定位置
+            CongQiStart.tjReg.mouseMove(location);
+            Thread.sleep(500);
+            //松开左键
+            CongQiStart.tjReg.mouseUp(Button.LEFT);
+        } catch (FindFailed findFailed) {
+            findFailed.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     //右侧IDEA界面
@@ -121,6 +145,12 @@ public class CongQiStart {
                             if(null != match){
                                 match.click();
                             }
+                            if(null == match){
+                                //如果没进入成功，叉掉重新进入
+                                match = CongQiStart.caReg.wait("D:/software/sikulix/cq/cha.PNG",2);
+                                match.click();
+                                cq();
+                            }
                         }
                         Thread.sleep(12000);
                         match = CongQiStart.tjReg.wait("D:/software/sikulix/image/ksjr.PNG", 5);
@@ -147,7 +177,7 @@ public class CongQiStart {
                 CongQiStart.tjReg.mouseDown(Button.LEFT);
                 Match xia = CongQiStart.tjReg.wait("D:/software/sikulix/cq/dn.PNG", 2);
                 Location location = xia.getTarget();
-                location.setX(location.getX()+35);
+                location.setX(location.getX()+58);
                 location.setY(location.getY()-30);
                 //将鼠标指针移动到指定位置
                 CongQiStart.tjReg.mouseMove(location);
