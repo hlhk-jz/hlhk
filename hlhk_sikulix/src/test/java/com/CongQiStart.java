@@ -52,15 +52,15 @@ public class CongQiStart {
 
 
     public static void cq(){
-
         try {
             while (true){
                 Thread.sleep(30000);
                 Match wait = CongQiStart.tjReg.wait(CurrencyData.BAOBAO, 2);
                 if(null == wait){
-                    Thread.sleep(60000);
+                    Thread.sleep(120000);
                     wait = CongQiStart.tjReg.wait(CurrencyData.BAOBAO, 2);
                     if(null == wait){
+                        System.out.println("重启中！！！！！！！！！！！！！！！！");
                         //寻找程序关闭
                         Match match = CongQiStart.cqReg.wait("D:/software/sikulix/cq/xsstart.PNG", 2);
                         if(null != match){
