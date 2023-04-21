@@ -86,7 +86,6 @@ public class XinShouHandler {
         XsDaGuai.xsDaguai(region);
         System.out.println("调用打怪结束~~~~~~~~~~~");
         //检查宝宝药品
-        SikYaoPin.zhYaoPin(region);
         SikYaoPin.bbYaoPin(region);
         //捡装备
         System.out.println("调用捡装备开始！！！！！！");
