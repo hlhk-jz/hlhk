@@ -69,7 +69,7 @@ public class KS {
                     match.click();
                 }
                 System.out.println("执行中！！！！！！");
-                Thread.sleep(120000);
+                Thread.sleep(240000);
             }
         }catch (Exception e ){
            e.printStackTrace();
