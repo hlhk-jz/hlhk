@@ -1,11 +1,16 @@
 package wd;
+import cn.hutool.core.util.RandomUtil;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class KS {
     public static void main(String[] args){
         Region region = new Region(1800, 0);
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         try {
             Settings.MinSimilarity = 0.9;
             while (true){
@@ -68,11 +73,15 @@ public class KS {
                     Thread.sleep(300);
                     match.click();
                 }
-                System.out.println("执行中！！！！！！");
-                Thread.sleep(240000);
+                System.out.println("执行时间："+format.format(new Date()));
+                Thread.sleep(getTime());
             }
         }catch (Exception e ){
            e.printStackTrace();
         }
+    }
+
+    public static long getTime(){
+        return RandomUtil.randomLong(120000, 360000);
     }
 }
