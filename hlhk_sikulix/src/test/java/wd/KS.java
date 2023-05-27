@@ -88,6 +88,6 @@ public class KS {
     }
 
     public static long getTime(){
-        return RandomUtil.randomLong(120000, 300000);
+        return RandomUtil.randomLong(120000, 240000);
     }
 }
