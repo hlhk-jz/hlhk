@@ -11,9 +11,10 @@ public class KS {
     public static void main(String[] args){
         Region region = new Region(1800, 0);
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-        try {
+
             Settings.MinSimilarity = 0.9;
             while (true){
+                try {
                 Match match = KSData.region1.wait(KSData.STR, 2);
                 if(null != match){
                     Thread.sleep(300);
@@ -75,13 +76,18 @@ public class KS {
                 }
                 System.out.println("执行时间："+format.format(new Date()));
                 Thread.sleep(getTime());
+                }catch (Exception e ){
+                    e.printStackTrace();
+                    try {
+                        Thread.sleep(getTime());
+                    } catch (InterruptedException e1) {
+                        e1.printStackTrace();
+                    }
+                }
             }
-        }catch (Exception e ){
-           e.printStackTrace();
-        }
     }
 
     public static long getTime(){
-        return RandomUtil.randomLong(120000, 360000);
+        return RandomUtil.randomLong(120000, 300000);
     }
 }
