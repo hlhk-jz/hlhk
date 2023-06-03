@@ -22,9 +22,11 @@ public class SikTest {
         region.setThrowException(false);
 
 
-        Match wait = CongQiStart.cqReg.wait("D:/software/sikulix/cq/qdcx.PNG", 6);
+        Match wait = CongQiStart.cqReg.wait("D:/software/sikulix/cq/qdcx.PNG", 2);
         if (null != wait){
             wait.hover();
+        }else {
+            System.out.println("1111111111111111");
         }
        /* Region region = new Region(206, 641,436,160);
         region.setThrowException(false);
