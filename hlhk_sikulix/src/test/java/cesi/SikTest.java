@@ -18,16 +18,16 @@ import java.util.List;
 
 public class SikTest {
     public static void main(String[] args)throws Exception{
-        Region region = new Region(0, 0,1200,800);
-        region.setThrowException(false);
-
-
-        Match wait = CongQiStart.cqReg.wait("D:/software/sikulix/cq/qdcx.PNG", 2);
+       /* Region region = new Region(0, 0,1200,800);
+        region.setThrowException(false);*/
+        Region region = new Region(1750, 50);
+         region.hover();
+       /* Match wait = CongQiStart.cqReg.wait("D:/software/sikulix/cq/qdcx.PNG", 2);
         if (null != wait){
             wait.hover();
         }else {
             System.out.println("1111111111111111");
-        }
+        }*/
        /* Region region = new Region(206, 641,436,160);
         region.setThrowException(false);
         Match  jzMatch = CurrencyData.bgRegion.wait(CurrencyData.BGuo,1);

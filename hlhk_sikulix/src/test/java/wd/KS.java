@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class KS {
     public static void main(String[] args){
-        Region region = new Region(1800, 0);
+        Region region = new Region(1750, 50);
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
             Settings.MinSimilarity = 0.9;
             while (true){
