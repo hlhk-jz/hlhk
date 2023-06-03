@@ -20,7 +20,11 @@ public class SikTest {
     public static void main(String[] args)throws Exception{
        /* Region region = new Region(0, 0,1200,800);
         region.setThrowException(false);*/
-        Region region = new Region(1750, 50);
+
+
+
+
+        Region region = new Region(1805, 36,88,63);
          region.hover();
        /* Match wait = CongQiStart.cqReg.wait("D:/software/sikulix/cq/qdcx.PNG", 2);
         if (null != wait){
