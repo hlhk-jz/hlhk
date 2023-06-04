@@ -20,7 +20,9 @@ public class KS {
                     if(null != wait){
                         Match match = KSData.region1.wait(KSData.STR, 2);
                         if(null != match){
+                            Thread.sleep(300);
                             match.click();
+                            Thread.sleep(300);
                             region.hover();
                             Thread.sleep(300);
                             match = KSData.region1.wait(KSData.STR, 2);
@@ -29,7 +31,9 @@ public class KS {
 
                         match = KSData.region2.wait(KSData.STR, 2);
                         if(null != match){
+                            Thread.sleep(300);
                             match.click();
+                            Thread.sleep(300);
                             region.hover();
                             Thread.sleep(300);
                             match = KSData.region2.wait(KSData.STR, 2);
@@ -38,7 +42,9 @@ public class KS {
 
                         match = KSData.region3.wait(KSData.STR, 2);
                         if(null != match){
+                            Thread.sleep(300);
                             match.click();
+                            Thread.sleep(300);
                             region.hover();
                             Thread.sleep(300);
                             match = KSData.region3.wait(KSData.STR, 2);
@@ -47,7 +53,9 @@ public class KS {
 
                         match = KSData.region4.wait(KSData.STR, 2);
                         if(null != match){
+                            Thread.sleep(300);
                             match.click();
+                            Thread.sleep(300);
                             region.hover();
                             Thread.sleep(300);
                             match = KSData.region4.wait(KSData.STR, 2);
@@ -56,7 +64,9 @@ public class KS {
 
                         match = KSData.region5.wait(KSData.STR, 2);
                         if(null != match){
+                            Thread.sleep(300);
                             match.click();
+                            Thread.sleep(300);
                             region.hover();
                             Thread.sleep(300);
                             match = KSData.region5.wait(KSData.STR, 2);
