@@ -24,7 +24,7 @@ public class SikTest {
 
 
 
-        Region region = new Region(1805, 36,88,63);
+        Region region = new Region(1700, 10,88,63);
          region.hover();
        /* Match wait = CongQiStart.cqReg.wait("D:/software/sikulix/cq/qdcx.PNG", 2);
         if (null != wait){

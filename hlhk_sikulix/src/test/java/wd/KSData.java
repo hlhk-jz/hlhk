@@ -9,6 +9,7 @@ public class KSData {
     }*/
     public static String STR = "D:/software/sikulix/wd/wd.PNG";
     public static String DATA = "D:/software/sikulix/wd/data.PNG";
+    public static String sikpng = "D:/software/sikulix/wd/sik.PNG";
     public static Region regionData = new Region(1308, 0,612,548);
 
     public static Region region1 = new Region(1241, 7,496,92);
