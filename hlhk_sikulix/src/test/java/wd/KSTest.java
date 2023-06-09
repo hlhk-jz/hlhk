@@ -1,14 +1,10 @@
 package wd;
-import cn.hutool.core.util.RandomUtil;
-import org.junit.Test;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Match;
 import org.sikuli.script.Region;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-public class KS {
+public class KSTest {
     public static void main(String[] args){
         try {
             Region region1 = new Region(1678, 26,242,255);
@@ -17,8 +13,7 @@ public class KS {
             Settings.MinSimilarity = 0.9;
             while (true){
                 try {
-                    Match wait = KSData.regionData.wait(KSData.DATA, 20);
-                    if(null != wait){
+                    if(true){
                         Match match = KSData.region1.wait(KSData.STR, 2);
                         if(null != match){
                             match.click();
@@ -64,7 +59,7 @@ public class KS {
                             match.click();
                         }
                         System.out.println("执行时间："+format.format(new Date()));
-                        Thread.sleep(10000);
+                        Thread.sleep(15000);
                     }
                 }catch (Exception e ){
                     e.printStackTrace();
