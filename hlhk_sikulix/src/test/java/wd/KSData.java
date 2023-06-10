@@ -15,11 +15,11 @@ public class KSData {
     public static String sikpng = "D:/software/sikulix/wd/sik.PNG";
     public static Region regionData = new Region(1308, 0,612,548);
 
-    public static Region region1 = new Region(1241, 7,496,92);
-    public static Region region2 = new Region(1404, 107,366,97);
-    public static Region region3 = new Region(1421, 201,372,102);
-    public static Region region4 = new Region(1604, 294,304,111);
-    public static Region region5 = new Region(1694, 404,226,119);
+    public static Region region1 = new Region(1233, 0,471,121);
+    public static Region region2 = new Region(1323, 98,470,121);
+    public static Region region3 = new Region(1414, 185,484,137);
+    public static Region region4 = new Region(1534, 279,386,138);
+    public static Region region5 = new Region(1626, 382,294,224);
     static {
         regionData.setThrowException(false);
         region1.setThrowException(false);

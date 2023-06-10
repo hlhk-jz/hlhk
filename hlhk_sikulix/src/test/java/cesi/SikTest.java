@@ -7,6 +7,7 @@ import com.util.SikJZB;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 import org.sikuli.script.Button;
+import wd.KSData;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -22,10 +23,8 @@ public class SikTest {
         region.setThrowException(false);*/
 
 
-
-
-        Region region = new Region(1700, 10,88,63);
-         region.hover();
+       /* Region region = new Region(1164, 0,756,555);
+         region.hover();*/
        /* Match wait = CongQiStart.cqReg.wait("D:/software/sikulix/cq/qdcx.PNG", 2);
         if (null != wait){
             wait.hover();
