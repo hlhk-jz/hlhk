@@ -14,52 +14,52 @@ public class KSTest {
             while (true){
                 try {
                     if(true){
-                        Match match = KSData.region1.wait(KSData.STR, 2);
+                        Match match = KSData.region1.wait(KSData.STR, 1);
                         if(null != match){
                             match.click();
                             Thread.sleep(300);
                             region.hover();
-                            match = KSData.region1.wait(KSData.STR, 2);
+                            match = KSData.region1.wait(KSData.STR, 1);
                             match.click();
                         }
 
-                        match = KSData.region2.wait(KSData.STR, 2);
+                        match = KSData.region2.wait(KSData.STR, 1);
                         if(null != match){
                             match.click();
                             Thread.sleep(300);
                             region.hover();
-                            match = KSData.region2.wait(KSData.STR, 2);
+                            match = KSData.region2.wait(KSData.STR, 1);
                             match.click();
                         }
 
-                        match = KSData.region3.wait(KSData.STR, 2);
+                        match = KSData.region3.wait(KSData.STR, 1);
                         if(null != match){
                             match.click();
                             Thread.sleep(300);
                             region.hover();
-                            match = KSData.region3.wait(KSData.STR, 2);
+                            match = KSData.region3.wait(KSData.STR, 1);
                             match.click();
                         }
 
-                        match = KSData.region4.wait(KSData.STR, 2);
+                        match = KSData.region4.wait(KSData.STR, 1);
                         if(null != match){
                             match.click();
                             Thread.sleep(300);
                             region.hover();
-                            match = KSData.region4.wait(KSData.STR, 2);
+                            match = KSData.region4.wait(KSData.STR, 1);
                             match.click();
                         }
 
-                        match = KSData.region5.wait(KSData.STR, 2);
+                        match = KSData.region5.wait(KSData.STR, 1);
                         if(null != match){
                             match.click();
                             Thread.sleep(300);
                             region.hover();
-                            match = KSData.region5.wait(KSData.STR, 2);
+                            match = KSData.region5.wait(KSData.STR, 1);
                             match.click();
                         }
                         System.out.println("执行时间："+format.format(new Date()));
-                        Thread.sleep(15000);
+                        Thread.sleep(20000);
                     }
                 }catch (Exception e ){
                     e.printStackTrace();

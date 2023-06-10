@@ -7,8 +7,11 @@ public class KSData {
         Region region = new Region(1800, 0);
         region.hover();
     }*/
+    //继续
     public static String STR = "D:/software/sikulix/wd/wd.PNG";
+    //即将结束
     public static String DATA = "D:/software/sikulix/wd/data.PNG";
+    //右侧标识
     public static String sikpng = "D:/software/sikulix/wd/sik.PNG";
     public static Region regionData = new Region(1308, 0,612,548);
 
