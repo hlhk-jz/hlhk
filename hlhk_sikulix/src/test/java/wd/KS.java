@@ -64,6 +64,7 @@ public class KS {
                             match.click();
                         }
                         System.out.println("执行时间："+format.format(new Date()));
+                        region.hover();
                     }
                 }catch (Exception e ){
                     e.printStackTrace();
