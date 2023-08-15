@@ -23,7 +23,7 @@ public class GpSikulix {
         //发送区域
         Region region3 = new Region(31, 918,360,69);
         region3.setThrowException(false);
-        Pattern pattern = Pattern.compile("\\d+\\.\\d+");
+        Pattern pattern = Pattern.compile("(\\d+\\.\\d+)|(\\d+)");
         Settings.MinSimilarity=0.99;
         while (true){
             //获取文本
@@ -75,10 +75,12 @@ public class GpSikulix {
                     //发送
                     region.type(Key.ENTER);
                 }else {
-                    System.out.println("未满足条件！！！！");
+                    System.out.println("未满足条件！！！！"+System.currentTimeMillis()/1000);
                 }
+            }else {
+                System.out.println("未检测到数值~~~~~~~"+System.currentTimeMillis()/1000);
             }
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         }
     }
 }
