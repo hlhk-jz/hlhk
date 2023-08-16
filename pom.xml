@@ -31,6 +31,7 @@
         <module>hlhk_https</module>
         <module>hlhk_sikulix</module>
         <module>hlhk-docker</module>
+        <module>hlhk_emqx</module>
     </modules>
 
     <dependencies>

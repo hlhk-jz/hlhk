@@ -1,7 +1,6 @@
 package com.controller;
 import cn.hutool.json.JSONObject;
 import com.pojo.VehiclePojo;
-import com.service.Test;
 import com.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +19,6 @@ import java.util.List;
 @RestController
 @Slf4j
 public class TestController {
-    @Autowired
-    private Test test;
     @Autowired
     private TestService testService;
 
