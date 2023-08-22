@@ -121,7 +121,11 @@ public class WxTest {
         String user = jsonObject.get("userName").toString();
         String str = redisTemplate.opsForValue().get(WX_COUNT + user);
         if(!StringUtils.isEmpty(str)){
-            return Integer.parseInt(str);
+            try {
+                return Integer.parseInt(str);
+            } catch (NumberFormatException e) {
+               return 0;
+            }
         }
         return 0;
     }
