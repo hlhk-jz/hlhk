@@ -113,4 +113,34 @@ public class WxTest {
         return jsonObject;
     }
 
+    //根据用户查询数据
+    private final String WX_COUNT="WX_COUNT:";
+    @PostMapping("/wuxing/count")
+    public Integer queryCount(@RequestBody JSONObject jsonObject){
+        log.info("{}",jsonObject);
+        String user = jsonObject.get("userName").toString();
+        String str = redisTemplate.opsForValue().get(WX_COUNT + user);
+        if(!StringUtils.isEmpty(str)){
+            return Integer.parseInt(str);
+        }
+        return 0;
+    }
+
+    @PostMapping("/wuxing/update")
+    public String updateCount(@RequestBody JSONObject jsonObject){
+        Object userName = jsonObject.get("userName666");
+        Object count = jsonObject.get("count888");
+        if(null != userName && null != count){
+            redisTemplate.opsForValue().set(WX_COUNT+userName.toString(), count.toString());
+            return "ok";
+        }else {
+            return "error";
+        }
+    }
+
+    @PostMapping("/wuxing/obtain")
+    public void obtain(@RequestBody JSONObject jsonObject){
+        redisTemplate.opsForValue().set(WX_COUNT+jsonObject.get("userName").toString(),"1800000000" );
+    }
+
 }
