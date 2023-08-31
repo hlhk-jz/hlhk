@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 public class Gp {
     public static void main(String[] args)throws Exception{
         while (true){
-            Thread.sleep(15000);
+            Thread.sleep(10000);
             try {
                 //获取数值
                 String text = GpTest.FIND_REG.text();
@@ -20,6 +20,7 @@ public class Gp {
                     GpTest.SEND_REG.type(GpTest.sd+"  "+i);//发送
                     Thread.sleep(1000);
                     GpTest.SEND_REG.type(Key.ENTER);
+                    break;
                 }
             }catch (Exception e){
                 log.error("出现异常：{}",e);
