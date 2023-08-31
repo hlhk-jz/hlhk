@@ -18,7 +18,7 @@ public class Gp {
                 if(i>result ){
                     GpTest.SEND_REG.click();
                     Thread.sleep(1000);
-                    GpTest.SEND_REG.type(RandomUtil.randomInt(1,100)+"");//发送
+                    GpTest.SEND_REG.type(GpTest.sd+"灬"+i);//发送
                     Thread.sleep(1000);
                     GpTest.SEND_REG.type(Key.ENTER);
                 }
