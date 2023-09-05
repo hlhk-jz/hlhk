@@ -1,19 +1,15 @@
 package gp;
 import org.sikuli.script.Key;
 import org.sikuli.script.Region;
-
-
-
-
 public class GpTest {
     //初始数值
-    public static double sd = 10.2;
+    public static double sd = 15.34;
     //加百分之十后值
-    public static int zjNum = 110;
+    public static int zjNum = 108;
     //获取数值区域
-    public static Region FIND_REG = new Region(136,180,91,24);
+    public static Region FIND_REG = new Region(23,261,92,45);
     //发送区域
-    public static Region SEND_REG = new Region(72,869,186,58);
+    public static Region SEND_REG = new Region(155,931,168,42);
     static {
         FIND_REG.setThrowException(false);
         SEND_REG.setThrowException(false);
