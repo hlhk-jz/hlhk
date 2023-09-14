@@ -4,8 +4,7 @@ import org.sikuli.script.Region;
 public class KS {
     public static void main(String[] args){
         try {
-            Region region1 = new Region(1678, 26,242,255);
-            Match region = region1.wait(KSData.sikpng, 2);
+            Region region = new Region(1744, 54,99,102);
             while (true){
                 try {
                     Match wait = KSData.regionData.wait(KSData.DATA, 10);
