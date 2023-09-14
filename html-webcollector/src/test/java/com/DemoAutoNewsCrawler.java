@@ -38,20 +38,10 @@ public class DemoAutoNewsCrawler  extends BreadthCrawler{
                 String str1=str.substring(0, str.indexOf("并刷新页面。"));
                 String str2=str.substring(str1.length()+6, str.length());
                 String str3 = str2.substring(0,str2.indexOf("『加入书签，方便阅读』") );
-               // System.out.println("==="+str3);
-               /* String str5 = str3.replaceAll("\\s+", " ");*/
-              /*  String str4 = str3.replaceAll(" +","");*/
                 String str5 = str3.replace("　", "");
                 String str6 = str5.replace("  ", "\r");
                 test.list.add(title);
                 test.list.add(str6);
-             /*   try {
-                    writer.write(title+"\r");
-                    writer.write(str6);
-                    writer.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }*/
             }
         }
     }
@@ -75,8 +65,6 @@ public class DemoAutoNewsCrawler  extends BreadthCrawler{
         crawler.setThreads(1);
         //启动爬虫,向下爬10层
         crawler.start(2);
-        System.out.println(test.list);
-
         // 创建一个文件输出流
         try {
             FileWriter writer = new FileWriter("D:/saoyang.txt");
