@@ -32,6 +32,7 @@
         <module>hlhk_sikulix</module>
         <module>hlhk-docker</module>
         <module>hlhk_emqx</module>
+        <module>html-webcollector</module>
     </modules>
 
     <dependencies>
