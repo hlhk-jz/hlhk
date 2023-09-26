@@ -5,6 +5,7 @@ import cn.edu.hfut.dmic.webcollector.plugin.rocks.BreadthCrawler;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+//邵阳
 public class DemoAutoNewsCrawler  extends BreadthCrawler{
     public static Map<String,String> urlMap = new HashMap<>();
     public static Map<String,String> map = new LinkedHashMap<>();

@@ -9,19 +9,17 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-//绝世强龙
-public class JSQLtxt  extends BreadthCrawler {
+
+//从仙界归来的厨神
+public class Cxjgldcstxt extends BreadthCrawler {
     public static Map<String,String> urlMap = new HashMap<>();
     public static Map<String,String> map = new LinkedHashMap<>();
 
-    public JSQLtxt(String crawlPath, boolean autoParse) {
+    public Cxjgldcstxt(String crawlPath, boolean autoParse) {
         super(crawlPath, autoParse);
         /**
          * http://www.26ks.org/book/58872/
          * http://www.26ks.org/book/58872/60923520.html
-         *
-         * http://www.26ks.org/book/58872/60923516.html
-         * http://www.26ks.org/book/58872/60923518.html
          */
         this.addSeed("http://www.26ks.org/book/58872/");
         this.addRegex("http://www.26ks.org/book/58872/.*");
@@ -50,7 +48,7 @@ public class JSQLtxt  extends BreadthCrawler {
 
     public static void main(String[] args) throws Exception {
         //参数是抓取器的id与是否解析网页true
-        JSQLtxt crawler = new JSQLtxt("idTest", true);
+        Cxjgldcstxt crawler = new Cxjgldcstxt("idTest", true);
         //深度
         crawler.start(2);
         try {
