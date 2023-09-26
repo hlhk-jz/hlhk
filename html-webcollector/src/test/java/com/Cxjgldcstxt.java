@@ -18,15 +18,15 @@ public class Cxjgldcstxt extends BreadthCrawler {
     public Cxjgldcstxt(String crawlPath, boolean autoParse) {
         super(crawlPath, autoParse);
         /**
-         * http://www.26ks.org/book/58872/
-         * http://www.26ks.org/book/58872/60923520.html
+         * https://www.69shu.la/69shu/8/8924/
+         * https://www.69shu.la/69shu/8/8924/4144560.html
          */
-        this.addSeed("http://www.26ks.org/book/58872/");
-        this.addRegex("http://www.26ks.org/book/58872/.*");
+        this.addSeed("https://www.69shu.la/69shu/8/8924/");
+        this.addRegex("https://www.69shu.la/69shu/8/8924/.*");
         this.addRegex("-.*\\.(jpg|png|gif).*");
         setThreads(1);
         //设置最大key数量，也就是最大网址数量
-        getConf().setTopN(3000);
+        getConf().setTopN(1000);
     }
     @Override
     public void visit(Page page, CrawlDatums next) {
@@ -37,11 +37,14 @@ public class Cxjgldcstxt extends BreadthCrawler {
             String str8=body.substring(0, body.indexOf("第"));
             String strtitle=body.substring(str8.length(), body.length());
             String[] strs = strtitle.split("书签");
-            String bodys = strs[2].split("广告！")[1];
-            bodys = bodys.substring(0,bodys.length()-2 );
             String title =  strs[0].split(" 第")[0];
-            bodys = bodys.replace("一秒记住ｈｔｔｐ://ｍ．26ks.org ","" );
-            bodys = bodys.replace(" 首发网址htTp://m.26ks.org ","" );
+            strs = strs[1].split("热门推荐：");
+            String bodys = strs[1].split(" 投推荐票")[0];
+            bodys = bodys.replace("【千↑千△小↓說△網w ww.xqq xs.com】","" );
+            bodys = bodys.replace("【千↑千△小↓说△网w ww.xqq xs.com】","" );
+            bodys = bodys.replace("【<a href=\"https://www.\">千千小说</a>w w w.x q q x s.c o m】","" );
+            bodys = bodys.replace("【千千小說w w w.x q q x s.c o m】","" );
+            bodys = bodys.replace("【千△千△小△說△網ww w.xqqx s.com】","" );
             DemoAutoNewsCrawler.map.put(title,bodys);
         }
     }
@@ -52,7 +55,7 @@ public class Cxjgldcstxt extends BreadthCrawler {
         //深度
         crawler.start(2);
         try {
-            FileWriter writer = new FileWriter("D:/jsql.txt");
+            FileWriter writer = new FileWriter("D:/xjgldcs.txt");
             // 将List的内容写入文件
             Set<String> strings = DemoAutoNewsCrawler.map.keySet();
             for (String str : strings){
