@@ -31,7 +31,7 @@ public class EcallMsg {
     public final String TWE_URL = "http://192.168.31.202:30042/dbt-call/ecall/healthlink/secondRecord";
 
     @PostMapping("/importExcel")
-    public void importExcel(@RequestParam("file")MultipartFile file) {
+    public Object importExcel(@RequestParam("file")MultipartFile file) {
         StringBuilder str = new StringBuilder();
         try {
             InputStream inputStream = file.getInputStream();
@@ -76,11 +76,13 @@ public class EcallMsg {
                 }
                 if(!StringUtils.isEmpty(str+"")){
                     log.info("错误ICCID：{}",str.toString() );
+                    return "错误ICCID："+str.toString();
                 }
             }
         }catch (Exception e){
             log.error("{}",e );
         }
+        return "OK";
     }
 
 }
