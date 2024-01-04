@@ -68,17 +68,16 @@ public class EcallMsg {
                                 if(StringUtils.isEmpty(phoneBody)  || !(JSONObject.parseObject(phoneBody).get("code")+"").equals("000000")){
                                     str.append(ecall.getIccid()+",");
                                 }
-                                log.info("{}",phoneBody );
                             }else {
                                 str.append(ecall.getIccid()+",");
                             }
                         }
                     }
                 }
-                log.info("错误ICCID：{}",str.toString() );
+                if(!StringUtils.isEmpty(str+"")){
+                    log.info("错误ICCID：{}",str.toString() );
+                }
             }
-
-            log.info("{}",ecalls );
         }catch (Exception e){
             log.error("{}",e );
         }
