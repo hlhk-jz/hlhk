@@ -9,22 +9,15 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-//绝世强龙
-public class JSQLtxt  extends BreadthCrawler {
 
-    public JSQLtxt(String crawlPath, boolean autoParse) {
+//邵阳
+public class SaoYangtxt extends BreadthCrawler {
+
+    public SaoYangtxt(String crawlPath, boolean autoParse) {
         super(crawlPath, autoParse);
-        /**
-         * http://www.26ks.org/book/58872/
-         * http://www.26ks.org/book/58872/60923520.html
-         *
-         * http://www.26ks.org/book/58872/60923516.html
-         * http://www.26ks.org/book/58872/60923518.html
-         *
-         * https://www.xiaoshuocc.com/zcxs/30197/
-         */
-        this.addSeed("https://www.xiaoshuocc.com/zcxs/30197/");
-        this.addRegex("https://www.xiaoshuocc.com/zcxs/30197/.*");
+
+        this.addSeed("https://www.511wx4.com/wenxue/44437/");
+        this.addRegex("https://www.511wx4.com/wenxue/44437/.*");
         this.addRegex("-.*\\.(jpg|png|gif).*");
         setThreads(1);
         //设置最大key数量，也就是最大网址数量
@@ -39,19 +32,19 @@ public class JSQLtxt  extends BreadthCrawler {
             String strtitle=body.substring(str8.length(), body.length());
             String[] strs = strtitle.split("书签");
             String title =  strs[0].split(" 第")[0];
-            String bodys = body.split("读无弹窗 ")[1];
-            bodys = bodys.split(" 上一章")[0];
+            String bodys = body.split("童养夫 　　")[1];
+            bodys = bodys.split(" 　　…… 网页")[0];
             DemoAutoNewsCrawler.map.put(title,bodys);
         }
     }
 
     public static void main(String[] args) throws Exception {
         //参数是抓取器的id与是否解析网页true
-        JSQLtxt crawler = new JSQLtxt("idTest", true);
+        SaoYangtxt crawler = new SaoYangtxt("idTest", true);
         //深度
         crawler.start(2);
         try {
-            FileWriter writer = new FileWriter("D:/jsql.txt");
+            FileWriter writer = new FileWriter("D:/saoyang.txt");
             // 将List的内容写入文件
             Set<String> strings = DemoAutoNewsCrawler.map.keySet();
             for (String str : strings){
