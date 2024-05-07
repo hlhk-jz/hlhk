@@ -36,10 +36,11 @@ public class DSMDGLtxt extends BreadthCrawler {
             String title = zj+" "+trim.substring(0,i );
             content = trim.split("推荐本书上一章")[0];
             content = content.substring(i,content.length()-1 );
-            content.replace("作者：不可爱的萝卜酱返回目录加入书签推荐本书", "");
-            content.replace("www.bbiquge.io，最快更新都市之魔帝归来","" );
-            content.replace("推荐阅读：神印王座II皓月当空、龙王殿、重生之都市仙尊、财运天降、花娇、好想住你隔壁、特种奶爸俏老婆、妖夏、总裁爹地，妈咪9块9！、暖婚33天","" );
-            content.replace("笔趣阁","" );
+            content =content.replace("作者：不可爱的萝卜酱返回目录加入书签推荐本书", "");
+            content =content.replace("www.bbiquge.io，最快更新都市之魔帝归来","" );
+            content =content.replace("推荐阅读：神印王座II皓月当空、龙王殿、重生之都市仙尊、财运天降、花娇、好想住你隔壁、特种奶爸俏老婆、妖夏、总裁爹地，妈咪9块9！、暖婚33天","" );
+            content =content.replace("笔趣阁","" );
+            content =content.replace("     ！ ","" );
             DemoAutoNewsCrawler.map.put(title,content);
         }
     }
