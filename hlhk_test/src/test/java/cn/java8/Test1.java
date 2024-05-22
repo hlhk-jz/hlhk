@@ -28,7 +28,6 @@ public class Test1 {
         log.info("======= "+integer);*/
 
         /*Optional<Integer> integer = Optional.ofNullable(null);
-        Integer integer1 = integer.orElseGet(Test3::get);
         log.info("========= "+integer1);*/
 
      /*   Optional<Object> o = Optional.ofNullable(null);
