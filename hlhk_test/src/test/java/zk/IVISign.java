@@ -16,7 +16,7 @@ public class IVISign {
         String transId = RandomUtil.randomNumbers(32);
         String timestamp =  System.currentTimeMillis()/1000+"";
 
-        String body = "{'iccid':'89861123200090282135'}";
+        String body = "{'address':'北京'}";
         JSONObject jb = JSONObject.parseObject(body);
         body = JSON.toJSONString(jb, SerializerFeature.MapSortField);
         String str = accessId+transId+timestamp+body;
