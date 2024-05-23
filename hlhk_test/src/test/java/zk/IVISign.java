@@ -16,7 +16,7 @@ public class IVISign {
         String transId = RandomUtil.randomNumbers(32);
         String timestamp =  System.currentTimeMillis()/1000+"";
 
-        String body = "{'address':'北京'}";
+        String body = "{\"list\":[{\"area\":\"广州市\",\"city\":\"广州市\",\"province\":\"广东省\"}]}";
         JSONObject jb = JSONObject.parseObject(body);
         body = JSON.toJSONString(jb, SerializerFeature.MapSortField);
         String str = accessId+transId+timestamp+body;
