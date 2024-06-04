@@ -11,12 +11,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class IVISign {
     public static void main(String[] args)throws Exception{
-        String accessId = "LV3MD7253D1001005";
+        String accessId = "111111";
         String accessKey = Sm3Util.sm3bcHex(accessId.getBytes());
         String transId = RandomUtil.randomNumbers(32);
         String timestamp =  System.currentTimeMillis()/1000+"";
 
-        String body = "{\"list\":[{\"area\":\"广州市\",\"city\":\"广州市\",\"province\":\"广东省\"}]}";
+        String body = "{\"vin\":\"111111\"}";
         JSONObject jb = JSONObject.parseObject(body);
         body = JSON.toJSONString(jb, SerializerFeature.MapSortField);
         String str = accessId+transId+timestamp+body;
