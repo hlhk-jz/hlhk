@@ -22,7 +22,9 @@ public class IVISign {
 
         //String body = "{\"phone\":\"13841374336\"}";
         //String body = "{\"carNum\":\"辽AA633G\",\"vin\":\"CS22222222\",\"phone\":\"13841374336\",\"verCode\":\"212765\"}";
-        String body = "{\"vin\":\"CS22222222\"}";
+        //String body = "{\"vin\":\"CS22222222\"}";
+        //String body = "{\"vin\":\"CS22222222\",\"tpms\":\"1\",\"updateTime\":\"2024-04-25 13:53:50\"}";
+        String body = "{\"vin\":\"CS22222222\",\"iccid\":\"89861123200090282671\"}";
         JSONObject jb = JSONObject.parseObject(body);
         body = JSON.toJSONString(jb, SerializerFeature.MapSortField);
         String str = accessId+transId+timestamp+body;
@@ -30,7 +32,7 @@ public class IVISign {
         //签名
         String sign = SecureUtil.hmacSha1(accessKey).digestBase64(content, false);
         log.info("accessId:{} ,transId:{} ,timestamp:{} ,sign:{} ",accessId,transId,timestamp,sign );
-
+/*
         HttpRequest post = HttpUtil.createPost("http://192.168.31.202:9010/dbt-ivi/ivi/data");
         HttpResponse execute = post.header("accessId", accessId)
                 .header("transId", transId)
@@ -38,6 +40,6 @@ public class IVISign {
                 .header("sign", sign)
                 .body(body)
                 .execute();
-        log.info("req:{}", execute);
+        log.info("req:{}", execute);*/
     }
 }
