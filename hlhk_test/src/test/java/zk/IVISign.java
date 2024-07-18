@@ -24,7 +24,8 @@ public class IVISign {
         //String body = "{\"carNum\":\"辽AA633G\",\"vin\":\"CS22222222\",\"phone\":\"13841374336\",\"verCode\":\"212765\"}";
         //String body = "{\"vin\":\"CS22222222\"}";
         //String body = "{\"vin\":\"CS22222222\",\"tpms\":\"1\",\"updateTime\":\"2024-04-25 13:53:50\"}";
-        String body = "{\"vin\":\"CS22222222\",\"iccid\":\"89861123200090282671\"}";
+        //String body = "{\"vin\":\"CS22222222\",\"iccid\":\"89861123200090282671\"}";
+        String body = "{\"address\":\"gz\"}";
         JSONObject jb = JSONObject.parseObject(body);
         body = JSON.toJSONString(jb, SerializerFeature.MapSortField);
         String str = accessId+transId+timestamp+body;
