@@ -26,6 +26,7 @@ public class EcallImportVehiclePhoneController {
     @PostMapping("/importExcel/phone")
     public Object importExcel(@RequestParam("file") MultipartFile file) {
         StringBuilder str = new StringBuilder();
+        StringBuilder vins = new StringBuilder();
         int i = 0;
         try {
             InputStream inputStream = file.getInputStream();
@@ -35,16 +36,21 @@ public class EcallImportVehiclePhoneController {
             if(!ecalls.isEmpty() && 0 != ecalls.size()){
                 log.info("读取文件数据：{} 条",ecalls.size());
                 for (EcallPhone ecall : ecalls){
-                    int code = HttpFirstRecordUtil.firstRecord(ecall.getVin(), ecall.getPhone());
-                    if(code != 200){
-                        str.append(ecall.getVin()+",");
+                    String msg = HttpFirstRecordUtil.firstRecord(ecall.getVin(), ecall.getPhone());
+                    if(null != msg){
+                        str.append(ecall.getVin()+msg+",");
+                        vins.append(ecall.getVin()+",");
+                    }else {
+                        i++;
                     }
                 }
                 if(!StringUtils.isEmpty(str+"")){
-                    log.info("错误VIN：{}",str.toString() );
-                    return "错误VIN："+str.toString();
-                }else {
-                    i++;
+                    log.info("错误信息：{}",str.toString() );
+                    log.info("错误VIN：{}",vins.toString() );
+                    if(i != 0){
+                        log.info("一次备案成功数量：{} 条",i );
+                    }
+                    return "错误信息："+str.toString();
                 }
             }
         }catch (Exception e){

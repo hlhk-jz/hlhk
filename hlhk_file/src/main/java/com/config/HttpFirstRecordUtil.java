@@ -19,9 +19,9 @@ import java.util.Calendar;
 //ecall 一次备案
 @Slf4j
 public class HttpFirstRecordUtil {
-    public static int firstRecord(String vin,String vehiclePhone){
-        int code = 200;
-        String url = "http://192.168.31.124:9010/dbt-call/ecall/healthlink/firstRecord";
+    public static String firstRecord(String vin,String vehiclePhone){
+        String msg = null;
+        String url = "localhost:30042/dbt-call/ecall/healthlink/firstRecord";
         String accessId = "LYKJ";
         String accessKey = "8c376bb1ea064776827dad47bf7692df";
         String transId = RandomUtil.randomNumbers(32);
@@ -44,11 +44,12 @@ public class HttpFirstRecordUtil {
                 .header("sign", sign)
                 .body(body)
                 .execute().body();
-        String rsCode = JSONObject.parseObject(rspDate).get("code").toString();
+        JSONObject jsonObject = JSONObject.parseObject(rspDate);
+        String rsCode = jsonObject.get("code").toString();
         if(!rsCode.equals("000000")){
-            code = 500;
+            msg = jsonObject.get("msg").toString();
         }
-        return code;
+        return msg;
     }
 
     public static String getDate(boolean type){
