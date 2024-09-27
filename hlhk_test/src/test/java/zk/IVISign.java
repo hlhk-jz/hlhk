@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class IVISign {
     public static void main(String[] args)throws Exception{
-        String accessId = "CS22222222";
+        String accessId = "SD11111111";
         String accessKey = Sm3Util.sm3bcHex(accessId.getBytes());
         String transId = RandomUtil.randomNumbers(32);
         String timestamp =  System.currentTimeMillis()/1000+"";
@@ -25,7 +25,9 @@ public class IVISign {
         //String body = "{\"vin\":\"CS22222222\"}";
         //String body = "{\"vin\":\"CS22222222\",\"tpms\":\"1\",\"updateTime\":\"2024-04-25 13:53:50\"}";
         //String body = "{\"vin\":\"CS22222222\",\"iccid\":\"89861123200090282671\"}";
-        String body = "{\"address\":\"gz\"}";
+        //String body = "{\"address\":\"gz\"}";
+        //String body = "{\"vin\":\"SD11111111\"}";
+        String body = "{\"vin\":\"SD11111111\",\"code\":\"616188\"}";
         JSONObject jb = JSONObject.parseObject(body);
         body = JSON.toJSONString(jb, SerializerFeature.MapSortField);
         String str = accessId+transId+timestamp+body;

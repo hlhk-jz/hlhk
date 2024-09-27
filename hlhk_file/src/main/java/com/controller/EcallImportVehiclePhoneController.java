@@ -43,6 +43,7 @@ public class EcallImportVehiclePhoneController {
                     }else {
                         i++;
                     }
+                    Thread.sleep(2000);
                 }
                 if(!StringUtils.isEmpty(str+"")){
                     log.info("错误信息：{}",str.toString() );

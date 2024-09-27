@@ -21,7 +21,7 @@ import java.util.Calendar;
 public class HttpFirstRecordUtil {
     public static String firstRecord(String vin,String vehiclePhone){
         String msg = null;
-        String url = "localhost:30042/dbt-call/ecall/healthlink/firstRecord";
+        String url = "https://dbt.zkang-e.com/dbt-call/ecall/healthlink/firstRecord";
         String accessId = "LYKJ";
         String accessKey = "8c376bb1ea064776827dad47bf7692df";
         String transId = RandomUtil.randomNumbers(32);
