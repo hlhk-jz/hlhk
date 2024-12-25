@@ -30,8 +30,9 @@
         <module>hlhk_exception</module>
         <module>hlhk_https</module>
         <module>hlhk_sikulix</module>
-        <module>hlhk_emqx</module>
+        <!--<module>hlhk_emqx</module>-->
         <module>html-webcollector</module>
+        <module>hlhk-thread</module>
     </modules>
 
     <dependencies>
