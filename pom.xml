@@ -33,6 +33,7 @@
         <!--<module>hlhk_emqx</module>-->
         <module>html-webcollector</module>
         <module>hlhk-thread</module>
+        <module>hlhk-cors</module>
     </modules>
 
     <dependencies>
