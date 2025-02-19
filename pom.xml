@@ -34,6 +34,7 @@
         <module>html-webcollector</module>
         <module>hlhk-thread</module>
         <module>hlhk-cors</module>
+        <module>hlhk-jvm</module>
     </modules>
 
     <dependencies>
