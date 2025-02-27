@@ -1,6 +1,7 @@
 package com.test;
 
 import com.alibaba.fastjson.JSONObject;
+import com.pojo.Stu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,18 @@ public class RedisSetZsetTs {
         redisTemplate.opsForSet().add(jsonObject.get("key"), jsonObject.get("value1"),jsonObject.get("value2"));
         //2、members：获取集合中的所有成员
         Set members = redisTemplate.opsForSet().members(jsonObject.get("key"));
+    }
+
+    @GetMapping("/redis/seta")
+    public void redisSeta(){
+        Stu stu = new Stu();
+        stu.setAge("1");
+        stu.setName("张三");
+        Stu stu2 = new Stu();
+        stu2.setAge("1");
+        stu2.setName("张三s");
+        redisTemplate.opsForSet().add("redis_set",stu);
+        redisTemplate.opsForSet().add("redis_set",stu2);
     }
 
     @PostMapping("/redis/zset")
