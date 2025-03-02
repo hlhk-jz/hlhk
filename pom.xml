@@ -35,6 +35,7 @@
         <module>hlhk-thread</module>
         <module>hlhk-cors</module>
         <module>hlhk-jvm</module>
+        <module>hlhk_encry</module>
     </modules>
 
     <dependencies>
