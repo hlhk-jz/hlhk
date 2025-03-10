@@ -67,4 +67,13 @@ public class TestController {
     }
 
 
+    @GetMapping("/test11")
+    public void show111(){
+        log.info("执行了！！！！！！！！！！！！！！");
+        try {
+            Thread.sleep(100000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

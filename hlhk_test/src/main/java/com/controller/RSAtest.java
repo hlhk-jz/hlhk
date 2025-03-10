@@ -1,3 +1,4 @@
+/*
 package com.controller;
 import com.config.EncryptionDecryptionUtils;
 import com.config.SecretKeyUtils;
@@ -10,11 +11,13 @@ public class RSAtest {
         String pubPath = "pub.key";
         String priPath = "pri.key";
 
-        /**
+        */
+/**
          * 生成公钥和私钥文件方法，如果用代码生成，
          * 放开该方法，如果从网上获取直接写到对应文件
          * 中并注释该方法即可
-         */
+         *//*
+
         //SecretKeyUtils.generateKeyPair(pubPath, priPath);
 
         // 从文件中加载密钥
@@ -36,3 +39,4 @@ public class RSAtest {
         System.out.println("非对称RSA-公钥解密:" +decrypt2 );
     }
 }
+*/

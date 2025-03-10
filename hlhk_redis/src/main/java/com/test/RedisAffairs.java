@@ -27,8 +27,11 @@ public class RedisAffairs {
         redisTemplate.execute(new SessionCallback() {
             @Override
             public Object execute(RedisOperations redisOperations) throws DataAccessException {
+                redisOperations.discard();
+
                 //开启事务
                 redisOperations.multi();
+                redisOperations.watch("a1");
                 redisTemplate.opsForValue().set("a1","a1" );
                 int i = 1/0;
                 redisTemplate.opsForValue().set("a2","a2" );
