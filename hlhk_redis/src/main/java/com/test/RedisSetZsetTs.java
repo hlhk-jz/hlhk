@@ -4,9 +4,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.pojo.Stu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * set 和 zset
@@ -15,6 +17,36 @@ import java.util.Set;
 public class RedisSetZsetTs {
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    //互斥锁
+    @GetMapping("/redis/hcs")
+    public void hcs(){
+        new Thread(()->{
+            Boolean aBoolean = redisTemplate.opsForValue().setIfAbsent("CS_KEY", "suo");
+            System.out.println("线程1互斥锁返回："+aBoolean);
+            try {
+                Thread.sleep(20000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            redisTemplate.delete("CS_KEY");
+        }).start();
+    }
+
+    @GetMapping("/redis/hcs1")
+    public void hcs1(){
+        Boolean aBoolean = redisTemplate.opsForValue().setIfAbsent("CS_KEY", "suo");
+        System.out.println("线程222222互斥锁返回："+aBoolean);
+        if(aBoolean){
+            redisTemplate.delete("CS_KEY");
+        }
+    }
+
+
+
 
     @PostMapping("/redis/set")
     public void redisSet(@RequestBody JSONObject jsonObject){
