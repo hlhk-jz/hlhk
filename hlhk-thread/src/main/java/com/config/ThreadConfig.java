@@ -15,7 +15,7 @@ Hashtable h = new Hashtable();
 h.get("");
 ConcurrentHashMap hashMap = new ConcurrentHashMap();
 hashMap.get("");
-                threadPoolExecutor = new ThreadPoolExecutor(3, 6, 200, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
+                threadPoolExecutor = new ThreadPoolExecutor(6, 6, 200, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
                 //threadPoolExecutor = new ThreadPoolExecutor(3, 6, 200, TimeUnit.SECONDS, new ArrayBlockingQueue<>(10));
             }
         }
